@@ -134,7 +134,7 @@ const Index = () => {
             </div>
 
             <div className="hidden md:block">
-              <Button className="bg-primary text-primary-foreground hover:bg-primary/90">
+              <Button className="bg-accent text-accent-foreground hover:bg-accent/90 button-smooth">
                 Get in touch
               </Button>
             </div>
@@ -289,7 +289,7 @@ const Index = () => {
                     <p className="text-muted-foreground text-lg leading-relaxed mb-8">
                       {study.description}
                     </p>
-                    <Button variant="outline" className="w-fit button-smooth">
+                    <Button className="w-fit bg-cosmic text-cosmic-foreground hover:bg-cosmic/90 button-smooth">
                       Learn more
                     </Button>
                   </CardContent>
@@ -408,7 +408,7 @@ const Index = () => {
               <div className="text-center py-20">
                 <h3 className="text-2xl font-medium mb-4">Schedule a Meeting</h3>
                 <p className="text-muted-foreground mb-8">Book a free consultation to discuss your project</p>
-                <Button size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90">
+                <Button size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90 button-smooth">
                   Book Now
                 </Button>
               </div>
