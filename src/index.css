@@ -19,16 +19,16 @@ All colors MUST be HSL.
     --popover: 0 0% 10%;
     --popover-foreground: 0 0% 100%;
 
-    /* Brand colors from Anoma Company */
-    --primary: 180 100% 50%; /* plasma-cyan: #00FFF5 */
+    /* Brand colors from Anoma Company - Exact Hex Matches */
+    --primary: 177 100% 50%; /* plasma-cyan: #00FFF5 */
     --primary-foreground: 0 0% 0%;
     --primary-rgb: 0, 255, 245;
 
-    --secondary: 0 0% 8%;
+    --secondary: 0 0% 10%; /* orbit-grey: #1A1A1A */
     --secondary-foreground: 0 0% 100%;
 
-    --muted: 0 0% 12%;
-    --muted-foreground: 0 0% 65%;
+    --muted: 0 0% 10%;
+    --muted-foreground: 0 0% 75%; /* starlight-grey: #BFBFBF */
 
     --accent: 313 100% 50%; /* solar-magenta: #FF00E0 */
     --accent-foreground: 0 0% 100%;
@@ -49,14 +49,16 @@ All colors MUST be HSL.
 
     --radius: 0.75rem;
 
-    /* Chromatic Nebula Gradients with updated colors */
-    --gradient-spectral: linear-gradient(135deg, hsl(180 100% 50%) 0%, hsl(313 100% 50%) 50%, hsl(270 100% 50%) 100%);
-    --gradient-aurora: linear-gradient(45deg, hsl(180 100% 50% / 0.3), hsl(313 100% 50% / 0.3), hsl(270 100% 50% / 0.3), hsl(48 100% 50% / 0.3));
-    --gradient-nebula: conic-gradient(from 0deg, hsl(180 100% 50% / 0.1), hsl(313 100% 50% / 0.1), hsl(270 100% 50% / 0.1), hsl(180 100% 50% / 0.1));
+    /* Chromatic Nebula Gradients with exact brand colors */
+    --gradient-spectral: linear-gradient(135deg, hsl(177 100% 50%) 0%, hsl(313 100% 50%) 50%, hsl(270 100% 50%) 100%);
+    --gradient-aurora: linear-gradient(45deg, hsl(177 100% 50% / 0.3), hsl(313 100% 50% / 0.3), hsl(270 100% 50% / 0.3), hsl(48 100% 50% / 0.3));
+    --gradient-nebula: conic-gradient(from 0deg, hsl(177 100% 50% / 0.1), hsl(313 100% 50% / 0.1), hsl(270 100% 50% / 0.1), hsl(177 100% 50% / 0.1));
     --gradient-subtle: linear-gradient(180deg, hsl(var(--background)) 0%, hsl(0 0% 5%) 100%);
+    --gradient-services: linear-gradient(135deg, hsl(177 100% 50% / 0.1) 0%, hsl(313 100% 50% / 0.1) 50%, hsl(270 100% 50% / 0.1) 100%);
+    --gradient-cards: linear-gradient(45deg, hsl(var(--card)) 0%, hsl(177 100% 50% / 0.05) 100%);
 
     /* Nebula effects for side gradients */
-    --nebula-left: radial-gradient(circle at left, hsl(180 100% 50% / 0.15), transparent 50%);
+    --nebula-left: radial-gradient(circle at left, hsl(177 100% 50% / 0.15), transparent 50%);
     --nebula-right: radial-gradient(circle at right, hsl(313 100% 50% / 0.15), transparent 50%);
 
     --sidebar-background: 0 0% 10%;

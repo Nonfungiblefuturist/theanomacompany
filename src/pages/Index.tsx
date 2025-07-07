@@ -11,32 +11,35 @@ const Index = () => {
     {
       title: "AI Advertising & Marketing",
       description: "Revolutionary AI-powered advertising solutions that transform your brand presence with stunning visual campaigns.",
-      image: "https://images.unsplash.com/photo-1560472355-536de3962603?w=800&h=400&fit=crop",
+      image: "https://images.unsplash.com/photo-1557804506-669a67965ba0?w=800&h=400&fit=crop",
       features: [
         "AI-generated product photography and lifestyle shots",
         "Dynamic social media content at scale",
         "Brand-consistent visual campaigns across platforms"
-      ]
+      ],
+      gradient: "from-primary/20 to-accent/20"
     },
     {
       title: "AI Film Production", 
       description: "Cinema-quality film production using cutting-edge AI technology that rivals traditional VFX and cinematography.",
-      image: "https://images.unsplash.com/photo-1440404653325-ab127d49abc1?w=800&h=400&fit=crop",
+      image: "https://images.unsplash.com/photo-1518675219903-c682c4b16b7e?w=800&h=400&fit=crop",
       features: [
         "Ultra-photorealistic film scenes for theaters",
         "Character consistency across sequences",
         "Cost-effective alternative to traditional VFX"
-      ]
+      ],
+      gradient: "from-accent/20 to-cosmic/20"
     },
     {
       title: "AI Software Solutions",
       description: "Custom AI-powered software tools and applications designed to revolutionize your creative workflows.",
-      image: "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&h=400&fit=crop",
+      image: "https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=800&h=400&fit=crop",
       features: [
         "Custom AI content generation platforms",
         "Automated creative workflow systems",
         "Integration with existing production pipelines"
-      ]
+      ],
+      gradient: "from-cosmic/20 to-amber/20"
     }
   ];
 
@@ -237,20 +240,26 @@ const Index = () => {
           
           <div className="grid lg:grid-cols-3 gap-8">
             {services.map((service, index) => (
-              <Card key={index} className="border-border/50 hover:border-primary/50 transition-colors overflow-hidden group hover-lift-smooth animate-fade-up-delay-1">
+              <Card key={index} className={`border-border/50 hover:border-primary/50 transition-all duration-300 overflow-hidden group hover-lift-smooth animate-fade-up-delay-1 bg-gradient-to-br ${service.gradient}`}>
                 <div 
-                  className="h-64 bg-cover bg-center"
+                  className="h-64 bg-cover bg-center relative"
                   style={{
                     backgroundImage: `url('${service.image}')`
                   }}
-                ></div>
-                <CardContent className="p-8">
+                >
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                </div>
+                <CardContent className="p-8 relative">
                   <h3 className="text-2xl font-medium mb-4">{service.title}</h3>
                   <p className="text-muted-foreground mb-6">{service.description}</p>
                   <div className="space-y-3">
                     {service.features.map((feature, i) => (
                       <div key={i} className="flex items-start gap-3">
-                        <ArrowRight className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
+                        <ArrowRight className={`w-4 h-4 mt-0.5 flex-shrink-0 ${
+                          index === 0 ? 'text-primary' : 
+                          index === 1 ? 'text-accent' : 
+                          'text-cosmic'
+                        }`} />
                         <span className="text-sm">{feature}</span>
                       </div>
                     ))}
