@@ -60,6 +60,26 @@ const Index = () => {
     });
   };
 
+  // Typewriter effect state
+  const [typewriterComplete, setTypewriterComplete] = useState(false);
+  const [showSecondLine, setShowSecondLine] = useState(false);
+
+  useEffect(() => {
+    // Start second line after first typewriter completes
+    const timer1 = setTimeout(() => {
+      setTypewriterComplete(true);
+    }, 3000);
+
+    const timer2 = setTimeout(() => {
+      setShowSecondLine(true);
+    }, 3500);
+
+    return () => {
+      clearTimeout(timer1);
+      clearTimeout(timer2);
+    };
+  }, []);
+
   const services = [
     {
       title: "AI Advertising & Marketing",
@@ -353,14 +373,19 @@ const Index = () => {
         <div className="absolute inset-0 bg-black/40"></div>
         
         <div className="max-w-5xl mx-auto text-center space-y-8 relative z-10">
-          <h1 className="text-5xl md:text-7xl lg:text-8xl font-light leading-tight tracking-tight text-white animate-fade-up">
-            AI-Powered Advertising &<br />
-            Cinematic Visuals
-          </h1>
+          <div className="space-y-4">
+            <div className="text-5xl md:text-7xl lg:text-8xl font-light leading-tight tracking-tight text-white">
+              <div className="typewriter">
+                AI-Powered Advertising &<br />
+                Cinematic Visuals
+              </div>
+              {typewriterComplete && <span className="cursor"></span>}
+            </div>
+          </div>
           
-          <p className="text-xl md:text-2xl text-gray-200 max-w-3xl mx-auto leading-relaxed animate-fade-up-delay-1">
+          <div className={`text-xl md:text-2xl text-gray-200 max-w-3xl mx-auto leading-relaxed typewriter-delayed ${showSecondLine ? 'start' : ''}`}>
             Lightning-fast creative solutions that deliver stunning results ahead of schedule.
-          </p>
+          </div>
           
           <div className="pt-8 animate-fade-up-delay-2">
             <Button size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90 px-12 py-6 text-lg button-smooth">
