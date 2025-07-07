@@ -2,17 +2,34 @@ import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
-import { ArrowRight, Menu, X, Phone, Mail, ChevronDown, ExternalLink, Star } from "lucide-react";
+import { ArrowRight, Menu, X, Phone, Mail, ChevronDown, ExternalLink, Star, ArrowUp } from "lucide-react";
 import YouTubeEmbed from "@/components/YouTubeEmbed";
 import useEmblaCarousel from 'embla-carousel-react';
 import Autoplay from 'embla-carousel-autoplay';
 
 const Index = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [showScrollTop, setShowScrollTop] = useState(false);
   const [emblaRef] = useEmblaCarousel(
     { loop: true, align: 'start' },
     [Autoplay({ delay: 5000, stopOnInteraction: false })]
   );
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setShowScrollTop(window.scrollY > 300);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  };
 
   const services = [
     {
@@ -576,7 +593,7 @@ const Index = () => {
                 Get in touch
               </h2>
               <p className="text-lg text-muted-foreground mb-12 leading-relaxed">
-                Dive into the future of VFX and ad creation with AI! Reach out via pixels, calls, or carrier pigeons. Book a brainstorming session today!
+                Ready to revolutionize your creative process? Let's explore how AI can transform your advertising campaigns, photography projects, video content, and storyboarding. Reach out to discuss your vision and see the possibilities!
               </p>
               
               <div className="space-y-6">
@@ -585,7 +602,7 @@ const Index = () => {
                     <Phone className="w-8 h-8 text-primary" />
                     <div>
                       <p className="font-medium mb-1">Give us a call:</p>
-                      <p className="text-muted-foreground">+1 (555) 123-4567</p>
+                      <p className="text-muted-foreground">+1 (647) 564-8106</p>
                     </div>
                   </div>
                 </Card>
@@ -619,9 +636,13 @@ const Index = () => {
       <footer className="border-t border-border/50 py-24 px-6">
         <div className="max-w-7xl mx-auto">
           <div className="grid md:grid-cols-4 gap-16 mb-16 animate-fade-up">
-            <div className="md:col-span-2">
-              <h3 className="text-3xl font-medium mb-6">The Anoma Company</h3>
-              <p className="text-muted-foreground max-w-md text-lg leading-relaxed">
+            <div className="md:col-span-2 flex flex-col items-center text-center">
+              <img 
+                src="/lovable-uploads/38e4e5bc-e33c-414c-ab90-cfc5468f67a1.png" 
+                alt="Anoma Company" 
+                className="h-32 w-auto mb-4"
+              />
+              <p className="text-muted-foreground max-w-md text-base leading-relaxed">
                 AI-first creative studio crafting the future of ads and film visuals with cutting-edge artificial intelligence.
               </p>
             </div>
@@ -655,6 +676,17 @@ const Index = () => {
           </div>
         </div>
       </footer>
+
+      {/* Scroll to Top Button */}
+      {showScrollTop && (
+        <Button
+          onClick={scrollToTop}
+          className="fixed bottom-8 right-8 z-50 bg-primary text-primary-foreground hover:bg-primary/90 rounded-full p-3 shadow-lg transition-all duration-300 animate-fade-in"
+          size="icon"
+        >
+          <ArrowUp className="h-5 w-5" />
+        </Button>
+      )}
     </div>
   );
 };
