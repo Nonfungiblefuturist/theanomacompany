@@ -150,7 +150,7 @@ const Index = () => {
   const testimonials = [
     {
       quote: "Honestly didn't think AI could match our traditional shoots until I saw the results. Cut our production time from 3 weeks to 4 days and saved us $180K on our Q4 campaign. The ROI speaks for itself.",
-      author: "Marcus Kim",
+      author: "Mark L.",
       role: "CMO",
       company: "TechFlow Dynamics",
       rating: 5,
@@ -159,7 +159,7 @@ const Index = () => {
     },
     {
       quote: "The character consistency blew my mind. We needed the same actor across 12 different scenes and Anoma delivered flawlessly. Our focus groups rated it 40% higher than our previous work.",
-      author: "Sarah Chen",
+      author: "Diana G.",
       role: "Creative Director", 
       company: "Pinnacle Studios",
       rating: 5,
@@ -168,7 +168,7 @@ const Index = () => {
     },
     {
       quote: "Their custom AI workflow integration transformed our entire content pipeline. We're now pushing out 5x more social content with the same team. Game changer for our agency.",
-      author: "Alex Rodriguez",
+      author: "Alex R.",
       role: "Head of Content",
       company: "Bloom Creative Agency", 
       rating: 5,
@@ -177,7 +177,7 @@ const Index = () => {
     },
     {
       quote: "Skeptical at first, but the photorealism is incredible. Our product photography now looks better than our $50K studio shoots and takes a fraction of the time. Clients can't tell the difference.",
-      author: "Jennifer Walsh",
+      author: "Jennifer W.",
       role: "E-commerce Director",
       company: "Luxe Brands",
       rating: 5,
@@ -186,7 +186,7 @@ const Index = () => {
     },
     {
       quote: "The speed is unreal. What used to take our VFX team 2 months, Anoma delivered in 1 week. Same quality, faster turnaround, and our clients are blown away every time.",
-      author: "David Park",
+      author: "David P.",
       role: "VFX Supervisor",
       company: "Motion Picture Studios",
       rating: 5,
