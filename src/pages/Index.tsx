@@ -640,7 +640,7 @@ const Index = () => {
               <img 
                 src="/lovable-uploads/38e4e5bc-e33c-414c-ab90-cfc5468f67a1.png" 
                 alt="Anoma Company" 
-                className="h-64 w-auto mb-2"
+                className="h-64 w-auto mb-1"
               />
               <p className="text-muted-foreground text-[10px] leading-tight">
                 AI-first creative studio crafting the future of ads and film visuals with cutting-edge artificial intelligence.
