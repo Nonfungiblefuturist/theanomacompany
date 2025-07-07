@@ -6,6 +6,8 @@ import { ArrowRight, Menu, X, Phone, Mail, ChevronDown, ExternalLink, Star, Arro
 import YouTubeEmbed from "@/components/YouTubeEmbed";
 import useEmblaCarousel from 'embla-carousel-react';
 import Autoplay from 'embla-carousel-autoplay';
+import chcaWineLabel from "@/assets/chca-wine-label.jpg";
+import eventFlyer from "@/assets/event-flyer.jpg";
 
 const Index = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -194,6 +196,21 @@ const Index = () => {
       type: "Brand Campaign",
       link: "https://readymag.website/surzayon/5140874/",
       image: "/lovable-uploads/a2bc0601-961e-40cb-80c4-ee53a8664039.png"
+    },
+    {
+      title: "AI Wine Label Design - CHCA Cabernet Franc",
+      description: "A sophisticated wine label design created using AI, blending tradition with modernity. Featured abstract illustrations inspired by Niagara Falls with bold typography and vibrant colors to capture the wine's essence and elevate brand identity.",
+      type: "AI Design",
+      link: "https://www.s.pictures/design/chcawinelabel",
+      image: chcaWineLabel,
+      imageLink: "https://www.thechefshouse.com/trillium-cellars"
+    },
+    {
+      title: "AI Event Flyer Design",
+      description: "Modern event flyer design showcasing AI's capability in creating sophisticated marketing materials with elegant typography and professional layout design for hospitality and entertainment industry.",
+      type: "Event Design", 
+      link: "#",
+      image: eventFlyer
     }
   ];
 
@@ -558,10 +575,11 @@ const Index = () => {
                       />
                     ) : (
                       <div 
-                        className="h-full bg-cover bg-center"
+                        className="h-full bg-cover bg-center cursor-pointer"
                         style={{
                           backgroundImage: `url('${study.image}')`
                         }}
+                        onClick={() => study.imageLink && window.open(study.imageLink, '_blank')}
                       ></div>
                     )}
                   </div>
