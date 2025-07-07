@@ -107,14 +107,14 @@ const Index = () => {
       description: "Breakthrough AI-generated photography that caught the attention of Vogue's prestigious PhotoVogue platform, showcasing the artistic potential of artificial intelligence in visual storytelling.",
       type: "AI Photography",
       link: "https://www.vogue.com/photovogue/photographers/167071/gallery#4039408",
-      image: "/lovable-uploads/71af5afa-9fe1-4527-acee-8f0ea355d8d4.png"
+      image: "/lovable-uploads/8185e138-3528-4a94-b901-5e66b4f98b8a.png"
     },
     {
       title: "AI Spec Ad for Vaseline - Interactive Experience",
       description: "An innovative AI-crafted advertising campaign for Vaseline that combines cutting-edge visual AI with interactive web design, pushing the boundaries of digital marketing.",
       type: "Brand Campaign",
       link: "https://readymag.website/surzayon/5140874/",
-      image: "/lovable-uploads/af959056-775b-4b0e-8dc1-ca9596729b39.png"
+      image: "/lovable-uploads/a2bc0601-961e-40cb-80c4-ee53a8664039.png"
     }
   ];
 
@@ -333,7 +333,7 @@ const Index = () => {
               <div className="h-px bg-primary flex-1 max-w-16"></div>
             </div>
             <h2 className="text-4xl md:text-6xl font-light mb-4 leading-tight">
-              Our Work Speaks for Us
+              Results That Inspire
             </h2>
           </div>
           
@@ -398,20 +398,51 @@ const Index = () => {
             </h2>
           </div>
           
-          <div className="relative">
-            <img 
-              src="https://images.unsplash.com/photo-1649972904349-6e44c42644a7?w=1200&h=600&fit=crop"
-              alt="Client testimonials"
-              className="w-full h-96 object-cover rounded-lg"
-            />
-            <div className="absolute inset-0 bg-gradient-to-r from-background/80 to-transparent rounded-lg flex items-center">
-              <div className="p-12 max-w-2xl">
-                <blockquote className="text-2xl font-light leading-relaxed mb-6">
-                  "The Anoma Company delivered visuals that would have cost us 10x more with traditional production. The quality is indistinguishable from real footage."
-                </blockquote>
-                <div className="text-primary font-medium">— Creative Director, Major Studio</div>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <Card className="border-border/50 hover:border-primary/50 transition-colors p-8">
+              <blockquote className="text-lg leading-relaxed mb-6">
+                "Anoma delivered our entire product launch campaign in 3 days. What would have taken our agency 6 weeks and $200K cost us a fraction of that. The AI-generated visuals are indistinguishable from traditional photography."
+              </blockquote>
+              <div className="flex items-center gap-4">
+                <div className="w-12 h-12 bg-primary/20 rounded-full flex items-center justify-center">
+                  <span className="text-primary font-medium">MK</span>
+                </div>
+                <div>
+                  <div className="font-medium">Marcus Kim</div>
+                  <div className="text-sm text-muted-foreground">CMO, TechFlow Dynamics</div>
+                </div>
               </div>
-            </div>
+            </Card>
+
+            <Card className="border-border/50 hover:border-primary/50 transition-colors p-8">
+              <blockquote className="text-lg leading-relaxed mb-6">
+                "Their AI film work helped us create a commercial that tested 40% higher than our previous campaigns. The character consistency and cinematic quality exceeded our expectations completely."
+              </blockquote>
+              <div className="flex items-center gap-4">
+                <div className="w-12 h-12 bg-accent/20 rounded-full flex items-center justify-center">
+                  <span className="text-accent font-medium">SC</span>
+                </div>
+                <div>
+                  <div className="font-medium">Sarah Chen</div>
+                  <div className="text-sm text-muted-foreground">Creative Director, Pinnacle Studios</div>
+                </div>
+              </div>
+            </Card>
+
+            <Card className="border-border/50 hover:border-primary/50 transition-colors p-8 md:col-span-2 lg:col-span-1">
+              <blockquote className="text-lg leading-relaxed mb-6">
+                "The custom AI tools they built for our workflow have transformed our content production. We're now producing 5x more social media content with the same team size."
+              </blockquote>
+              <div className="flex items-center gap-4">
+                <div className="w-12 h-12 bg-cosmic/20 rounded-full flex items-center justify-center">
+                  <span className="text-cosmic font-medium">AR</span>
+                </div>
+                <div>
+                  <div className="font-medium">Alex Rodriguez</div>
+                  <div className="text-sm text-muted-foreground">Head of Content, Bloom Agency</div>
+                </div>
+              </div>
+            </Card>
           </div>
         </div>
       </section>
