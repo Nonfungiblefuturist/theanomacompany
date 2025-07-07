@@ -114,7 +114,7 @@ const Index = () => {
               <img 
                 src="/lovable-uploads/38e4e5bc-e33c-414c-ab90-cfc5468f67a1.png" 
                 alt="Anoma Company" 
-                className="h-16 w-auto"
+                className="h-24 w-auto"
               />
             </div>
             
@@ -173,8 +173,8 @@ const Index = () => {
         
         <div className="max-w-5xl mx-auto text-center space-y-8 relative z-10">
           <h1 className="text-5xl md:text-7xl lg:text-8xl font-light leading-tight tracking-tight text-white">
-            Revolutionary AI<br />
-            Visual Production
+            AI-Powered Advertising &<br />
+            Cinematic Visuals
           </h1>
           
           <p className="text-xl md:text-2xl text-gray-200 max-w-3xl mx-auto leading-relaxed">
