@@ -296,9 +296,9 @@ const Index = () => {
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16 animate-fade-up">
             <div className="flex items-center justify-center gap-4 mb-8">
-              <div className="h-px bg-accent flex-1 max-w-16"></div>
+              <div className="h-px bg-primary flex-1 max-w-16"></div>
               <span className="text-sm font-medium text-white">Our Services</span>
-              <div className="h-px bg-accent flex-1 max-w-16"></div>
+              <div className="h-px bg-primary flex-1 max-w-16"></div>
             </div>
             <h2 className="text-4xl md:text-6xl font-light mb-4 leading-tight">
               <span className="text-foreground">Advertising • Film • Software</span>
@@ -336,7 +336,7 @@ const Index = () => {
           <div className="text-center mb-16 animate-fade-up">
             <div className="flex items-center justify-center gap-4 mb-8">
               <div className="h-px bg-primary flex-1 max-w-16"></div>
-              <span className="text-sm font-medium text-primary">Why Choose Us?</span>
+              <span className="text-sm font-medium text-white">Why Choose Us?</span>
               <div className="h-px bg-primary flex-1 max-w-16"></div>
             </div>
             <h2 className="text-4xl md:text-6xl font-light mb-4 leading-tight">
@@ -362,7 +362,7 @@ const Index = () => {
           <div className="text-center mb-16 animate-fade-up">
             <div className="flex items-center justify-center gap-4 mb-8">
               <div className="h-px bg-primary flex-1 max-w-16"></div>
-              <span className="text-sm font-medium text-primary">Our Process</span>
+              <span className="text-sm font-medium text-white">Our Process</span>
               <div className="h-px bg-primary flex-1 max-w-16"></div>
             </div>
             <h2 className="text-4xl md:text-6xl font-light mb-4 leading-tight">
@@ -390,7 +390,7 @@ const Index = () => {
           <div className="text-center mb-16 animate-fade-up">
             <div className="flex items-center justify-center gap-4 mb-8">
               <div className="h-px bg-primary flex-1 max-w-16"></div>
-              <span className="text-sm font-medium text-primary">Case Studies</span>
+              <span className="text-sm font-medium text-white">Case Studies</span>
               <div className="h-px bg-primary flex-1 max-w-16"></div>
             </div>
             <h2 className="text-4xl md:text-6xl font-light mb-4 leading-tight">
@@ -451,7 +451,7 @@ const Index = () => {
           <div className="text-center mb-16">
             <div className="flex items-center justify-center gap-4 mb-8">
               <div className="h-px bg-primary flex-1 max-w-16"></div>
-              <span className="text-sm font-medium text-primary">Testimonials</span>
+              <span className="text-sm font-medium text-white">Testimonials</span>
               <div className="h-px bg-primary flex-1 max-w-16"></div>
             </div>
             <h2 className="text-4xl md:text-6xl font-light mb-4 leading-tight">
@@ -527,7 +527,7 @@ const Index = () => {
           <div className="text-center mb-16">
             <div className="flex items-center justify-center gap-4 mb-8">
               <div className="h-px bg-primary flex-1 max-w-16"></div>
-              <span className="text-sm font-medium text-primary">FAQ's</span>
+              <span className="text-sm font-medium text-white">FAQ's</span>
               <div className="h-px bg-primary flex-1 max-w-16"></div>
             </div>
             <h2 className="text-4xl md:text-6xl font-light mb-4 leading-tight">
@@ -560,7 +560,7 @@ const Index = () => {
           <div className="grid lg:grid-cols-2 gap-16">
             <div>
               <div className="flex items-center gap-4 mb-8">
-                <span className="text-sm font-medium text-primary">Contact us</span>
+                <span className="text-sm font-medium text-white">Contact us</span>
                 <div className="h-px bg-primary flex-1 max-w-16"></div>
               </div>
               <h2 className="text-4xl md:text-6xl font-light mb-6 leading-tight">
