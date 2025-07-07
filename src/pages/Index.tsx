@@ -109,6 +109,13 @@ const Index = () => {
       link: "https://youtu.be/XlaBgDLMuGQ"
     },
     {
+      title: "AI Mockumentary: Behind the Scenes",
+      description: "An innovative AI-powered mockumentary showcasing the creative potential of artificial intelligence in storytelling and documentary-style content creation.",
+      youtubeId: "QenWLMUnC18",
+      type: "AI Mockumentary",
+      link: "https://youtu.be/QenWLMUnC18"
+    },
+    {
       title: "AI Photography Featured in PhotoVogue",
       description: "Breakthrough AI-generated photography that caught the attention of Vogue's prestigious PhotoVogue platform, showcasing the artistic potential of artificial intelligence in visual storytelling.",
       type: "AI Photography",
