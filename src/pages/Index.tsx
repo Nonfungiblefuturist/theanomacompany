@@ -118,7 +118,7 @@ const Index = () => {
               <img 
                 src="/lovable-uploads/38e4e5bc-e33c-414c-ab90-cfc5468f67a1.png" 
                 alt="Anoma Company" 
-                className="h-32 w-auto pt-4"
+                className="h-40 w-auto pt-4"
               />
             </div>
             
@@ -173,7 +173,7 @@ const Index = () => {
             backgroundImage: `url('/lovable-uploads/c40680e6-8093-4681-8fcf-e6b6356d9ef2.png')`
           }}
         ></div>
-        <div className="absolute inset-0 bg-black/80"></div>
+        <div className="absolute inset-0 bg-black/40"></div>
         
         <div className="max-w-5xl mx-auto text-center space-y-8 relative z-10">
           <h1 className="text-5xl md:text-7xl lg:text-8xl font-light leading-tight tracking-tight text-white">
