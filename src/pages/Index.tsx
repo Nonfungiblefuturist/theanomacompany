@@ -11,7 +11,7 @@ const Index = () => {
     {
       title: "AI Advertising & Marketing",
       description: "Revolutionary AI-powered advertising solutions that transform your brand presence with stunning visual campaigns.",
-      image: "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=800&h=400&fit=crop",
+      image: "https://images.unsplash.com/photo-1560472355-536de3962603?w=800&h=400&fit=crop",
       features: [
         "AI-generated product photography and lifestyle shots",
         "Dynamic social media content at scale",
@@ -21,7 +21,7 @@ const Index = () => {
     {
       title: "AI Film Production", 
       description: "Cinema-quality film production using cutting-edge AI technology that rivals traditional VFX and cinematography.",
-      image: "https://images.unsplash.com/photo-1489599735188-1fd7155a4a2b?w=800&h=400&fit=crop",
+      image: "https://images.unsplash.com/photo-1440404653325-ab127d49abc1?w=800&h=400&fit=crop",
       features: [
         "Ultra-photorealistic film scenes for theaters",
         "Character consistency across sequences",
@@ -31,12 +31,39 @@ const Index = () => {
     {
       title: "AI Software Solutions",
       description: "Custom AI-powered software tools and applications designed to revolutionize your creative workflows.",
-      image: "https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?w=800&h=400&fit=crop",
+      image: "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&h=400&fit=crop",
       features: [
         "Custom AI content generation platforms",
         "Automated creative workflow systems",
         "Integration with existing production pipelines"
       ]
+    }
+  ];
+
+  const processSteps = [
+    {
+      step: "01",
+      title: "Discovery & Strategy",
+      description: "We analyze your vision, brand identity, and project requirements to develop a tailored AI-powered creative strategy.",
+      icon: "🎯"
+    },
+    {
+      step: "02", 
+      title: "AI Model Selection",
+      description: "Our team selects and fine-tunes the most suitable AI models based on your specific creative needs and desired outcomes.",
+      icon: "🤖"
+    },
+    {
+      step: "03",
+      title: "Creative Development",
+      description: "We blend human creativity with AI precision to develop your visual content, ensuring brand consistency and artistic excellence.",
+      icon: "🎨"
+    },
+    {
+      step: "04",
+      title: "Quality Assurance",
+      description: "Every output undergoes rigorous quality checks and refinements to meet cinema-grade standards before delivery.",
+      icon: "✨"
     }
   ];
 
@@ -255,6 +282,34 @@ const Index = () => {
                 <div className="text-5xl mb-6">{benefit.icon}</div>
                 <h3 className="text-xl font-medium mb-4">{benefit.title}</h3>
                 <p className="text-muted-foreground">{benefit.description}</p>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Our Process Section */}
+      <section id="our-process" className="py-24 px-6 bg-muted/20">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-16 animate-fade-up">
+            <div className="flex items-center justify-center gap-4 mb-8">
+              <div className="h-px bg-primary flex-1 max-w-16"></div>
+              <span className="text-sm font-medium text-primary">Our Process</span>
+              <div className="h-px bg-primary flex-1 max-w-16"></div>
+            </div>
+            <h2 className="text-4xl md:text-6xl font-light mb-4 leading-tight">
+              How We Transform Ideas into<br />
+              <span className="text-primary">AI-Powered Reality</span>
+            </h2>
+          </div>
+          
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {processSteps.map((step, index) => (
+              <Card key={index} className="border-border/50 hover:border-primary/50 transition-colors text-center p-8 animate-fade-up-delay-1 hover-lift-smooth">
+                <div className="text-6xl mb-6 text-primary font-light">{step.step}</div>
+                <div className="text-4xl mb-6">{step.icon}</div>
+                <h3 className="text-xl font-medium mb-4">{step.title}</h3>
+                <p className="text-muted-foreground leading-relaxed">{step.description}</p>
               </Card>
             ))}
           </div>
