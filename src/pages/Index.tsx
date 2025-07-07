@@ -7,7 +7,7 @@ import YouTubeEmbed from "@/components/YouTubeEmbed";
 import useEmblaCarousel from 'embla-carousel-react';
 import Autoplay from 'embla-carousel-autoplay';
 import chcaWineLabel from "@/assets/chca-wine-label.jpg";
-import instagramEventFlyer from "@/assets/instagram-event-flyer.jpg";
+import eventFlyer from "@/assets/event-flyer.jpg";
 
 const Index = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -206,11 +206,11 @@ const Index = () => {
       imageLink: "https://www.thechefshouse.com/trillium-cellars"
     },
     {
-      title: "Instagram Event Flyer Design",
+      title: "Event Flyer",
       description: "Professional event flyer design created for Instagram promotion, showcasing AI's capability in creating sophisticated social media marketing materials for the hospitality industry with elegant typography and restaurant branding.",
       type: "Instagram Design", 
       link: "https://www.instagram.com/p/DI1gNCHOD-g/?igsh=bW5xdG1rNjRmMGFi",
-      image: instagramEventFlyer
+      image: eventFlyer
     }
   ];
 
