@@ -217,6 +217,46 @@ const Index = () => {
     {
       question: "Do you offer training for AI filmmaking?",
       answer: "We're working on The Anoma Creator's Program to teach and support creative minds."
+    },
+    {
+      question: "What's your typical project timeline and delivery schedule?",
+      answer: "Most projects are completed within 2-4 weeks, depending on scope. We provide regular updates and can accommodate urgent deadlines when needed."
+    },
+    {
+      question: "How do you price your AI creative services?",
+      answer: "Pricing varies based on project complexity, timeline, and deliverables. We offer competitive rates that typically save clients 40-70% compared to traditional production methods. Contact us for a custom quote."
+    },
+    {
+      question: "What industries do you work with?",
+      answer: "We work across all industries including e-commerce, entertainment, advertising agencies, fashion, automotive, tech startups, and Fortune 500 companies. Our AI solutions adapt to any sector's creative needs."
+    },
+    {
+      question: "Can you handle large-scale commercial campaigns?",
+      answer: "Absolutely. We've successfully delivered campaigns for major brands and can scale our operations to meet enterprise-level demands while maintaining quality and consistency."
+    },
+    {
+      question: "Do you provide revisions and creative direction?",
+      answer: "Yes, we include multiple revision rounds in our packages and work closely with your creative team to ensure the final output aligns perfectly with your brand vision and campaign goals."
+    },
+    {
+      question: "What file formats and technical specifications do you deliver?",
+      answer: "We deliver in all standard formats including 4K video, high-resolution images, and can accommodate specific technical requirements for different platforms and media outlets."
+    },
+    {
+      question: "Can you work with our existing creative assets and brand guidelines?",
+      answer: "Definitely. We excel at integrating with existing brand materials, style guides, and creative assets to ensure consistency across all AI-generated content."
+    },
+    {
+      question: "Do you offer ongoing creative partnerships or retainer agreements?",
+      answer: "Yes, we work with several clients on retainer basis for ongoing content creation, which provides better rates and priority scheduling for regular creative needs."
+    },
+    {
+      question: "How do you ensure brand consistency across multiple AI-generated assets?",
+      answer: "We use advanced AI training techniques and maintain detailed brand profiles to ensure consistent visual identity, tone, and messaging across all generated content."
+    },
+    {
+      question: "What's your approach to confidentiality and NDAs?",
+      answer: "We maintain strict confidentiality protocols and are happy to sign NDAs before any project discussion. Your creative concepts and business information are completely secure."
     }
   ];
 
