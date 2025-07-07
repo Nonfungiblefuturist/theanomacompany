@@ -701,7 +701,7 @@ const Index = () => {
                     <Mail className="w-8 h-8 text-primary" />
                     <div>
                       <p className="font-medium mb-1">Send us an email:</p>
-                      <p className="text-muted-foreground">hello@anoma.company</p>
+                      <p className="text-muted-foreground">sg@s.pictures</p>
                     </div>
                   </div>
                 </Card>
