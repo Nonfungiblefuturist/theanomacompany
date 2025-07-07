@@ -10,6 +10,7 @@ import Autoplay from 'embla-carousel-autoplay';
 const Index = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [showScrollTop, setShowScrollTop] = useState(false);
+  const [scrollY, setScrollY] = useState(0);
   const [emblaRef] = useEmblaCarousel(
     { loop: true, align: 'start' },
     [Autoplay({ delay: 5000, stopOnInteraction: false })]
@@ -17,11 +18,37 @@ const Index = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      setShowScrollTop(window.scrollY > 300);
+      const currentScrollY = window.scrollY;
+      setShowScrollTop(currentScrollY > 300);
+      setScrollY(currentScrollY);
+      
+      // Parallax effect for nebula
+      document.documentElement.style.setProperty('--scroll-y', `${currentScrollY * 0.5}px`);
     };
 
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  useEffect(() => {
+    const observeElements = () => {
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('in-view', 'visible');
+            }
+          });
+        },
+        { threshold: 0.1, rootMargin: '50px' }
+      );
+
+      document.querySelectorAll('.scroll-reveal, .stagger-item, .text-reveal').forEach((el) => {
+        observer.observe(el);
+      });
+    };
+
+    observeElements();
   }, []);
 
   const scrollToTop = () => {
@@ -329,11 +356,14 @@ const Index = () => {
             <h2 className="text-4xl md:text-6xl font-light mb-4 leading-tight">
               <span className="text-foreground">Advertising • Film • Software</span>
             </h2>
+            <p className="text-muted-foreground text-lg leading-relaxed max-w-4xl mx-auto">
+              From AI-generated ad campaigns and product photography to cinematic film production and custom software tools—we deliver creative solutions that traditionally take months in just weeks.
+            </p>
           </div>
           
           <div className="grid lg:grid-cols-3 gap-8">
             {services.map((service, index) => (
-              <Card key={index} className={`border-border/50 hover:border-accent/30 transition-all duration-300 overflow-hidden group hover-lift-smooth animate-fade-up-delay-1 bg-gradient-to-br ${service.gradient}`}>
+              <Card key={index} className={`border-border/50 hover:border-accent/30 transition-all duration-300 overflow-hidden group card-parallax scroll-reveal bg-gradient-to-br ${service.gradient}`} style={{ transitionDelay: `${index * 100}ms` }}>
                 <CardContent className="p-8 relative">
                   <h3 className="text-2xl font-medium mb-4">{service.title}</h3>
                   <p className="text-muted-foreground mb-6">{service.description}</p>
@@ -372,7 +402,7 @@ const Index = () => {
           
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {benefits.map((benefit, index) => (
-              <Card key={index} className="border-border/50 hover:border-primary/50 transition-colors text-center p-8 animate-scale-in hover-lift-smooth">
+              <Card key={index} className="border-border/50 hover:border-primary/50 transition-colors text-center p-8 stagger-item card-parallax" style={{ transitionDelay: `${index * 150}ms` }}>
                 <div className="text-5xl mb-6">{benefit.icon}</div>
                 <h3 className="text-xl font-medium mb-4">{benefit.title}</h3>
                 <p className="text-muted-foreground">{benefit.description}</p>
@@ -392,14 +422,13 @@ const Index = () => {
               <div className="h-px bg-primary flex-1 max-w-16"></div>
             </div>
             <h2 className="text-4xl md:text-6xl font-light mb-4 leading-tight">
-              How We Transform Ideas into<br />
-              <span className="text-primary">AI-Powered Reality</span>
+              How We Transform Ideas into Reality
             </h2>
           </div>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {processSteps.map((step, index) => (
-              <Card key={index} className="border-border/50 hover:border-primary/50 transition-colors text-center p-8 animate-fade-up-delay-1 hover-lift-smooth">
+              <Card key={index} className="border-border/50 hover:border-primary/50 transition-colors text-center p-8 stagger-item card-parallax" style={{ transitionDelay: `${index * 200}ms` }}>
                 <div className="text-6xl mb-6 text-primary font-light">{step.step}</div>
                 <div className="text-4xl mb-6">{step.icon}</div>
                 <h3 className="text-xl font-medium mb-4">{step.title}</h3>
@@ -426,7 +455,7 @@ const Index = () => {
           
           <div className="space-y-12">
             {caseStudies.map((study, index) => (
-              <Card key={index} className="border-border/50 hover:border-accent/30 transition-colors overflow-hidden animate-fade-up-delay-1 hover-lift-smooth">
+              <Card key={index} className="border-border/50 hover:border-accent/30 transition-colors overflow-hidden scroll-reveal card-parallax" style={{ transitionDelay: `${index * 250}ms` }}>
                 <div className="grid lg:grid-cols-2 gap-0">
                   <div className="h-80 lg:h-auto">
                     {study.youtubeId ? (
