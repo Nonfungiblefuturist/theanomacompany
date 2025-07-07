@@ -114,7 +114,7 @@ const Index = () => {
               <img 
                 src="/lovable-uploads/38e4e5bc-e33c-414c-ab90-cfc5468f67a1.png" 
                 alt="Anoma Company" 
-                className="h-12 w-auto"
+                className="h-16 w-auto"
               />
             </div>
             
@@ -166,10 +166,10 @@ const Index = () => {
         <div 
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{
-            backgroundImage: `url('https://images.unsplash.com/photo-1551434678-e076c223a692?w=1920&h=1080&fit=crop')`
+            backgroundImage: `url('https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=1920&h=1080&fit=crop')`
           }}
         ></div>
-        <div className="absolute inset-0 bg-black/60"></div>
+        <div className="absolute inset-0 bg-black/70"></div>
         
         <div className="max-w-5xl mx-auto text-center space-y-8 relative z-10">
           <h1 className="text-5xl md:text-7xl lg:text-8xl font-light leading-tight tracking-tight text-white">
