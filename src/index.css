@@ -428,7 +428,6 @@ All colors MUST be HSL.
   .button-smooth:hover::before {
     left: 100%;
   }
-  }
 
   /* Scroll-triggered animations */
   .scroll-reveal {
