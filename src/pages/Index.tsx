@@ -240,15 +240,7 @@ const Index = () => {
           
           <div className="grid lg:grid-cols-3 gap-8">
             {services.map((service, index) => (
-              <Card key={index} className={`border-border/50 hover:border-primary/50 transition-all duration-300 overflow-hidden group hover-lift-smooth animate-fade-up-delay-1 bg-gradient-to-br ${service.gradient}`}>
-                <div 
-                  className="h-64 bg-cover bg-center relative"
-                  style={{
-                    backgroundImage: `url('${service.image}')`
-                  }}
-                >
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
-                </div>
+              <Card key={index} className={`border-border/50 hover:border-accent/30 transition-all duration-300 overflow-hidden group hover-lift-smooth animate-fade-up-delay-1 bg-gradient-to-br ${service.gradient}`}>
                 <CardContent className="p-8 relative">
                   <h3 className="text-2xl font-medium mb-4">{service.title}</h3>
                   <p className="text-muted-foreground mb-6">{service.description}</p>
@@ -256,7 +248,7 @@ const Index = () => {
                     {service.features.map((feature, i) => (
                       <div key={i} className="flex items-start gap-3">
                         <ArrowRight className={`w-4 h-4 mt-0.5 flex-shrink-0 ${
-                          index === 0 ? 'text-primary' : 
+                          index === 0 ? 'text-amber' : 
                           index === 1 ? 'text-accent' : 
                           'text-cosmic'
                         }`} />
