@@ -640,9 +640,9 @@ const Index = () => {
               <img 
                 src="/lovable-uploads/38e4e5bc-e33c-414c-ab90-cfc5468f67a1.png" 
                 alt="Anoma Company" 
-                className="h-64 w-auto mb-6"
+                className="h-64 w-auto mb-2"
               />
-              <p className="text-muted-foreground max-w-md text-sm leading-relaxed">
+              <p className="text-muted-foreground text-xs">
                 AI-first creative studio crafting the future of ads and film visuals with cutting-edge artificial intelligence.
               </p>
             </div>
@@ -664,8 +664,6 @@ const Index = () => {
                 <a href="https://instagram.com/nonfungible.ai" target="_blank" rel="noopener noreferrer" className="block text-muted-foreground hover:text-foreground transition-colors">Instagram</a>
                 <a href="https://www.youtube.com/@nonfungibleai" target="_blank" rel="noopener noreferrer" className="block text-muted-foreground hover:text-foreground transition-colors">YouTube</a>
                 <a href="https://www.linkedin.com/in/surzayon/" target="_blank" rel="noopener noreferrer" className="block text-muted-foreground hover:text-foreground transition-colors">LinkedIn</a>
-                <a href="https://x.com/surzayon" target="_blank" rel="noopener noreferrer" className="block text-muted-foreground hover:text-foreground transition-colors">X (Twitter)</a>
-                <a href="https://tiktok.com/@nonfungible.ai" target="_blank" rel="noopener noreferrer" className="block text-muted-foreground hover:text-foreground transition-colors">TikTok</a>
               </div>
             </div>
           </div>
