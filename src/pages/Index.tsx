@@ -176,17 +176,17 @@ const Index = () => {
         <div className="absolute inset-0 bg-black/40"></div>
         
         <div className="max-w-5xl mx-auto text-center space-y-8 relative z-10">
-          <h1 className="text-5xl md:text-7xl lg:text-8xl font-light leading-tight tracking-tight text-white">
+          <h1 className="text-5xl md:text-7xl lg:text-8xl font-light leading-tight tracking-tight text-white animate-fade-up">
             AI-Powered Advertising &<br />
             Cinematic Visuals
           </h1>
           
-          <p className="text-xl md:text-2xl text-gray-200 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-xl md:text-2xl text-gray-200 max-w-3xl mx-auto leading-relaxed animate-fade-up-delay-1">
             Lightning-fast creative solutions that deliver stunning results ahead of schedule.
           </p>
           
-          <div className="pt-8">
-            <Button size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90 px-12 py-6 text-lg">
+          <div className="pt-8 animate-fade-up-delay-2">
+            <Button size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90 px-12 py-6 text-lg button-smooth">
               Book a Free Demo
             </Button>
           </div>
@@ -196,7 +196,7 @@ const Index = () => {
       {/* Services Section */}
       <section id="services" className="py-24 px-6">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
+          <div className="text-center mb-16 animate-fade-up">
             <div className="flex items-center justify-center gap-4 mb-8">
               <div className="h-px bg-primary flex-1 max-w-16"></div>
               <span className="text-sm font-medium text-primary">Our Services</span>
@@ -209,7 +209,7 @@ const Index = () => {
           
           <div className="grid lg:grid-cols-3 gap-8">
             {services.map((service, index) => (
-              <Card key={index} className="border-border/50 hover:border-primary/50 transition-colors overflow-hidden group">
+              <Card key={index} className="border-border/50 hover:border-primary/50 transition-colors overflow-hidden group hover-lift-smooth animate-fade-up-delay-1">
                 <div 
                   className="h-64 bg-cover bg-center"
                   style={{
@@ -237,7 +237,7 @@ const Index = () => {
       {/* Why Us Section */}
       <section id="why-us" className="py-24 px-6 bg-muted/20">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
+          <div className="text-center mb-16 animate-fade-up">
             <div className="flex items-center justify-center gap-4 mb-8">
               <div className="h-px bg-primary flex-1 max-w-16"></div>
               <span className="text-sm font-medium text-primary">Why Choose Us?</span>
@@ -250,7 +250,7 @@ const Index = () => {
           
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {benefits.map((benefit, index) => (
-              <Card key={index} className="border-border/50 hover:border-primary/50 transition-colors text-center p-8">
+              <Card key={index} className="border-border/50 hover:border-primary/50 transition-colors text-center p-8 animate-scale-in hover-lift-smooth">
                 <div className="text-5xl mb-6">{benefit.icon}</div>
                 <h3 className="text-xl font-medium mb-4">{benefit.title}</h3>
                 <p className="text-muted-foreground">{benefit.description}</p>
@@ -263,7 +263,7 @@ const Index = () => {
       {/* Case Studies Section */}
       <section id="case-study" className="py-24 px-6">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
+          <div className="text-center mb-16 animate-fade-up">
             <div className="flex items-center justify-center gap-4 mb-8">
               <div className="h-px bg-primary flex-1 max-w-16"></div>
               <span className="text-sm font-medium text-primary">Case Studies</span>
@@ -276,7 +276,7 @@ const Index = () => {
           
           <div className="space-y-12">
             {caseStudies.map((study, index) => (
-              <Card key={index} className="border-border/50 hover:border-primary/50 transition-colors overflow-hidden">
+              <Card key={index} className="border-border/50 hover:border-primary/50 transition-colors overflow-hidden animate-fade-up-delay-1 hover-lift-smooth">
                 <div className="grid lg:grid-cols-2 gap-0">
                   <div 
                     className="h-80 lg:h-auto bg-cover bg-center"
@@ -289,7 +289,7 @@ const Index = () => {
                     <p className="text-muted-foreground text-lg leading-relaxed mb-8">
                       {study.description}
                     </p>
-                    <Button variant="outline" className="w-fit">
+                    <Button variant="outline" className="w-fit button-smooth">
                       Learn more
                     </Button>
                   </CardContent>
@@ -418,19 +418,19 @@ const Index = () => {
       </section>
 
       {/* Footer */}
-      <footer className="border-t border-border/50 py-16 px-6">
+      <footer className="border-t border-border/50 py-24 px-6">
         <div className="max-w-7xl mx-auto">
-          <div className="grid md:grid-cols-4 gap-12 mb-12">
+          <div className="grid md:grid-cols-4 gap-16 mb-16 animate-fade-up">
             <div className="md:col-span-2">
-              <h3 className="text-2xl font-medium mb-4">The Anoma Company</h3>
-              <p className="text-muted-foreground max-w-md">
+              <h3 className="text-3xl font-medium mb-6">The Anoma Company</h3>
+              <p className="text-muted-foreground max-w-md text-lg leading-relaxed">
                 AI-first creative studio crafting the future of ads and film visuals with cutting-edge artificial intelligence.
               </p>
             </div>
             
             <div>
-              <h4 className="font-medium mb-4">Quick links</h4>
-              <div className="space-y-2">
+              <h4 className="font-medium mb-6 text-lg">Quick links</h4>
+              <div className="space-y-3">
                 <a href="#services" className="block text-muted-foreground hover:text-foreground transition-colors">Our Services</a>
                 <a href="#why-us" className="block text-muted-foreground hover:text-foreground transition-colors">Why Choose Us</a>
                 <a href="#case-study" className="block text-muted-foreground hover:text-foreground transition-colors">Case Studies</a>
@@ -440,8 +440,8 @@ const Index = () => {
             </div>
             
             <div>
-              <h4 className="font-medium mb-4">Follow Us</h4>
-              <div className="space-y-2">
+              <h4 className="font-medium mb-6 text-lg">Follow Us</h4>
+              <div className="space-y-3">
                 <a href="#" className="block text-muted-foreground hover:text-foreground transition-colors">Instagram</a>
                 <a href="#" className="block text-muted-foreground hover:text-foreground transition-colors">YouTube</a>
                 <a href="#" className="block text-muted-foreground hover:text-foreground transition-colors">LinkedIn</a>
@@ -449,7 +449,7 @@ const Index = () => {
             </div>
           </div>
           
-          <div className="border-t border-border/50 pt-8 flex items-center justify-between">
+          <div className="border-t border-border/50 pt-12 flex items-center justify-between">
             <p className="text-muted-foreground">© 2024 The Anoma Company. All rights reserved.</p>
             <p className="text-muted-foreground text-sm">Crafted with AI precision</p>
           </div>
