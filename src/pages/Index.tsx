@@ -111,9 +111,9 @@ const Index = () => {
       icon: "⚖️"
     },
     {
-      title: "Proven ROI",
-      description: "Documented 60-90% cost savings with measurably better audience response rates.",
-      icon: "📈"
+      title: "Rapid Delivery",
+      description: "Complete projects in weeks, not months, while maintaining professional quality standards.",
+      icon: "⚡"
     }
   ];
 
@@ -633,7 +633,7 @@ const Index = () => {
       </section>
 
       {/* Footer */}
-      <footer className="border-t border-border/50 py-24 px-6">
+      <footer className="border-t border-border/50 py-16 px-6">
         <div className="max-w-7xl mx-auto">
           <div className="grid md:grid-cols-4 gap-16 mb-16 animate-fade-up">
             <div className="md:col-span-2 flex flex-col items-center text-center">
@@ -642,7 +642,7 @@ const Index = () => {
                 alt="Anoma Company" 
                 className="h-64 w-auto mb-2"
               />
-              <p className="text-muted-foreground text-xs">
+              <p className="text-muted-foreground text-[10px] leading-tight">
                 AI-first creative studio crafting the future of ads and film visuals with cutting-edge artificial intelligence.
               </p>
             </div>
