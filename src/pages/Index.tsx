@@ -118,7 +118,7 @@ const Index = () => {
               <img 
                 src="/lovable-uploads/38e4e5bc-e33c-414c-ab90-cfc5468f67a1.png" 
                 alt="Anoma Company" 
-                className="h-40 w-auto pt-4"
+                className="h-40 w-auto pt-8 pb-6"
               />
             </div>
             
