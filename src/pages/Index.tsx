@@ -327,7 +327,7 @@ const Index = () => {
             </div>
 
             <div className="hidden md:block">
-              <Button className={`bg-accent text-accent-foreground hover:bg-accent/90 button-smooth transition-all duration-500 ease-out ${
+              <Button className={`bg-accent text-accent-foreground hover:bg-accent/90 button-smooth glass-button transition-all duration-500 ease-out ${
                 isScrolled ? 'px-4 py-2 text-sm' : 'px-6 py-3 text-base'
               }`}>
                 Get in touch
@@ -383,12 +383,12 @@ const Index = () => {
             </div>
           </div>
           
-          <div className={`text-xl md:text-2xl text-gray-200 max-w-3xl mx-auto leading-relaxed typewriter-delayed ${showSecondLine ? 'start' : ''}`}>
+          <p className="text-xl md:text-2xl text-gray-200 max-w-3xl mx-auto leading-relaxed animate-fade-up-delay-1">
             Lightning-fast creative solutions that deliver stunning results ahead of schedule.
-          </div>
+          </p>
           
           <div className="pt-8 animate-fade-up-delay-2">
-            <Button size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90 px-12 py-6 text-lg button-smooth">
+            <Button size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90 px-12 py-6 text-lg button-smooth glass-button">
               Book a Free Demo
             </Button>
           </div>
@@ -405,28 +405,28 @@ const Index = () => {
               <div className="h-px bg-primary flex-1 max-w-16"></div>
             </div>
             <h2 className="text-4xl md:text-6xl font-light mb-4 leading-tight">
-              <span className="text-foreground">Advertising • Film • Software</span>
+              <span className="text-foreground">Creative Intelligence • Visual Storytelling • Smart Solutions</span>
             </h2>
             <p className="text-muted-foreground text-lg leading-relaxed max-w-4xl mx-auto">
-              From AI-generated ad campaigns and product photography to cinematic film production and custom software tools—we deliver creative solutions that traditionally take months in just weeks.
+              From AI-generated advertising campaigns and product photography to cinematic film production and custom software solutions, we deliver creative excellence that traditionally takes months in just weeks.
             </p>
           </div>
           
-          <div className="grid lg:grid-cols-3 gap-8">
+           <div className="grid lg:grid-cols-3 gap-8">
             {services.map((service, index) => (
-              <Card key={index} className={`border-border/50 hover:border-accent/30 transition-all duration-300 overflow-hidden group card-parallax scroll-reveal bg-gradient-to-br ${service.gradient}`} style={{ transitionDelay: `${index * 100}ms` }}>
+              <Card key={index} className={`border-border/50 hover:border-accent/30 transition-all duration-500 overflow-hidden group card-parallax scroll-reveal bg-gradient-to-br ${service.gradient} hover:scale-105 hover:shadow-2xl hover:shadow-primary/20 liquid-hover`} style={{ transitionDelay: `${index * 100}ms` }}>
                 <CardContent className="p-8 relative">
-                  <h3 className="text-2xl font-medium mb-4">{service.title}</h3>
-                  <p className="text-muted-foreground mb-6">{service.description}</p>
+                  <h3 className="text-2xl font-medium mb-4 group-hover:text-primary transition-colors duration-300">{service.title}</h3>
+                  <p className="text-muted-foreground mb-6 group-hover:text-foreground/90 transition-colors duration-300">{service.description}</p>
                   <div className="space-y-3">
                     {service.features.map((feature, i) => (
-                      <div key={i} className="flex items-start gap-3">
-                        <ArrowRight className={`w-4 h-4 mt-0.5 flex-shrink-0 ${
-                          index === 0 ? 'text-amber' : 
-                          index === 1 ? 'text-accent' : 
-                          'text-cosmic'
+                      <div key={i} className="flex items-start gap-3 group-hover:translate-x-1 transition-transform duration-300" style={{ transitionDelay: `${i * 50}ms` }}>
+                        <ArrowRight className={`w-4 h-4 mt-0.5 flex-shrink-0 transition-all duration-300 ${
+                          index === 0 ? 'text-amber group-hover:text-amber/80' : 
+                          index === 1 ? 'text-accent group-hover:text-accent/80' : 
+                          'text-cosmic group-hover:text-cosmic/80'
                         }`} />
-                        <span className="text-sm">{feature}</span>
+                        <span className="text-sm group-hover:text-foreground transition-colors duration-300">{feature}</span>
                       </div>
                     ))}
                   </div>
@@ -703,7 +703,7 @@ const Index = () => {
               <div className="text-center py-20">
                 <h3 className="text-2xl font-medium mb-4">Schedule a Meeting</h3>
                 <p className="text-muted-foreground mb-8">Book a free consultation to discuss your project</p>
-                <Button size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90 button-smooth">
+                <Button size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90 button-smooth glass-button">
                   Book Now
                 </Button>
               </div>
