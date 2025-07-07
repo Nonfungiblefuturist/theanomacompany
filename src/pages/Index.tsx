@@ -414,7 +414,7 @@ const Index = () => {
               <div className="h-px bg-primary flex-1 max-w-16"></div>
             </div>
             <h2 className="text-4xl md:text-6xl font-light mb-4 leading-tight">
-              <span className="text-foreground">Creative Intelligence • Visual Storytelling • Smart Solutions</span>
+              <span className="text-foreground">Creative Intelligence, Visual Storytelling & Smart Solutions</span>
             </h2>
             <p className="text-muted-foreground text-lg leading-relaxed max-w-4xl mx-auto">
               From AI-generated advertising campaigns and product photography to cinematic film production and custom software solutions, we deliver creative excellence that traditionally takes months in just weeks.
