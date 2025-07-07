@@ -47,6 +47,14 @@ export default {
 					DEFAULT: 'hsl(var(--accent))',
 					foreground: 'hsl(var(--accent-foreground))'
 				},
+				cosmic: {
+					DEFAULT: 'hsl(var(--cosmic))',
+					foreground: 'hsl(var(--cosmic-foreground))'
+				},
+				amber: {
+					DEFAULT: 'hsl(var(--amber))',
+					foreground: 'hsl(var(--amber-foreground))'
+				},
 				popover: {
 					DEFAULT: 'hsl(var(--popover))',
 					foreground: 'hsl(var(--popover-foreground))'

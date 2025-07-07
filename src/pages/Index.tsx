@@ -166,12 +166,15 @@ const Index = () => {
 
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-background via-background to-card/20"></div>
+        {/* Animated gradient background */}
+        <div className="absolute inset-0 bg-gradient-to-br from-background via-card/10 to-background animate-gradient" 
+             style={{background: 'linear-gradient(45deg, hsl(var(--background)), hsl(var(--primary) / 0.1), hsl(var(--accent) / 0.1), hsl(var(--cosmic) / 0.1), hsl(var(--background)))'}}></div>
         
-        {/* Subtle animated background elements */}
+        {/* Floating animated elements */}
         <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-primary/5 rounded-full blur-3xl animate-pulse"></div>
-          <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-accent/5 rounded-full blur-3xl animate-pulse delay-1000"></div>
+          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/10 rounded-full blur-3xl animate-float"></div>
+          <div className="absolute bottom-1/3 right-1/4 w-80 h-80 bg-accent/10 rounded-full blur-3xl animate-float delay-1000"></div>
+          <div className="absolute top-1/2 right-1/3 w-64 h-64 bg-cosmic/10 rounded-full blur-3xl animate-float delay-2000"></div>
         </div>
         
         <div className="relative z-10 text-center px-4 max-w-6xl mx-auto pt-16">
@@ -183,7 +186,7 @@ const Index = () => {
           
           <h1 className="font-anoma text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
             AI visuals, delivered before<br />
-            <span className="text-primary bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-primary via-accent to-cosmic bg-clip-text text-transparent animate-gradient">
               your coffee gets cold.
             </span>
           </h1>
@@ -197,7 +200,7 @@ const Index = () => {
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <Button 
               size="lg" 
-              className="bg-primary hover:bg-primary/90 text-primary-foreground font-semibold px-8 py-4 text-lg transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-primary/25"
+              className="bg-gradient-to-r from-primary to-accent hover:from-accent hover:to-primary text-primary-foreground font-semibold px-8 py-4 text-lg transition-all duration-500 hover:scale-105 animate-glow"
             >
               Book a free demo
               <ArrowRight className="ml-2 h-5 w-5" />
@@ -205,7 +208,7 @@ const Index = () => {
             <Button 
               variant="outline" 
               size="lg"
-              className="border-border hover:bg-accent/50 font-semibold px-8 py-4 text-lg transition-all duration-300"
+              className="border-primary/50 bg-background/50 backdrop-blur-sm hover:bg-primary/10 hover:border-primary font-semibold px-8 py-4 text-lg transition-all duration-500 hover:scale-105"
             >
               View Our Work
             </Button>
@@ -232,20 +235,21 @@ const Index = () => {
             {services.map((service, index) => (
               <Card 
                 key={index} 
-                className="bg-card/50 border-border/50 hover:bg-card hover:border-primary/20 transition-all duration-500 hover:-translate-y-2 cursor-pointer group backdrop-blur-sm"
+                className="bg-card/30 border-border/30 hover:bg-card/60 hover:border-primary/30 transition-all duration-700 hover:-translate-y-3 hover:rotate-1 cursor-pointer group backdrop-blur-md relative overflow-hidden"
               >
-                <CardContent className="p-8">
-                  <div className="text-5xl mb-6 group-hover:scale-110 transition-transform duration-300">
+                <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-accent/5 opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+                <CardContent className="p-8 relative z-10">
+                  <div className="text-5xl mb-6 group-hover:scale-125 transition-all duration-500 filter group-hover:drop-shadow-lg">
                     {service.icon}
                   </div>
-                  <h3 className="font-anoma text-xl font-bold mb-4 group-hover:text-primary transition-colors">
+                  <h3 className="font-anoma text-xl font-bold mb-4 group-hover:text-primary transition-all duration-300">
                     {service.title}
                   </h3>
-                  <p className="text-muted-foreground leading-relaxed mb-6">
+                  <p className="text-muted-foreground leading-relaxed mb-6 group-hover:text-foreground/90 transition-colors duration-300">
                     {service.description}
                   </p>
-                  <div className="flex items-center text-primary text-sm font-medium group-hover:translate-x-2 transition-transform duration-300">
-                    Learn more <ArrowRight className="ml-2 h-4 w-4" />
+                  <div className="flex items-center text-primary text-sm font-medium group-hover:translate-x-3 transition-all duration-500 group-hover:text-accent">
+                    Learn more <ArrowRight className="ml-2 h-4 w-4 group-hover:rotate-45 transition-transform duration-300" />
                   </div>
                 </CardContent>
               </Card>
@@ -273,14 +277,15 @@ const Index = () => {
             {features.map((feature, index) => (
               <div key={index} className="text-center group">
                 <div className="relative mb-8">
-                  <div className="w-20 h-20 mx-auto bg-gradient-to-br from-primary/20 to-accent/20 rounded-2xl flex items-center justify-center text-3xl group-hover:scale-110 transition-transform duration-300 border border-primary/10">
+                  <div className="w-24 h-24 mx-auto bg-gradient-to-br from-primary/20 via-accent/20 to-cosmic/20 rounded-3xl flex items-center justify-center text-4xl group-hover:scale-125 group-hover:rotate-12 transition-all duration-700 border border-primary/20 group-hover:border-accent/40 backdrop-blur-sm animate-float">
                     {feature.icon}
                   </div>
+                  <div className="absolute inset-0 w-24 h-24 mx-auto bg-gradient-to-br from-primary/5 to-accent/5 rounded-3xl blur-xl group-hover:blur-2xl transition-all duration-700"></div>
                 </div>
-                <h3 className="font-anoma text-2xl font-bold mb-4 text-primary group-hover:text-accent transition-colors">
+                <h3 className="font-anoma text-2xl font-bold mb-4 bg-gradient-to-r from-primary via-accent to-cosmic bg-clip-text text-transparent group-hover:from-accent group-hover:via-cosmic group-hover:to-amber transition-all duration-500">
                   {feature.title}
                 </h3>
-                <p className="text-muted-foreground text-lg leading-relaxed">
+                <p className="text-muted-foreground text-lg leading-relaxed group-hover:text-foreground/80 transition-colors duration-300">
                   {feature.description}
                 </p>
               </div>
