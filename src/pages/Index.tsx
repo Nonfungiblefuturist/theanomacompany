@@ -602,7 +602,7 @@ const Index = () => {
                     <Phone className="w-8 h-8 text-primary" />
                     <div>
                       <p className="font-medium mb-1">Give us a call:</p>
-                      <p className="text-muted-foreground">+1 (647) 564-8106</p>
+                      <p className="text-muted-foreground">+1 (647) 564 8106</p>
                     </div>
                   </div>
                 </Card>
