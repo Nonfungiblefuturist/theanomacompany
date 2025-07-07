@@ -107,14 +107,14 @@ const Index = () => {
       description: "Breakthrough AI-generated photography that caught the attention of Vogue's prestigious PhotoVogue platform, showcasing the artistic potential of artificial intelligence in visual storytelling.",
       type: "AI Photography",
       link: "https://www.vogue.com/photovogue/photographers/167071/gallery#4039408",
-      image: "https://images.unsplash.com/photo-1493863641943-9b68992a8d07?w=800&h=600&fit=crop"
+      image: "/lovable-uploads/71af5afa-9fe1-4527-acee-8f0ea355d8d4.png"
     },
     {
       title: "AI Spec Ad for Vaseline - Interactive Experience",
       description: "An innovative AI-crafted advertising campaign for Vaseline that combines cutting-edge visual AI with interactive web design, pushing the boundaries of digital marketing.",
       type: "Brand Campaign",
       link: "https://readymag.website/surzayon/5140874/",
-      image: "https://images.unsplash.com/photo-1556742044-3c52d6e88c62?w=800&h=600&fit=crop"
+      image: "/lovable-uploads/af959056-775b-4b0e-8dc1-ca9596729b39.png"
     }
   ];
 
@@ -240,8 +240,7 @@ const Index = () => {
               <div className="h-px bg-accent flex-1 max-w-16"></div>
             </div>
             <h2 className="text-4xl md:text-6xl font-light mb-4 leading-tight">
-              Creative Solutions Across<br />
-              <span className="text-foreground">Advertising • Film Production • Custom Software</span>
+              <span className="text-foreground">Advertising • Film • Software</span>
             </h2>
           </div>
           
