@@ -227,10 +227,6 @@ const Index = () => {
       answer: "Pricing varies based on project complexity, timeline, and deliverables. We offer competitive rates that typically save clients 40-70% compared to traditional production methods. Contact us for a custom quote."
     },
     {
-      question: "What industries do you work with?",
-      answer: "We work across all industries including e-commerce, entertainment, advertising agencies, fashion, automotive, tech startups, and Fortune 500 companies. Our AI solutions adapt to any sector's creative needs."
-    },
-    {
       question: "Can you handle large-scale commercial campaigns?",
       answer: "Absolutely. We've successfully delivered campaigns for major brands and can scale our operations to meet enterprise-level demands while maintaining quality and consistency."
     },
