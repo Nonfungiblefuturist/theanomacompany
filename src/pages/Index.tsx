@@ -1,12 +1,18 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
-import { ArrowRight, Menu, X, Phone, Mail, ChevronDown, ExternalLink } from "lucide-react";
+import { ArrowRight, Menu, X, Phone, Mail, ChevronDown, ExternalLink, Star } from "lucide-react";
 import YouTubeEmbed from "@/components/YouTubeEmbed";
+import useEmblaCarousel from 'embla-carousel-react';
+import Autoplay from 'embla-carousel-autoplay';
 
 const Index = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [emblaRef] = useEmblaCarousel(
+    { loop: true, align: 'start' },
+    [Autoplay({ delay: 5000, stopOnInteraction: false })]
+  );
 
   const services = [
     {
@@ -138,6 +144,54 @@ const Index = () => {
     {
       question: "Do you offer training for AI filmmaking?",
       answer: "We're working on The Anoma Creator's Program to teach and support creative minds."
+    }
+  ];
+
+  const testimonials = [
+    {
+      quote: "Honestly didn't think AI could match our traditional shoots until I saw the results. Cut our production time from 3 weeks to 4 days and saved us $180K on our Q4 campaign. The ROI speaks for itself.",
+      author: "Marcus Kim",
+      role: "CMO",
+      company: "TechFlow Dynamics",
+      rating: 5,
+      project: "Product Launch Campaign",
+      savings: "Saved $180K, 85% faster delivery"
+    },
+    {
+      quote: "The character consistency blew my mind. We needed the same actor across 12 different scenes and Anoma delivered flawlessly. Our focus groups rated it 40% higher than our previous work.",
+      author: "Sarah Chen",
+      role: "Creative Director", 
+      company: "Pinnacle Studios",
+      rating: 5,
+      project: "Brand Commercial Series",
+      savings: "40% better audience response"
+    },
+    {
+      quote: "Their custom AI workflow integration transformed our entire content pipeline. We're now pushing out 5x more social content with the same team. Game changer for our agency.",
+      author: "Alex Rodriguez",
+      role: "Head of Content",
+      company: "Bloom Creative Agency", 
+      rating: 5,
+      project: "Workflow Automation",
+      savings: "500% content output increase"
+    },
+    {
+      quote: "Skeptical at first, but the photorealism is incredible. Our product photography now looks better than our $50K studio shoots and takes a fraction of the time. Clients can't tell the difference.",
+      author: "Jennifer Walsh",
+      role: "E-commerce Director",
+      company: "Luxe Brands",
+      rating: 5,
+      project: "Product Photography Suite",
+      savings: "90% cost reduction vs studio"
+    },
+    {
+      quote: "The speed is unreal. What used to take our VFX team 2 months, Anoma delivered in 1 week. Same quality, faster turnaround, and our clients are blown away every time.",
+      author: "David Park",
+      role: "VFX Supervisor",
+      company: "Motion Picture Studios",
+      rating: 5,
+      project: "Film VFX Sequences", 
+      savings: "87% faster than traditional VFX"
     }
   ];
 
@@ -398,51 +452,64 @@ const Index = () => {
             </h2>
           </div>
           
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <Card className="border-border/50 hover:border-primary/50 transition-colors p-8">
-              <blockquote className="text-lg leading-relaxed mb-6">
-                "Anoma delivered our entire product launch campaign in 3 days. What would have taken our agency 6 weeks and $200K cost us a fraction of that. The AI-generated visuals are indistinguishable from traditional photography."
-              </blockquote>
-              <div className="flex items-center gap-4">
-                <div className="w-12 h-12 bg-primary/20 rounded-full flex items-center justify-center">
-                  <span className="text-primary font-medium">MK</span>
+          <div className="embla overflow-hidden" ref={emblaRef}>
+            <div className="embla__container flex">
+              {testimonials.map((testimonial, index) => (
+                <div key={index} className="embla__slide flex-[0_0_100%] md:flex-[0_0_85%] lg:flex-[0_0_60%] pl-4">
+                  <Card className="border-border/50 hover:border-primary/50 transition-all duration-300 p-8 h-full hover-lift-smooth">
+                    <div className="flex items-center gap-1 mb-4">
+                      {Array.from({ length: testimonial.rating }).map((_, i) => (
+                        <Star key={i} className="w-4 h-4 fill-amber-400 text-amber-400" />
+                      ))}
+                    </div>
+                    
+                    <blockquote className="text-lg leading-relaxed mb-6 italic">
+                      "{testimonial.quote}"
+                    </blockquote>
+                    
+                    <div className="space-y-4">
+                      <div className="flex items-center gap-4">
+                        <div className="w-12 h-12 bg-gradient-to-br from-primary/20 to-accent/20 rounded-full flex items-center justify-center">
+                          <span className="text-primary font-medium">
+                            {testimonial.author.split(' ').map(n => n[0]).join('')}
+                          </span>
+                        </div>
+                        <div>
+                          <div className="font-medium">{testimonial.author}</div>
+                          <div className="text-sm text-muted-foreground">
+                            {testimonial.role}, {testimonial.company}
+                          </div>
+                        </div>
+                      </div>
+                      
+                      <div className="border-t border-border/50 pt-4">
+                        <div className="flex justify-between items-center text-sm">
+                          <span className="text-muted-foreground">Project:</span>
+                          <span className="font-medium">{testimonial.project}</span>
+                        </div>
+                        <div className="flex justify-between items-center text-sm mt-2">
+                          <span className="text-muted-foreground">Result:</span>
+                          <span className="font-medium text-accent">{testimonial.savings}</span>
+                        </div>
+                      </div>
+                    </div>
+                  </Card>
                 </div>
-                <div>
-                  <div className="font-medium">Marcus Kim</div>
-                  <div className="text-sm text-muted-foreground">CMO, TechFlow Dynamics</div>
-                </div>
-              </div>
-            </Card>
-
-            <Card className="border-border/50 hover:border-primary/50 transition-colors p-8">
-              <blockquote className="text-lg leading-relaxed mb-6">
-                "Their AI film work helped us create a commercial that tested 40% higher than our previous campaigns. The character consistency and cinematic quality exceeded our expectations completely."
-              </blockquote>
-              <div className="flex items-center gap-4">
-                <div className="w-12 h-12 bg-accent/20 rounded-full flex items-center justify-center">
-                  <span className="text-accent font-medium">SC</span>
-                </div>
-                <div>
-                  <div className="font-medium">Sarah Chen</div>
-                  <div className="text-sm text-muted-foreground">Creative Director, Pinnacle Studios</div>
-                </div>
-              </div>
-            </Card>
-
-            <Card className="border-border/50 hover:border-primary/50 transition-colors p-8 md:col-span-2 lg:col-span-1">
-              <blockquote className="text-lg leading-relaxed mb-6">
-                "The custom AI tools they built for our workflow have transformed our content production. We're now producing 5x more social media content with the same team size."
-              </blockquote>
-              <div className="flex items-center gap-4">
-                <div className="w-12 h-12 bg-cosmic/20 rounded-full flex items-center justify-center">
-                  <span className="text-cosmic font-medium">AR</span>
-                </div>
-                <div>
-                  <div className="font-medium">Alex Rodriguez</div>
-                  <div className="text-sm text-muted-foreground">Head of Content, Bloom Agency</div>
-                </div>
-              </div>
-            </Card>
+              ))}
+            </div>
+          </div>
+          
+          <div className="flex justify-center gap-2 mt-8">
+            {testimonials.map((_, index) => (
+              <div
+                key={index}
+                className="w-2 h-2 rounded-full bg-primary/30 animate-pulse"
+                style={{
+                  animationDelay: `${index * 1000}ms`,
+                  animationDuration: '5000ms'
+                }}
+              />
+            ))}
           </div>
         </div>
       </section>
