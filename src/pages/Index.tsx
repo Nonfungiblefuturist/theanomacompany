@@ -11,7 +11,7 @@ const Index = () => {
     {
       title: "AI Advertising & Marketing",
       description: "Revolutionary AI-powered advertising solutions that transform your brand presence with stunning visual campaigns.",
-      image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=800&h=400&fit=crop",
+      image: "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=800&h=400&fit=crop",
       features: [
         "AI-generated product photography and lifestyle shots",
         "Dynamic social media content at scale",
@@ -21,7 +21,7 @@ const Index = () => {
     {
       title: "AI Film Production", 
       description: "Cinema-quality film production using cutting-edge AI technology that rivals traditional VFX and cinematography.",
-      image: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800&h=400&fit=crop",
+      image: "https://images.unsplash.com/photo-1489599735188-1fd7155a4a2b?w=800&h=400&fit=crop",
       features: [
         "Ultra-photorealistic film scenes for theaters",
         "Character consistency across sequences",
@@ -198,13 +198,13 @@ const Index = () => {
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16 animate-fade-up">
             <div className="flex items-center justify-center gap-4 mb-8">
-              <div className="h-px bg-accent flex-1 max-w-16"></div>
-              <span className="text-sm font-medium text-accent">Our Services</span>
-              <div className="h-px bg-accent flex-1 max-w-16"></div>
+              <div className="h-px bg-primary flex-1 max-w-16"></div>
+              <span className="text-sm font-medium text-primary">Our Services</span>
+              <div className="h-px bg-primary flex-1 max-w-16"></div>
             </div>
             <h2 className="text-4xl md:text-6xl font-light mb-4 leading-tight">
               Advertising | Films | Software<br />
-              <span className="text-accent">All developed through AI</span>
+              <span className="text-primary">All developed through AI</span>
             </h2>
           </div>
           
