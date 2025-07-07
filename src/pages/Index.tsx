@@ -11,6 +11,7 @@ const Index = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [showScrollTop, setShowScrollTop] = useState(false);
   const [scrollY, setScrollY] = useState(0);
+  const [isScrolled, setIsScrolled] = useState(false);
   const [emblaRef] = useEmblaCarousel(
     { loop: true, align: 'start' },
     [Autoplay({ delay: 5000, stopOnInteraction: false })]
@@ -20,6 +21,7 @@ const Index = () => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
       setShowScrollTop(currentScrollY > 300);
+      setIsScrolled(currentScrollY > 50);
       setScrollY(currentScrollY);
       
       // Parallax effect for nebula
@@ -262,30 +264,52 @@ const Index = () => {
       <div className="nebula-effect nebula-right"></div>
       
       {/* Navigation */}
-      <nav className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border/10">
+      <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ease-out ${
+        isScrolled 
+          ? 'bg-background/98 backdrop-blur-md border-b border-border/20 shadow-lg shadow-black/10' 
+          : 'bg-background/95 backdrop-blur-sm border-b border-border/10'
+      }`}>
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="flex items-center justify-between h-20">
+          <div className={`flex items-center justify-between transition-all duration-500 ease-out ${
+            isScrolled ? 'h-16' : 'h-20'
+          }`}>
             <div className="flex items-center">
               <img 
                 src="/lovable-uploads/38e4e5bc-e33c-414c-ab90-cfc5468f67a1.png" 
                 alt="Anoma Company" 
-                className="h-40 w-auto pt-8 pb-6"
+                className={`w-auto transition-all duration-500 ease-out ${
+                  isScrolled ? 'h-24 pt-4 pb-2' : 'h-40 pt-8 pb-6'
+                }`}
               />
             </div>
             
             {/* Desktop Navigation */}
             <div className="hidden md:block">
-              <div className="flex items-center space-x-8">
-                <a href="#services" className="text-muted-foreground hover:text-foreground transition-colors">Services</a>
-                <a href="#why-us" className="text-muted-foreground hover:text-foreground transition-colors">Why choose us</a>
-                <a href="#case-study" className="text-muted-foreground hover:text-foreground transition-colors">Case Studies</a>
-                <a href="#testimonial" className="text-muted-foreground hover:text-foreground transition-colors">Testimonials</a>
-                <a href="#faq" className="text-muted-foreground hover:text-foreground transition-colors">FAQ's</a>
+              <div className={`flex items-center transition-all duration-500 ease-out ${
+                isScrolled ? 'space-x-6' : 'space-x-8'
+              }`}>
+                <a href="#services" className={`text-muted-foreground hover:text-foreground transition-colors ${
+                  isScrolled ? 'text-sm' : 'text-base'
+                }`}>Services</a>
+                <a href="#why-us" className={`text-muted-foreground hover:text-foreground transition-colors ${
+                  isScrolled ? 'text-sm' : 'text-base'
+                }`}>Why choose us</a>
+                <a href="#case-study" className={`text-muted-foreground hover:text-foreground transition-colors ${
+                  isScrolled ? 'text-sm' : 'text-base'
+                }`}>Case Studies</a>
+                <a href="#testimonial" className={`text-muted-foreground hover:text-foreground transition-colors ${
+                  isScrolled ? 'text-sm' : 'text-base'
+                }`}>Testimonials</a>
+                <a href="#faq" className={`text-muted-foreground hover:text-foreground transition-colors ${
+                  isScrolled ? 'text-sm' : 'text-base'
+                }`}>FAQ's</a>
               </div>
             </div>
 
             <div className="hidden md:block">
-              <Button className="bg-accent text-accent-foreground hover:bg-accent/90 button-smooth">
+              <Button className={`bg-accent text-accent-foreground hover:bg-accent/90 button-smooth transition-all duration-500 ease-out ${
+                isScrolled ? 'px-4 py-2 text-sm' : 'px-6 py-3 text-base'
+              }`}>
                 Get in touch
               </Button>
             </div>
@@ -304,7 +328,9 @@ const Index = () => {
 
         {/* Mobile Navigation */}
         {isMenuOpen && (
-          <div className="md:hidden bg-background border-t border-border/10">
+          <div className={`md:hidden bg-background/98 backdrop-blur-md border-t border-border/20 transition-all duration-300 ease-out ${
+            isScrolled ? 'shadow-lg' : ''
+          }`}>
             <div className="px-6 py-4 space-y-2">
               <a href="#services" className="block py-2 text-muted-foreground hover:text-foreground transition-colors">Services</a>
               <a href="#why-us" className="block py-2 text-muted-foreground hover:text-foreground transition-colors">Why choose us</a>
