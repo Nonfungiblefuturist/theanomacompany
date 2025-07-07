@@ -294,13 +294,23 @@ const Index = () => {
             isScrolled ? 'h-16' : 'h-20'
           }`}>
             <div className="flex items-center">
-              <img 
-                src="/lovable-uploads/38e4e5bc-e33c-414c-ab90-cfc5468f67a1.png" 
-                alt="Anoma Company" 
-                className={`w-auto transition-all duration-500 ease-out ${
-                  isScrolled ? 'h-24 pt-4 pb-2' : 'h-40 pt-8 pb-6'
-                }`}
-              />
+              <div className="relative overflow-hidden">
+                <img 
+                  src="/lovable-uploads/38e4e5bc-e33c-414c-ab90-cfc5468f67a1.png" 
+                  alt="Anoma Company" 
+                  className={`w-auto transition-all duration-700 ease-out logo-reveal ${
+                    isScrolled ? 'h-32 pt-2 pb-2' : 'h-48 pt-10 pb-8'
+                  }`}
+                />
+                <div className={`absolute inset-0 flex items-center justify-center transition-all duration-700 ease-out ${
+                  isScrolled ? 'opacity-100 scale-100' : 'opacity-0 scale-95'
+                }`}>
+                  <div className="text-center">
+                    <div className="text-primary font-light text-lg tracking-wide mb-1">ANOMA</div>
+                    <div className="text-xs text-muted-foreground tracking-wider">COMPANY</div>
+                  </div>
+                </div>
+              </div>
             </div>
             
             {/* Desktop Navigation */}
@@ -414,7 +424,7 @@ const Index = () => {
           
            <div className="grid lg:grid-cols-3 gap-8">
             {services.map((service, index) => (
-              <Card key={index} className={`border-border/50 hover:border-accent/30 transition-all duration-500 overflow-hidden group card-parallax scroll-reveal bg-gradient-to-br ${service.gradient} hover:scale-105 hover:shadow-2xl hover:shadow-primary/20 liquid-hover`} style={{ transitionDelay: `${index * 100}ms` }}>
+              <Card key={index} className={`border-border/50 hover:border-accent/30 transition-all duration-500 overflow-hidden group card-parallax scroll-reveal bg-gradient-to-br ${service.gradient} hover:scale-105 hover:shadow-2xl hover:shadow-primary/20 liquid-hover wobble-effect`} style={{ transitionDelay: `${index * 100}ms` }}>
                 <CardContent className="p-8 relative">
                   <h3 className="text-2xl font-medium mb-4 group-hover:text-primary transition-colors duration-300">{service.title}</h3>
                   <p className="text-muted-foreground mb-6 group-hover:text-foreground/90 transition-colors duration-300">{service.description}</p>

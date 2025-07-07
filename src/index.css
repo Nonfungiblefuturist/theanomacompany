@@ -616,7 +616,72 @@ All colors MUST be HSL.
     opacity: 0;
   }
 
+  
   .glass-button:hover::before {
     opacity: 1;
   }
+
+  /* Logo reveal animation */
+  .logo-reveal {
+    position: relative;
+  }
+
+  .logo-reveal img {
+    transition: opacity 0.7s ease-out;
+  }
+
+  /* Text expansion animations (footer style) */
+  .text-expand {
+    overflow: hidden;
+    transition: all 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .text-expand.collapsed {
+    max-height: 0;
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+
+  .text-expand.expanded {
+    max-height: 200px;
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* Enhanced liquid effects for service cards */
+  .liquid-hover {
+    transform-style: preserve-3d;
+    background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.02), transparent);
+    background-size: 200% 200%;
+    animation: liquidShimmer 8s ease-in-out infinite;
+  }
+
+  @keyframes liquidShimmer {
+    0%, 100% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+  }
+
+  .liquid-hover:hover {
+    animation-duration: 2s;
+  }
+
+  /* Wobble effect on hover */
+  .wobble-effect {
+    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+
+  .wobble-effect:hover {
+    animation: wobble 0.6s ease-in-out;
+  }
+
+  @keyframes wobble {
+    0% { transform: scale(1) rotate(0deg); }
+    25% { transform: scale(1.05) rotate(-2deg); }
+    50% { transform: scale(1.08) rotate(1deg); }
+    75% { transform: scale(1.02) rotate(-1deg); }
+    100% { transform: scale(1.05) rotate(0deg); }
 }
