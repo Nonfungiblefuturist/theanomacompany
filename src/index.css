@@ -106,27 +106,14 @@ All colors MUST be HSL.
     @apply border-border;
   }
 
-  /* Enhanced typography and spacing */
+  /* Minimal design system */
   body {
-    @apply bg-background text-foreground font-light;
-    letter-spacing: -0.02em;
-  }
-
-  h1, h2, h3, h4, h5, h6 {
-    letter-spacing: -0.05em;
+    @apply bg-background text-foreground;
     font-weight: 300;
   }
 
-  .text-hero {
-    font-size: clamp(3rem, 8vw, 7rem);
-    line-height: 0.9;
-    font-weight: 200;
-  }
-
-  .text-section {
-    font-size: clamp(2rem, 5vw, 4rem);
-    line-height: 1.1;
-    font-weight: 200;
+  h1, h2, h3, h4, h5, h6 {
+    font-weight: 300;
   }
 
   /* Smooth scrolling */
