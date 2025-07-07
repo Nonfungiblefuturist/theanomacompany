@@ -2,7 +2,8 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
-import { ArrowRight, Menu, X, Phone, Mail, ChevronDown } from "lucide-react";
+import { ArrowRight, Menu, X, Phone, Mail, ChevronDown, ExternalLink } from "lucide-react";
+import YouTubeEmbed from "@/components/YouTubeEmbed";
 
 const Index = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -95,19 +96,25 @@ const Index = () => {
 
   const caseStudies = [
     {
-      title: "Epic Cinematic Experience: A Modern Masterpiece",
-      description: "Experience an epic cinematic journey like never before in this AI-generated masterpiece. Witness stunning visuals and innovative storytelling brought to life with cutting-edge technology.",
-      image: "https://images.unsplash.com/photo-1501854140801-50d01698950b?w=800&h=600&fit=crop"
+      title: "How I Made This Using AI 🤯 | Runway Gen-4 + Midjourney + More",
+      description: "This entire video was crafted using AI from start to finish — from the visuals to the story, even down to the editing workflow. A complete demonstration of AI-powered video production capabilities.",
+      youtubeId: "XlaBgDLMuGQ",
+      type: "Ad Spec",
+      link: "https://youtu.be/XlaBgDLMuGQ"
     },
     {
-      title: "Architectural Wonder: A Monument of Innovation",
-      description: "Step into the world of architectural grandeur with this AI-crafted documentary. Explore design excellence and cultural significance through the blend of technology and artistry.",
-      image: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=800&h=600&fit=crop"
+      title: "AI Photography Featured in PhotoVogue",
+      description: "Breakthrough AI-generated photography that caught the attention of Vogue's prestigious PhotoVogue platform, showcasing the artistic potential of artificial intelligence in visual storytelling.",
+      type: "AI Photography",
+      link: "https://www.vogue.com/photovogue/photographers/167071/gallery#4039408",
+      image: "https://images.unsplash.com/photo-1493863641943-9b68992a8d07?w=800&h=600&fit=crop"
     },
     {
-      title: "The Visionary: An AI-Generated Creative Journey",
-      description: "Explore the enigmatic world of creativity through this AI-crafted film that delves into innovation, storytelling, and the future of visual content.",
-      image: "https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?w=800&h=600&fit=crop"
+      title: "AI Spec Ad for Vaseline - Interactive Experience",
+      description: "An innovative AI-crafted advertising campaign for Vaseline that combines cutting-edge visual AI with interactive web design, pushing the boundaries of digital marketing.",
+      type: "Brand Campaign",
+      link: "https://readymag.website/surzayon/5140874/",
+      image: "https://images.unsplash.com/photo-1556742044-3c52d6e88c62?w=800&h=600&fit=crop"
     }
   ];
 
@@ -228,9 +235,9 @@ const Index = () => {
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16 animate-fade-up">
             <div className="flex items-center justify-center gap-4 mb-8">
-              <div className="h-px bg-primary flex-1 max-w-16"></div>
-              <span className="text-sm font-medium text-primary">Our Services</span>
-              <div className="h-px bg-primary flex-1 max-w-16"></div>
+              <div className="h-px bg-accent flex-1 max-w-16"></div>
+              <span className="text-sm font-medium text-white">Our Services</span>
+              <div className="h-px bg-accent flex-1 max-w-16"></div>
             </div>
             <h2 className="text-4xl md:text-6xl font-light mb-4 leading-tight">
               Advertising | Films | Software<br />
@@ -333,21 +340,42 @@ const Index = () => {
           
           <div className="space-y-12">
             {caseStudies.map((study, index) => (
-              <Card key={index} className="border-border/50 hover:border-primary/50 transition-colors overflow-hidden animate-fade-up-delay-1 hover-lift-smooth">
+              <Card key={index} className="border-border/50 hover:border-accent/30 transition-colors overflow-hidden animate-fade-up-delay-1 hover-lift-smooth">
                 <div className="grid lg:grid-cols-2 gap-0">
-                  <div 
-                    className="h-80 lg:h-auto bg-cover bg-center"
-                    style={{
-                      backgroundImage: `url('${study.image}')`
-                    }}
-                  ></div>
+                  <div className="h-80 lg:h-auto">
+                    {study.youtubeId ? (
+                      <YouTubeEmbed 
+                        videoId={study.youtubeId} 
+                        title={study.title}
+                        className="h-full"
+                      />
+                    ) : (
+                      <div 
+                        className="h-full bg-cover bg-center"
+                        style={{
+                          backgroundImage: `url('${study.image}')`
+                        }}
+                      ></div>
+                    )}
+                  </div>
                   <CardContent className="p-12 flex flex-col justify-center">
+                    <div className="flex items-center gap-2 mb-4">
+                      <span className="text-sm font-medium text-accent px-3 py-1 bg-accent/10 rounded-full">
+                        {study.type}
+                      </span>
+                    </div>
                     <h3 className="text-2xl font-medium mb-6">{study.title}</h3>
                     <p className="text-muted-foreground text-lg leading-relaxed mb-8">
                       {study.description}
                     </p>
-                    <Button className="w-fit bg-cosmic text-cosmic-foreground hover:bg-cosmic/90 button-smooth">
-                      Learn more
+                    <Button 
+                      asChild 
+                      className="w-fit bg-cosmic text-cosmic-foreground hover:bg-cosmic/90 button-smooth"
+                    >
+                      <a href={study.link} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
+                        View Project
+                        <ExternalLink className="w-4 h-4" />
+                      </a>
                     </Button>
                   </CardContent>
                 </div>
@@ -499,9 +527,11 @@ const Index = () => {
             <div>
               <h4 className="font-medium mb-6 text-lg">Follow Us</h4>
               <div className="space-y-3">
-                <a href="#" className="block text-muted-foreground hover:text-foreground transition-colors">Instagram</a>
-                <a href="#" className="block text-muted-foreground hover:text-foreground transition-colors">YouTube</a>
-                <a href="#" className="block text-muted-foreground hover:text-foreground transition-colors">LinkedIn</a>
+                <a href="https://instagram.com/nonfungible.ai" target="_blank" rel="noopener noreferrer" className="block text-muted-foreground hover:text-foreground transition-colors">Instagram</a>
+                <a href="https://www.youtube.com/@nonfungibleai" target="_blank" rel="noopener noreferrer" className="block text-muted-foreground hover:text-foreground transition-colors">YouTube</a>
+                <a href="https://www.linkedin.com/in/surzayon/" target="_blank" rel="noopener noreferrer" className="block text-muted-foreground hover:text-foreground transition-colors">LinkedIn</a>
+                <a href="https://x.com/surzayon" target="_blank" rel="noopener noreferrer" className="block text-muted-foreground hover:text-foreground transition-colors">X (Twitter)</a>
+                <a href="https://tiktok.com/@nonfungible.ai" target="_blank" rel="noopener noreferrer" className="block text-muted-foreground hover:text-foreground transition-colors">TikTok</a>
               </div>
             </div>
           </div>
