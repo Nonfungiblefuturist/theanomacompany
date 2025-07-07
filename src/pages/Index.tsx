@@ -11,34 +11,34 @@ const Index = () => {
   const services = [
     {
       title: "AI Advertising & Marketing",
-      description: "Revolutionary AI-powered advertising solutions that transform your brand presence with stunning visual campaigns.",
+      description: "Generate high-quality advertising content using AI models. Reduce production costs while maintaining professional standards for your campaigns.",
       image: "https://images.unsplash.com/photo-1557804506-669a67965ba0?w=800&h=400&fit=crop",
       features: [
         "AI-generated product photography and lifestyle shots",
-        "Dynamic social media content at scale",
-        "Brand-consistent visual campaigns across platforms"
+        "Scalable social media content creation",
+        "Consistent brand visuals across all platforms"
       ],
       gradient: "from-primary/20 to-accent/20"
     },
     {
       title: "AI Film Production", 
-      description: "Cinema-quality film production using cutting-edge AI technology that rivals traditional VFX and cinematography.",
+      description: "Create film content with AI assistance. Achieve professional-grade visuals at a fraction of traditional production costs and timelines.",
       image: "https://images.unsplash.com/photo-1518675219903-c682c4b16b7e?w=800&h=400&fit=crop",
       features: [
-        "Ultra-photorealistic film scenes for theaters",
-        "Character consistency across sequences",
-        "Cost-effective alternative to traditional VFX"
+        "High-quality film scenes with AI assistance",
+        "Maintained character consistency across shots",
+        "Significant cost reduction vs traditional VFX"
       ],
       gradient: "from-accent/20 to-cosmic/20"
     },
     {
       title: "AI Software Solutions",
-      description: "Custom AI-powered software tools and applications designed to revolutionize your creative workflows.",
+      description: "Custom AI tools built for your specific creative needs. Streamline workflows and automate repetitive tasks in your production pipeline.",
       image: "https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=800&h=400&fit=crop",
       features: [
-        "Custom AI content generation platforms",
-        "Automated creative workflow systems",
-        "Integration with existing production pipelines"
+        "Tailored AI content generation tools",
+        "Workflow automation systems",
+        "Seamless integration with existing tools"
       ],
       gradient: "from-cosmic/20 to-amber/20"
     }
