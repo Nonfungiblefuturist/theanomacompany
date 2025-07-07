@@ -19,20 +19,28 @@ All colors MUST be HSL.
     --popover: 0 0% 10%;
     --popover-foreground: 0 0% 100%;
 
-    /* Teal/Cyan as primary */
-    --primary: 174 100% 41%;
-    --primary-foreground: 0 0% 100%;
+    /* Plasma Cyan as primary */
+    --primary: 178 100% 50%;
+    --primary-foreground: 0 0% 0%;
 
     /* Darker grey for secondary */
     --secondary: 0 0% 15%;
     --secondary-foreground: 0 0% 100%;
 
     --muted: 0 0% 15%;
-    --muted-foreground: 0 0% 60%;
+    --muted-foreground: 0 0% 75%;
 
-    /* Slightly lighter teal as accent */
-    --accent: 174 100% 50%;
+    /* Solar Magenta as accent */
+    --accent: 315 100% 50%;
     --accent-foreground: 0 0% 100%;
+
+    /* Cosmic Violet for special accents */
+    --cosmic: 270 100% 44%;
+    --cosmic-foreground: 0 0% 100%;
+
+    /* Ion Amber for highlights */
+    --amber: 48 100% 50%;
+    --amber-foreground: 0 0% 0%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 100%;
@@ -43,8 +51,10 @@ All colors MUST be HSL.
 
     --radius: 0.75rem;
 
-    /* Simple gradients */
-    --gradient-primary: linear-gradient(135deg, hsl(174 100% 41%) 0%, hsl(174 100% 50%) 100%);
+    /* Chromatic Nebula Gradients */
+    --gradient-spectral: linear-gradient(135deg, hsl(178 100% 50%) 0%, hsl(315 100% 50%) 50%, hsl(270 100% 44%) 100%);
+    --gradient-aurora: linear-gradient(45deg, hsl(178 100% 50% / 0.3), hsl(315 100% 50% / 0.3), hsl(270 100% 44% / 0.3), hsl(48 100% 50% / 0.3));
+    --gradient-nebula: conic-gradient(from 0deg, hsl(178 100% 50% / 0.1), hsl(315 100% 50% / 0.1), hsl(270 100% 44% / 0.1), hsl(178 100% 50% / 0.1));
     --gradient-subtle: linear-gradient(180deg, hsl(var(--background)) 0%, hsl(0 0% 5%) 100%);
 
     --sidebar-background: 0 0% 10%;
@@ -65,14 +75,18 @@ All colors MUST be HSL.
     --card-foreground: 0 0% 100%;
     --popover: 0 0% 10%;
     --popover-foreground: 0 0% 100%;
-    --primary: 174 100% 41%;
-    --primary-foreground: 0 0% 100%;
+    --primary: 178 100% 50%;
+    --primary-foreground: 0 0% 0%;
     --secondary: 0 0% 15%;
     --secondary-foreground: 0 0% 100%;
     --muted: 0 0% 15%;
-    --muted-foreground: 0 0% 60%;
-    --accent: 174 100% 50%;
+    --muted-foreground: 0 0% 75%;
+    --accent: 315 100% 50%;
     --accent-foreground: 0 0% 100%;
+    --cosmic: 270 100% 44%;
+    --cosmic-foreground: 0 0% 100%;
+    --amber: 48 100% 50%;
+    --amber-foreground: 0 0% 0%;
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 100%;
     --border: 0 0% 20%;
@@ -80,12 +94,12 @@ All colors MUST be HSL.
     --ring: 178 100% 50%;
     --sidebar-background: 0 0% 10%;
     --sidebar-foreground: 0 0% 100%;
-    --sidebar-primary: 174 100% 41%;
-    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-primary: 178 100% 50%;
+    --sidebar-primary-foreground: 0 0% 0%;
     --sidebar-accent: 0 0% 15%;
     --sidebar-accent-foreground: 0 0% 100%;
     --sidebar-border: 0 0% 20%;
-    --sidebar-ring: 174 100% 41%;
+    --sidebar-ring: 178 100% 50%;
   }
 }
 
@@ -103,18 +117,45 @@ All colors MUST be HSL.
     scroll-behavior: smooth;
   }
 
-  /* Custom animations */
+  /* Custom Chromatic Nebula animations */
   .animate-float {
     animation: float 6s ease-in-out infinite;
   }
 
   .animate-glow {
-    animation: glow 2s ease-in-out infinite alternate;
+    animation: glow 3s ease-in-out infinite alternate;
   }
 
-  .animate-gradient {
+  .animate-spectral {
     background-size: 400% 400%;
-    animation: gradient 8s ease infinite;
+    animation: spectral 12s ease infinite;
+  }
+
+  .animate-nebula {
+    animation: nebula 20s linear infinite;
+  }
+
+  .animate-aurora {
+    animation: aurora 8s ease-in-out infinite;
+  }
+
+  .spectral-trail {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .spectral-trail::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: var(--gradient-spectral);
+    opacity: 0.1;
+    animation: spectral-rotate 15s linear infinite;
+    border-radius: 50%;
+    filter: blur(40px);
   }
 
   @keyframes float {
@@ -128,14 +169,14 @@ All colors MUST be HSL.
 
   @keyframes glow {
     from {
-      box-shadow: 0 0 20px hsl(var(--primary) / 0.5);
+      box-shadow: 0 0 30px hsl(var(--primary) / 0.3);
     }
     to {
-      box-shadow: 0 0 40px hsl(var(--primary) / 0.8), 0 0 60px hsl(var(--accent) / 0.5);
+      box-shadow: 0 0 60px hsl(var(--primary) / 0.6), 0 0 80px hsl(var(--accent) / 0.4), 0 0 120px hsl(var(--cosmic) / 0.2);
     }
   }
 
-  @keyframes gradient {
+  @keyframes spectral {
     0% {
       background-position: 0% 50%;
     }
@@ -144,6 +185,41 @@ All colors MUST be HSL.
     }
     100% {
       background-position: 0% 50%;
+    }
+  }
+
+  @keyframes nebula {
+    0% {
+      transform: rotate(0deg) scale(1);
+      opacity: 0.1;
+    }
+    50% {
+      opacity: 0.3;
+    }
+    100% {
+      transform: rotate(360deg) scale(1.1);
+      opacity: 0.1;
+    }
+  }
+
+  @keyframes aurora {
+    0%, 100% {
+      transform: translateX(-50%) translateY(-50%) rotate(0deg);
+    }
+    33% {
+      transform: translateX(-50%) translateY(-50%) rotate(120deg);
+    }
+    66% {
+      transform: translateX(-50%) translateY(-50%) rotate(240deg);
+    }
+  }
+
+  @keyframes spectral-rotate {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
     }
   }
 }
