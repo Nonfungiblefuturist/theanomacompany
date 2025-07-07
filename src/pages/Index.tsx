@@ -375,7 +375,7 @@ const Index = () => {
         ></div>
         <div className="absolute inset-0 bg-black/40"></div>
         
-        <div className="max-w-5xl mx-auto text-center space-y-8 relative z-10">
+        <div className="max-w-5xl mx-auto text-center space-y-4 relative z-10">
           <div className="space-y-4">
             <div className="text-5xl md:text-7xl lg:text-8xl font-light leading-tight tracking-tight text-white">
               <div className="typewriter">
@@ -710,8 +710,7 @@ const Index = () => {
             
             <div className="bg-card/50 rounded-lg p-8">
               <div className="text-center py-20">
-                <h3 className="text-2xl font-medium mb-4">Schedule a Meeting</h3>
-                <p className="text-muted-foreground mb-8">Book a free consultation to discuss your project</p>
+                <h3 className="text-2xl font-medium mb-4">Schedule a Meeting - Book a free consultation to discuss your project</h3>
                 <Button 
                   asChild
                   size="lg" 
