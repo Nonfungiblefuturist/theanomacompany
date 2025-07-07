@@ -96,24 +96,24 @@ const Index = () => {
 
   const benefits = [
     {
-      title: "Efficiency",
-      description: "Save up to 90% on both time and production costs.",
-      icon: "⚡"
+      title: "Cinema-Grade Quality",
+      description: "Theatre-tested visuals that match traditional filmmaking standards, not just social media content.",
+      icon: "🎬"
     },
     {
-      title: "Quality", 
-      description: "Achieve top-tier visuals matching traditional filmmaking.",
-      icon: "🎯"
+      title: "Character Consistency", 
+      description: "Maintain the same actor's face across multiple scenes - a breakthrough others struggle with.",
+      icon: "🎭"
     },
     {
-      title: "Flexibility",
-      description: "Custom solutions for ads, shoots, and film scenes.",
-      icon: "🎨"
+      title: "Commercial Licensing",
+      description: "All AI content is fully licensed for commercial use with zero copyright concerns.",
+      icon: "⚖️"
     },
     {
-      title: "Innovation",
-      description: "Stay ahead with cutting-edge AI technology.",
-      icon: "🚀"
+      title: "Proven ROI",
+      description: "Documented 60-90% cost savings with measurably better audience response rates.",
+      icon: "📈"
     }
   ];
 
@@ -640,7 +640,7 @@ const Index = () => {
               <img 
                 src="/lovable-uploads/38e4e5bc-e33c-414c-ab90-cfc5468f67a1.png" 
                 alt="Anoma Company" 
-                className="h-48 w-auto mb-6"
+                className="h-64 w-auto mb-6"
               />
               <p className="text-muted-foreground max-w-md text-sm leading-relaxed">
                 AI-first creative studio crafting the future of ads and film visuals with cutting-edge artificial intelligence.
