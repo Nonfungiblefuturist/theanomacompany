@@ -9,33 +9,33 @@ const Index = () => {
 
   const services = [
     {
-      title: "AI Product Photography and Ads",
-      description: "We transform your product photos into stunning AI-generated ads and shoots.",
+      title: "AI Advertising & Marketing",
+      description: "Revolutionary AI-powered advertising solutions that transform your brand presence with stunning visual campaigns.",
       image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=800&h=400&fit=crop",
       features: [
-        "AI-Crafted models, backgrounds, VFX.",
-        "Custom styles match brand vision.",
-        "Ideal for e-commerce and fashion launches."
+        "AI-generated product photography and lifestyle shots",
+        "Dynamic social media content at scale",
+        "Brand-consistent visual campaigns across platforms"
       ]
     },
     {
-      title: "100% AI-Generated Ads", 
-      description: "We transform your product photos into stunning AI-generated ads and shoots.",
-      image: "https://images.unsplash.com/photo-1605810230434-7631ac76ec81?w=800&h=400&fit=crop",
-      features: [
-        "Choose photorealistic or stylized visual styles.",
-        "Fast turnaround with minimal input needed.",
-        "Ideal for unique, standout brand ads."
-      ]
-    },
-    {
-      title: "AI-Generated Film Scenes",
-      description: "We create ultra-photorealistic film scenes that surpass traditional CGI and VFX quality.",
+      title: "AI Film Production", 
+      description: "Cinema-quality film production using cutting-edge AI technology that rivals traditional VFX and cinematography.",
       image: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800&h=400&fit=crop",
       features: [
-        "Ideal for theater screens and professional films.",
-        "Integrates smoothly with any project.",
-        "For filmmakers targeting cinematic excellence."
+        "Ultra-photorealistic film scenes for theaters",
+        "Character consistency across sequences",
+        "Cost-effective alternative to traditional VFX"
+      ]
+    },
+    {
+      title: "AI Software Solutions",
+      description: "Custom AI-powered software tools and applications designed to revolutionize your creative workflows.",
+      image: "https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?w=800&h=400&fit=crop",
+      features: [
+        "Custom AI content generation platforms",
+        "Automated creative workflow systems",
+        "Integration with existing production pipelines"
       ]
     }
   ];
@@ -198,12 +198,13 @@ const Index = () => {
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16 animate-fade-up">
             <div className="flex items-center justify-center gap-4 mb-8">
-              <div className="h-px bg-primary flex-1 max-w-16"></div>
-              <span className="text-sm font-medium text-primary">Our Services</span>
-              <div className="h-px bg-primary flex-1 max-w-16"></div>
+              <div className="h-px bg-accent flex-1 max-w-16"></div>
+              <span className="text-sm font-medium text-accent">Our Services</span>
+              <div className="h-px bg-accent flex-1 max-w-16"></div>
             </div>
             <h2 className="text-4xl md:text-6xl font-light mb-4 leading-tight">
-              Transform Visuals with Our AI Services
+              Advertising | Films | Software<br />
+              <span className="text-accent">All developed through AI</span>
             </h2>
           </div>
           
