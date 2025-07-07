@@ -227,10 +227,6 @@ const Index = () => {
       answer: "Pricing varies based on project complexity, timeline, and deliverables. We offer competitive rates that typically save clients 40-70% compared to traditional production methods. Contact us for a custom quote."
     },
     {
-      question: "Can you handle large-scale commercial campaigns?",
-      answer: "Absolutely. We've successfully delivered campaigns for major brands and can scale our operations to meet enterprise-level demands while maintaining quality and consistency."
-    },
-    {
       question: "Do you provide revisions and creative direction?",
       answer: "Yes, we include multiple revision rounds in our packages and work closely with your creative team to ensure the final output aligns perfectly with your brand vision and campaign goals."
     },
