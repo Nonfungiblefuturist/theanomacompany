@@ -10,17 +10,43 @@ const Index = () => {
     {
       title: "AI Product Photography & Ads",
       description: "Studio-grade campaigns from two flat shots.",
-      icon: "📸"
+      icon: "📸",
+      image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158"
     },
     {
       title: "100% AI Commercials", 
       description: "Scroll-stoppers, no set build required.",
-      icon: "🎬"
+      icon: "🎬",
+      image: "https://images.unsplash.com/photo-1605810230434-7631ac76ec81"
     },
     {
       title: "AI-Generated Film Scenes",
       description: "IMAX-ready visuals at indie budgets.",
-      icon: "🎭"
+      icon: "🎭",
+      image: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5"
+    }
+  ];
+
+  const portfolio = [
+    {
+      title: "Epic Film Production",
+      category: "Cinematic AI",
+      image: "https://images.unsplash.com/photo-1501854140801-50d01698950b"
+    },
+    {
+      title: "Tech Commercial Campaign",
+      category: "Product Photography",
+      image: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b"
+    },
+    {
+      title: "Creative Visual Effects",
+      category: "Digital Art",
+      image: "https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7"
+    },
+    {
+      title: "Nature Documentary",
+      category: "Environmental Film",
+      image: "https://images.unsplash.com/photo-1506744038136-46273834b3fb"
     }
   ];
 
@@ -38,6 +64,7 @@ const Index = () => {
             <div className="hidden md:block">
               <div className="flex items-center space-x-8">
                 <a href="#services" className="text-muted-foreground hover:text-foreground transition-colors">Services</a>
+                <a href="#portfolio" className="text-muted-foreground hover:text-foreground transition-colors">Portfolio</a>
                 <a href="#about" className="text-muted-foreground hover:text-foreground transition-colors">About</a>
                 <a href="#contact" className="text-muted-foreground hover:text-foreground transition-colors">Contact</a>
               </div>
@@ -66,6 +93,7 @@ const Index = () => {
           <div className="md:hidden bg-background border-t border-border/10">
             <div className="px-6 py-4 space-y-2">
               <a href="#services" className="block py-2 text-muted-foreground hover:text-foreground transition-colors">Services</a>
+              <a href="#portfolio" className="block py-2 text-muted-foreground hover:text-foreground transition-colors">Portfolio</a>
               <a href="#about" className="block py-2 text-muted-foreground hover:text-foreground transition-colors">About</a>
               <a href="#contact" className="block py-2 text-muted-foreground hover:text-foreground transition-colors">Contact</a>
               <div className="pt-4">
@@ -78,9 +106,17 @@ const Index = () => {
         )}
       </nav>
 
-      {/* Hero Section */}
-      <section className="min-h-screen flex items-center justify-center px-6 pt-16">
-        <div className="max-w-4xl mx-auto text-center space-y-8">
+      {/* Hero Section with Background Image */}
+      <section className="min-h-screen flex items-center justify-center px-6 pt-16 relative">
+        <div 
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-20"
+          style={{
+            backgroundImage: `url('https://images.unsplash.com/photo-1500673922987-e212871fec22')`
+          }}
+        ></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-background/80 via-background/60 to-background/80"></div>
+        
+        <div className="max-w-4xl mx-auto text-center space-y-8 relative z-10">
           <h1 className="text-5xl md:text-7xl font-light leading-tight tracking-tight">
             AI visuals, delivered before<br />
             your coffee gets cold.
@@ -103,7 +139,7 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Services Section */}
+      {/* Services Section with Images */}
       <section id="services" className="py-24 px-6">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
@@ -117,7 +153,13 @@ const Index = () => {
           
           <div className="grid md:grid-cols-3 gap-8">
             {services.map((service, index) => (
-              <Card key={index} className="border-border/50 hover:border-primary/50 transition-colors">
+              <Card key={index} className="border-border/50 hover:border-primary/50 transition-colors overflow-hidden">
+                <div 
+                  className="h-48 bg-cover bg-center"
+                  style={{
+                    backgroundImage: `url('${service.image}?w=400&h=300&fit=crop')`
+                  }}
+                ></div>
                 <CardContent className="p-8 text-center">
                   <div className="text-4xl mb-6">{service.icon}</div>
                   <h3 className="text-xl font-medium mb-4">{service.title}</h3>
@@ -129,30 +171,129 @@ const Index = () => {
         </div>
       </section>
 
-      {/* About Section */}
-      <section id="about" className="py-24 px-6 bg-muted/20">
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl md:text-5xl font-light mb-6">
-            The Future of Visual Production
-          </h2>
-          <p className="text-xl text-muted-foreground leading-relaxed mb-12">
-            Founded at the intersection of art and technology, The Anoma Company pioneers 
-            a new approach to creative production. We harness the power of artificial intelligence 
-            to expand the boundaries of what's visually possible.
-          </p>
+      {/* Portfolio Section */}
+      <section id="portfolio" className="py-24 px-6 bg-muted/20">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-5xl font-light mb-4">
+              Our Recent Work
+            </h2>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              Discover how we've transformed creative visions into stunning reality with AI
+            </p>
+          </div>
           
-          <div className="grid md:grid-cols-3 gap-8 text-center">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {portfolio.map((item, index) => (
+              <Card key={index} className="border-border/50 hover:border-primary/50 transition-all hover:scale-105 overflow-hidden">
+                <div 
+                  className="h-64 bg-cover bg-center"
+                  style={{
+                    backgroundImage: `url('${item.image}?w=400&h=400&fit=crop')`
+                  }}
+                ></div>
+                <CardContent className="p-6">
+                  <p className="text-sm text-primary mb-2">{item.category}</p>
+                  <h3 className="font-medium">{item.title}</h3>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* About Section with Side Image */}
+      <section id="about" className="py-24 px-6">
+        <div className="max-w-6xl mx-auto">
+          <div className="grid md:grid-cols-2 gap-16 items-center">
             <div>
-              <div className="text-2xl font-light mb-2">90%</div>
-              <p className="text-muted-foreground">Faster Production</p>
+              <h2 className="text-3xl md:text-5xl font-light mb-6">
+                The Future of Visual Production
+              </h2>
+              <p className="text-xl text-muted-foreground leading-relaxed mb-8">
+                Founded at the intersection of art and technology, The Anoma Company pioneers 
+                a new approach to creative production. We harness the power of artificial intelligence 
+                to expand the boundaries of what's visually possible.
+              </p>
+              
+              <div className="grid grid-cols-3 gap-8 text-center">
+                <div>
+                  <div className="text-2xl font-light mb-2">90%</div>
+                  <p className="text-muted-foreground text-sm">Faster Production</p>
+                </div>
+                <div>
+                  <div className="text-2xl font-light mb-2">Cinema-grade</div>
+                  <p className="text-muted-foreground text-sm">Quality Results</p>
+                </div>
+                <div>
+                  <div className="text-2xl font-light mb-2">Unlimited</div>
+                  <p className="text-muted-foreground text-sm">Creative Freedom</p>
+                </div>
+              </div>
             </div>
-            <div>
-              <div className="text-2xl font-light mb-2">Cinema-grade</div>
-              <p className="text-muted-foreground">Quality Results</p>
+            
+            <div className="relative">
+              <img 
+                src="https://images.unsplash.com/photo-1649972904349-6e44c42644a7?w=600&h=400&fit=crop"
+                alt="Creative workspace"
+                className="rounded-lg w-full h-96 object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-background/20 to-transparent rounded-lg"></div>
             </div>
-            <div>
-              <div className="text-2xl font-light mb-2">Unlimited</div>
-              <p className="text-muted-foreground">Creative Freedom</p>
+          </div>
+        </div>
+      </section>
+
+      {/* Team/Process Section */}
+      <section className="py-24 px-6 bg-muted/20">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-5xl font-light mb-4">
+              How We Work
+            </h2>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              Our streamlined process combines human creativity with AI innovation
+            </p>
+          </div>
+          
+          <div className="grid md:grid-cols-3 gap-8">
+            <div className="text-center">
+              <div className="relative mb-6">
+                <img 
+                  src="https://images.unsplash.com/photo-1615729947596-a598e5de0ab3?w=300&h=200&fit=crop"
+                  alt="Analysis phase"
+                  className="rounded-lg w-full h-48 object-cover mx-auto"
+                />
+                <div className="absolute -bottom-4 left-1/2 transform -translate-x-1/2 bg-primary text-primary-foreground w-8 h-8 rounded-full flex items-center justify-center text-sm font-medium">1</div>
+              </div>
+              <h3 className="text-xl font-medium mb-4">Analyze & Plan</h3>
+              <p className="text-muted-foreground">We dive deep into your vision and requirements</p>
+            </div>
+            
+            <div className="text-center">
+              <div className="relative mb-6">
+                <img 
+                  src="https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?w=300&h=200&fit=crop"
+                  alt="Creation phase"
+                  className="rounded-lg w-full h-48 object-cover mx-auto"
+                />
+                <div className="absolute -bottom-4 left-1/2 transform -translate-x-1/2 bg-primary text-primary-foreground w-8 h-8 rounded-full flex items-center justify-center text-sm font-medium">2</div>
+              </div>
+              <h3 className="text-xl font-medium mb-4">Create & Generate</h3>
+              <p className="text-muted-foreground">Our AI systems bring your concepts to life</p>
+            </div>
+            
+            <div className="text-center">
+              <div className="relative mb-6">
+                <img 
+                  src="https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?w=300&h=200&fit=crop"
+                  alt="Delivery phase"
+                  className="rounded-lg w-full h-48 object-cover mx-auto"
+                />
+                <div className="absolute -bottom-4 left-1/2 transform -translate-x-1/2 bg-primary text-primary-foreground w-8 h-8 rounded-full flex items-center justify-center text-sm font-medium">3</div>
+              </div>
+              <h3 className="text-xl font-medium mb-4">Refine & Deliver</h3>
+              <p className="text-muted-foreground">Perfect results delivered at lightning speed</p>
             </div>
           </div>
         </div>
