@@ -684,4 +684,5 @@ All colors MUST be HSL.
     50% { transform: scale(1.08) rotate(1deg); }
     75% { transform: scale(1.02) rotate(-1deg); }
     100% { transform: scale(1.05) rotate(0deg); }
+  }
 }
