@@ -210,7 +210,7 @@ const Index = () => {
       description: "Professional event flyer design created for Instagram promotion, showcasing AI's capability in creating sophisticated social media marketing materials for the hospitality industry with elegant typography and restaurant branding.",
       type: "Instagram Design", 
       link: "https://www.instagram.com/p/DI1gNCHOD-g/?igsh=bW5xdG1rNjRmMGFi",
-      image: eventFlyer
+      image: "/lovable-uploads/e0cb3268-c7ec-4136-9335-3de792e7898f.png"
     }
   ];
 
