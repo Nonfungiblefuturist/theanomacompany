@@ -1,144 +1,61 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { ArrowRight, Menu, X } from "lucide-react";
 
 const Index = () => {
-  const [currentCase, setCurrentCase] = useState(0);
-  const [currentTestimonial, setCurrentTestimonial] = useState(0);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const services = [
     {
-      title: "AI Product Photography & Ads",
-      description: "Studio-grade campaigns from two flat shots.",
-      icon: "📸"
+      title: "AI Visual Design",
+      description: "Creating stunning visuals using state-of-the-art generative AI models, customized for your brand's unique aesthetic."
     },
     {
-      title: "100% AI Commercials", 
-      description: "Scroll-stoppers, no set build required.",
-      icon: "🎬"
+      title: "Motion Graphics", 
+      description: "Dynamic AI-powered animations and motion design that bring static concepts to life with fluid, organic movement."
     },
     {
-      title: "AI-Generated Film Scenes",
-      description: "IMAX-ready visuals at indie budgets.",
-      icon: "🎭"
-    }
-  ];
-
-  const features = [
-    {
-      title: "Efficiency",
-      description: "Up to 90% faster and cheaper production",
-      icon: "⚡"
+      title: "Brand Identity",
+      description: "Developing comprehensive visual systems that leverage AI to create cohesive yet adaptable brand identities."
     },
     {
-      title: "Cinema-grade Quality", 
-      description: "Rivals traditional filmmaking",
-      icon: "🎯"
+      title: "Creative Development",
+      description: "Custom AI solutions and creative coding that bridge the gap between technological innovation and artistic expression."
     },
     {
-      title: "Creative Freedom",
-      description: "Tailored styles for ads, shoots, film scenes", 
-      icon: "🎨"
-    }
-  ];
-
-  const caseStudies = [
-    {
-      title: "Mythic epic reimagined in AI",
-      thumbnail: "🏛️"
-    },
-    {
-      title: "Architectural legend docu in hyper-detail",
-      thumbnail: "🏗️"
-    },
-    {
-      title: "Psychological thriller proof-of-concept",
-      thumbnail: "🧠"
-    }
-  ];
-
-  const testimonials = [
-    {
-      quote: "Anoma delivered visuals that would have cost us 10x more with traditional production.",
-      author: "M.K.",
-      role: "Creative Director"
-    },
-    {
-      quote: "The quality is indistinguishable from real footage. Game-changing for indie filmmakers.",
-      author: "S.R.",
-      role: "Film Producer"
-    },
-    {
-      quote: "From concept to final cut in days, not months. Incredible speed without compromising quality.",
-      author: "J.L.",
-      role: "Brand Manager"
-    }
-  ];
-
-  const faqs = [
-    {
-      question: "How does AI quality compare to traditional filming?",
-      answer: "Our AI generates cinema-grade visuals that rival traditional filmmaking, with full control over lighting, composition, and style."
-    },
-    {
-      question: "What about licensing and rights?",
-      answer: "You own full commercial rights to all AI-generated content. No royalties, no usage restrictions."
-    },
-    {
-      question: "Can you maintain character consistency across scenes?",
-      answer: "Yes, we use advanced AI training to maintain perfect character consistency throughout your project."
-    },
-    {
-      question: "How do product shots work with just two images?",
-      answer: "Our AI analyzes your product from multiple angles and lighting conditions to generate studio-quality campaigns."
-    },
-    {
-      question: "Do you provide training on the process?",
-      answer: "Absolutely. We guide you through the entire workflow and provide best practices for optimal results."
+      title: "Immersive Experiences",
+      description: "AI-enhanced virtual and augmented reality experiences that blur the line between digital and physical worlds."
     }
   ];
 
   return (
     <div className="min-h-screen bg-background text-foreground">
       {/* Navigation */}
-      <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border/20">
+      <nav className="fixed top-0 left-0 right-0 z-50 bg-background/90 backdrop-blur-sm border-b border-border/10">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
             <div className="flex items-center">
-              <img 
-                src="/lovable-uploads/71af5afa-9fe1-4527-acee-8f0ea355d8d4.png" 
-                alt="The Anoma Company" 
-                className="h-8 w-auto opacity-90"
-              />
+              <span className="text-xl font-bold text-foreground">ANOMĀ</span>
             </div>
             
             {/* Desktop Navigation */}
             <div className="hidden md:block">
               <div className="ml-10 flex items-baseline space-x-8">
-                <a href="#services" className="text-muted-foreground hover:text-primary transition-colors">Services</a>
-                <a href="#why-anoma" className="text-muted-foreground hover:text-primary transition-colors">Why Anoma</a>
-                <a href="#case-studies" className="text-muted-foreground hover:text-primary transition-colors">Case Studies</a>
-                <a href="#faq" className="text-muted-foreground hover:text-primary transition-colors">FAQ</a>
+                <a href="#about" className="text-muted-foreground hover:text-foreground transition-colors text-sm font-medium">ABOUT</a>
+                <a href="#services" className="text-muted-foreground hover:text-foreground transition-colors text-sm font-medium">SERVICES</a>
+                <a href="#portfolio" className="text-muted-foreground hover:text-foreground transition-colors text-sm font-medium">PORTFOLIO</a>
+                <a href="#process" className="text-muted-foreground hover:text-foreground transition-colors text-sm font-medium">PROCESS</a>
+                <a href="#team" className="text-muted-foreground hover:text-foreground transition-colors text-sm font-medium">TEAM</a>
+                <a href="#contact" className="text-muted-foreground hover:text-foreground transition-colors text-sm font-medium">CONTACT</a>
               </div>
-            </div>
-
-            <div className="hidden md:block">
-              <Button 
-                variant="outline" 
-                className="border-primary text-primary hover:bg-primary hover:text-primary-foreground"
-              >
-                Book a Demo
-              </Button>
             </div>
 
             {/* Mobile menu button */}
             <div className="md:hidden">
               <button
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
-                className="text-muted-foreground hover:text-primary"
+                className="text-muted-foreground hover:text-foreground"
               >
                 {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
               </button>
@@ -150,107 +67,125 @@ const Index = () => {
         {isMenuOpen && (
           <div className="md:hidden bg-background/95 backdrop-blur-md border-t border-border/20">
             <div className="px-2 pt-2 pb-3 space-y-1">
-              <a href="#services" className="block px-3 py-2 text-muted-foreground hover:text-primary transition-colors">Services</a>
-              <a href="#why-anoma" className="block px-3 py-2 text-muted-foreground hover:text-primary transition-colors">Why Anoma</a>
-              <a href="#case-studies" className="block px-3 py-2 text-muted-foreground hover:text-primary transition-colors">Case Studies</a>
-              <a href="#faq" className="block px-3 py-2 text-muted-foreground hover:text-primary transition-colors">FAQ</a>
-              <div className="px-3 py-2">
-                <Button variant="outline" className="w-full border-primary text-primary hover:bg-primary hover:text-primary-foreground">
-                  Book a Demo
-                </Button>
-              </div>
+              <a href="#about" className="block px-3 py-2 text-muted-foreground hover:text-foreground transition-colors text-sm font-medium">ABOUT</a>
+              <a href="#services" className="block px-3 py-2 text-muted-foreground hover:text-foreground transition-colors text-sm font-medium">SERVICES</a>
+              <a href="#portfolio" className="block px-3 py-2 text-muted-foreground hover:text-foreground transition-colors text-sm font-medium">PORTFOLIO</a>
+              <a href="#process" className="block px-3 py-2 text-muted-foreground hover:text-foreground transition-colors text-sm font-medium">PROCESS</a>
+              <a href="#team" className="block px-3 py-2 text-muted-foreground hover:text-foreground transition-colors text-sm font-medium">TEAM</a>
+              <a href="#contact" className="block px-3 py-2 text-muted-foreground hover:text-foreground transition-colors text-sm font-medium">CONTACT</a>
             </div>
           </div>
         )}
       </nav>
 
+      {/* Code snippet in top right */}
+      <div className="fixed top-20 right-8 text-xs text-muted-foreground font-mono hidden lg:block">
+        <div>function createFuture() &#123;</div>
+        <div className="ml-4">return ai.transform(reality);</div>
+        <div>&#125;</div>
+      </div>
+
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-        {/* Animated gradient background */}
-        <div className="absolute inset-0 bg-gradient-to-br from-background via-card/10 to-background animate-gradient" 
-             style={{background: 'linear-gradient(45deg, hsl(var(--background)), hsl(var(--primary) / 0.1), hsl(var(--accent) / 0.1), hsl(var(--cosmic) / 0.1), hsl(var(--background)))'}}></div>
-        
-        {/* Floating animated elements */}
-        <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/10 rounded-full blur-3xl animate-float"></div>
-          <div className="absolute bottom-1/3 right-1/4 w-80 h-80 bg-accent/10 rounded-full blur-3xl animate-float delay-1000"></div>
-          <div className="absolute top-1/2 right-1/3 w-64 h-64 bg-cosmic/10 rounded-full blur-3xl animate-float delay-2000"></div>
-        </div>
-        
-        <div className="relative z-10 text-center px-4 max-w-6xl mx-auto pt-16">
-          <div className="mb-8">
-            <div className="inline-block mb-4 px-4 py-2 bg-primary/10 rounded-full border border-primary/20">
-              <span className="text-sm text-primary font-medium">AI-FIRST CREATIVE STUDIO</span>
+      <section className="min-h-screen flex items-center justify-center px-4 pt-16">
+        <div className="max-w-7xl mx-auto w-full">
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
+            {/* Left side - Main content */}
+            <div className="space-y-8">
+              <div className="space-y-6">
+                <h1 className="text-6xl md:text-7xl lg:text-8xl font-bold leading-tight">
+                  AI-First<br />
+                  <span className="text-primary">Creative</span><br />
+                  Intelligence
+                </h1>
+                
+                <p className="text-lg md:text-xl text-muted-foreground max-w-lg leading-relaxed">
+                  The Anomā Company is a pioneering AI-first creative studio that merges cutting-edge artificial intelligence with human creativity to produce extraordinary visual experiences.
+                </p>
+              </div>
+              
+              <Button 
+                size="lg"
+                className="border-2 border-primary bg-transparent text-primary hover:bg-primary hover:text-primary-foreground font-medium px-8 py-6 text-base transition-all duration-300"
+              >
+                GET IN TOUCH
+              </Button>
             </div>
-          </div>
-          
-          <h1 className="font-anoma text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
-            AI visuals, delivered before<br />
-            <span className="bg-gradient-to-r from-primary via-accent to-cosmic bg-clip-text text-transparent animate-gradient">
-              your coffee gets cold.
-            </span>
-          </h1>
-          
-          <p className="text-lg md:text-xl text-muted-foreground mb-10 max-w-3xl mx-auto leading-relaxed">
-            Studio-grade campaigns, commercials, and film scenes powered by AI. 
-            <br className="hidden md:block" />
-            Cinema-quality results at unprecedented speed.
-          </p>
-          
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <Button 
-              size="lg" 
-              className="bg-gradient-to-r from-primary to-accent hover:from-accent hover:to-primary text-primary-foreground font-semibold px-8 py-4 text-lg transition-all duration-500 hover:scale-105 animate-glow"
-            >
-              Book a free demo
-              <ArrowRight className="ml-2 h-5 w-5" />
-            </Button>
-            <Button 
-              variant="outline" 
-              size="lg"
-              className="border-primary/50 bg-background/50 backdrop-blur-sm hover:bg-primary/10 hover:border-primary font-semibold px-8 py-4 text-lg transition-all duration-500 hover:scale-105"
-            >
-              View Our Work
-            </Button>
+
+            {/* Right side - Card */}
+            <div className="flex justify-center lg:justify-end">
+              <Card className="w-full max-w-md bg-gradient-to-br from-primary/10 to-primary/5 border-primary/20 backdrop-blur-sm">
+                <CardContent className="p-8 text-center space-y-6">
+                  <div className="space-y-4">
+                    <div className="text-sm text-muted-foreground">The</div>
+                    <h2 className="text-4xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+                      Anoma
+                    </h2>
+                    <div className="text-sm text-muted-foreground">Company</div>
+                  </div>
+                  
+                  <div className="border-t border-primary/20 pt-6">
+                    <p className="text-sm text-muted-foreground font-mono">
+                      AI visuals, delivered before<br />
+                      your coffee gets cold
+                    </p>
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Services Grid */}
-      <section id="services" className="py-24 px-4">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
-            <div className="inline-block mb-4 px-4 py-2 bg-accent/10 rounded-full border border-accent/20">
-              <span className="text-sm text-accent font-medium">OUR SERVICES</span>
+      {/* About Section */}
+      <section id="about" className="py-24 px-4">
+        <div className="max-w-6xl mx-auto">
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
+            <div className="space-y-6">
+              <h2 className="text-4xl md:text-5xl font-bold">About Us</h2>
+              <div className="space-y-4 text-muted-foreground leading-relaxed">
+                <p>
+                  Founded at the intersection of art and technology, The Anomā Company pioneers a new approach to creative production. We harness the power of artificial intelligence to expand the boundaries of what's visually possible.
+                </p>
+                <p>
+                  Our team of AI specialists, designers, and creative technologists work in harmony to create visual experiences that are both technically innovative and emotionally resonant.
+                </p>
+                <p>
+                  Through our Chromatic Nebula approach, we blend human intuition with computational creativity to deliver results that neither could achieve alone.
+                </p>
+              </div>
             </div>
-            <h2 className="font-anoma text-3xl md:text-5xl font-bold mb-4">
-              Transform Visuals with AI
-            </h2>
+            <div className="flex justify-center">
+              <div className="w-80 h-80 bg-gradient-to-br from-primary/20 to-accent/20 rounded-2xl flex items-center justify-center">
+                <div className="text-6xl opacity-60">🌌</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Services Section */}
+      <section id="services" className="py-24 px-4 bg-gradient-to-b from-background to-card/20">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold mb-4">Our Services</h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
               Cutting-edge AI solutions that revolutionize how you create and produce visual content
             </p>
           </div>
           
-          <div className="grid lg:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {services.map((service, index) => (
               <Card 
                 key={index} 
-                className="bg-card/30 border-border/30 hover:bg-card/60 hover:border-primary/30 transition-all duration-700 hover:-translate-y-3 hover:rotate-1 cursor-pointer group backdrop-blur-md relative overflow-hidden"
+                className="bg-card/30 border-border/30 hover:bg-card/60 hover:border-primary/30 transition-all duration-500 hover:-translate-y-2 cursor-pointer group backdrop-blur-sm"
               >
-                <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-accent/5 opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
-                <CardContent className="p-8 relative z-10">
-                  <div className="text-5xl mb-6 group-hover:scale-125 transition-all duration-500 filter group-hover:drop-shadow-lg">
-                    {service.icon}
-                  </div>
-                  <h3 className="font-anoma text-xl font-bold mb-4 group-hover:text-primary transition-all duration-300">
+                <CardContent className="p-8">
+                  <h3 className="text-xl font-bold mb-4 group-hover:text-primary transition-colors duration-300">
                     {service.title}
                   </h3>
-                  <p className="text-muted-foreground leading-relaxed mb-6 group-hover:text-foreground/90 transition-colors duration-300">
+                  <p className="text-muted-foreground leading-relaxed">
                     {service.description}
                   </p>
-                  <div className="flex items-center text-primary text-sm font-medium group-hover:translate-x-3 transition-all duration-500 group-hover:text-accent">
-                    Learn more <ArrowRight className="ml-2 h-4 w-4 group-hover:rotate-45 transition-transform duration-300" />
-                  </div>
                 </CardContent>
               </Card>
             ))}
@@ -258,241 +193,65 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Why Anoma */}
-      <section id="why-anoma" className="py-24 px-4 bg-gradient-to-r from-background to-card/20">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
-            <div className="inline-block mb-4 px-4 py-2 bg-primary/10 rounded-full border border-primary/20">
-              <span className="text-sm text-primary font-medium">WHY CHOOSE ANOMA</span>
-            </div>
-            <h2 className="font-anoma text-3xl md:text-5xl font-bold mb-4">
-              The Future of Visual Production
-            </h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Experience unmatched quality, speed, and creative freedom with our AI-powered solutions
-            </p>
-          </div>
-          
-          <div className="grid lg:grid-cols-3 gap-12">
-            {features.map((feature, index) => (
-              <div key={index} className="text-center group">
-                <div className="relative mb-8">
-                  <div className="w-24 h-24 mx-auto bg-gradient-to-br from-primary/20 via-accent/20 to-cosmic/20 rounded-3xl flex items-center justify-center text-4xl group-hover:scale-125 group-hover:rotate-12 transition-all duration-700 border border-primary/20 group-hover:border-accent/40 backdrop-blur-sm animate-float">
-                    {feature.icon}
-                  </div>
-                  <div className="absolute inset-0 w-24 h-24 mx-auto bg-gradient-to-br from-primary/5 to-accent/5 rounded-3xl blur-xl group-hover:blur-2xl transition-all duration-700"></div>
-                </div>
-                <h3 className="font-anoma text-2xl font-bold mb-4 bg-gradient-to-r from-primary via-accent to-cosmic bg-clip-text text-transparent group-hover:from-accent group-hover:via-cosmic group-hover:to-amber transition-all duration-500">
-                  {feature.title}
-                </h3>
-                <p className="text-muted-foreground text-lg leading-relaxed group-hover:text-foreground/80 transition-colors duration-300">
-                  {feature.description}
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Case Studies Slider */}
-      <section id="case-studies" className="py-24 px-4">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-16">
-            <div className="inline-block mb-4 px-4 py-2 bg-accent/10 rounded-full border border-accent/20">
-              <span className="text-sm text-accent font-medium">CASE STUDIES</span>
-            </div>
-            <h2 className="font-anoma text-3xl md:text-5xl font-bold mb-4">
-              Real Results, Real Impact
-            </h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              See how we've transformed creative visions into stunning reality with AI
-            </p>
-          </div>
-          
-          <div className="relative">
-            <div className="flex overflow-hidden rounded-2xl">
-              {caseStudies.map((study, index) => (
-                <div 
-                  key={index}
-                  className={`w-full flex-shrink-0 transition-transform duration-700 ease-in-out`}
-                  style={{ transform: `translateX(-${currentCase * 100}%)` }}
-                >
-                  <Card className="bg-gradient-to-br from-card/50 to-card/80 border-border/50 backdrop-blur-sm">
-                    <CardContent className="p-16 text-center">
-                      <div className="text-9xl mb-8 opacity-80">{study.thumbnail}</div>
-                      <h3 className="font-anoma text-3xl font-bold mb-4 text-primary">
-                        {study.title}
-                      </h3>
-                      <div className="w-24 h-1 bg-gradient-to-r from-primary to-accent mx-auto rounded-full"></div>
-                    </CardContent>
-                  </Card>
-                </div>
-              ))}
-            </div>
-            
-            <div className="flex justify-center mt-8 space-x-3">
-              {caseStudies.map((_, index) => (
-                <button
-                  key={index}
-                  onClick={() => setCurrentCase(index)}
-                  className={`w-4 h-4 rounded-full transition-all duration-300 ${
-                    index === currentCase 
-                      ? 'bg-primary scale-125' 
-                      : 'bg-muted hover:bg-muted-foreground/50'
-                  }`}
-                />
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Testimonials */}
-      <section className="py-24 px-4 bg-gradient-to-l from-background to-card/20">
-        <div className="max-w-5xl mx-auto">
-          <div className="text-center mb-16">
-            <div className="inline-block mb-4 px-4 py-2 bg-primary/10 rounded-full border border-primary/20">
-              <span className="text-sm text-primary font-medium">TESTIMONIALS</span>
-            </div>
-            <h2 className="font-anoma text-3xl md:text-5xl font-bold mb-4">
-              Trusted by Visionaries
-            </h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Hear from the creators who've transformed their workflows with our AI solutions
-            </p>
-          </div>
-          
-          <div className="relative">
-            <Card className="bg-gradient-to-br from-card/50 to-card/80 border-border/50 backdrop-blur-sm">
-              <CardContent className="p-12 md:p-16 text-center">
-                <div className="text-7xl mb-8 opacity-60">💬</div>
-                <blockquote className="text-xl md:text-2xl font-medium mb-8 text-foreground leading-relaxed">
-                  "{testimonials[currentTestimonial].quote}"
-                </blockquote>
-                <div className="flex items-center justify-center space-x-6">
-                  <div className="w-16 h-16 bg-gradient-to-br from-primary to-accent rounded-full flex items-center justify-center text-primary-foreground font-bold text-lg">
-                    {testimonials[currentTestimonial].author}
-                  </div>
-                  <div className="text-left">
-                    <p className="font-bold text-lg">{testimonials[currentTestimonial].author}</p>
-                    <p className="text-muted-foreground">{testimonials[currentTestimonial].role}</p>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-            
-            <div className="flex justify-center mt-8 space-x-3">
-              {testimonials.map((_, index) => (
-                <button
-                  key={index}
-                  onClick={() => setCurrentTestimonial(index)}
-                  className={`w-4 h-4 rounded-full transition-all duration-300 ${
-                    index === currentTestimonial 
-                      ? 'bg-primary scale-125' 
-                      : 'bg-muted hover:bg-muted-foreground/50'
-                  }`}
-                />
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* FAQ */}
-      <section id="faq" className="py-24 px-4">
-        <div className="max-w-4xl mx-auto">
-          <div className="text-center mb-16">
-            <div className="inline-block mb-4 px-4 py-2 bg-accent/10 rounded-full border border-accent/20">
-              <span className="text-sm text-accent font-medium">FAQ</span>
-            </div>
-            <h2 className="font-anoma text-3xl md:text-5xl font-bold mb-4">
-              Everything You Need to Know
-            </h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Get answers to the most common questions about our AI visual production services
-            </p>
-          </div>
-          
-          <Accordion type="single" collapsible className="space-y-4">
-            {faqs.map((faq, index) => (
-              <AccordionItem 
-                key={index} 
-                value={`item-${index}`} 
-                className="border border-border/50 rounded-2xl px-6 bg-card/30 backdrop-blur-sm hover:bg-card/50 transition-colors"
-              >
-                <AccordionTrigger className="font-anoma text-left hover:text-primary text-lg py-6 hover:no-underline">
-                  {faq.question}
-                </AccordionTrigger>
-                <AccordionContent className="text-muted-foreground pt-2 pb-6 text-base leading-relaxed">
-                  {faq.answer}
-                </AccordionContent>
-              </AccordionItem>
-            ))}
-          </Accordion>
-        </div>
-      </section>
-
       {/* CTA Section */}
-      <section className="py-24 px-4 bg-gradient-to-r from-primary/10 via-background to-accent/10">
+      <section className="py-24 px-4">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="font-anoma text-3xl md:text-5xl font-bold mb-6">
-            Ready to Transform Your Visuals?
+          <h2 className="text-4xl md:text-5xl font-bold mb-6">
+            Ready to Transform Your Vision?
           </h2>
           <p className="text-lg text-muted-foreground mb-10 max-w-2xl mx-auto">
-            Join the future of visual production. Book a free demo and see how AI can revolutionize your creative workflow.
+            Let's create something extraordinary together. Get in touch to discuss your next AI-powered creative project.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <Button 
               size="lg" 
-              className="bg-primary hover:bg-primary/90 text-primary-foreground font-semibold px-10 py-4 text-lg transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-primary/25"
+              className="bg-primary hover:bg-primary/90 text-primary-foreground font-medium px-10 py-6 text-lg transition-all duration-300 hover:scale-105"
             >
-              Book a Free Demo
+              Start Your Project
               <ArrowRight className="ml-2 h-5 w-5" />
             </Button>
             <Button 
               variant="outline" 
               size="lg"
-              className="border-border hover:bg-accent/50 font-semibold px-10 py-4 text-lg transition-all duration-300"
+              className="border-border hover:bg-primary/10 font-medium px-10 py-6 text-lg transition-all duration-300"
             >
-              View Portfolio
+              View Our Work
             </Button>
           </div>
         </div>
       </section>
 
       {/* Footer */}
-      <footer className="bg-card/50 border-t border-border py-12 px-4">
+      <footer id="contact" className="bg-card/50 border-t border-border py-16 px-4">
         <div className="max-w-7xl mx-auto">
-          <div className="flex flex-col lg:flex-row items-center justify-between space-y-8 lg:space-y-0">
-            <div className="flex items-center space-x-4">
-              <img 
-                src="/lovable-uploads/71af5afa-9fe1-4527-acee-8f0ea355d8d4.png" 
-                alt="The Anoma Company" 
-                className="h-8 w-auto opacity-90"
-              />
-              <span className="text-muted-foreground">© 2024 The Anoma Company</span>
+          <div className="grid md:grid-cols-3 gap-12">
+            <div className="space-y-4">
+              <h3 className="text-xl font-bold">ANOMĀ</h3>
+              <p className="text-muted-foreground">
+                AI-first creative intelligence for extraordinary visual experiences.
+              </p>
             </div>
             
-            <div className="flex items-center space-x-8 text-sm">
-              <a href="tel:+1234567890" className="flex items-center space-x-2 hover:text-primary transition-colors">
-                <span>📞</span>
-                <span>Call Us</span>
-              </a>
-              <a href="mailto:hello@anoma.company" className="flex items-center space-x-2 hover:text-primary transition-colors">
-                <span>✉️</span>
-                <span>Email</span>
-              </a>
-              <a href="#" className="flex items-center space-x-2 hover:text-primary transition-colors">
-                <span>📅</span>
-                <span>Book a Call</span>
-              </a>
+            <div className="space-y-4">
+              <h4 className="font-semibold">Contact</h4>
+              <div className="space-y-2 text-muted-foreground">
+                <p>hello@anoma.company</p>
+                <p>+1 (555) 123-4567</p>
+              </div>
             </div>
             
-            <div className="flex items-center space-x-6">
-              <a href="#" className="text-2xl hover:text-primary transition-colors hover:scale-110 duration-300">🐦</a>
-              <a href="#" className="text-2xl hover:text-primary transition-colors hover:scale-110 duration-300">💼</a>
-              <a href="#" className="text-2xl hover:text-primary transition-colors hover:scale-110 duration-300">📸</a>
+            <div className="space-y-4">
+              <h4 className="font-semibold">Follow Us</h4>
+              <div className="flex space-x-4">
+                <a href="#" className="text-muted-foreground hover:text-primary transition-colors">Twitter</a>
+                <a href="#" className="text-muted-foreground hover:text-primary transition-colors">LinkedIn</a>
+                <a href="#" className="text-muted-foreground hover:text-primary transition-colors">Instagram</a>
+              </div>
             </div>
+          </div>
+          
+          <div className="border-t border-border/50 mt-12 pt-8 text-center text-muted-foreground">
+            <p>© 2024 The Anomā Company. All rights reserved.</p>
           </div>
         </div>
       </footer>
