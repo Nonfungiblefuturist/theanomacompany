@@ -240,8 +240,8 @@ const Index = () => {
               <div className="h-px bg-accent flex-1 max-w-16"></div>
             </div>
             <h2 className="text-4xl md:text-6xl font-light mb-4 leading-tight">
-              Advertising | Films | Software<br />
-              <span className="text-primary">All developed through AI</span>
+              Creative Solutions Across<br />
+              <span className="text-foreground">Advertising • Film Production • Custom Software</span>
             </h2>
           </div>
           
