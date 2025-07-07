@@ -640,9 +640,9 @@ const Index = () => {
               <img 
                 src="/lovable-uploads/38e4e5bc-e33c-414c-ab90-cfc5468f67a1.png" 
                 alt="Anoma Company" 
-                className="h-32 w-auto mb-4"
+                className="h-48 w-auto mb-6"
               />
-              <p className="text-muted-foreground max-w-md text-base leading-relaxed">
+              <p className="text-muted-foreground max-w-md text-sm leading-relaxed">
                 AI-first creative studio crafting the future of ads and film visuals with cutting-edge artificial intelligence.
               </p>
             </div>
@@ -671,7 +671,7 @@ const Index = () => {
           </div>
           
           <div className="border-t border-border/50 pt-12 flex items-center justify-between">
-            <p className="text-muted-foreground">© 2024 The Anoma Company. All rights reserved.</p>
+            <p className="text-muted-foreground">© 2025 The Anoma Company. All rights reserved.</p>
             <p className="text-muted-foreground text-sm">Crafted with AI precision</p>
           </div>
         </div>
@@ -681,7 +681,7 @@ const Index = () => {
       {showScrollTop && (
         <Button
           onClick={scrollToTop}
-          className="fixed bottom-8 right-8 z-50 bg-primary text-primary-foreground hover:bg-primary/90 rounded-full p-3 shadow-lg transition-all duration-300 animate-fade-in"
+          className="fixed bottom-8 right-8 z-50 bg-gradient-to-br from-primary to-accent hover:from-primary/90 hover:to-accent/90 text-primary-foreground rounded-full p-3 shadow-lg transition-all duration-300 animate-fade-in hover:shadow-xl"
           size="icon"
         >
           <ArrowUp className="h-5 w-5" />
