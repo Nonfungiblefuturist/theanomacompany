@@ -149,49 +149,49 @@ const Index = () => {
 
   const testimonials = [
     {
-      quote: "Honestly didn't think AI could match our traditional shoots until I saw the results. Cut our production time from 3 weeks to 4 days and saved us $180K on our Q4 campaign. The ROI speaks for itself.",
+      quote: "Honestly didn't think AI could match our traditional shoots until I saw the results. Cut our production time from 3 weeks to 10 days and saved us $45K on our Q4 campaign. The ROI speaks for itself.",
       author: "Mark L.",
       role: "CMO",
-      company: "TechFlow Dynamics",
+      company: "",
       rating: 5,
       project: "Product Launch Campaign",
-      savings: "Saved $180K, 85% faster delivery"
+      savings: "Saved $45K, 60% faster delivery"
     },
     {
-      quote: "The character consistency blew my mind. We needed the same actor across 12 different scenes and Anoma delivered flawlessly. Our focus groups rated it 40% higher than our previous work.",
+      quote: "The character consistency blew my mind. We needed the same actor across 12 different scenes and Anoma delivered flawlessly. Our focus groups rated it 25% higher than our previous work.",
       author: "Diana G.",
       role: "Creative Director", 
-      company: "Pinnacle Studios",
+      company: "",
       rating: 5,
       project: "Brand Commercial Series",
-      savings: "40% better audience response"
+      savings: "25% better audience response"
     },
     {
-      quote: "Their custom AI workflow integration transformed our entire content pipeline. We're now pushing out 5x more social content with the same team. Game changer for our agency.",
+      quote: "Their custom AI workflow integration transformed our entire content pipeline. We're now pushing out 3x more social content with the same team. Game changer for our agency.",
       author: "Alex R.",
       role: "Head of Content",
-      company: "Bloom Creative Agency", 
+      company: "", 
       rating: 5,
       project: "Workflow Automation",
-      savings: "500% content output increase"
+      savings: "3x content output increase"
     },
     {
-      quote: "Skeptical at first, but the photorealism is incredible. Our product photography now looks better than our $50K studio shoots and takes a fraction of the time. Clients can't tell the difference.",
+      quote: "Skeptical at first, but the photorealism is incredible. Our product photography now looks better than our $15K studio shoots and takes a fraction of the time. Clients can't tell the difference.",
       author: "Jennifer W.",
       role: "E-commerce Director",
-      company: "Luxe Brands",
+      company: "",
       rating: 5,
       project: "Product Photography Suite",
-      savings: "90% cost reduction vs studio"
+      savings: "70% cost reduction vs studio"
     },
     {
-      quote: "The speed is unreal. What used to take our VFX team 2 months, Anoma delivered in 1 week. Same quality, faster turnaround, and our clients are blown away every time.",
+      quote: "The speed is unreal. What used to take our VFX team 2 months, Anoma delivered in 3 weeks. Same quality, faster turnaround, and our clients are blown away every time.",
       author: "David P.",
       role: "VFX Supervisor",
-      company: "Motion Picture Studios",
+      company: "",
       rating: 5,
       project: "Film VFX Sequences", 
-      savings: "87% faster than traditional VFX"
+      savings: "60% faster than traditional VFX"
     }
   ];
 
@@ -477,7 +477,7 @@ const Index = () => {
                         <div>
                           <div className="font-medium">{testimonial.author}</div>
                           <div className="text-sm text-muted-foreground">
-                            {testimonial.role}, {testimonial.company}
+                            {testimonial.role}
                           </div>
                         </div>
                       </div>
