@@ -327,10 +327,13 @@ const Index = () => {
             </div>
 
             <div className="hidden md:block">
-              <Button className={`bg-accent text-accent-foreground hover:bg-accent/90 button-smooth glass-button transition-all duration-500 ease-out ${
-                isScrolled ? 'px-4 py-2 text-sm' : 'px-6 py-3 text-base'
-              }`}>
-                Get in touch
+              <Button 
+                asChild
+                className={`bg-accent text-accent-foreground hover:bg-accent/90 button-smooth glass-button transition-all duration-500 ease-out ${
+                  isScrolled ? 'px-4 py-2 text-sm' : 'px-6 py-3 text-base'
+                }`}
+              >
+                <a href="mailto:sg@s.pictures">Get in touch</a>
               </Button>
             </div>
 
@@ -388,8 +391,14 @@ const Index = () => {
           </p>
           
           <div className="pt-8 animate-fade-up-delay-2">
-            <Button size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90 px-12 py-6 text-lg button-smooth glass-button">
-              Book a Free Demo
+            <Button 
+              asChild
+              size="lg" 
+              className="bg-accent text-accent-foreground hover:bg-accent/90 px-12 py-6 text-lg button-smooth glass-button"
+            >
+              <a href="https://calendly.com/surzayon/the-anoma-company-consultation" target="_blank" rel="noopener noreferrer">
+                Book a Free Demo
+              </a>
             </Button>
           </div>
         </div>
@@ -703,8 +712,14 @@ const Index = () => {
               <div className="text-center py-20">
                 <h3 className="text-2xl font-medium mb-4">Schedule a Meeting</h3>
                 <p className="text-muted-foreground mb-8">Book a free consultation to discuss your project</p>
-                <Button size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90 button-smooth glass-button">
-                  Book Now
+                <Button 
+                  asChild
+                  size="lg" 
+                  className="bg-primary text-primary-foreground hover:bg-primary/90 button-smooth glass-button"
+                >
+                  <a href="https://calendly.com/surzayon/the-anoma-company-consultation" target="_blank" rel="noopener noreferrer">
+                    Book Now
+                  </a>
                 </Button>
               </div>
             </div>
