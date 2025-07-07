@@ -1,90 +1,103 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { ArrowRight, Menu, X, Play } from "lucide-react";
+import { ArrowRight, Menu, X, Play, Star } from "lucide-react";
 
 const Index = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  const services = [
+  const benefits = [
     {
-      title: "AI Visual Design",
-      description: "Creating stunning visuals using state-of-the-art generative AI models, customized for your brand's unique aesthetic.",
-      icon: "🎨"
-    },
-    {
-      title: "Motion Graphics", 
-      description: "Dynamic AI-powered animations and motion design that bring static concepts to life with fluid, organic movement.",
-      icon: "🎬"
-    },
-    {
-      title: "Brand Identity",
-      description: "Developing comprehensive visual systems that leverage AI to create cohesive yet adaptable brand identities.",
+      title: "Real-Time Intelligence",
+      description: "Access accurate, real-time data to drive smarter decisions",
       icon: "⚡"
     },
     {
-      title: "Creative Development",
-      description: "Custom AI solutions and creative coding that bridge the gap between technological innovation and artistic expression.",
-      icon: "💻"
+      title: "Measurable Impact", 
+      description: "Track performance, uncover insights, and achieve data-backed growth",
+      icon: "📊"
     },
     {
-      title: "Immersive Experiences",
-      description: "AI-enhanced virtual and augmented reality experiences that blur the line between digital and physical worlds.",
-      icon: "🌌"
+      title: "Seamless Integration",
+      description: "Connect tools, teams, and workflows with intelligent automation",
+      icon: "🔗"
+    }
+  ];
+
+  const services = [
+    {
+      title: "Cost Management",
+      description: "Automate financial workflows and payment systems",
+      visual: "💰"
+    },
+    {
+      title: "Employee Tracking", 
+      description: "Smart workforce analytics and productivity insights",
+      visual: "👥"
+    },
+    {
+      title: "Social Media Automation",
+      description: "AI-powered content creation and posting schedules",
+      visual: "📱"
+    },
+    {
+      title: "Research Intelligence",
+      description: "Comprehensive market and industry analysis",
+      visual: "🔍"
+    },
+    {
+      title: "Automated Workflows",
+      description: "Streamline operations with intelligent process automation",
+      visual: "⚙️"
+    },
+    {
+      title: "Real-Time Analytics",
+      description: "Live data insights and intelligent reporting systems",
+      visual: "📈"
     }
   ];
 
   return (
     <div className="min-h-screen bg-background text-foreground relative overflow-hidden">
-      {/* Nebula Background Effects */}
-      <div className="fixed inset-0 pointer-events-none">
-        <div className="absolute top-1/4 left-1/4 w-[500px] h-[500px] animate-nebula">
-          <div className="w-full h-full rounded-full" style={{
-            background: 'var(--gradient-aurora)',
-            filter: 'blur(100px)',
-          }}></div>
-        </div>
-        <div className="absolute bottom-1/3 right-1/4 w-[400px] h-[400px] animate-nebula" style={{animationDelay: '7s'}}>
-          <div className="w-full h-full rounded-full" style={{
-            background: 'var(--gradient-nebula)',
-            filter: 'blur(80px)',
-          }}></div>
-        </div>
-        <div className="absolute top-1/2 right-1/3 w-[300px] h-[300px] animate-nebula" style={{animationDelay: '14s'}}>
-          <div className="w-full h-full rounded-full" style={{
-            background: 'conic-gradient(from 45deg, hsl(var(--primary) / 0.3), hsl(var(--accent) / 0.3), hsl(var(--cosmic) / 0.3))',
-            filter: 'blur(60px)',
-          }}></div>
-        </div>
-      </div>
+      {/* Subtle gradient overlay */}
+      <div className="fixed inset-0 bg-gradient-to-br from-background via-background to-secondary/20 pointer-events-none"></div>
 
-      {/* Navigation */}
-      <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-xl border-b border-primary/10">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="flex items-center justify-between h-16">
+      {/* Professional Navigation */}
+      <nav className="fixed top-0 left-0 right-0 z-50 glass-nav">
+        <div className="max-w-7xl mx-auto px-6 lg:px-12">
+          <div className="flex items-center justify-between h-20">
             <div className="flex items-center">
-              <div className="relative">
-                <span className="text-xl font-bold text-foreground">ANOM</span>
-                <span className="text-xl font-bold bg-gradient-to-r from-primary via-accent to-cosmic bg-clip-text text-transparent animate-spectral">Ā</span>
+              <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-primary/20 to-accent/20 border border-primary/30 backdrop-blur-sm flex items-center justify-center mr-3">
+                <div className="w-4 h-4 rounded-md bg-gradient-to-br from-primary to-accent"></div>
               </div>
+              <span className="text-xl font-light tracking-tight">Landio</span>
             </div>
             
             {/* Desktop Navigation */}
             <div className="hidden md:block">
-              <div className="ml-10 flex items-baseline space-x-8">
-                <a href="#about" className="text-muted-foreground hover:text-primary transition-colors text-sm font-medium tracking-wide">ABOUT</a>
-                <a href="#services" className="text-muted-foreground hover:text-primary transition-colors text-sm font-medium tracking-wide">SERVICES</a>
-                <a href="#portfolio" className="text-muted-foreground hover:text-primary transition-colors text-sm font-medium tracking-wide">PORTFOLIO</a>
-                <a href="#process" className="text-muted-foreground hover:text-primary transition-colors text-sm font-medium tracking-wide">PROCESS</a>
-                <a href="#contact" className="text-muted-foreground hover:text-primary transition-colors text-sm font-medium tracking-wide">CONTACT</a>
+              <div className="flex items-center space-x-12">
+                <a href="#services" className="text-muted-foreground hover:text-foreground transition-colors text-sm font-light tracking-wide">Services</a>
+                <a href="#process" className="text-muted-foreground hover:text-foreground transition-colors text-sm font-light tracking-wide">Process</a>
+                <a href="#pricing" className="text-muted-foreground hover:text-foreground transition-colors text-sm font-light tracking-wide">Pricing</a>
+                <a href="#blog" className="text-muted-foreground hover:text-foreground transition-colors text-sm font-light tracking-wide">Blog</a>
+                <a href="#contact" className="text-muted-foreground hover:text-foreground transition-colors text-sm font-light tracking-wide">Contact</a>
               </div>
+            </div>
+
+            <div className="hidden md:block">
+              <Button 
+                variant="outline" 
+                className="border-primary/30 bg-primary/5 text-foreground hover:bg-primary/10 font-light px-6 py-2 text-sm backdrop-blur-sm"
+              >
+                Get Template
+              </Button>
             </div>
 
             {/* Mobile menu button */}
             <div className="md:hidden">
               <button
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
-                className="text-muted-foreground hover:text-primary"
+                className="text-muted-foreground hover:text-foreground"
               >
                 {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
               </button>
@@ -94,161 +107,125 @@ const Index = () => {
 
         {/* Mobile Navigation */}
         {isMenuOpen && (
-          <div className="md:hidden bg-background/95 backdrop-blur-xl border-t border-primary/10">
-            <div className="px-2 pt-2 pb-3 space-y-1">
-              <a href="#about" className="block px-3 py-2 text-muted-foreground hover:text-primary transition-colors text-sm font-medium tracking-wide">ABOUT</a>
-              <a href="#services" className="block px-3 py-2 text-muted-foreground hover:text-primary transition-colors text-sm font-medium tracking-wide">SERVICES</a>
-              <a href="#portfolio" className="block px-3 py-2 text-muted-foreground hover:text-primary transition-colors text-sm font-medium tracking-wide">PORTFOLIO</a>
-              <a href="#process" className="block px-3 py-2 text-muted-foreground hover:text-primary transition-colors text-sm font-medium tracking-wide">PROCESS</a>
-              <a href="#contact" className="block px-3 py-2 text-muted-foreground hover:text-primary transition-colors text-sm font-medium tracking-wide">CONTACT</a>
+          <div className="md:hidden glass-nav border-t border-primary/10">
+            <div className="px-6 py-4 space-y-4">
+              <a href="#services" className="block text-muted-foreground hover:text-foreground transition-colors text-sm font-light">Services</a>
+              <a href="#process" className="block text-muted-foreground hover:text-foreground transition-colors text-sm font-light">Process</a>
+              <a href="#pricing" className="block text-muted-foreground hover:text-foreground transition-colors text-sm font-light">Pricing</a>
+              <a href="#blog" className="block text-muted-foreground hover:text-foreground transition-colors text-sm font-light">Blog</a>
+              <a href="#contact" className="block text-muted-foreground hover:text-foreground transition-colors text-sm font-light">Contact</a>
             </div>
           </div>
         )}
       </nav>
 
-      {/* Code snippet overlay */}
-      <div className="fixed top-24 right-8 text-xs font-mono text-muted-foreground/60 hidden lg:block select-none pointer-events-none">
-        <div className="bg-card/20 backdrop-blur-sm rounded-lg p-4 border border-primary/10">
-          <div className="text-primary">function</div>
-          <div><span className="text-accent">createFuture</span>() &#123;</div>
-          <div className="ml-4">return <span className="text-cosmic">ai</span>.<span className="text-amber">transform</span>(reality);</div>
-          <div>&#125;</div>
-        </div>
-      </div>
-
       {/* Hero Section */}
-      <section className="min-h-screen flex items-center justify-center px-4 pt-16 relative">
-        {/* Centered Brand Icon */}
-        <div className="absolute top-32 left-1/2 transform -translate-x-1/2">
-          <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-primary/20 to-accent/20 border border-primary/30 backdrop-blur-sm flex items-center justify-center animate-glow">
-            <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-primary to-accent"></div>
+      <section className="min-h-screen flex items-center justify-center px-6 pt-20 relative">
+        <div className="max-w-6xl mx-auto text-center space-y-12 reveal-up relative z-10">
+          {/* Brand Icon */}
+          <div className="w-20 h-20 mx-auto rounded-3xl glass-card flex items-center justify-center mb-8 reveal-scale">
+            <div className="w-8 h-8 rounded-xl bg-gradient-to-br from-primary to-accent animate-pulse"></div>
           </div>
-        </div>
 
-        <div className="max-w-5xl mx-auto text-center space-y-8 relative z-10 mt-16">
           {/* Badge */}
-          <div className="inline-flex items-center px-4 py-2 rounded-full bg-primary/10 border border-primary/20 text-primary text-sm font-medium tracking-wide">
-            <div className="w-2 h-2 bg-primary rounded-full mr-2 animate-pulse"></div>
-            AI-FIRST CREATIVE INTELLIGENCE
+          <div className="inline-flex items-center px-6 py-3 rounded-full glass-card text-primary text-sm font-light tracking-wider border border-primary/20">
+            <Star className="w-3 h-3 mr-2 fill-current" />
+            NEW GEN AI AUTOMATION PARTNER
           </div>
           
-          <div className="space-y-6">
-            <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold leading-tight tracking-tight">
+          <div className="space-y-8">
+            <h1 className="text-hero font-extralight leading-none tracking-tighter">
               <span className="block">Automate Smarter.</span>
-              <span className="block">Create Faster.</span>
-              <span className="block italic bg-gradient-to-r from-primary via-accent to-cosmic bg-clip-text text-transparent animate-spectral">
+              <span className="block">Grow Faster.</span>
+              <span className="block italic bg-gradient-to-r from-primary via-accent to-cosmic bg-clip-text text-transparent">
                 With AI.
               </span>
             </h1>
             
-            <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-              AI visuals, delivered before your coffee gets cold
+            <p className="text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed font-light">
+              AI Automation for Modern Businesses Made Simple
             </p>
           </div>
           
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-12">
+          <div className="pt-8">
             <Button 
               size="lg"
-              className="bg-transparent border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground font-medium px-8 py-6 text-base transition-all duration-500 group animate-glow"
+              className="bg-foreground text-background hover:bg-foreground/90 font-light px-10 py-6 text-base transition-all duration-500 hover:scale-105 rounded-xl"
             >
-              GET IN TOUCH
-              <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
+              Book A Free Call
+              <ArrowRight className="ml-2 h-4 w-4" />
             </Button>
           </div>
 
-          {/* Social Links */}
-          <div className="flex items-center justify-center space-x-8 mt-12 opacity-60">
-            <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
-              <div className="w-6 h-6 border border-current rounded-full flex items-center justify-center">
-                <span className="text-xs">𝕏</span>
-              </div>
-            </a>
-            <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
-              <div className="w-6 h-6 border border-current rounded-md flex items-center justify-center">
-                <span className="text-xs">📷</span>
-              </div>
-            </a>
-            <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
-              <div className="w-6 h-6 border border-current rounded-sm flex items-center justify-center">
-                <span className="text-xs">f</span>
-              </div>
-            </a>
+          {/* Social Icons */}
+          <div className="flex items-center justify-center space-x-6 pt-12 opacity-60">
+            <div className="w-8 h-8 rounded-lg glass-card flex items-center justify-center hover:bg-primary/10 transition-colors cursor-pointer">
+              <span className="text-xs">𝕏</span>
+            </div>
+            <div className="w-8 h-8 rounded-lg glass-card flex items-center justify-center hover:bg-primary/10 transition-colors cursor-pointer">
+              <span className="text-xs">in</span>
+            </div>
+            <div className="w-8 h-8 rounded-lg glass-card flex items-center justify-center hover:bg-primary/10 transition-colors cursor-pointer">
+              <span className="text-xs">f</span>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* About Section */}
-      <section id="about" className="py-32 px-4 relative">
+      {/* Data Analysis Section */}
+      <section className="py-32 px-6 relative">
         <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-20">
-            <div className="inline-flex items-center px-4 py-2 rounded-full bg-accent/10 border border-accent/20 text-accent text-sm font-medium tracking-wide mb-8">
+          <div className="text-center mb-20 reveal-up">
+            <div className="inline-flex items-center px-6 py-3 rounded-full glass-card text-accent text-sm font-light tracking-wider border border-accent/20 mb-8">
               WE ANALYZE YOUR DATA
             </div>
-            <h2 className="text-4xl md:text-6xl font-bold mb-8 leading-tight">
-              We find what to automate, who your users are<br />
-              & how AI can optimize your workflow.
+            <h2 className="text-section font-extralight mb-8 leading-tight tracking-tighter max-w-4xl mx-auto">
+              We find what to automate, who your users are & how AI can optimize your workflow.
             </h2>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-              Founded at the intersection of art and technology, The Anomā Company pioneers a new approach to creative production through our Chromatic Nebula methodology.
+            <p className="text-lg text-muted-foreground font-light italic">
+              Best part is we also build and launch real solutions.
             </p>
           </div>
           
           <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <div className="space-y-8">
-              <div className="spectral-trail relative">
-                <Card className="bg-gradient-to-br from-card/50 to-card/20 border-primary/20 backdrop-blur-sm overflow-hidden">
-                  <CardContent className="p-8">
-                    <div className="flex items-center space-x-4 mb-6">
-                      <div className="w-12 h-12 rounded-full bg-gradient-to-br from-primary to-accent flex items-center justify-center">
-                        <span className="text-primary-foreground font-bold">AC</span>
-                      </div>
-                      <div>
-                        <h4 className="font-bold">Co-founder & AI Strategy Lead</h4>
-                        <p className="text-muted-foreground text-sm">The Anomā Company</p>
-                      </div>
+            <div className="reveal-up">
+              <Card className="glass-card hover-lift">
+                <CardContent className="p-12">
+                  <div className="flex items-center space-x-6 mb-8">
+                    <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center">
+                      <span className="text-2xl">👤</span>
                     </div>
-                    <p className="text-muted-foreground leading-relaxed">
-                      "We blend human intuition with computational creativity to deliver results that neither could achieve alone."
-                    </p>
-                  </CardContent>
-                </Card>
-              </div>
+                    <div>
+                      <h4 className="text-xl font-light mb-2">Co-founder & AI Strategy Lead</h4>
+                      <p className="text-muted-foreground text-sm font-light">The Anomā Company</p>
+                    </div>
+                  </div>
+                  <p className="text-muted-foreground leading-relaxed font-light text-lg">
+                    "We blend human intuition with computational creativity to deliver results that neither could achieve alone."
+                  </p>
+                </CardContent>
+              </Card>
             </div>
             
-            <div className="space-y-6">
-              <div className="grid grid-cols-2 gap-4">
-                <div className="spectral-trail">
-                  <Card className="bg-gradient-to-br from-primary/10 to-primary/5 border-primary/20 backdrop-blur-sm">
-                    <CardContent className="p-6 text-center">
-                      <div className="text-2xl mb-2">⚡</div>
-                      <h4 className="font-bold text-sm">Real-Time Intelligence</h4>
-                    </CardContent>
-                  </Card>
-                </div>
-                <div className="spectral-trail">
-                  <Card className="bg-gradient-to-br from-accent/10 to-accent/5 border-accent/20 backdrop-blur-sm">
-                    <CardContent className="p-6 text-center">
-                      <div className="text-2xl mb-2">📊</div>
-                      <h4 className="font-bold text-sm">Measurable Impact</h4>
-                    </CardContent>
-                  </Card>
-                </div>
-                <div className="spectral-trail">
-                  <Card className="bg-gradient-to-br from-cosmic/10 to-cosmic/5 border-cosmic/20 backdrop-blur-sm">
-                    <CardContent className="p-6 text-center">
-                      <div className="text-2xl mb-2">🔗</div>
-                      <h4 className="font-bold text-sm">Seamless Integration</h4>
-                    </CardContent>
-                  </Card>
-                </div>
-                <div className="spectral-trail">
-                  <Card className="bg-gradient-to-br from-amber/10 to-amber/5 border-amber/20 backdrop-blur-sm">
-                    <CardContent className="p-6 text-center">
-                      <div className="text-2xl mb-2">🎯</div>
-                      <h4 className="font-bold text-sm">Precision Targeting</h4>
-                    </CardContent>
-                  </Card>
-                </div>
+            <div className="space-y-8 reveal-up" style={{animationDelay: '0.2s'}}>
+              <h3 className="text-2xl font-light mb-8 tracking-tight">BENEFITS</h3>
+              <h4 className="text-4xl font-extralight mb-12 leading-tight">Why Choose Us?</h4>
+              <p className="text-muted-foreground font-light text-lg mb-12">
+                Everything you need to automate, optimize, and scale
+              </p>
+              
+              <div className="space-y-6">
+                {benefits.map((benefit, index) => (
+                  <div key={index} className="flex items-start space-x-4 p-6 rounded-2xl glass-card hover-lift">
+                    <div className="text-2xl mt-1">{benefit.icon}</div>
+                    <div>
+                      <h5 className="font-medium mb-2">{benefit.title}</h5>
+                      <p className="text-muted-foreground text-sm font-light leading-relaxed">
+                        {benefit.description}
+                      </p>
+                    </div>
+                  </div>
+                ))}
               </div>
             </div>
           </div>
@@ -256,37 +233,37 @@ const Index = () => {
       </section>
 
       {/* Services Section */}
-      <section id="services" className="py-32 px-4 relative">
+      <section id="services" className="py-32 px-6 relative">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-20">
-            <div className="inline-flex items-center px-4 py-2 rounded-full bg-primary/10 border border-primary/20 text-primary text-sm font-medium tracking-wide mb-8">
+          <div className="text-center mb-20 reveal-up">
+            <div className="inline-flex items-center px-6 py-3 rounded-full glass-card text-primary text-sm font-light tracking-wider border border-primary/20 mb-8">
               SERVICES
             </div>
-            <h2 className="text-4xl md:text-6xl font-bold mb-8 leading-tight">
+            <h2 className="text-section font-extralight mb-8 leading-tight tracking-tighter">
               Smarter Services,<br />
               Built with AI
             </h2>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-              Everything you need to automate operations, boost productivity, and create extraordinary visual experiences
+            <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed font-light">
+              Everything you need to automate operations, boost productivity
             </p>
           </div>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {services.map((service, index) => (
-              <div key={index} className="spectral-trail group">
-                <Card className="bg-gradient-to-br from-card/50 to-card/20 border-border/30 hover:border-primary/40 transition-all duration-700 hover:-translate-y-4 cursor-pointer backdrop-blur-sm h-full">
+              <div key={index} className="reveal-up hover-lift" style={{animationDelay: `${index * 0.1}s`}}>
+                <Card className="glass-card h-full group cursor-pointer">
                   <CardContent className="p-8 h-full flex flex-col">
                     <div className="text-4xl mb-6 group-hover:scale-110 transition-transform duration-500">
-                      {service.icon}
+                      {service.visual}
                     </div>
-                    <h3 className="text-xl font-bold mb-4 group-hover:text-primary transition-colors duration-300">
+                    <h3 className="text-xl font-light mb-4 group-hover:text-primary transition-colors duration-300">
                       {service.title}
                     </h3>
-                    <p className="text-muted-foreground leading-relaxed flex-grow">
+                    <p className="text-muted-foreground leading-relaxed flex-grow font-light">
                       {service.description}
                     </p>
-                    <div className="mt-6 pt-6 border-t border-border/30">
-                      <div className="flex items-center text-primary text-sm font-medium group-hover:translate-x-2 transition-transform duration-500">
+                    <div className="mt-8 pt-6 border-t border-border/30">
+                      <div className="flex items-center text-primary text-sm font-light group-hover:translate-x-2 transition-transform duration-500">
                         <Play className="w-3 h-3 mr-2" />
                         Learn more
                       </div>
@@ -300,26 +277,27 @@ const Index = () => {
       </section>
 
       {/* Code Example Section */}
-      <section className="py-32 px-4 relative">
-        <div className="max-w-5xl mx-auto text-center">
-          <div className="spectral-trail mb-12">
-            <Card className="bg-gradient-to-br from-card/80 to-card/40 border-primary/20 backdrop-blur-sm">
-              <CardContent className="p-12">
-                <div className="font-mono text-left text-sm space-y-2">
-                  <div className="text-muted-foreground">// Chromatic Nebula Architecture</div>
-                  <div><span className="text-cosmic">class</span> <span className="text-primary">AutomationAgent</span> &#123;</div>
-                  <div className="ml-4"><span className="text-accent">constructor</span>(<span className="text-amber">activation_limit</span>) &#123;</div>
-                  <div className="ml-8"><span className="text-foreground">this</span>.<span className="text-primary">activation_limit</span> = <span className="text-amber">activation_limit</span>;</div>
-                  <div className="ml-8"><span className="text-foreground">this</span>.<span className="text-primary">current_mode</span> = <span className="text-accent">"idle"</span>;</div>
-                  <div className="ml-4">&#125;</div>
+      <section className="py-32 px-6 relative">
+        <div className="max-w-5xl mx-auto">
+          <div className="reveal-up">
+            <Card className="glass-card hover-lift">
+              <CardContent className="p-16">
+                <div className="font-mono text-left text-sm space-y-3 font-light">
+                  <div className="text-muted-foreground mb-6">// AI Automation Architecture</div>
+                  <div><span className="text-cosmic">class</span> <span className="text-primary">AutomationAgent</span>:</div>
+                  <div className="ml-4"><span className="text-accent">def</span> <span className="text-amber">__init__</span>(<span className="text-foreground">self</span>, <span className="text-primary">activation_limit</span>):</div>
+                  <div className="ml-8"><span className="text-foreground">self</span>.<span className="text-primary">activation_limit</span> = <span className="text-amber">activation_limit</span></div>
+                  <div className="ml-8"><span className="text-foreground">self</span>.<span className="text-primary">current_mode</span> = <span className="text-accent">"idle"</span></div>
                   <div className="ml-4"></div>
-                  <div className="ml-4"><span className="text-cosmic">evaluate_task</span>(<span className="text-amber">workload_value</span>) &#123;</div>
-                  <div className="ml-8"><span className="text-cosmic">if</span> (<span className="text-amber">workload_value</span> &gt; <span className="text-foreground">this</span>.<span className="text-primary">activation_limit</span>) &#123;</div>
-                  <div className="ml-12"><span className="text-foreground">this</span>.<span className="text-primary">current_mode</span> = <span className="text-accent">"engaged"</span>;</div>
-                  <div className="ml-12"><span className="text-cosmic">return</span> <span className="text-accent">"AI transformation complete!"</span>;</div>
-                  <div className="ml-8">&#125;</div>
-                  <div className="ml-4">&#125;</div>
-                  <div>&#125;</div>
+                  <div className="ml-4"><span className="text-accent">def</span> <span className="text-cosmic">evaluate_task</span>(<span className="text-foreground">self</span>, <span className="text-amber">workload_value</span>):</div>
+                  <div className="ml-8"><span className="text-cosmic">if</span> <span className="text-amber">workload_value</span> &gt; <span className="text-foreground">self</span>.<span className="text-primary">activation_limit</span>:</div>
+                  <div className="ml-12"><span className="text-foreground">self</span>.<span className="text-primary">current_mode</span> = <span className="text-accent">"engaged"</span></div>
+                  <div className="ml-12"><span className="text-cosmic">return</span> <span className="text-accent">"Automation agent has been successfully activated!"</span></div>
+                  <div className="ml-8"><span className="text-cosmic">else</span>:</div>
+                  <div className="ml-12"><span className="text-cosmic">return</span> <span className="text-accent">"No activation needed. Agent stays idle."</span></div>
+                  <div className="ml-4"></div>
+                  <div className="ml-4"><span className="text-accent">def</span> <span className="text-cosmic">get_current_mode</span>(<span className="text-foreground">self</span>):</div>
+                  <div className="ml-8"><span className="text-cosmic">return</span> <span className="text-foreground">self</span>.<span className="text-primary">current_mode</span></div>
                 </div>
               </CardContent>
             </Card>
@@ -328,18 +306,18 @@ const Index = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-32 px-4 relative">
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-4xl md:text-6xl font-bold mb-8 leading-tight">
+      <section className="py-32 px-6 relative">
+        <div className="max-w-4xl mx-auto text-center reveal-up">
+          <h2 className="text-section font-extralight mb-8 leading-tight tracking-tighter">
             Ready to Transform<br />
-            Your Creative Vision?
+            Your Business?
           </h2>
-          <p className="text-xl text-muted-foreground mb-12 max-w-2xl mx-auto leading-relaxed">
-            Let's create something extraordinary together. Get in touch to discuss your next AI-powered creative project.
+          <p className="text-xl text-muted-foreground mb-12 max-w-2xl mx-auto leading-relaxed font-light">
+            Join the future of automation. Book a free consultation and see how AI can revolutionize your workflow.
           </p>
           <Button 
             size="lg" 
-            className="bg-transparent border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground font-medium px-12 py-6 text-lg transition-all duration-500 hover:scale-105 animate-glow"
+            className="bg-foreground text-background hover:bg-foreground/90 font-light px-12 py-6 text-lg transition-all duration-500 hover:scale-105 rounded-xl"
           >
             Book A Free Call
             <ArrowRight className="ml-2 h-5 w-5" />
@@ -349,42 +327,48 @@ const Index = () => {
 
       {/* Footer */}
       <footer id="contact" className="relative">
-        <div className="absolute inset-0 bg-gradient-to-t from-card/50 to-transparent"></div>
-        <div className="relative border-t border-primary/10 py-16 px-4">
+        <div className="absolute inset-0 bg-gradient-to-t from-secondary/30 to-transparent"></div>
+        <div className="relative border-t border-primary/5 py-20 px-6">
           <div className="max-w-7xl mx-auto">
             <div className="grid md:grid-cols-4 gap-12">
               <div className="md:col-span-2 space-y-6">
-                <div className="flex items-center space-x-2">
-                  <span className="text-2xl font-bold text-foreground">ANOM</span>
-                  <span className="text-2xl font-bold bg-gradient-to-r from-primary via-accent to-cosmic bg-clip-text text-transparent">Ā</span>
+                <div className="flex items-center space-x-3">
+                  <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-primary/20 to-accent/20 border border-primary/30 backdrop-blur-sm flex items-center justify-center">
+                    <div className="w-4 h-4 rounded-md bg-gradient-to-br from-primary to-accent"></div>
+                  </div>
+                  <span className="text-2xl font-light tracking-tight">Landio</span>
                 </div>
-                <p className="text-muted-foreground max-w-md leading-relaxed">
-                  AI-first creative intelligence for extraordinary visual experiences. Pioneering the Chromatic Nebula approach to visual production.
+                <p className="text-muted-foreground max-w-md leading-relaxed font-light">
+                  AI-first automation partner for modern businesses. Making intelligent workflows accessible to everyone.
                 </p>
               </div>
               
               <div className="space-y-4">
-                <h4 className="font-bold text-foreground">Contact</h4>
-                <div className="space-y-2 text-muted-foreground">
-                  <p className="hover:text-primary cursor-pointer transition-colors">hello@anoma.company</p>
+                <h4 className="font-light text-foreground">Contact</h4>
+                <div className="space-y-3 text-muted-foreground font-light text-sm">
+                  <p className="hover:text-primary cursor-pointer transition-colors">hello@landio.ai</p>
                   <p className="hover:text-primary cursor-pointer transition-colors">+1 (555) 123-4567</p>
                 </div>
               </div>
               
               <div className="space-y-4">
-                <h4 className="font-bold text-foreground">Follow</h4>
+                <h4 className="font-light text-foreground">Follow</h4>
                 <div className="flex space-x-4">
-                  <a href="#" className="text-muted-foreground hover:text-primary transition-colors">Twitter</a>
-                  <a href="#" className="text-muted-foreground hover:text-primary transition-colors">LinkedIn</a>
-                  <a href="#" className="text-muted-foreground hover:text-primary transition-colors">Instagram</a>
+                  <a href="#" className="text-muted-foreground hover:text-primary transition-colors font-light text-sm">Twitter</a>
+                  <a href="#" className="text-muted-foreground hover:text-primary transition-colors font-light text-sm">LinkedIn</a>
+                  <a href="#" className="text-muted-foreground hover:text-primary transition-colors font-light text-sm">GitHub</a>
                 </div>
               </div>
             </div>
             
-            <div className="border-t border-primary/10 mt-12 pt-8 text-center">
-              <p className="text-muted-foreground text-sm">
-                © 2024 The Anomā Company. All rights reserved. | Powered by Chromatic Nebula Technology
+            <div className="flex items-center justify-between pt-12 mt-12 border-t border-primary/5">
+              <p className="text-muted-foreground text-sm font-light">
+                © 2024 Landio. All rights reserved.
               </p>
+              <div className="flex items-center text-muted-foreground text-xs font-light">
+                <span className="mr-2">Made in Framer</span>
+                <div className="w-4 h-4 rounded bg-primary/20"></div>
+              </div>
             </div>
           </div>
         </div>

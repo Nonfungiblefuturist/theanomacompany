@@ -19,26 +19,24 @@ All colors MUST be HSL.
     --popover: 0 0% 10%;
     --popover-foreground: 0 0% 100%;
 
-    /* Plasma Cyan as primary */
+    /* Enhanced color system with RGB variants for better effects */
     --primary: 178 100% 50%;
     --primary-foreground: 0 0% 0%;
+    --primary-rgb: 0, 255, 255;
 
-    /* Darker grey for secondary */
-    --secondary: 0 0% 15%;
+    --secondary: 0 0% 8%;
     --secondary-foreground: 0 0% 100%;
 
-    --muted: 0 0% 15%;
-    --muted-foreground: 0 0% 75%;
+    --muted: 0 0% 12%;
+    --muted-foreground: 0 0% 65%;
 
-    /* Solar Magenta as accent */
     --accent: 315 100% 50%;
     --accent-foreground: 0 0% 100%;
+    --accent-rgb: 255, 0, 255;
 
-    /* Cosmic Violet for special accents */
     --cosmic: 270 100% 44%;
     --cosmic-foreground: 0 0% 100%;
 
-    /* Ion Amber for highlights */
     --amber: 48 100% 50%;
     --amber-foreground: 0 0% 0%;
 
@@ -108,8 +106,27 @@ All colors MUST be HSL.
     @apply border-border;
   }
 
+  /* Enhanced typography and spacing */
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-light;
+    letter-spacing: -0.02em;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    letter-spacing: -0.05em;
+    font-weight: 300;
+  }
+
+  .text-hero {
+    font-size: clamp(3rem, 8vw, 7rem);
+    line-height: 0.9;
+    font-weight: 200;
+  }
+
+  .text-section {
+    font-size: clamp(2rem, 5vw, 4rem);
+    line-height: 1.1;
+    font-weight: 200;
   }
 
   /* Smooth scrolling */
@@ -117,7 +134,55 @@ All colors MUST be HSL.
     scroll-behavior: smooth;
   }
 
-  /* Custom Chromatic Nebula animations */
+  /* Professional blur and glass effects */
+  .glass-card {
+    background: rgba(255, 255, 255, 0.02);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .glass-nav {
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(40px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  }
+
+  /* Smooth reveal animations */
+  .reveal-up {
+    opacity: 0;
+    transform: translateY(30px);
+    animation: reveal-up 0.8s ease-out forwards;
+  }
+
+  .reveal-scale {
+    opacity: 0;
+    transform: scale(0.95);
+    animation: reveal-scale 0.8s ease-out forwards;
+  }
+
+  @keyframes reveal-up {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes reveal-scale {
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  /* Professional hover effects */
+  .hover-lift {
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+
+  .hover-lift:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3), 0 0 60px rgba(var(--primary-rgb), 0.2);
+  }
   .animate-float {
     animation: float 6s ease-in-out infinite;
   }
