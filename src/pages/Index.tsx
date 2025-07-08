@@ -107,7 +107,7 @@ const Index = () => {
       gradient: "from-accent/20 to-cosmic/20"
     },
     {
-      title: "AI Software Solutions",
+      title: "AI Software Solutions", 
       description: "Custom AI tools built for your specific creative needs. Streamline workflows and automate repetitive tasks in your production pipeline.",
       image: "https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=800&h=400&fit=crop",
       features: [
@@ -401,6 +401,9 @@ const Index = () => {
                 <a href="#case-study" className={`text-muted-foreground hover:text-foreground transition-colors ${
                   isScrolled ? 'text-sm' : 'text-base'
                 }`}>Case Studies</a>
+                <a href="#why-us" className={`text-muted-foreground hover:text-foreground transition-colors ${
+                  isScrolled ? 'text-sm' : 'text-base'
+                }`}>Our Expertise</a>
                 <a href="#testimonial" className={`text-muted-foreground hover:text-foreground transition-colors ${
                   isScrolled ? 'text-sm' : 'text-base'
                 }`}>Testimonials</a>
@@ -442,6 +445,7 @@ const Index = () => {
               <a href="#services" className="block py-2 text-muted-foreground hover:text-foreground transition-colors">Services</a>
               <a href="#why-us" className="block py-2 text-muted-foreground hover:text-foreground transition-colors">Why choose us</a>
               <a href="#case-study" className="block py-2 text-muted-foreground hover:text-foreground transition-colors">Case Studies</a>
+              <a href="#why-us" className="block py-2 text-muted-foreground hover:text-foreground transition-colors">Our Expertise</a>
               <a href="#testimonial" className="block py-2 text-muted-foreground hover:text-foreground transition-colors">Testimonials</a>
               <a href="#faq" className="block py-2 text-muted-foreground hover:text-foreground transition-colors">FAQ's</a>
             </div>
@@ -548,7 +552,7 @@ const Index = () => {
               <div className="h-px bg-primary flex-1 max-w-16"></div>
             </div>
             <h2 className="text-4xl md:text-6xl font-light mb-4 leading-tight">
-              What's So Special About The Anoma Company
+              What Makes Us Different
             </h2>
           </div>
           
@@ -604,7 +608,7 @@ const Index = () => {
             </div>
             
             {/* AI Tools & Partners Section */}
-            <div className="mt-20">
+            <div className="mt-12">
               <div className="text-center mb-12">
                 <h4 className="text-2xl md:text-3xl font-light mb-4 leading-tight">
                   Powered by Industry-Leading AI Tools
@@ -917,15 +921,14 @@ const Index = () => {
               <h4 className="font-medium mb-6 text-lg">Follow Us</h4>
               <div className="space-y-3">
                 <a href="https://instagram.com/nonfungible.ai" target="_blank" rel="noopener noreferrer" className="block text-muted-foreground hover:text-foreground transition-colors">Instagram</a>
-                <a href="https://www.youtube.com/@nonfungibleai" target="_blank" rel="noopener noreferrer" className="block text-muted-foreground hover:text-foreground transition-colors">YouTube</a>
+                <a href="https://www.youtube.com/@CTRLplusAI/videos" target="_blank" rel="noopener noreferrer" className="block text-muted-foreground hover:text-foreground transition-colors">YouTube</a>
                 <a href="https://www.linkedin.com/in/surzayon/" target="_blank" rel="noopener noreferrer" className="block text-muted-foreground hover:text-foreground transition-colors">LinkedIn</a>
               </div>
             </div>
           </div>
           
-          <div className="border-t border-border/50 pt-12 flex items-center justify-between">
+          <div className="border-t border-border/50 pt-12 flex justify-center">
             <p className="text-muted-foreground">© 2025 The Anoma Company. All rights reserved.</p>
-            <p className="text-muted-foreground text-sm">Crafted with AI precision</p>
           </div>
         </div>
       </footer>
