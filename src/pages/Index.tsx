@@ -8,6 +8,7 @@ import useEmblaCarousel from 'embla-carousel-react';
 import Autoplay from 'embla-carousel-autoplay';
 import chcaWineLabel from "@/assets/chca-wine-label.jpg";
 import eventFlyer from "@/assets/event-flyer.jpg";
+import skillsHero from "@/assets/skills-hero.jpg";
 
 const Index = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -170,16 +171,12 @@ const Index = () => {
       items: ["Midjourney", "DALL-E 3", "Stable Diffusion", "Adobe Firefly", "Product Photography", "Brand Visuals"]
     },
     {
-      category: "AI Software & Tools",
-      items: ["ChatGPT API", "Claude AI", "Replicate", "ComfyUI", "Automatic1111", "Custom Workflows"]
+      category: "Custom Software Solutions",
+      items: ["ChatGPT API", "Claude AI", "Python", "JavaScript", "API Integration", "Workflow Automation"]
     },
     {
       category: "Creative Software",
       items: ["Adobe Creative Suite", "DaVinci Resolve", "Blender", "Figma", "After Effects", "Premiere Pro"]
-    },
-    {
-      category: "Technical Skills",
-      items: ["Python", "JavaScript", "API Integration", "Workflow Automation", "Brand Integration", "Pipeline Optimization"]
     },
     {
       category: "Specializations",
@@ -540,12 +537,27 @@ const Index = () => {
           {/* Skills Section */}
           <div className="mt-24">
             <div className="text-center mb-16">
-              <h3 className="text-3xl md:text-4xl font-light mb-4 leading-tight">
-                Our Expertise & Skills
+              <div className="flex items-center justify-center gap-4 mb-8">
+                <div className="h-px bg-primary flex-1 max-w-16"></div>
+                <span className="text-sm font-medium text-white">Our Expertise & Skills</span>
+                <div className="h-px bg-primary flex-1 max-w-16"></div>
+              </div>
+              <h3 className="text-4xl md:text-6xl font-light mb-4 leading-tight">
+                Advanced AI Technology Stack
               </h3>
               <p className="text-muted-foreground text-lg leading-relaxed max-w-3xl mx-auto">
                 Comprehensive AI-powered creative capabilities across video, photography, design, and custom software solutions.
               </p>
+            </div>
+            
+            {/* Skills Hero Image */}
+            <div className="mb-16 relative overflow-hidden rounded-lg">
+              <img 
+                src={skillsHero} 
+                alt="AI Technology and Skills" 
+                className="w-full h-64 md:h-80 object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-r from-black/60 to-transparent"></div>
             </div>
             
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
