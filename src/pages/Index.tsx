@@ -516,7 +516,7 @@ const Index = () => {
               <div className="h-px bg-primary flex-1 max-w-16"></div>
             </div>
             <h2 className="text-4xl md:text-6xl font-light mb-4 leading-tight">
-              <span className="text-foreground">Creative Intelligence, Visual Storytelling & Smart Solutions</span>
+              <span className="text-foreground">Creative Intelligence, Visual Storytelling &amp;<br />Smart Solutions</span>
             </h2>
             <p className="text-muted-foreground text-lg leading-relaxed max-w-4xl mx-auto">
               From AI-generated advertising campaigns and product photography to cinematic film production and custom software solutions, we deliver creative excellence that traditionally takes months in just weeks.
@@ -624,26 +624,17 @@ const Index = () => {
                 </p>
               </div>
               
-              <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6">
+              <div className="flex flex-wrap justify-center items-center gap-6 md:gap-8">
                 {aiTools.map((tool, index) => (
                   <a 
                     key={index} 
                     href={tool.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex flex-col items-center group stagger-item cursor-pointer" 
+                    className="text-muted-foreground hover:text-foreground transition-colors duration-300 text-sm md:text-base font-medium whitespace-nowrap"
                     style={{ transitionDelay: `${index * 150}ms` }}
                   >
-                    <div className="w-16 h-16 bg-card/50 border border-border/30 rounded-lg flex items-center justify-center group-hover:border-accent/50 group-hover:bg-accent/10 transition-all duration-500 hover:scale-110 p-2">
-                      <img 
-                        src={tool.logo} 
-                        alt={tool.name} 
-                        className="w-full h-full object-contain"
-                      />
-                    </div>
-                    <span className="text-xs text-muted-foreground mt-2 text-center opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                      {tool.category}
-                    </span>
+                    {tool.name}
                   </a>
                 ))}
               </div>
@@ -942,9 +933,8 @@ const Index = () => {
             </div>
           </div>
           
-          <div className="border-t border-border/50 pt-12 flex items-center justify-between">
-            <p className="text-muted-foreground">© 2025 The Anoma Company. All rights reserved.</p>
-            <p className="text-muted-foreground text-sm">Crafted with AI precision</p>
+          <div className="border-t border-border/50 pt-12 text-center">
+            <p className="text-muted-foreground">© 2025 Anoma Company. All rights reserved.</p>
           </div>
         </div>
       </footer>
