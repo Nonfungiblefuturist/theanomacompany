@@ -122,49 +122,60 @@ const Index = () => {
     {
       step: "01",
       title: "Discovery & Strategy",
-      description: "We analyze your vision, brand identity, and project requirements to develop a tailored AI-powered creative strategy.",
-      icon: "🎯"
+      description: "We analyze your vision, brand identity, and project requirements to develop a tailored AI-powered creative strategy."
     },
     {
       step: "02", 
       title: "AI Model Selection",
-      description: "Our team selects and fine-tunes the most suitable AI models based on your specific creative needs and desired outcomes.",
-      icon: "🤖"
+      description: "Our team selects and fine-tunes the most suitable AI models based on your specific creative needs and desired outcomes."
     },
     {
       step: "03",
       title: "Creative Development",
-      description: "We blend human creativity with AI precision to develop your visual content, ensuring brand consistency and artistic excellence.",
-      icon: "🎨"
+      description: "We blend human creativity with AI precision to develop your visual content, ensuring brand consistency and artistic excellence."
     },
     {
       step: "04",
       title: "Quality Assurance",
-      description: "Every output undergoes rigorous quality checks and refinements to meet cinema-grade standards before delivery.",
-      icon: "✨"
+      description: "Every output undergoes rigorous quality checks and refinements to meet cinema-grade standards before delivery."
     }
   ];
 
   const benefits = [
     {
       title: "Cinema-Grade Quality",
-      description: "Theatre-tested visuals that match traditional filmmaking standards, not just social media content.",
-      icon: "🎬"
+      description: "Theatre-tested visuals that match traditional filmmaking standards, not just social media content."
     },
     {
       title: "Character Consistency", 
-      description: "Maintain the same actor's face across multiple scenes - a breakthrough others struggle with.",
-      icon: "🎭"
+      description: "Maintain the same actor's face across multiple scenes - a breakthrough others struggle with."
     },
     {
       title: "Commercial Licensing",
-      description: "All AI content is fully licensed for commercial use with zero copyright concerns.",
-      icon: "⚖️"
+      description: "All AI content is fully licensed for commercial use with zero copyright concerns."
     },
     {
       title: "Rapid Delivery",
-      description: "Complete projects in weeks, not months, while maintaining professional quality standards.",
-      icon: "⚡"
+      description: "Complete projects in weeks, not months, while maintaining professional quality standards."
+    }
+  ];
+
+  const skills = [
+    {
+      category: "AI Video Production",
+      items: ["Runway Gen-4", "Midjourney", "Character Consistency", "Cinematic Visuals", "AI Storyboarding"]
+    },
+    {
+      category: "AI Photography", 
+      items: ["Product Photography", "Lifestyle Shots", "Brand Visuals", "Commercial Licensing", "Photo Vogue Featured"]
+    },
+    {
+      category: "AI Design & Creative",
+      items: ["Graphic Design", "Brand Identity", "Wine Label Design", "Event Flyers", "Social Media Content"]
+    },
+    {
+      category: "AI Software & Automation",
+      items: ["Custom AI Tools", "Workflow Automation", "Content Generation", "Brand Integration", "Pipeline Optimization"]
     }
   ];
 
@@ -512,11 +523,38 @@ const Index = () => {
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {benefits.map((benefit, index) => (
               <Card key={index} className="border-border/50 hover:border-primary/50 transition-colors text-center p-8 stagger-item card-parallax" style={{ transitionDelay: `${index * 150}ms` }}>
-                <div className="text-5xl mb-6">{benefit.icon}</div>
                 <h3 className="text-xl font-medium mb-4">{benefit.title}</h3>
                 <p className="text-muted-foreground">{benefit.description}</p>
               </Card>
             ))}
+          </div>
+          
+          {/* Skills Section */}
+          <div className="mt-24">
+            <div className="text-center mb-16">
+              <h3 className="text-3xl md:text-4xl font-light mb-4 leading-tight">
+                Our Expertise & Skills
+              </h3>
+              <p className="text-muted-foreground text-lg leading-relaxed max-w-3xl mx-auto">
+                Comprehensive AI-powered creative capabilities across video, photography, design, and custom software solutions.
+              </p>
+            </div>
+            
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+              {skills.map((skillCategory, index) => (
+                <Card key={index} className="border-border/50 hover:border-accent/30 transition-all duration-300 p-6 stagger-item card-parallax hover:scale-105" style={{ transitionDelay: `${index * 100}ms` }}>
+                  <h4 className="text-lg font-medium mb-4 text-accent">{skillCategory.category}</h4>
+                  <div className="space-y-2">
+                    {skillCategory.items.map((skill, i) => (
+                      <div key={i} className="flex items-center gap-2">
+                        <div className="w-1.5 h-1.5 bg-primary rounded-full flex-shrink-0"></div>
+                        <span className="text-sm text-muted-foreground">{skill}</span>
+                      </div>
+                    ))}
+                  </div>
+                </Card>
+              ))}
+            </div>
           </div>
         </div>
       </section>
@@ -539,7 +577,6 @@ const Index = () => {
             {processSteps.map((step, index) => (
               <Card key={index} className="border-border/50 hover:border-primary/50 transition-colors text-center p-8 stagger-item card-parallax" style={{ transitionDelay: `${index * 200}ms` }}>
                 <div className="text-6xl mb-6 text-primary font-light">{step.step}</div>
-                <div className="text-4xl mb-6">{step.icon}</div>
                 <h3 className="text-xl font-medium mb-4">{step.title}</h3>
                 <p className="text-muted-foreground leading-relaxed">{step.description}</p>
               </Card>
