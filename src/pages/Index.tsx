@@ -873,16 +873,17 @@ const Index = () => {
               </div>
             </div>
             
-            <div className="bg-card/50 rounded-lg p-8">
-              <div className="text-center py-20">
-                <h3 className="text-2xl font-medium mb-4">Schedule a Meeting - Book a free consultation to discuss your project</h3>
+            <div className="bg-card/50 rounded-lg p-8 flex flex-col justify-center">
+              <div className="text-center space-y-6">
+                <h3 className="text-xl font-medium leading-relaxed">Schedule a Free Consultation</h3>
+                <p className="text-muted-foreground">Book a meeting to discuss your project and explore how AI can transform your creative process.</p>
                 <Button 
                   asChild
                   size="lg" 
                   className="bg-primary text-primary-foreground hover:bg-primary/90 button-smooth glass-button"
                 >
                   <a href="https://calendly.com/surzayon/the-anoma-company-consultation" target="_blank" rel="noopener noreferrer">
-                    Book Now
+                    Book Free Demo
                   </a>
                 </Button>
               </div>
