@@ -9,6 +9,19 @@ import Autoplay from 'embla-carousel-autoplay';
 import chcaWineLabel from "@/assets/chca-wine-label.jpg";
 import eventFlyer from "@/assets/event-flyer.jpg";
 import skillsHero from "@/assets/skills-hero.jpg";
+import runwayLogo from "@/assets/logos/runway-logo.svg";
+import midjourneyLogo from "@/assets/logos/midjourney-logo.png";
+import claudeLogo from "@/assets/logos/claude-logo.png";
+import stableDiffusionLogo from "@/assets/logos/stable-diffusion-logo.png";
+import pikaLogo from "@/assets/logos/pika-logo.png";
+import elevenlabsLogo from "@/assets/logos/elevenlabs-logo.png";
+import sunoLogo from "@/assets/logos/suno-logo.png";
+import kreaLogo from "@/assets/logos/krea-logo.png";
+import cursorLogo from "@/assets/logos/cursor-logo.png";
+import freepikLogo from "@/assets/logos/freepik-logo.png";
+import klingLogo from "@/assets/logos/kling-logo.png";
+import lumaLogo from "@/assets/logos/luma-logo.png";
+import minimaxLogo from "@/assets/logos/minimax-logo.png";
 
 const Index = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -185,22 +198,19 @@ const Index = () => {
   ];
 
   const aiTools = [
-    { name: "Runway", category: "Video Generation" },
-    { name: "Midjourney", category: "Image Generation" },
-    { name: "Pika Labs", category: "Video Generation" },
-    { name: "Claude", category: "AI Assistant" },
-    { name: "Stable Diffusion", category: "Image Generation" },
-    { name: "Eleven Labs", category: "Voice AI" },
-    { name: "Kling AI", category: "Video Generation" },
-    { name: "Luma AI", category: "3D & Video" },
-    { name: "Suno", category: "Audio Generation" },
-    { name: "KREA", category: "Real-time AI" },
-    { name: "Cursor", category: "AI Coding" },
-    { name: "Letz.AI", category: "AI Platform" },
-    { name: "Freepik", category: "AI Design" },
-    { name: "Convergence", category: "AI Tools" },
-    { name: "Minimax", category: "AI Models" },
-    { name: "Reve", category: "AI Innovation" }
+    { name: "Runway", category: "Video Generation", logo: runwayLogo },
+    { name: "Midjourney", category: "Image Generation", logo: midjourneyLogo },
+    { name: "Pika Labs", category: "Video Generation", logo: pikaLogo },
+    { name: "Claude", category: "AI Assistant", logo: claudeLogo },
+    { name: "Stable Diffusion", category: "Image Generation", logo: stableDiffusionLogo },
+    { name: "Eleven Labs", category: "Voice AI", logo: elevenlabsLogo },
+    { name: "Kling AI", category: "Video Generation", logo: klingLogo },
+    { name: "Luma AI", category: "3D & Video", logo: lumaLogo },
+    { name: "Suno", category: "Audio Generation", logo: sunoLogo },
+    { name: "KREA", category: "Real-time AI", logo: kreaLogo },
+    { name: "Cursor", category: "AI Coding", logo: cursorLogo },
+    { name: "Freepik", category: "AI Design", logo: freepikLogo },
+    { name: "Minimax", category: "AI Models", logo: minimaxLogo }
   ];
 
   const caseStudies = [
@@ -395,9 +405,9 @@ const Index = () => {
                 <a href="#services" className={`text-muted-foreground hover:text-foreground transition-colors ${
                   isScrolled ? 'text-sm' : 'text-base'
                 }`}>Services</a>
-                <a href="#why-us" className={`text-muted-foreground hover:text-foreground transition-colors ${
+                <a href="#our-expertise" className={`text-muted-foreground hover:text-foreground transition-colors ${
                   isScrolled ? 'text-sm' : 'text-base'
-                }`}>Why choose us</a>
+                }`}>Our Expertise</a>
                 <a href="#case-study" className={`text-muted-foreground hover:text-foreground transition-colors ${
                   isScrolled ? 'text-sm' : 'text-base'
                 }`}>Case Studies</a>
@@ -440,7 +450,7 @@ const Index = () => {
           }`}>
             <div className="px-6 py-4 space-y-2">
               <a href="#services" className="block py-2 text-muted-foreground hover:text-foreground transition-colors">Services</a>
-              <a href="#why-us" className="block py-2 text-muted-foreground hover:text-foreground transition-colors">Why choose us</a>
+              <a href="#our-expertise" className="block py-2 text-muted-foreground hover:text-foreground transition-colors">Our Expertise</a>
               <a href="#case-study" className="block py-2 text-muted-foreground hover:text-foreground transition-colors">Case Studies</a>
               <a href="#testimonial" className="block py-2 text-muted-foreground hover:text-foreground transition-colors">Testimonials</a>
               <a href="#faq" className="block py-2 text-muted-foreground hover:text-foreground transition-colors">FAQ's</a>
@@ -539,7 +549,7 @@ const Index = () => {
       </section>
 
       {/* Why Us Section */}
-      <section id="why-us" className="py-24 px-6 bg-muted/20">
+      <section id="our-expertise" className="py-24 px-6 bg-muted/20">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16 animate-fade-up">
             <div className="flex items-center justify-center gap-4 mb-8">
@@ -614,13 +624,15 @@ const Index = () => {
                 </p>
               </div>
               
-              <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-8 gap-6">
+              <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6">
                 {aiTools.map((tool, index) => (
                   <div key={index} className="flex flex-col items-center group stagger-item" style={{ transitionDelay: `${index * 50}ms` }}>
-                    <div className="w-16 h-16 bg-card/50 border border-border/30 rounded-lg flex items-center justify-center group-hover:border-accent/50 group-hover:bg-accent/10 transition-all duration-300 hover:scale-110">
-                      <span className="text-xs font-medium text-muted-foreground group-hover:text-foreground transition-colors text-center leading-tight">
-                        {tool.name}
-                      </span>
+                    <div className="w-16 h-16 bg-card/50 border border-border/30 rounded-lg flex items-center justify-center group-hover:border-accent/50 group-hover:bg-accent/10 transition-all duration-300 hover:scale-110 p-2">
+                      <img 
+                        src={tool.logo} 
+                        alt={tool.name} 
+                        className="w-full h-full object-contain"
+                      />
                     </div>
                     <span className="text-xs text-muted-foreground mt-2 text-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                       {tool.category}
@@ -906,7 +918,7 @@ const Index = () => {
               <h4 className="font-medium mb-6 text-lg">Quick links</h4>
               <div className="space-y-3">
                 <a href="#services" className="block text-muted-foreground hover:text-foreground transition-colors">Our Services</a>
-                <a href="#why-us" className="block text-muted-foreground hover:text-foreground transition-colors">Why Choose Us</a>
+                <a href="#our-expertise" className="block text-muted-foreground hover:text-foreground transition-colors">Our Expertise</a>
                 <a href="#case-study" className="block text-muted-foreground hover:text-foreground transition-colors">Case Studies</a>
                 <a href="#testimonial" className="block text-muted-foreground hover:text-foreground transition-colors">Testimonials</a>
                 <a href="#faq" className="block text-muted-foreground hover:text-foreground transition-colors">FAQ's</a>
