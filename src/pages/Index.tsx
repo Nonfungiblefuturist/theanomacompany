@@ -466,6 +466,14 @@ const Index = () => {
               </a>
             </Button>
           </div>
+          
+          {/* Bouncing scroll indicator */}
+          <div className="pt-16 animate-fade-up-delay-3">
+            <div className="flex flex-col items-center">
+              <ChevronDown className="w-8 h-8 text-white/70 animate-bounce" />
+              <span className="text-white/50 text-sm mt-2">Scroll to explore</span>
+            </div>
+          </div>
         </div>
       </section>
 
