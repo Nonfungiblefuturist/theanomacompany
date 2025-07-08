@@ -9,19 +9,6 @@ import Autoplay from 'embla-carousel-autoplay';
 import chcaWineLabel from "@/assets/chca-wine-label.jpg";
 import eventFlyer from "@/assets/event-flyer.jpg";
 import skillsHero from "@/assets/skills-hero.jpg";
-import runwayLogo from "@/assets/logos/runway-logo.svg";
-import midjourneyLogo from "@/assets/logos/midjourney-logo.png";
-import claudeLogo from "@/assets/logos/claude-logo.png";
-import stableDiffusionLogo from "@/assets/logos/stable-diffusion-logo.png";
-import pikaLogo from "@/assets/logos/pika-logo.png";
-import elevenlabsLogo from "@/assets/logos/elevenlabs-logo.png";
-import sunoLogo from "@/assets/logos/suno-logo.png";
-import kreaLogo from "@/assets/logos/krea-logo.png";
-import cursorLogo from "@/assets/logos/cursor-logo.png";
-import freepikLogo from "@/assets/logos/freepik-logo.png";
-import klingLogo from "@/assets/logos/kling-logo.png";
-import lumaLogo from "@/assets/logos/luma-logo.png";
-import minimaxLogo from "@/assets/logos/minimax-logo.png";
 
 const Index = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -198,19 +185,22 @@ const Index = () => {
   ];
 
   const aiTools = [
-    { name: "Runway", category: "Video Generation", logo: runwayLogo, url: "https://runwayml.com" },
-    { name: "Midjourney", category: "Image Generation", logo: midjourneyLogo, url: "https://midjourney.com" },
-    { name: "Pika Labs", category: "Video Generation", logo: pikaLogo, url: "https://pika.art" },
-    { name: "Claude", category: "AI Assistant", logo: claudeLogo, url: "https://claude.ai" },
-    { name: "Stable Diffusion", category: "Image Generation", logo: stableDiffusionLogo, url: "https://stability.ai" },
-    { name: "Eleven Labs", category: "Voice AI", logo: elevenlabsLogo, url: "https://elevenlabs.io" },
-    { name: "Kling AI", category: "Video Generation", logo: klingLogo, url: "https://klingai.com" },
-    { name: "Luma AI", category: "3D & Video", logo: lumaLogo, url: "https://lumalabs.ai" },
-    { name: "Suno", category: "Audio Generation", logo: sunoLogo, url: "https://suno.ai" },
-    { name: "KREA", category: "Real-time AI", logo: kreaLogo, url: "https://krea.ai" },
-    { name: "Cursor", category: "AI Coding", logo: cursorLogo, url: "https://cursor.sh" },
-    { name: "Freepik", category: "AI Design", logo: freepikLogo, url: "https://freepik.com" },
-    { name: "Minimax", category: "AI Models", logo: minimaxLogo, url: "https://hailuoai.com" }
+    { name: "Runway", category: "Video Generation" },
+    { name: "Midjourney", category: "Image Generation" },
+    { name: "Pika Labs", category: "Video Generation" },
+    { name: "Claude", category: "AI Assistant" },
+    { name: "Stable Diffusion", category: "Image Generation" },
+    { name: "Eleven Labs", category: "Voice AI" },
+    { name: "Kling AI", category: "Video Generation" },
+    { name: "Luma AI", category: "3D & Video" },
+    { name: "Suno", category: "Audio Generation" },
+    { name: "KREA", category: "Real-time AI" },
+    { name: "Cursor", category: "AI Coding" },
+    { name: "Letz.AI", category: "AI Platform" },
+    { name: "Freepik", category: "AI Design" },
+    { name: "Convergence", category: "AI Tools" },
+    { name: "Minimax", category: "AI Models" },
+    { name: "Reve", category: "AI Innovation" }
   ];
 
   const caseStudies = [
@@ -405,9 +395,9 @@ const Index = () => {
                 <a href="#services" className={`text-muted-foreground hover:text-foreground transition-colors ${
                   isScrolled ? 'text-sm' : 'text-base'
                 }`}>Services</a>
-                <a href="#our-expertise" className={`text-muted-foreground hover:text-foreground transition-colors ${
+                <a href="#why-us" className={`text-muted-foreground hover:text-foreground transition-colors ${
                   isScrolled ? 'text-sm' : 'text-base'
-                }`}>Our Expertise</a>
+                }`}>Why choose us</a>
                 <a href="#case-study" className={`text-muted-foreground hover:text-foreground transition-colors ${
                   isScrolled ? 'text-sm' : 'text-base'
                 }`}>Case Studies</a>
@@ -450,7 +440,7 @@ const Index = () => {
           }`}>
             <div className="px-6 py-4 space-y-2">
               <a href="#services" className="block py-2 text-muted-foreground hover:text-foreground transition-colors">Services</a>
-              <a href="#our-expertise" className="block py-2 text-muted-foreground hover:text-foreground transition-colors">Our Expertise</a>
+              <a href="#why-us" className="block py-2 text-muted-foreground hover:text-foreground transition-colors">Why choose us</a>
               <a href="#case-study" className="block py-2 text-muted-foreground hover:text-foreground transition-colors">Case Studies</a>
               <a href="#testimonial" className="block py-2 text-muted-foreground hover:text-foreground transition-colors">Testimonials</a>
               <a href="#faq" className="block py-2 text-muted-foreground hover:text-foreground transition-colors">FAQ's</a>
@@ -516,7 +506,7 @@ const Index = () => {
               <div className="h-px bg-primary flex-1 max-w-16"></div>
             </div>
             <h2 className="text-4xl md:text-6xl font-light mb-4 leading-tight">
-              <span className="text-foreground">Creative Intelligence, Visual Storytelling &amp;<br />Smart Solutions</span>
+              <span className="text-foreground">Creative Intelligence, Visual Storytelling & Smart Solutions</span>
             </h2>
             <p className="text-muted-foreground text-lg leading-relaxed max-w-4xl mx-auto">
               From AI-generated advertising campaigns and product photography to cinematic film production and custom software solutions, we deliver creative excellence that traditionally takes months in just weeks.
@@ -549,7 +539,7 @@ const Index = () => {
       </section>
 
       {/* Why Us Section */}
-      <section id="our-expertise" className="py-24 px-6 bg-muted/20">
+      <section id="why-us" className="py-24 px-6 bg-muted/20">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16 animate-fade-up">
             <div className="flex items-center justify-center gap-4 mb-8">
@@ -558,13 +548,13 @@ const Index = () => {
               <div className="h-px bg-primary flex-1 max-w-16"></div>
             </div>
             <h2 className="text-4xl md:text-6xl font-light mb-4 leading-tight">
-              What Makes Us Different
+              What's So Special About The Anoma Company
             </h2>
           </div>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {benefits.map((benefit, index) => (
-              <Card key={index} className="border-border/50 hover:border-primary/50 transition-colors text-center p-8 stagger-item card-parallax" style={{ transitionDelay: `${index * 250}ms` }}>
+              <Card key={index} className="border-border/50 hover:border-primary/50 transition-colors text-center p-8 stagger-item card-parallax" style={{ transitionDelay: `${index * 150}ms` }}>
                 <h3 className="text-xl font-medium mb-4">{benefit.title}</h3>
                 <p className="text-muted-foreground">{benefit.description}</p>
               </Card>
@@ -599,7 +589,7 @@ const Index = () => {
             
             <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-8">
               {skills.map((skillCategory, index) => (
-                <Card key={index} className="border-border/50 hover:border-accent/30 transition-all duration-500 p-6 stagger-item card-parallax hover:scale-105" style={{ transitionDelay: `${index * 200}ms` }}>
+                <Card key={index} className="border-border/50 hover:border-accent/30 transition-all duration-300 p-6 stagger-item card-parallax hover:scale-105" style={{ transitionDelay: `${index * 100}ms` }}>
                   <h4 className="text-lg font-medium mb-4 text-accent">{skillCategory.category}</h4>
                   <div className="space-y-2">
                     {skillCategory.items.map((skill, i) => (
@@ -624,18 +614,18 @@ const Index = () => {
                 </p>
               </div>
               
-              <div className="flex flex-wrap justify-center items-center gap-6 md:gap-8">
+              <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-8 gap-6">
                 {aiTools.map((tool, index) => (
-                  <a 
-                    key={index} 
-                    href={tool.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-muted-foreground hover:text-foreground transition-colors duration-300 text-sm md:text-base font-medium whitespace-nowrap"
-                    style={{ transitionDelay: `${index * 150}ms` }}
-                  >
-                    {tool.name}
-                  </a>
+                  <div key={index} className="flex flex-col items-center group stagger-item" style={{ transitionDelay: `${index * 50}ms` }}>
+                    <div className="w-16 h-16 bg-card/50 border border-border/30 rounded-lg flex items-center justify-center group-hover:border-accent/50 group-hover:bg-accent/10 transition-all duration-300 hover:scale-110">
+                      <span className="text-xs font-medium text-muted-foreground group-hover:text-foreground transition-colors text-center leading-tight">
+                        {tool.name}
+                      </span>
+                    </div>
+                    <span className="text-xs text-muted-foreground mt-2 text-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                      {tool.category}
+                    </span>
+                  </div>
                 ))}
               </div>
             </div>
@@ -916,7 +906,7 @@ const Index = () => {
               <h4 className="font-medium mb-6 text-lg">Quick links</h4>
               <div className="space-y-3">
                 <a href="#services" className="block text-muted-foreground hover:text-foreground transition-colors">Our Services</a>
-                <a href="#our-expertise" className="block text-muted-foreground hover:text-foreground transition-colors">Our Expertise</a>
+                <a href="#why-us" className="block text-muted-foreground hover:text-foreground transition-colors">Why Choose Us</a>
                 <a href="#case-study" className="block text-muted-foreground hover:text-foreground transition-colors">Case Studies</a>
                 <a href="#testimonial" className="block text-muted-foreground hover:text-foreground transition-colors">Testimonials</a>
                 <a href="#faq" className="block text-muted-foreground hover:text-foreground transition-colors">FAQ's</a>
@@ -933,8 +923,9 @@ const Index = () => {
             </div>
           </div>
           
-          <div className="border-t border-border/50 pt-12 text-center">
-            <p className="text-muted-foreground">© 2025 Anoma Company. All rights reserved.</p>
+          <div className="border-t border-border/50 pt-12 flex items-center justify-between">
+            <p className="text-muted-foreground">© 2025 The Anoma Company. All rights reserved.</p>
+            <p className="text-muted-foreground text-sm">Crafted with AI precision</p>
           </div>
         </div>
       </footer>
