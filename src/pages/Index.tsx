@@ -253,7 +253,7 @@ const Index = () => {
   const faqs = [
     {
       question: "Can AI-made videos match traditional film quality?",
-      answer: "Yes, they can. Our work has been tested on commercial theatre screens. However, the quality depends on the complexity of the video."
+      answer: "AI-generated videos can achieve professional quality suitable for commercial use. The final result depends on the project requirements and complexity."
     },
     {
       question: "Are there copyright issues with AI content?",
