@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { ArrowRight, Menu, X, Phone, Mail, ChevronDown, ExternalLink, Star, ArrowUp } from "lucide-react";
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 import YouTubeEmbed from "@/components/YouTubeEmbed";
 import useEmblaCarousel from 'embla-carousel-react';
 import Autoplay from 'embla-carousel-autoplay';
@@ -929,7 +930,43 @@ const Index = () => {
           </div>
           
           <div className="border-t border-border/50 pt-12 flex justify-center">
-            <p className="text-muted-foreground">© 2025 The Anoma Company. All rights reserved.</p>
+            <Dialog>
+              <DialogTrigger asChild>
+                <button className="text-muted-foreground hover:text-foreground transition-colors cursor-pointer">
+                  © 2025 The Anoma Company. All rights reserved.
+                </button>
+              </DialogTrigger>
+              <DialogContent className="max-w-4xl max-h-[80vh] overflow-y-auto">
+                <DialogHeader>
+                  <DialogTitle>Copyright & Legal Notice</DialogTitle>
+                </DialogHeader>
+                <div className="space-y-6 text-sm leading-relaxed">
+                  <div className="text-center font-medium">
+                    © 2025 The Anoma Company. All rights reserved.
+                  </div>
+                  
+                  <div className="space-y-4">
+                    <p>
+                      All content on this website, including text, graphics, logos, images, videos, audio, software, and other materials (collectively, the "Content") are the exclusive property of The Anoma Company or its licensors and are protected by copyright, trademark, and other intellectual property laws. You may access and use the Content solely for your personal, non-commercial use.
+                    </p>
+                    
+                    <p>
+                      Any distribution, modification, public display, or commercial use of the Content without the prior written consent of The Anoma Company is strictly prohibited and may result in legal action.
+                    </p>
+                    
+                    <div className="border-t border-border pt-4">
+                      <h4 className="font-medium mb-2">Additional Information:</h4>
+                      <ul className="space-y-1 text-xs text-muted-foreground">
+                        <li>• This notice applies to all pages and content on this website</li>
+                        <li>• For licensing inquiries, please contact us directly</li>
+                        <li>• All AI-generated content is fully licensed for our commercial use</li>
+                        <li>• This copyright notice is updated annually and governs all interactions with our website</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </DialogContent>
+            </Dialog>
           </div>
         </div>
       </footer>
