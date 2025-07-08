@@ -560,7 +560,7 @@ const Index = () => {
               <div className="absolute inset-0 bg-gradient-to-r from-black/60 to-transparent"></div>
             </div>
             
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-8">
               {skills.map((skillCategory, index) => (
                 <Card key={index} className="border-border/50 hover:border-accent/30 transition-all duration-300 p-6 stagger-item card-parallax hover:scale-105" style={{ transitionDelay: `${index * 100}ms` }}>
                   <h4 className="text-lg font-medium mb-4 text-accent">{skillCategory.category}</h4>
