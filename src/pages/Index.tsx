@@ -163,19 +163,27 @@ const Index = () => {
   const skills = [
     {
       category: "AI Video Production",
-      items: ["Runway Gen-4", "Midjourney", "Character Consistency", "Cinematic Visuals", "AI Storyboarding"]
+      items: ["Runway Gen-4", "Midjourney", "Pika Labs", "Stable Video Diffusion", "Character Consistency", "Cinematic Visuals"]
     },
     {
-      category: "AI Photography", 
-      items: ["Product Photography", "Lifestyle Shots", "Brand Visuals", "Commercial Licensing", "Photo Vogue Featured"]
+      category: "AI Photography & Design", 
+      items: ["Midjourney", "DALL-E 3", "Stable Diffusion", "Adobe Firefly", "Product Photography", "Brand Visuals"]
     },
     {
-      category: "AI Design & Creative",
-      items: ["Graphic Design", "Brand Identity", "Wine Label Design", "Event Flyers", "Social Media Content"]
+      category: "AI Software & Tools",
+      items: ["ChatGPT API", "Claude AI", "Replicate", "ComfyUI", "Automatic1111", "Custom Workflows"]
     },
     {
-      category: "AI Software & Automation",
-      items: ["Custom AI Tools", "Workflow Automation", "Content Generation", "Brand Integration", "Pipeline Optimization"]
+      category: "Creative Software",
+      items: ["Adobe Creative Suite", "DaVinci Resolve", "Blender", "Figma", "After Effects", "Premiere Pro"]
+    },
+    {
+      category: "Technical Skills",
+      items: ["Python", "JavaScript", "API Integration", "Workflow Automation", "Brand Integration", "Pipeline Optimization"]
+    },
+    {
+      category: "Specializations",
+      items: ["Character Consistency", "Commercial Licensing", "Photo Vogue Featured", "Cinema-Grade Quality", "Rapid Delivery"]
     }
   ];
 
@@ -540,7 +548,7 @@ const Index = () => {
               </p>
             </div>
             
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
               {skills.map((skillCategory, index) => (
                 <Card key={index} className="border-border/50 hover:border-accent/30 transition-all duration-300 p-6 stagger-item card-parallax hover:scale-105" style={{ transitionDelay: `${index * 100}ms` }}>
                   <h4 className="text-lg font-medium mb-4 text-accent">{skillCategory.category}</h4>
