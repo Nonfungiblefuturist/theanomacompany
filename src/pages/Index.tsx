@@ -184,9 +184,28 @@ const Index = () => {
     }
   ];
 
+  const aiTools = [
+    { name: "Runway", category: "Video Generation" },
+    { name: "Midjourney", category: "Image Generation" },
+    { name: "Pika Labs", category: "Video Generation" },
+    { name: "Claude", category: "AI Assistant" },
+    { name: "Stable Diffusion", category: "Image Generation" },
+    { name: "Eleven Labs", category: "Voice AI" },
+    { name: "Kling AI", category: "Video Generation" },
+    { name: "Luma AI", category: "3D & Video" },
+    { name: "Suno", category: "Audio Generation" },
+    { name: "KREA", category: "Real-time AI" },
+    { name: "Cursor", category: "AI Coding" },
+    { name: "Letz.AI", category: "AI Platform" },
+    { name: "Freepik", category: "AI Design" },
+    { name: "Convergence", category: "AI Tools" },
+    { name: "Minimax", category: "AI Models" },
+    { name: "Reve", category: "AI Innovation" }
+  ];
+
   const caseStudies = [
     {
-      title: "How I Made This Using AI 🤯 | Runway Gen-4 + Midjourney + More",
+      title: "How I Made This Using AI | Runway Gen-4 + Midjourney + More",
       description: "This entire video was crafted using AI from start to finish — from the visuals to the story, even down to the editing workflow. A complete demonstration of AI-powered video production capabilities.",
       youtubeId: "XlaBgDLMuGQ",
       type: "Ad Spec",
@@ -582,6 +601,33 @@ const Index = () => {
                   </div>
                 </Card>
               ))}
+            </div>
+            
+            {/* AI Tools & Partners Section */}
+            <div className="mt-20">
+              <div className="text-center mb-12">
+                <h4 className="text-2xl md:text-3xl font-light mb-4 leading-tight">
+                  Powered by Industry-Leading AI Tools
+                </h4>
+                <p className="text-muted-foreground leading-relaxed max-w-2xl mx-auto">
+                  We work with the most advanced AI platforms and tools to deliver cutting-edge creative solutions.
+                </p>
+              </div>
+              
+              <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-8 gap-6">
+                {aiTools.map((tool, index) => (
+                  <div key={index} className="flex flex-col items-center group stagger-item" style={{ transitionDelay: `${index * 50}ms` }}>
+                    <div className="w-16 h-16 bg-card/50 border border-border/30 rounded-lg flex items-center justify-center group-hover:border-accent/50 group-hover:bg-accent/10 transition-all duration-300 hover:scale-110">
+                      <span className="text-xs font-medium text-muted-foreground group-hover:text-foreground transition-colors text-center leading-tight">
+                        {tool.name}
+                      </span>
+                    </div>
+                    <span className="text-xs text-muted-foreground mt-2 text-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                      {tool.category}
+                    </span>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </div>
