@@ -198,19 +198,19 @@ const Index = () => {
   ];
 
   const aiTools = [
-    { name: "Runway", category: "Video Generation", logo: runwayLogo },
-    { name: "Midjourney", category: "Image Generation", logo: midjourneyLogo },
-    { name: "Pika Labs", category: "Video Generation", logo: pikaLogo },
-    { name: "Claude", category: "AI Assistant", logo: claudeLogo },
-    { name: "Stable Diffusion", category: "Image Generation", logo: stableDiffusionLogo },
-    { name: "Eleven Labs", category: "Voice AI", logo: elevenlabsLogo },
-    { name: "Kling AI", category: "Video Generation", logo: klingLogo },
-    { name: "Luma AI", category: "3D & Video", logo: lumaLogo },
-    { name: "Suno", category: "Audio Generation", logo: sunoLogo },
-    { name: "KREA", category: "Real-time AI", logo: kreaLogo },
-    { name: "Cursor", category: "AI Coding", logo: cursorLogo },
-    { name: "Freepik", category: "AI Design", logo: freepikLogo },
-    { name: "Minimax", category: "AI Models", logo: minimaxLogo }
+    { name: "Runway", category: "Video Generation", logo: runwayLogo, url: "https://runwayml.com" },
+    { name: "Midjourney", category: "Image Generation", logo: midjourneyLogo, url: "https://midjourney.com" },
+    { name: "Pika Labs", category: "Video Generation", logo: pikaLogo, url: "https://pika.art" },
+    { name: "Claude", category: "AI Assistant", logo: claudeLogo, url: "https://claude.ai" },
+    { name: "Stable Diffusion", category: "Image Generation", logo: stableDiffusionLogo, url: "https://stability.ai" },
+    { name: "Eleven Labs", category: "Voice AI", logo: elevenlabsLogo, url: "https://elevenlabs.io" },
+    { name: "Kling AI", category: "Video Generation", logo: klingLogo, url: "https://klingai.com" },
+    { name: "Luma AI", category: "3D & Video", logo: lumaLogo, url: "https://lumalabs.ai" },
+    { name: "Suno", category: "Audio Generation", logo: sunoLogo, url: "https://suno.ai" },
+    { name: "KREA", category: "Real-time AI", logo: kreaLogo, url: "https://krea.ai" },
+    { name: "Cursor", category: "AI Coding", logo: cursorLogo, url: "https://cursor.sh" },
+    { name: "Freepik", category: "AI Design", logo: freepikLogo, url: "https://freepik.com" },
+    { name: "Minimax", category: "AI Models", logo: minimaxLogo, url: "https://hailuoai.com" }
   ];
 
   const caseStudies = [
@@ -558,13 +558,13 @@ const Index = () => {
               <div className="h-px bg-primary flex-1 max-w-16"></div>
             </div>
             <h2 className="text-4xl md:text-6xl font-light mb-4 leading-tight">
-              What's So Special About The Anoma Company
+              What Makes Us Different
             </h2>
           </div>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {benefits.map((benefit, index) => (
-              <Card key={index} className="border-border/50 hover:border-primary/50 transition-colors text-center p-8 stagger-item card-parallax" style={{ transitionDelay: `${index * 150}ms` }}>
+              <Card key={index} className="border-border/50 hover:border-primary/50 transition-colors text-center p-8 stagger-item card-parallax" style={{ transitionDelay: `${index * 250}ms` }}>
                 <h3 className="text-xl font-medium mb-4">{benefit.title}</h3>
                 <p className="text-muted-foreground">{benefit.description}</p>
               </Card>
@@ -599,7 +599,7 @@ const Index = () => {
             
             <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-8">
               {skills.map((skillCategory, index) => (
-                <Card key={index} className="border-border/50 hover:border-accent/30 transition-all duration-300 p-6 stagger-item card-parallax hover:scale-105" style={{ transitionDelay: `${index * 100}ms` }}>
+                <Card key={index} className="border-border/50 hover:border-accent/30 transition-all duration-500 p-6 stagger-item card-parallax hover:scale-105" style={{ transitionDelay: `${index * 200}ms` }}>
                   <h4 className="text-lg font-medium mb-4 text-accent">{skillCategory.category}</h4>
                   <div className="space-y-2">
                     {skillCategory.items.map((skill, i) => (
@@ -626,18 +626,25 @@ const Index = () => {
               
               <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6">
                 {aiTools.map((tool, index) => (
-                  <div key={index} className="flex flex-col items-center group stagger-item" style={{ transitionDelay: `${index * 50}ms` }}>
-                    <div className="w-16 h-16 bg-card/50 border border-border/30 rounded-lg flex items-center justify-center group-hover:border-accent/50 group-hover:bg-accent/10 transition-all duration-300 hover:scale-110 p-2">
+                  <a 
+                    key={index} 
+                    href={tool.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex flex-col items-center group stagger-item cursor-pointer" 
+                    style={{ transitionDelay: `${index * 150}ms` }}
+                  >
+                    <div className="w-16 h-16 bg-card/50 border border-border/30 rounded-lg flex items-center justify-center group-hover:border-accent/50 group-hover:bg-accent/10 transition-all duration-500 hover:scale-110 p-2">
                       <img 
                         src={tool.logo} 
                         alt={tool.name} 
                         className="w-full h-full object-contain"
                       />
                     </div>
-                    <span className="text-xs text-muted-foreground mt-2 text-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <span className="text-xs text-muted-foreground mt-2 text-center opacity-0 group-hover:opacity-100 transition-opacity duration-500">
                       {tool.category}
                     </span>
-                  </div>
+                  </a>
                 ))}
               </div>
             </div>
