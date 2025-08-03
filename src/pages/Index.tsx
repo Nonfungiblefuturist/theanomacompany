@@ -857,7 +857,14 @@ const Index = () => {
                     <Phone className="w-8 h-8 text-primary" />
                     <div>
                       <p className="font-medium mb-1">Give us a call:</p>
-                      <p className="text-muted-foreground">+1 (647) 564 8106</p>
+                      <a 
+                        href="https://wa.me/16475648106" 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="text-muted-foreground hover:text-primary transition-colors underline cursor-pointer"
+                      >
+                        +1 (647) 564 8106
+                      </a>
                     </div>
                   </div>
                 </Card>
