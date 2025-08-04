@@ -10,6 +10,7 @@ import Autoplay from 'embla-carousel-autoplay';
 import chcaWineLabel from "@/assets/chca-wine-label.jpg";
 import eventFlyer from "@/assets/event-flyer.jpg";
 import skillsHero from "@/assets/skills-hero.jpg";
+import animatedHeroBg from "@/assets/animated-hero-bg.jpg";
 
 const Index = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -455,14 +456,15 @@ const Index = () => {
       </nav>
 
       {/* Hero Section */}
-      <section className="min-h-screen flex items-center justify-center px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 pt-20 relative">
+      <section className="min-h-screen flex items-center justify-center px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 pt-20 relative overflow-hidden">
         <div 
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat animate-slow-float"
           style={{
-            backgroundImage: `url('/lovable-uploads/c40680e6-8093-4681-8fcf-e6b6356d9ef2.png')`
+            backgroundImage: `url(${animatedHeroBg})`,
+            backgroundSize: '110%',
           }}
         ></div>
-        <div className="absolute inset-0 bg-black/40"></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-black/60 via-black/40 to-black/60 animate-pulse-subtle"></div>
         
         <div className="max-w-5xl mx-auto text-center space-y-4 relative z-10">
           <div className="space-y-4">
