@@ -374,7 +374,7 @@ const Index = () => {
           ? 'bg-background/98 backdrop-blur-md border-b border-border/20 shadow-lg shadow-black/10' 
           : 'bg-background/95 backdrop-blur-sm border-b border-border/10'
       }`}>
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16">
           <div className={`flex items-center justify-between transition-all duration-500 ease-out ${
             isScrolled ? 'h-16' : 'h-20'
           }`}>
@@ -442,7 +442,7 @@ const Index = () => {
           <div className={`md:hidden bg-background/98 backdrop-blur-md border-t border-border/20 transition-all duration-300 ease-out ${
             isScrolled ? 'shadow-lg' : ''
           }`}>
-            <div className="px-6 py-4 space-y-2">
+            <div className="px-4 sm:px-6 py-4 space-y-2">
               <a href="#services" className="block py-2 text-muted-foreground hover:text-foreground transition-colors">Services</a>
               <a href="#why-us" className="block py-2 text-muted-foreground hover:text-foreground transition-colors">Why choose us</a>
               <a href="#case-study" className="block py-2 text-muted-foreground hover:text-foreground transition-colors">Case Studies</a>
@@ -455,7 +455,7 @@ const Index = () => {
       </nav>
 
       {/* Hero Section */}
-      <section className="min-h-screen flex items-center justify-center px-6 pt-20 relative">
+      <section className="min-h-screen flex items-center justify-center px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 pt-20 relative">
         <div 
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{
@@ -502,7 +502,7 @@ const Index = () => {
       </section>
 
       {/* Services Section */}
-      <section id="services" className="py-24 px-6">
+      <section id="services" className="py-24 px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16 animate-fade-up">
             <div className="flex items-center justify-center gap-4 mb-8">
@@ -544,7 +544,7 @@ const Index = () => {
       </section>
 
       {/* Why Us Section */}
-      <section id="why-us" className="py-24 px-6 bg-muted/20">
+      <section id="why-us" className="py-24 px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 bg-muted/20">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16 animate-fade-up">
             <div className="flex items-center justify-center gap-4 mb-8">
@@ -639,7 +639,7 @@ const Index = () => {
       </section>
 
       {/* Our Process Section */}
-      <section id="our-process" className="py-24 px-6 bg-muted/20">
+      <section id="our-process" className="py-24 px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 bg-muted/20">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16 animate-fade-up">
             <div className="flex items-center justify-center gap-4 mb-8">
@@ -665,7 +665,7 @@ const Index = () => {
       </section>
 
       {/* Case Studies Section */}
-      <section id="case-study" className="py-24 px-6">
+      <section id="case-study" className="py-24 px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16 animate-fade-up">
             <div className="flex items-center justify-center gap-4 mb-8">
@@ -727,7 +727,7 @@ const Index = () => {
       </section>
 
       {/* Testimonials Section */}
-      <section id="testimonial" className="py-24 px-6 bg-muted/20">
+      <section id="testimonial" className="py-24 px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 bg-muted/20">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <div className="flex items-center justify-center gap-4 mb-8">
@@ -803,7 +803,7 @@ const Index = () => {
       </section>
 
       {/* FAQ Section */}
-      <section id="faq" className="py-24 px-6">
+      <section id="faq" className="py-24 px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-16">
             <div className="flex items-center justify-center gap-4 mb-8">
@@ -836,7 +836,7 @@ const Index = () => {
       </section>
 
       {/* Contact Section */}
-      <section id="contact-us" className="py-24 px-6 bg-muted/20">
+      <section id="contact-us" className="py-24 px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 bg-muted/20">
         <div className="max-w-7xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-16">
             <div>
@@ -901,7 +901,7 @@ const Index = () => {
       </section>
 
       {/* Footer */}
-      <footer className="border-t border-border/50 py-16 px-6">
+      <footer className="border-t border-border/50 py-16 px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16">
         <div className="max-w-7xl mx-auto">
           <div className="grid md:grid-cols-4 gap-16 mb-16 animate-fade-up">
             <div className="md:col-span-2 flex flex-col items-center text-center">
