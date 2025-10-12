@@ -545,8 +545,70 @@ const Index = () => {
         </div>
       </section>
 
+      {/* Case Studies Section */}
+      <section id="case-study" className="py-24 px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 bg-muted/20">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-16 animate-fade-up">
+            <div className="flex items-center justify-center gap-4 mb-8">
+              <div className="h-px bg-primary flex-1 max-w-16"></div>
+              <span className="text-sm font-medium text-white">Case Studies</span>
+              <div className="h-px bg-primary flex-1 max-w-16"></div>
+            </div>
+            <h2 className="text-4xl md:text-6xl font-light mb-4 leading-tight">
+              Results That Inspire
+            </h2>
+          </div>
+          
+          <div className="space-y-12">
+            {caseStudies.map((study, index) => (
+              <Card key={index} className="border-border/50 hover:border-accent/30 transition-colors overflow-hidden scroll-reveal card-parallax" style={{ transitionDelay: `${index * 250}ms` }}>
+                <div className="grid lg:grid-cols-2 gap-0">
+                  <div className="h-80 lg:h-auto">
+                    {study.youtubeId ? (
+                      <YouTubeEmbed 
+                        videoId={study.youtubeId} 
+                        title={study.title}
+                        className="h-full"
+                      />
+                    ) : (
+                      <div 
+                        className="h-full bg-cover bg-center cursor-pointer"
+                        style={{
+                          backgroundImage: `url('${study.image}')`
+                        }}
+                        onClick={() => study.imageLink && window.open(study.imageLink, '_blank')}
+                      ></div>
+                    )}
+                  </div>
+                  <CardContent className="p-12 flex flex-col justify-center">
+                    <div className="flex items-center gap-2 mb-4">
+                      <span className="text-sm font-medium text-accent px-3 py-1 bg-accent/10 rounded-full">
+                        {study.type}
+                      </span>
+                    </div>
+                    <h3 className="text-2xl font-medium mb-6">{study.title}</h3>
+                    <p className="text-muted-foreground text-lg leading-relaxed mb-8">
+                      {study.description}
+                    </p>
+                    <Button 
+                      asChild 
+                      className="w-fit bg-cosmic text-cosmic-foreground hover:bg-cosmic/90 button-smooth"
+                    >
+                      <a href={study.link} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
+                        View Project
+                        <ExternalLink className="w-4 h-4" />
+                      </a>
+                    </Button>
+                  </CardContent>
+                </div>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Why Us Section */}
-      <section id="why-us" className="py-24 px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 bg-muted/20">
+      <section id="why-us" className="py-24 px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16 animate-fade-up">
             <div className="flex items-center justify-center gap-4 mb-8">
@@ -666,70 +728,8 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Case Studies Section */}
-      <section id="case-study" className="py-24 px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16 animate-fade-up">
-            <div className="flex items-center justify-center gap-4 mb-8">
-              <div className="h-px bg-primary flex-1 max-w-16"></div>
-              <span className="text-sm font-medium text-white">Case Studies</span>
-              <div className="h-px bg-primary flex-1 max-w-16"></div>
-            </div>
-            <h2 className="text-4xl md:text-6xl font-light mb-4 leading-tight">
-              Results That Inspire
-            </h2>
-          </div>
-          
-          <div className="space-y-12">
-            {caseStudies.map((study, index) => (
-              <Card key={index} className="border-border/50 hover:border-accent/30 transition-colors overflow-hidden scroll-reveal card-parallax" style={{ transitionDelay: `${index * 250}ms` }}>
-                <div className="grid lg:grid-cols-2 gap-0">
-                  <div className="h-80 lg:h-auto">
-                    {study.youtubeId ? (
-                      <YouTubeEmbed 
-                        videoId={study.youtubeId} 
-                        title={study.title}
-                        className="h-full"
-                      />
-                    ) : (
-                      <div 
-                        className="h-full bg-cover bg-center cursor-pointer"
-                        style={{
-                          backgroundImage: `url('${study.image}')`
-                        }}
-                        onClick={() => study.imageLink && window.open(study.imageLink, '_blank')}
-                      ></div>
-                    )}
-                  </div>
-                  <CardContent className="p-12 flex flex-col justify-center">
-                    <div className="flex items-center gap-2 mb-4">
-                      <span className="text-sm font-medium text-accent px-3 py-1 bg-accent/10 rounded-full">
-                        {study.type}
-                      </span>
-                    </div>
-                    <h3 className="text-2xl font-medium mb-6">{study.title}</h3>
-                    <p className="text-muted-foreground text-lg leading-relaxed mb-8">
-                      {study.description}
-                    </p>
-                    <Button 
-                      asChild 
-                      className="w-fit bg-cosmic text-cosmic-foreground hover:bg-cosmic/90 button-smooth"
-                    >
-                      <a href={study.link} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
-                        View Project
-                        <ExternalLink className="w-4 h-4" />
-                      </a>
-                    </Button>
-                  </CardContent>
-                </div>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* Testimonials Section */}
-      <section id="testimonial" className="py-24 px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 bg-muted/20">
+      <section id="testimonial" className="py-24 px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <div className="flex items-center justify-center gap-4 mb-8">
