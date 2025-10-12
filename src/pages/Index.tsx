@@ -211,7 +211,7 @@ const Index = () => {
       description: "A captivating AI-generated short film showcasing the power of artificial intelligence in cinematic storytelling. Created using cutting-edge AI video generation tools to deliver an engaging narrative experience.",
       type: "AI Short Film",
       link: "https://www.instagram.com/reel/DPdUvTuDoAi/?igsh=ZGVhYnhkOXc5dWJx",
-      image: "/lovable-uploads/instagram-short-film.png"
+      image: "/lovable-uploads/ai-short-film-wallet.png"
     },
     {
       title: "How I Made This Using AI | Runway Gen-4 + Midjourney + More",
