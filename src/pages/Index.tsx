@@ -503,50 +503,8 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Services Section */}
-      <section id="services" className="py-24 px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16 animate-fade-up">
-            <div className="flex items-center justify-center gap-4 mb-8">
-              <div className="h-px bg-primary flex-1 max-w-16"></div>
-              <span className="text-sm font-medium text-white">Our Services</span>
-              <div className="h-px bg-primary flex-1 max-w-16"></div>
-            </div>
-            <h2 className="text-4xl md:text-6xl font-light mb-4 leading-tight">
-              <span className="text-foreground">Creative Intelligence, Visual Storytelling & Smart Solutions</span>
-            </h2>
-            <p className="text-muted-foreground text-lg leading-relaxed max-w-4xl mx-auto">
-              From AI-generated advertising campaigns and product photography to cinematic film production and custom software solutions, we deliver creative excellence that traditionally takes months in just weeks.
-            </p>
-          </div>
-          
-           <div className="grid lg:grid-cols-3 gap-8">
-            {services.map((service, index) => (
-              <Card key={index} className={`border-border/50 hover:border-accent/30 transition-all duration-500 overflow-hidden group card-parallax scroll-reveal bg-gradient-to-br ${service.gradient} hover:scale-105 hover:shadow-2xl hover:shadow-primary/20 liquid-hover`} style={{ transitionDelay: `${index * 100}ms` }}>
-                <CardContent className="p-8 relative">
-                  <h3 className="text-2xl font-medium mb-4 group-hover:text-primary transition-colors duration-300">{service.title}</h3>
-                  <p className="text-muted-foreground mb-6 group-hover:text-foreground/90 transition-colors duration-300">{service.description}</p>
-                  <div className="space-y-3">
-                    {service.features.map((feature, i) => (
-                      <div key={i} className="flex items-start gap-3 group-hover:translate-x-1 transition-transform duration-300" style={{ transitionDelay: `${i * 50}ms` }}>
-                        <ArrowRight className={`w-4 h-4 mt-0.5 flex-shrink-0 transition-all duration-300 ${
-                          index === 0 ? 'text-amber group-hover:text-amber/80' : 
-                          index === 1 ? 'text-accent group-hover:text-accent/80' : 
-                          'text-cosmic group-hover:text-cosmic/80'
-                        }`} />
-                        <span className="text-sm group-hover:text-foreground transition-colors duration-300">{feature}</span>
-                      </div>
-                    ))}
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* Case Studies Section */}
-      <section id="case-study" className="py-24 px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 bg-muted/20">
+      <section id="case-study" className="py-24 px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16 animate-fade-up">
             <div className="flex items-center justify-center gap-4 mb-8">
@@ -601,6 +559,48 @@ const Index = () => {
                     </Button>
                   </CardContent>
                 </div>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Services Section */}
+      <section id="services" className="py-24 px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 bg-muted/20">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-16 animate-fade-up">
+            <div className="flex items-center justify-center gap-4 mb-8">
+              <div className="h-px bg-primary flex-1 max-w-16"></div>
+              <span className="text-sm font-medium text-white">Our Services</span>
+              <div className="h-px bg-primary flex-1 max-w-16"></div>
+            </div>
+            <h2 className="text-4xl md:text-6xl font-light mb-4 leading-tight">
+              <span className="text-foreground">Creative Intelligence, Visual Storytelling & Smart Solutions</span>
+            </h2>
+            <p className="text-muted-foreground text-lg leading-relaxed max-w-4xl mx-auto">
+              From AI-generated advertising campaigns and product photography to cinematic film production and custom software solutions, we deliver creative excellence that traditionally takes months in just weeks.
+            </p>
+          </div>
+          
+           <div className="grid lg:grid-cols-3 gap-8">
+            {services.map((service, index) => (
+              <Card key={index} className={`border-border/50 hover:border-accent/30 transition-all duration-500 overflow-hidden group card-parallax scroll-reveal bg-gradient-to-br ${service.gradient} hover:scale-105 hover:shadow-2xl hover:shadow-primary/20 liquid-hover`} style={{ transitionDelay: `${index * 100}ms` }}>
+                <CardContent className="p-8 relative">
+                  <h3 className="text-2xl font-medium mb-4 group-hover:text-primary transition-colors duration-300">{service.title}</h3>
+                  <p className="text-muted-foreground mb-6 group-hover:text-foreground/90 transition-colors duration-300">{service.description}</p>
+                  <div className="space-y-3">
+                    {service.features.map((feature, i) => (
+                      <div key={i} className="flex items-start gap-3 group-hover:translate-x-1 transition-transform duration-300" style={{ transitionDelay: `${i * 50}ms` }}>
+                        <ArrowRight className={`w-4 h-4 mt-0.5 flex-shrink-0 transition-all duration-300 ${
+                          index === 0 ? 'text-amber group-hover:text-amber/80' : 
+                          index === 1 ? 'text-accent group-hover:text-accent/80' : 
+                          'text-cosmic group-hover:text-cosmic/80'
+                        }`} />
+                        <span className="text-sm group-hover:text-foreground transition-colors duration-300">{feature}</span>
+                      </div>
+                    ))}
+                  </div>
+                </CardContent>
               </Card>
             ))}
           </div>
