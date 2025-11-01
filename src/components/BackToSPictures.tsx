@@ -26,17 +26,18 @@ export default function BackToSPictures() {
 
   return (
     <motion.div
-      initial={{ opacity: 0, y: 10 }}
-      animate={{ opacity: 1, y: 0 }}
+      initial={{ opacity: 0, x: -10 }}
+      animate={{ opacity: 1, x: 0 }}
       transition={{ duration: 0.3, ease: "easeOut" }}
-      className="fixed bottom-4 right-4 z-50"
+      className="fixed top-4 left-4 z-50"
     >
       <Button
-        variant="outline"
-        className="flex items-center gap-2 bg-background/80 backdrop-blur-sm shadow-lg hover:shadow-xl transition-shadow"
+        size="lg"
+        variant="default"
+        className="flex items-center gap-2 shadow-xl hover:shadow-2xl transition-all font-semibold"
         onClick={handleClick}
       >
-        <ArrowLeft size={16} />
+        <ArrowLeft size={20} />
         <span className="hidden sm:inline">Back to s.pictures</span>
         <span className="sm:hidden">Back</span>
       </Button>
