@@ -10,17 +10,12 @@ export default function BackToSPictures() {
     const fromSPictures = document.referrer.includes("s.pictures");
     if (fromSPictures) {
       setShow(true);
-      // Optional: store in localStorage for persistence across page navigations
-      localStorage.setItem("fromSPictures", "true");
-    } else if (localStorage.getItem("fromSPictures") === "true") {
-      setShow(true);
     }
   }, []);
 
   if (!show) return null;
 
   const handleClick = () => {
-    localStorage.removeItem("fromSPictures");
     window.location.href = "https://www.s.pictures/";
   };
 
