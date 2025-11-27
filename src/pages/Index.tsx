@@ -883,7 +883,12 @@ const Index = () => {
                     <Mail className="w-8 h-8 text-primary" />
                     <div>
                       <p className="font-medium mb-1">Send us an email:</p>
-                      <p className="text-muted-foreground">surzayon@theanoma.company</p>
+                      <a 
+                        href="mailto:surzayon@theanoma.company"
+                        className="text-muted-foreground hover:text-primary transition-colors underline cursor-pointer"
+                      >
+                        surzayon@theanoma.company
+                      </a>
                     </div>
                   </div>
                 </Card>
