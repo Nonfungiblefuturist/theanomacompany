@@ -883,7 +883,7 @@ const Index = () => {
                     <Mail className="w-8 h-8 text-primary" />
                     <div>
                       <p className="font-medium mb-1">Send us an email:</p>
-                      <p className="text-muted-foreground">sg@s.pictures</p>
+                      <p className="text-muted-foreground">surzayon@theanoma.company</p>
                     </div>
                   </div>
                 </Card>
