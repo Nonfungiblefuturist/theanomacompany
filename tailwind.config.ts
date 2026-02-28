@@ -10,6 +10,11 @@ export default {
 	],
 	prefix: "",
 	theme: {
+		fontFamily: {
+			'instrument-serif': ['"Instrument Serif"', 'Georgia', 'serif'],
+			'dm-sans': ['"DM Sans"', 'system-ui', 'sans-serif'],
+			'oswald': ['"Oswald"', 'sans-serif'],
+		},
 		container: {
 			center: true,
 			padding: '2rem',

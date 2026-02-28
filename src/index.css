@@ -625,3 +625,230 @@ All colors MUST be HSL.
     opacity: 1;
   }
 }
+
+/* ═══════════════════════════════════════════════════════════════
+   STUDIO PAGE — Scoped styles (does NOT affect existing site)
+   ═══════════════════════════════════════════════════════════════ */
+
+/* Hero grid */
+.studio-hero-grid {
+  display: grid;
+  grid-template-columns: minmax(320px, 1fr) 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 6px;
+  height: 100vh;
+  min-height: 700px;
+  position: relative;
+  transition: opacity 0.5s ease;
+}
+
+.studio-hero-text {
+  grid-row: 1 / -1;
+  display: flex;
+  flex-direction: column;
+  padding: 40px 36px;
+}
+
+/* Card hover */
+.studio-card {
+  cursor: none;
+}
+
+.studio-card-img {
+  filter: brightness(0.88) saturate(0.95);
+  transition: transform 0.7s ease, filter 0.7s ease;
+}
+
+.studio-card:hover .studio-card-img {
+  transform: scale(1.04);
+  filter: brightness(0.72) saturate(0.95);
+}
+
+/* Nav pills */
+.studio-nav-pills {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  display: flex;
+  gap: 8px;
+  z-index: 20;
+}
+
+.studio-pill {
+  display: inline-block;
+  padding: 8px 20px;
+  border-radius: 50px;
+  background: rgba(255,255,255,0.08);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  color: #f0efe8;
+  font-family: "DM Sans", sans-serif;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  text-decoration: none;
+  transition: background 0.3s ease;
+  cursor: none;
+}
+
+.studio-pill:hover {
+  background: rgba(255,255,255,0.18);
+}
+
+/* Below-fold grid */
+.studio-below-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 6px;
+  padding: 2px 0 0;
+}
+
+.studio-below-grid .studio-wide {
+  grid-column: span 2;
+}
+
+.studio-below-grid .studio-card {
+  aspect-ratio: 1/1;
+}
+
+.studio-below-grid .studio-wide {
+  aspect-ratio: 16/9;
+}
+
+/* Entrance animations — pure CSS */
+.studio-entrance {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.studio-entrance-visible {
+  animation: studio-fade-up 0.7s ease forwards;
+}
+
+.studio-card-entrance {
+  opacity: 0;
+  transform: scale(0.97);
+}
+
+.studio-card-entrance-visible {
+  animation: studio-scale-in 0.8s ease forwards;
+}
+
+@keyframes studio-fade-up {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes studio-scale-in {
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Scroll reveal for below-fold */
+.studio-scroll-reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.studio-scroll-reveal.studio-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Mobile info chip always visible */
+@media (max-width: 639px) {
+  .studio-info-chip {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+  }
+}
+
+/* Responsive */
+@media (max-width: 1023px) {
+  .studio-hero-grid {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    min-height: auto;
+  }
+
+  .studio-hero-text {
+    padding: 32px 24px;
+  }
+
+  .studio-hero-card {
+    aspect-ratio: 4/5;
+  }
+
+  .studio-below-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .studio-nav-pills {
+    top: 16px;
+    right: 16px;
+  }
+}
+
+@media (min-width: 640px) and (max-width: 1023px) {
+  .studio-hero-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    height: auto;
+  }
+
+  .studio-hero-text {
+    grid-row: auto;
+  }
+
+  /* Create a 2x2 sub-grid for hero cards */
+  .studio-hero-card:nth-child(2) { grid-column: 1; }
+  .studio-hero-card:nth-child(3) { grid-column: 1; }
+}
+
+@media (max-width: 639px) {
+  .studio-hero-grid {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+  }
+
+  .studio-hero-card {
+    height: 280px;
+    aspect-ratio: auto;
+  }
+
+  .studio-below-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .studio-below-grid .studio-wide {
+    grid-column: span 1;
+  }
+
+  .studio-below-grid .studio-card,
+  .studio-below-grid .studio-wide {
+    aspect-ratio: 16/10;
+  }
+
+  .studio-nav-pills {
+    top: 12px;
+    right: 12px;
+    gap: 6px;
+  }
+
+  .studio-pill {
+    font-size: 11px;
+    padding: 6px 14px;
+  }
+
+  .studio-card {
+    cursor: default;
+  }
+}
