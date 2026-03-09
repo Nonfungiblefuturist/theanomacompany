@@ -935,3 +935,46 @@ All colors MUST be HSL.
     grid-template-columns: repeat(2, 1fr);
   }
 }
+
+/* ═══════════════════════════════════════════════════════════════
+   SITE PAGES — Shared styles for /home, /solutions, /video, etc.
+   ═══════════════════════════════════════════════════════════════ */
+
+/* Scroll reveal */
+.site-reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.site-reveal.site-revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Route fade-in */
+.site-page-enter {
+  animation: site-fade-in 150ms ease-out;
+}
+
+@keyframes site-fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Tech marquee */
+.site-marquee {
+  display: flex;
+  overflow: hidden;
+}
+
+.site-marquee-track {
+  display: flex;
+  animation: site-marquee-scroll 30s linear infinite;
+  white-space: nowrap;
+}
+
+@keyframes site-marquee-scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
