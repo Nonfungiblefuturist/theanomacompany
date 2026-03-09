@@ -852,3 +852,86 @@ All colors MUST be HSL.
     cursor: default;
   }
 }
+
+/* ═══════════════════════════════════════════════════════════════
+   BRANDING PAGE — Scoped styles
+   ═══════════════════════════════════════════════════════════════ */
+
+.branding-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 6px;
+}
+
+.branding-grid .branding-wide {
+  grid-column: span 2;
+}
+
+.branding-card {
+  aspect-ratio: 4/3;
+  cursor: none;
+}
+
+.branding-card .branding-wide {
+  aspect-ratio: 16/9;
+}
+
+.branding-card-img {
+  filter: brightness(0.88) saturate(0.95);
+  transition: transform 0.7s ease, filter 0.7s ease;
+}
+
+.branding-card:hover .branding-card-img {
+  transform: scale(1.04);
+  filter: brightness(0.72) saturate(0.95);
+}
+
+.branding-info-chip {
+  opacity: 0;
+  transform: translateY(10px);
+  transition: all 0.5s ease-out;
+}
+
+.branding-card:hover .branding-info-chip {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Scroll reveal */
+.branding-card-reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.branding-card-reveal.branding-card-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Mobile: info chip always visible */
+@media (max-width: 639px) {
+  .branding-info-chip {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+  }
+
+  .branding-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .branding-grid .branding-wide {
+    grid-column: span 1;
+  }
+
+  .branding-card {
+    aspect-ratio: 16/10;
+    cursor: default;
+  }
+}
+
+@media (min-width: 640px) and (max-width: 1023px) {
+  .branding-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
