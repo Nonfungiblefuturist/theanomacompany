@@ -1,89 +1,110 @@
 
 
-# Complete Multi-Page Website Build
+# Billy Boman-Style Studio Page — New Route `/studio`
 
-## Current State
-- `/` — Existing Index page (long single-page site with services, testimonials, FAQ)
-- `/studio` — Billy Boman-style grid page
-- `/branding` + `/branding/:slug` — Branding hub with 13 projects (6 internal, 7 external)
-- Fonts loaded: Anta, Instrument Serif, DM Sans, Oswald
-- Brand colors already defined in CSS variables (primary cyan, accent magenta, cosmic violet)
+## Key Decision
+This will be a **new page at `/studio`**, keeping your existing Anoma homepage completely intact.
 
-## What Needs to Be Built
+## Addressing Your Feedback
 
-### New Shared Layout System
-- `SiteLayout.tsx` — wraps all new pages with Navbar, Footer, film grain overlay, scroll-reveal observer
-- `Navbar.tsx` — sticky nav with "the Anoma company" logo + gradient bar, dropdown menus for Solutions/Branding/Video Production, blur on scroll, mobile hamburger overlay with focus trap + Escape close
-- `Footer.tsx` — single-line: "© 2026 The Anoma Company. Toronto." left, Instagram/YouTube/LinkedIn icons right
-- `FilmGrain.tsx` — SVG feTurbulence filter at ~6% opacity, fixed overlay
-- `ScrollReveal.tsx` — IntersectionObserver wrapper, fade up translateY(20px) over 0.6s
+### 1. No destructive overwrite
+The current `Index.tsx` remains untouched. A new `Studio.tsx` page is created and added to the router.
 
-### New Pages (7 pages + 4 video sub-pages)
+### 2. caseStudies field mapping
+Your existing data uses `title`, `description`, `type`, `link`, `image`, `youtubeId`. The new design needs `title`, `category`, `thumbnailUrl`, `videoUrl`. An adapter will map:
+- `type` → `category`
+- `image` → `thumbnailUrl`
+- `youtubeId` → converted to YouTube embed URL for hover video
+- Items without `image` will use a dark placeholder
 
-**Homepage `/home`** (new route, keeps existing `/` intact)
-- Full-viewport hero with placeholder `<video>` + dark gradient overlay
-- "Where AI Meets Cinema." in Playfair Display, subtitle in Inter, CTA button
-- Three Pillars section: Solutions, Branding, Video Production cards with hover lift + gradient border
-- Contact CTA: email link, "Get in Touch" mailto, "Book a Call" Calendly link
+### 3. Email confirmed
+`surzayon@theanoma.company` with `mailto:` link, matching your current setup.
 
-**Solutions `/solutions`**
-- Hero banner, 3-column grid of 6 solution cards (AI Chatbot, Prompt Machine, Resume Match, Work Schedule, GPA Converter, AI Agents)
-- Each card: icon area, title, description, external CTA link, hover gradient glow
+### 4. Pure CSS instead of Framer Motion
+Agreed — the entrance animations are simple staggered fades/scales. Using CSS `@keyframes` + `animation-delay` instead of Framer Motion. No extra bundle weight.
 
-**Video Production `/video`**
-- Hero with placeholder showreel `<video>`
-- 4 category sections: Storyboards, Showreel & Ads, Music Video, Animated 30-Seconder
-- Each links to its sub-page
+### 5. Nav pill styling (was missing)
+Explicitly specced:
+- `background: rgba(255,255,255,0.08)`
+- `backdrop-filter: blur(12px)`
+- `border-radius: 50px`
+- `padding: 8px 20px`
+- `font-size: 13px`, uppercase, letter-spacing 1.5px
+- Hover: `background: rgba(255,255,255,0.18)`
+- 8px gap between pills
+- Absolutely positioned top-right of the grid
 
-**Video Sub-Pages** `/video/storyboards`, `/video/showreel`, `/video/music-video`, `/video/animated`
-- Portfolio layout: hero, description, media gallery (image grid or video embeds)
-- "Back to Video Production" navigation
+### 6. Scroll progress bar (was underspecified)
+Functional scroll tracker:
+```
+fillWidth = (scrollY / (documentHeight - viewportHeight)) * 100%
+```
+Updates on scroll event. 180px wide, 3px tall, white fill, `transition: width 0.3s linear`.
 
-**About `/about`**
-- Text-forward, 2-3 paragraphs about the studio
-- Tech marquee strip (Runway, Midjourney, Kling AI, etc.)
+---
 
-**Contact `/contact`**
-- Email with gradient underline, Calendly iframe embed
-- Social links, contact form (Name, Email, Message, Submit)
+## Files to Create
 
-**404 Update**
-- Restyle to "Lost in the void." with link home, matching brand
+### `src/pages/Studio.tsx`
+The full Billy Boman-style single-page layout:
+- Page loader overlay (progress bar, fades out after 0.9s)
+- Unified hero grid: 3 columns x 2 rows, 100vh
+  - Column 1 (spans both rows): Logo ("THE ANOMA COMPANY" in Oswald), scroll progress bar, headline ("AI powered Content Studio" in Instrument Serif italic), description, LET'S TALK + mailto link
+  - Columns 2-3: 4 project cards from your caseStudies data
+- Frosted nav pills (Home, Work, About, Contact) floating top-right
+- Below-fold project grid: 3 columns, first card spans 2 cols, same 6px gap
+- Footer: centered nav links, top border `rgba(255,255,255,0.05)`
 
-### Fonts to Add
-Playfair Display, Inter, JetBrains Mono (added to `index.html` Google Fonts link)
+### `src/components/studio/ProjectCard.tsx`
+Reusable card component:
+- Full-bleed thumbnail (`object-fit: cover`, `brightness(0.88)`)
+- On hover: image `scale(1.04) + brightness(0.72)`, 0.7s ease
+- Video lazy-load on first hover (set src from data attribute, play, fade to opacity 1)
+- Gradient overlay (always visible, pointer-events none)
+- Info chip: frosted glass (`rgba(60,60,55,0.65)`, `backdrop-filter: blur(16px)`, `border-radius: 8px`), slides up from `translateY(10px)` on hover
+- Mobile: info chip always visible, no video
 
-### Files to Create (~15)
-- `src/components/site/SiteLayout.tsx`
-- `src/components/site/Navbar.tsx`
-- `src/components/site/Footer.tsx`
-- `src/components/site/FilmGrain.tsx`
-- `src/components/site/ScrollReveal.tsx`
-- `src/components/site/HeroSection.tsx`
-- `src/components/site/PillarCard.tsx`
-- `src/components/site/SolutionCard.tsx`
-- `src/components/site/VideoEmbed.tsx`
-- `src/components/site/ContactForm.tsx`
-- `src/components/site/CaseStudyLayout.tsx`
-- `src/pages/Home.tsx`
-- `src/pages/Solutions.tsx`
-- `src/pages/Video.tsx`
-- `src/pages/VideoProject.tsx`
-- `src/pages/About.tsx`
-- `src/pages/Contact.tsx`
+### `src/components/studio/CustomCursor.tsx`
+Desktop only (hidden on touch):
+- Dot: 6px white circle, `mix-blend-mode: difference`, instant mouse follow
+- Ring: 32px, 1px border `rgba(240,239,232,0.35)`, LERP follow (`rx += (mouseX - rx) * 0.12` per rAF frame)
+- Hover states: nav/links = 50px ring, project cards = 70px ring with brighter border
 
-### Files to Modify
-- `src/App.tsx` — add all new routes with React.lazy + Suspense
-- `index.html` — add Playfair Display, Inter, JetBrains Mono fonts
-- `tailwind.config.ts` — add `playfair`, `inter`, `jetbrains` font families
-- `src/index.css` — add site-page scoped styles, film grain, scroll-reveal animations
-- `src/pages/NotFound.tsx` — restyle to brand
+### `src/components/studio/PageLoader.tsx`
+- Full-screen `#0a0a0a` overlay, z-50
+- 120px progress bar fills 0-100% over 0.8s
+- Fades out after 0.9s
+- Triggers staggered entrance of hero elements via CSS animation-delay
 
-### Key Design Decisions
-- All new pages wrapped in `SiteLayout` (Navbar + Footer + grain); existing `/`, `/studio`, `/branding` routes untouched
-- Gradient `linear-gradient(135deg, #00B4D8, #E91E8C)` used sparingly: logo bar, CTA hover, section dividers, active nav
-- Text colors: `#F5F5F5` headings, `#AAAAAA` body, `#666666` captions
-- JetBrains Mono used only for section labels ("WHAT WE DO") and solution card tags
-- 150ms route fade transitions via CSS
-- Existing Branding pages keep their current studio-style design; the new Navbar will link to them
+## Files to Modify
 
+### `src/App.tsx`
+- Add route: `<Route path="/studio" element={<Studio />} />`
+
+### `index.html`
+- Add Google Fonts: Instrument Serif, DM Sans, Oswald
+
+### `src/index.css`
+- Add studio-specific CSS variables scoped under a `.studio-page` class (does NOT touch existing variables)
+- Add card hover keyframes, entrance animations, cursor styles
+
+### `tailwind.config.ts`
+- Add font families: `instrument-serif`, `dm-sans`, `oswald`
+
+---
+
+## Entrance Animation Sequence (Pure CSS)
+
+All using `@keyframes` + `animation-delay`, no Framer Motion:
+
+1. Loader progress bar fills (0-0.8s), loader fades out (0.9s)
+2. Hero cards stagger in: 0.3s, 0.45s, 0.55s, 0.65s delay — `opacity 0 + scale(0.97)` to visible
+3. Hero text staggers: logo 0.6s, progress bar 0.7s, headline 0.85s, CTA 1.0s — `opacity 0 + translateY(20px)` to visible
+4. Nav pills slide down from `translateY(-10px)` at 0.8s
+5. Below-fold: IntersectionObserver, threshold 0.08, +80ms stagger per card
+
+## Responsive
+
+- **Desktop (1024px+)**: Full 3-column hero grid
+- **Tablet (640-1024px)**: Hero text full-width top, 2x2 cards below, below-fold 2 columns
+- **Mobile (< 640px)**: Single column, 280px cards, info chips always visible, no cursor, no video autoplay
