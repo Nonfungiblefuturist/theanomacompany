@@ -55,6 +55,12 @@ const BentoGrid = () => (
               gridRow: "1 / 3",
             }}
           >
+            <img
+              src="/images/aeria-bento.png"
+              alt="Cutting-Edge Creativity"
+              className="absolute inset-0 w-full h-full object-cover object-top opacity-40"
+              loading="lazy"
+            />
             <div className="relative z-20 p-6 md:p-8 flex flex-col justify-between h-full">
               <h3
                 className="select-none"

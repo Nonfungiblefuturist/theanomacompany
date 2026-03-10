@@ -78,8 +78,8 @@ const Studio = () => (
     <section className="section-card mx-[6px] mt-[6px] rounded-[20px] overflow-hidden">
       <div className="aspect-[16/7] w-full">
         <img
-          src="/images/studio-hero.jpg"
-          alt="Cinematic production"
+          src="/images/studio-whatwedo.jpg"
+          alt="AI-powered creative production studio"
           className="w-full h-full object-cover"
           loading="lazy"
         />
