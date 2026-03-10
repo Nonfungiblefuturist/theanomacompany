@@ -32,7 +32,7 @@ const ScrollToTop = () => {
 // Lenis smooth scroll
 const LenisProvider = ({ children }: { children: React.ReactNode }) => {
   useEffect(() => {
-    const lenis = new Lenis({ duration: 1.2 });
+    const lenis = new Lenis({ duration: 1.6, lerp: 0.08, smoothWheel: true });
     const raf = (time: number) => {
       lenis.raf(time);
       requestAnimationFrame(raf);
