@@ -123,7 +123,8 @@ export default {
 				'accordion-down': 'accordion-down 0.2s ease-out',
 				'accordion-up': 'accordion-up 0.2s ease-out',
 				'slow-float': 'slow-float 20s ease-in-out infinite',
-				'pulse-subtle': 'pulse-subtle 8s ease-in-out infinite'
+				'pulse-subtle': 'pulse-subtle 8s ease-in-out infinite',
+				'marquee': 'marquee 30s linear infinite',
 			}
 		}
 	},
