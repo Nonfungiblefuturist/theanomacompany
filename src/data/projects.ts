@@ -28,6 +28,7 @@ export interface Project {
   videoPreviewUrl?: string;
   videoFullUrl?: string;
   isVideoLightbox?: boolean;
+  tripleVideoPreview?: string[];
 }
 
 export const projects: Project[] = [
