@@ -19,7 +19,7 @@ const Studio = () => (
     <section className="section-card mx-[6px] mt-[6px] rounded-[20px] overflow-hidden">
       <div className="aspect-[21/9] md:aspect-[3/1] w-full">
         <img
-          src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=1600&h=600&fit=crop"
+          src="/images/studio-hero.jpg"
           alt="The Anoma Company studio"
           className="w-full h-full object-cover"
         />
