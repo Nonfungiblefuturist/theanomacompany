@@ -246,27 +246,13 @@ const BentoGrid = () => (
       {/* Stat + Avatars + Logo marquee row */}
       <ScrollReveal type="fade-up" delay={0.2}>
         <div className="mt-16 pt-8 border-t border-border flex flex-col md:flex-row md:items-center md:justify-between gap-8 px-2">
-          <div className="flex items-center gap-5">
-            <div className="flex -space-x-2">
-              {avatarUrls.map((url, i) => (
-                <img
-                  key={i}
-                  src={url}
-                  alt="Client"
-                  className="w-9 h-9 rounded-full border-2 object-cover"
-                  style={{ borderColor: "hsl(var(--card))" }}
-                  loading="lazy"
-                />
+          <div className="flex items-center gap-3">
+            <div className="flex items-center gap-1">
+              {[1, 2, 3, 4, 5].map((i) => (
+                <span key={i} className="text-yellow-400 text-xs">★</span>
               ))}
             </div>
-            <div>
-              <div className="flex items-center gap-1">
-                {[1, 2, 3, 4, 5].map((i) => (
-                  <span key={i} className="text-yellow-400 text-xs">★</span>
-                ))}
-              </div>
-              <p className="text-sm text-foreground font-medium">100+ Satisfied Clients</p>
-            </div>
+            <p className="text-sm text-foreground font-medium">100+ Satisfied Clients</p>
           </div>
           <div className="flex-1 max-w-[500px]">
             <LogoMarquee />
