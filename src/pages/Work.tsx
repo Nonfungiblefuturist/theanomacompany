@@ -7,6 +7,7 @@ import Footer from "@/components/layout/Footer";
 import CTABand from "@/components/layout/CTABand";
 import ScrollReveal from "@/components/shared/ScrollReveal";
 import VideoLightbox from "@/components/shared/VideoLightbox";
+import TripleVideoPreview from "@/components/shared/TripleVideoPreview";
 import { projects } from "@/data/projects";
 
 const categories = [
