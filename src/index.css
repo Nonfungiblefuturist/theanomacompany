@@ -626,8 +626,7 @@ All colors MUST be HSL.
   }
 }
 
-  display: grid;
-  grid-template-columns: minmax(320px, 1fr) 1fr 1fr;
+
   grid-template-rows: 1fr 1fr;
   gap: 6px;
   height: 100vh;
