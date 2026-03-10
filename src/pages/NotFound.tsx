@@ -8,7 +8,7 @@ const NotFound = () => (
     <Navbar />
     <div className="flex-1 flex items-center justify-center">
       <div className="text-center">
-        <h1 className="font-['Anta'] text-8xl md:text-9xl text-foreground/10">404</h1>
+        <h1 className="text-8xl md:text-9xl font-bold text-foreground/10">404</h1>
         <p className="mt-4 text-muted-foreground">This page doesn't exist.</p>
         <Link to="/" className="inline-block mt-6 text-sm text-primary hover:text-foreground transition-colors">
           Back to Home →
