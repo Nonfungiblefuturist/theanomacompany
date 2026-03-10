@@ -3,11 +3,10 @@ import ScrollReveal from "@/components/shared/ScrollReveal";
 import FlipButton from "@/components/shared/FlipButton";
 
 const socials = [
-  { label: "Twitter / X", href: siteConfig.socials.twitter },
   { label: "Instagram", href: siteConfig.socials.instagram },
   { label: "YouTube", href: siteConfig.socials.youtube },
   { label: "LinkedIn", href: siteConfig.socials.linkedin },
-];
+].filter(s => s.href);
 
 const CTABand = () => (
   <section className="section-card mx-[6px] rounded-[20px] overflow-hidden py-24 md:py-32">
@@ -24,7 +23,8 @@ const CTABand = () => (
                 className="text-foreground font-bold"
                 style={{ fontSize: "clamp(2.5rem, 5vw, 6rem)", letterSpacing: "-0.02em", lineHeight: 1.1 }}
               >
-                Let's Build Something.
+                AI Creative Studio<br />
+                <span style={{ color: "hsl(var(--cosmic))" }}>The Anoma Company.</span>
               </h2>
 
               <p className="text-muted-foreground mt-4 text-base max-w-md" style={{ lineHeight: 1.7 }}>
@@ -60,16 +60,19 @@ const CTABand = () => (
               </div>
             </div>
 
-            {/* Right column — dark card with video placeholder */}
+            {/* Right column — handshake video */}
             <div className="hidden lg:flex relative rounded-2xl m-3 overflow-hidden flex-col justify-end" style={{ background: "rgb(15,15,15)" }}>
-              {/* Ambient gradient placeholder for video */}
-              <div
-                className="absolute inset-0"
-                style={{ background: "linear-gradient(135deg, #111 0%, #1a1a1a 50%, #111 100%)" }}
+              <video
+                src="/videos/handshake.mp4"
+                autoPlay
+                loop
+                muted
+                playsInline
+                className="absolute inset-0 w-full h-full object-cover opacity-70"
               />
               <div
-                className="absolute inset-0 opacity-20"
-                style={{ background: "var(--gradient-spectral)" }}
+                className="absolute inset-0"
+                style={{ background: "linear-gradient(to top, rgba(0,0,0,0.6) 0%, transparent 60%)" }}
               />
               <div className="relative z-10 p-8">
                 <p className="text-xs uppercase tracking-widest text-muted-foreground mb-3">

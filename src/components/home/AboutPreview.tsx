@@ -6,13 +6,6 @@ import { stats } from "@/data/stats";
 const whiteWords = "We blend cinematic vision with AI-native craft, transforming bold ideas".split(" ");
 const grayWords = "into immersive brand experiences, precision-engineered campaigns, and standout digital content.".split(" ");
 
-const avatarUrls = [
-  "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=80&h=80&fit=crop&crop=face",
-  "https://images.unsplash.com/photo-1494790108755-2616b612b786?w=80&h=80&fit=crop&crop=face",
-  "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=80&h=80&fit=crop&crop=face",
-  "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=80&h=80&fit=crop&crop=face",
-  "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=80&h=80&fit=crop&crop=face",
-];
 
 const AboutPreview = () => (
   <section className="section-card mx-[6px] rounded-[20px] overflow-hidden">
@@ -57,23 +50,10 @@ const AboutPreview = () => (
             {/* 100+ Satisfied Clients */}
             <ScrollReveal type="fade-up" delay={0.1 + stats.length * 0.1}>
               <div className="py-5 border-t border-border">
-                <div className="flex items-center -space-x-2 mb-2">
-                  {avatarUrls.map((url, i) => (
-                    <img
-                      key={i}
-                      src={url}
-                      alt="Client"
-                      className="w-8 h-8 rounded-full border-2 object-cover"
-                      style={{ borderColor: "hsl(var(--card))" }}
-                      loading="lazy"
-                    />
+                <div className="flex items-center gap-1 mb-2">
+                  {[1, 2, 3, 4, 5].map((i) => (
+                    <span key={i} className="text-yellow-400 text-xs">★</span>
                   ))}
-                  <span
-                    className="w-8 h-8 rounded-full flex items-center justify-center text-[10px] font-bold text-foreground"
-                    style={{ backgroundColor: "hsl(var(--cosmic))", borderColor: "hsl(var(--card))", borderWidth: 2 }}
-                  >
-                    +
-                  </span>
                 </div>
                 <div className="text-4xl md:text-5xl font-bold text-primary">
                   100<span className="text-muted-foreground">+</span>
