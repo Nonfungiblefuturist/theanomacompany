@@ -626,9 +626,6 @@ All colors MUST be HSL.
   }
 }
 
-}
-/* Hero grid */
-.studio-hero-grid {
   display: grid;
   grid-template-columns: minmax(320px, 1fr) 1fr 1fr;
   grid-template-rows: 1fr 1fr;
