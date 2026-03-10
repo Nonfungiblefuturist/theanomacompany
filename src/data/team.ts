@@ -3,23 +3,27 @@ export interface TeamMember {
   role: string;
   image: string;
   isAI?: boolean;
+  linkedin?: string;
 }
 
 export const team: TeamMember[] = [
   {
-    name: "Dr. Uday Ghosh",
+    name: "Dr. Uday K Ghosh",
     role: "Chairman Emeritus",
     image: "/images/uday-ghosh.jpg",
+    linkedin: "https://www.linkedin.com/in/udoayghosh/",
   },
   {
     name: "Surzayon",
     role: "Founder & Creative Director",
     image: "/images/surzayon.png",
+    linkedin: "https://www.linkedin.com/in/surzayon/",
   },
   {
     name: "Sreejeeta",
     role: "Co-Founder, Head of Business Operations",
     image: "/images/sreejeeta.jpg",
+    linkedin: "https://www.linkedin.com/in/sreejeeta-ghosh/",
   },
   {
     name: "Diana",

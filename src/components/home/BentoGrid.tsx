@@ -45,7 +45,7 @@ const BentoGrid = () => (
             gap: "12px",
           }}
         >
-          {/* Card 1 — TALL left, spans 2 rows — Aeria / AI-Native Pipeline */}
+          {/* Card 1 — TALL left, spans 2 rows — AI-Native Pipeline */}
           <div
             className="relative rounded-2xl overflow-hidden"
             style={{
@@ -55,26 +55,6 @@ const BentoGrid = () => (
               gridRow: "1 / 3",
             }}
           >
-            <video
-              src="/videos/aeria-intro.mp4"
-              autoPlay
-              loop
-              muted
-              playsInline
-              className="absolute inset-0 w-full h-full object-cover opacity-50"
-            />
-            {/* Aeria popping out */}
-            <img
-              src="/images/aeria-bento.png"
-              alt="Aeria — AI Influencer"
-               className="absolute bottom-0 left-0 z-10 pointer-events-none select-none"
-              style={{
-                width: "80%",
-                maxWidth: "340px",
-                objectFit: "contain",
-                filter: "drop-shadow(0 -10px 30px rgba(0,0,0,0.5))",
-              }}
-            />
             <div className="relative z-20 p-6 md:p-8 flex flex-col justify-between h-full">
               <h3
                 className="select-none"

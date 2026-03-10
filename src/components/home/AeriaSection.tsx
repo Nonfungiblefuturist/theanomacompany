@@ -15,7 +15,7 @@ const AeriaSection = () => {
             loop
             muted
             playsInline
-            className="w-full object-cover object-top transition-transform duration-[600ms] group-hover:scale-[1.03]"
+            className="w-full object-cover object-center transition-transform duration-[600ms] group-hover:scale-[1.03]"
             style={{ height: "clamp(400px, 60vh, 700px)" }}
           />
 
