@@ -3,7 +3,7 @@ const AeriaSection = () => {
     <section className="section-card mx-[6px] rounded-[20px] overflow-hidden">
       <div className="p-[6px]">
         <a
-          href="https://www.instagram.com/be_aeria/"
+          href="https://www.instagram.com/be_aeria?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
           target="_blank"
           rel="noopener noreferrer"
           className="block relative w-full rounded-2xl overflow-hidden cursor-pointer group no-underline"

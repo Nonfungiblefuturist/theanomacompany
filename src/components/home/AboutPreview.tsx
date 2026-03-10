@@ -1,7 +1,6 @@
 import ScrollReveal from "@/components/shared/ScrollReveal";
 import StatsCounter from "@/components/shared/StatsCounter";
 import FlipButton from "@/components/shared/FlipButton";
-import LogoMarquee from "@/components/shared/LogoMarquee";
 import { stats } from "@/data/stats";
 
 const whiteWords = "We blend cinematic vision with AI-native craft, transforming bold ideas".split(" ");
@@ -18,7 +17,7 @@ const avatarUrls = [
 const AboutPreview = () => (
   <section className="section-card mx-[6px] rounded-[20px] overflow-hidden">
     <div className="max-w-[1400px] mx-auto px-6 md:px-10 lg:px-16 xl:px-20 py-24 md:py-32">
-      {/* Top row: "About us" label left, two-tone paragraph right */}
+      {/* Top row */}
       <div className="grid grid-cols-1 md:grid-cols-[30%_1fr] gap-6 md:gap-12">
         <ScrollReveal type="fade-up">
           <p className="flex items-center gap-2 text-sm text-muted-foreground">
@@ -102,11 +101,6 @@ const AboutPreview = () => (
             </div>
           </ScrollReveal>
         </div>
-      </div>
-
-      {/* Client Marquee */}
-      <div className="mt-8">
-        <LogoMarquee />
       </div>
     </div>
   </section>
