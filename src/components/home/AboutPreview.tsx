@@ -100,6 +100,7 @@ const AboutPreview = () => (
                 loading="lazy"
               />
             </div>
+          </ScrollReveal>
         </div>
       </div>
 
