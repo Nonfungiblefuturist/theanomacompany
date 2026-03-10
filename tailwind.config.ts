@@ -11,9 +11,7 @@ export default {
 	prefix: "",
 	theme: {
 		fontFamily: {
-			'instrument-serif': ['"Instrument Serif"', 'Georgia', 'serif'],
-			'dm-sans': ['"DM Sans"', 'system-ui', 'sans-serif'],
-			'oswald': ['"Oswald"', 'sans-serif'],
+			'anta': ['"Anta"', 'sans-serif'],
 		},
 		container: {
 			center: true,
@@ -119,13 +117,18 @@ export default {
 					'50%': { 
 						opacity: '0.4',
 					}
+				},
+				'marquee': {
+					'0%': { transform: 'translateX(0)' },
+					'100%': { transform: 'translateX(-50%)' },
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
 				'accordion-up': 'accordion-up 0.2s ease-out',
 				'slow-float': 'slow-float 20s ease-in-out infinite',
-				'pulse-subtle': 'pulse-subtle 8s ease-in-out infinite'
+				'pulse-subtle': 'pulse-subtle 8s ease-in-out infinite',
+				'marquee': 'marquee 30s linear infinite',
 			}
 		}
 	},

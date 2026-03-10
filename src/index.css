@@ -626,10 +626,7 @@ All colors MUST be HSL.
   }
 }
 
-/* ═══════════════════════════════════════════════════════════════
-   STUDIO PAGE — Scoped styles (does NOT affect existing site)
-   ═══════════════════════════════════════════════════════════════ */
-
+}
 /* Hero grid */
 .studio-hero-grid {
   display: grid;
