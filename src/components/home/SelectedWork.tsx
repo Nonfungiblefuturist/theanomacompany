@@ -11,7 +11,7 @@ const curatedSlugs = [
   "music-video-1",
   "ai-chatbot",
   "vaseline-campaign",
-  "animated-30-seconder",
+  "animated-25-seconder",
 ];
 
 // Vaseline is treated as external (readymag portfolio)

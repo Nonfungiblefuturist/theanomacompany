@@ -1,6 +1,6 @@
 export const siteConfig = {
   name: "The Anoma Company",
-  tagline: "Everything is noise.",
+  tagline: "Everything else is noise.",
   description: "AI-First Creative Studio. Campaigns, tools, and brand systems.",
   email: "hello@theanoma.company",
   phone: "+1 (647) 555-0199",

@@ -4,9 +4,9 @@ import Footer from "@/components/layout/Footer";
 import CTABand from "@/components/layout/CTABand";
 import Hero from "@/components/home/Hero";
 import AboutPreview from "@/components/home/AboutPreview";
-import ImageMosaic from "@/components/home/ImageMosaic";
 import ShowreelBanner from "@/components/home/ShowreelBanner";
 import SelectedWork from "@/components/home/SelectedWork";
+import AeriaSection from "@/components/home/AeriaSection";
 import ServicesTabbed from "@/components/home/ServicesTabbed";
 import ProcessSteps from "@/components/home/ProcessSteps";
 import BentoGrid from "@/components/home/BentoGrid";
@@ -22,12 +22,13 @@ const Home = () => (
     {/* 2 */}  <div className="mt-[6px]"><AboutPreview /></div>
     {/* 3 */}  <div className="mt-[6px]"><ShowreelBanner /></div>
     {/* 4 */}  <div className="mt-[6px]"><SelectedWork /></div>
-    {/* 5 */}  <div className="mt-[6px]"><ServicesTabbed /></div>
-    {/* 6 */}  <div className="mt-[6px]"><ProcessSteps /></div>
-    {/* 7 */}  <div className="mt-[6px]"><BentoGrid /></div>
-    {/* 8 */}  <div className="mt-[6px]"><Testimonials /></div>
-    {/* 9 */}  <div className="mt-[6px]"><HomeFAQ /></div>
-    {/* 10 */} <div className="mt-[6px]"><CTABand /></div>
+    {/* 5 */}  <div className="mt-[6px]"><AeriaSection /></div>
+    {/* 6 */}  <div className="mt-[6px]"><ServicesTabbed /></div>
+    {/* 7 */}  <div className="mt-[6px]"><ProcessSteps /></div>
+    {/* 8 */}  <div className="mt-[6px]"><BentoGrid /></div>
+    {/* 9 */}  <div className="mt-[6px]"><Testimonials /></div>
+    {/* 10 */} <div className="mt-[6px]"><HomeFAQ /></div>
+    {/* 11 */} <div className="mt-[6px]"><CTABand /></div>
 
     <div className="mt-[6px]"><Footer /></div>
   </div>

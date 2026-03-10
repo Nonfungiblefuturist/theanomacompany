@@ -141,7 +141,7 @@ export const projects: Project[] = [
     category: "AI Tool",
     filterTag: "Solutions",
     thumbnailType: "image",
-    thumbnail: "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=800&h=600&fit=crop",
+    thumbnail: "/images/campus-convert-thumb.jpg",
     summary: "Automated GPA conversion across global education systems",
     intro: "International admissions required converting grades from dozens of country-specific systems into a standardized format.",
     metadata: { year: 2026, duration: "3 Weeks", client: "Intl Campus Admit", category: "AI Tool" },
@@ -318,7 +318,7 @@ export const projects: Project[] = [
     isVideoLightbox: true,
   },
   {
-    slug: "animated-30-seconder",
+    slug: "animated-25-seconder",
     title: "Animated 25-Seconder",
     client: "Multi-client",
     year: 2025,

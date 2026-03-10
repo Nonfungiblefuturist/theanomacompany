@@ -55,7 +55,7 @@ const Hero = () => {
                 lineHeight: 1.2,
               }}
             >
-              Everything is noise.
+              Everything else is noise.
             </p>
             <p
               className="text-foreground/50 mt-3"
