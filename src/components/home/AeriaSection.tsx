@@ -1,5 +1,3 @@
-import ScrollReveal from "@/components/shared/ScrollReveal";
-
 const AeriaSection = () => {
   return (
     <section className="section-card mx-[6px] rounded-[20px] overflow-hidden">
@@ -10,29 +8,16 @@ const AeriaSection = () => {
           rel="noopener noreferrer"
           className="block relative w-full rounded-2xl overflow-hidden cursor-pointer group no-underline"
         >
-          {/* Image — placeholder gradient until real image is provided */}
-          <div
-            className="w-full flex items-center justify-center"
-            style={{
-              height: "clamp(400px, 60vh, 700px)",
-              background: "linear-gradient(135deg, #1a1a1a, #0a0a0a)",
-              transition: "transform 0.6s ease",
-            }}
-          >
-            <img
-              src="/images/aeria-fullbleed.jpg"
-              alt="Aeria — AI Influencer by The Anoma Company"
-              className="w-full h-full object-cover object-top transition-transform duration-[600ms] group-hover:scale-[1.03]"
-              onError={(e) => {
-                // Fallback if image not yet uploaded
-                (e.target as HTMLImageElement).style.display = "none";
-                (e.target as HTMLImageElement).parentElement!.classList.add("fallback-active");
-              }}
-            />
-            <span className="absolute text-muted-foreground text-sm pointer-events-none fallback-text hidden">
-              Aeria full image
-            </span>
-          </div>
+          {/* Looping video background — no audio, no controls */}
+          <video
+            src="/videos/aeria-intro.mp4"
+            autoPlay
+            loop
+            muted
+            playsInline
+            className="w-full object-cover object-top transition-transform duration-[600ms] group-hover:scale-[1.03]"
+            style={{ height: "clamp(400px, 60vh, 700px)" }}
+          />
 
           {/* Overlay */}
           <div
@@ -65,9 +50,7 @@ const AeriaSection = () => {
             </div>
 
             <div className="mt-4 md:mt-0">
-              <span
-                className="inline-block text-sm font-medium text-white border border-white/30 px-5 py-2.5 rounded-[10px] transition-all duration-300 whitespace-nowrap group-hover:bg-white group-hover:text-[#0a0a0a] group-hover:border-white"
-              >
+              <span className="inline-block text-sm font-medium text-white border border-white/30 px-5 py-2.5 rounded-[10px] transition-all duration-300 whitespace-nowrap group-hover:bg-white group-hover:text-[#0a0a0a] group-hover:border-white">
                 Follow on Instagram ↗
               </span>
             </div>
