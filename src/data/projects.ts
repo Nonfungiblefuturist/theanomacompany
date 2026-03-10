@@ -299,7 +299,7 @@ export const projects: Project[] = [
     category: "Music Video",
     filterTag: "Video Production",
     thumbnailType: "video",
-    thumbnail: "/images/music-video-1-thumb.jpg",
+    thumbnail: "/videos/music-video-1-full.mp4",
     summary: "AI-native music video with cinematic visual language",
     intro: "A music video that needed to feel like a short film — narrative-driven, visually dense, and completely original.",
     metadata: { year: 2024, duration: "5 Weeks", client: "MAIA", category: "Music Video" },
