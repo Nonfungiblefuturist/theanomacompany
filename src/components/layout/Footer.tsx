@@ -20,15 +20,15 @@ const Footer = () => {
 
   return (
     <footer
-      className="bg-card overflow-hidden"
+      className="bg-card"
       style={{ borderTopLeftRadius: 24, borderTopRightRadius: 24 }}
     >
-      <div className="max-w-[1400px] mx-auto px-6 md:px-10 lg:px-16 pt-16 md:pt-20">
+      <div className="max-w-[1400px] mx-auto px-6 md:px-10 lg:px-16 xl:px-20 pt-16 md:pt-20">
         {/* Top row: 3 columns */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-8">
           {/* Logo + Address */}
           <div>
-            <span className="font-semibold text-foreground text-lg tracking-[0.05em] uppercase">
+            <span className="font-bold text-foreground text-lg tracking-[0.05em] uppercase">
               The Anoma Company
             </span>
             <p className="mt-3 text-muted-foreground text-sm">{siteConfig.address}</p>
@@ -108,13 +108,13 @@ const Footer = () => {
           <p className="text-xs text-muted-foreground">© {new Date().getFullYear()} All rights reserved.</p>
         </div>
 
-        {/* Giant display text */}
-        <div className="mt-8 -mb-[0.15em]">
+        {/* Giant display text — fully visible, not clipped */}
+        <div className="mt-8 pb-8">
           <h2
             className="font-bold text-foreground uppercase tracking-tight select-none whitespace-nowrap text-center"
             style={{
-              fontSize: "clamp(8rem, 18vw, 20rem)",
-              lineHeight: 0.85,
+              fontSize: "clamp(3rem, 10vw, 10rem)",
+              lineHeight: 0.9,
               letterSpacing: "-0.02em",
             }}
           >
