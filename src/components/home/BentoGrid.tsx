@@ -2,13 +2,6 @@ import ScrollReveal from "@/components/shared/ScrollReveal";
 import FlipButton from "@/components/shared/FlipButton";
 import LogoMarquee from "@/components/shared/LogoMarquee";
 
-const avatarUrls = [
-  "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=80&h=80&fit=crop&crop=face",
-  "https://images.unsplash.com/photo-1494790108755-2616b612b786?w=80&h=80&fit=crop&crop=face",
-  "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=80&h=80&fit=crop&crop=face",
-  "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=80&h=80&fit=crop&crop=face",
-  "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=80&h=80&fit=crop&crop=face",
-];
 
 const BentoGrid = () => (
   <section className="section-card mx-[6px] rounded-[20px] overflow-hidden">
