@@ -88,7 +88,9 @@ const Work = () => {
               const CardContent = (
                 <>
                   <div className={`aspect-[16/10] rounded-2xl overflow-hidden relative ${isExternal ? "border border-cosmic/30" : ""}`}>
-                    {p.videoPreviewUrl ? (
+                    {p.tripleVideoPreview ? (
+                      <TripleVideoPreview videos={p.tripleVideoPreview} />
+                    ) : p.videoPreviewUrl ? (
                       <video
                         src={p.videoPreviewUrl}
                         autoPlay
