@@ -93,7 +93,7 @@ const SelectedWork = () => {
                     )}
                     {isExternal && (
                       <span className="absolute top-3 right-3 px-2.5 py-1 rounded-full bg-cosmic/90 text-background text-xs font-medium flex items-center gap-1">
-                        Live App <ArrowUpRight size={10} />
+                        {p.filterTag === "Solutions" ? "Live App" : "Launch Project"} <ArrowUpRight size={10} />
                       </span>
                     )}
                   </div>
@@ -104,7 +104,7 @@ const SelectedWork = () => {
                     </div>
                     <p className="text-sm text-muted-foreground mt-1">{p.category}</p>
                     <span className="text-sm text-muted-foreground group-hover:text-primary transition-colors mt-2 inline-flex items-center gap-1">
-                      {isExternal ? "Launch App" : isVideoLightbox ? "Watch" : "View project"}{" "}
+                      {isExternal ? (p.filterTag === "Solutions" ? "Launch App" : "Launch Project") : isVideoLightbox ? "Watch" : "View project"}{" "}
                       <ArrowUpRight size={14} className="inline-block transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                     </span>
                   </div>
