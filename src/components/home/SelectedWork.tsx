@@ -25,15 +25,12 @@ const SelectedWork = () => (
         dotLabel="Selected Work"
       />
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         {featured.map((p, i) => (
           <ScrollReveal key={p.slug} type="slide-up" delay={i * 0.1} viewportAmount={0.15}>
-            <Link
-              to={`/work/${p.slug}`}
-              className="group block rounded-2xl overflow-hidden border border-border hover:border-primary/30 transition-all duration-500"
-            >
+            <Link to={`/work/${p.slug}`} className="group block">
               {/* Large cinematic thumbnail */}
-              <div className="aspect-[16/10] relative overflow-hidden">
+              <div className="aspect-[16/10] rounded-2xl overflow-hidden">
                 <img
                   src={p.thumbnail}
                   alt={p.title}
@@ -41,13 +38,13 @@ const SelectedWork = () => (
                   loading="lazy"
                 />
               </div>
-              {/* Info bar */}
-              <div className="p-5 md:p-6 bg-card flex items-center justify-between">
-                <div>
-                  <h3 className="font-semibold text-lg text-foreground">{p.title}</h3>
-                  <span className="text-xs text-muted-foreground">{p.year}</span>
+              {/* Info — no background bar, just text on page bg */}
+              <div className="pt-4 pb-2">
+                <div className="flex items-center justify-between">
+                  <h3 className="font-medium text-lg text-foreground">{p.title}</h3>
+                  <span className="text-sm text-muted-foreground">{p.year}</span>
                 </div>
-                <span className="text-sm text-muted-foreground group-hover:text-foreground transition-colors">
+                <span className="text-sm text-muted-foreground group-hover:text-foreground transition-colors mt-1 inline-block">
                   View project{" "}
                   <span className="inline-block transition-transform duration-300 group-hover:translate-x-1">→</span>
                 </span>

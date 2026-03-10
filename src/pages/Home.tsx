@@ -19,8 +19,8 @@ const Home = () => (
 
     {/* 1 */}  <Hero />
     {/* 2 */}  <AboutPreview />
-    {/* 3 */}  <SelectedWork />
-    {/* 4 */}  <ServicesTabbed />
+    {/* 3 */}  <ServicesTabbed />
+    {/* 4 */}  <SelectedWork />
     {/* 5 */}  <ProcessSteps />
     {/* 6 */}  <BentoGrid />
     {/* 7 */}  <Testimonials />
