@@ -8,5 +8,4 @@ export const stats: Stat[] = [
   { value: 29, suffix: "+", label: "Projects Delivered" },
   { value: 6, suffix: "", label: "AI Tools Built" },
   { value: 3, suffix: "", label: "Countries" },
-  { value: 100, suffix: "%", label: "Retention" },
 ];

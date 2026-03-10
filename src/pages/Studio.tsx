@@ -51,7 +51,7 @@ const Studio = () => (
               Our Mission
             </p>
             <p className="text-foreground text-lg md:text-xl" style={{ lineHeight: 1.7 }}>
-              We believe creative production should be bold, purposeful, and powered by intelligence. Our mission is to help brands break through noise with AI-driven visuals that tell stories, engage audiences, and leave lasting impressions.
+              Our mission is to redefine creative production through AI-native craft and cinematic vision. We build AI solutions that automate and elevate, produce creative campaigns that demand attention, and deliver content that moves people. Every project is an opportunity to prove that bold ideas, powered by intelligent tools, create unforgettable results.
             </p>
           </div>
         </ScrollReveal>
