@@ -1,11 +1,10 @@
 import ScrollReveal from "@/components/shared/ScrollReveal";
 
 const ImageMosaic = () => (
-  <section className="py-24 border-y border-border">
+  <section className="section-card mx-[6px] rounded-[20px] overflow-hidden py-24">
     <div className="max-w-[1600px] mx-auto px-6 md:px-10 lg:px-16">
       <ScrollReveal type="blur-fade">
         <div className="text-center space-y-2 md:space-y-4">
-          {/* Line 1 */}
           <p
             className="font-bold leading-tight"
             style={{ fontSize: "clamp(3rem, 6vw, 6rem)", letterSpacing: "-0.02em" }}
@@ -23,7 +22,6 @@ const ImageMosaic = () => (
             <span className="text-muted-foreground">AI-Native Craft</span>
           </p>
 
-          {/* Line 2 */}
           <p
             className="font-bold leading-tight"
             style={{ fontSize: "clamp(3rem, 6vw, 6rem)", letterSpacing: "-0.02em" }}
@@ -40,7 +38,6 @@ const ImageMosaic = () => (
             <span className="text-foreground">Precision in Every Frame</span>
           </p>
 
-          {/* Line 3 */}
           <p
             className="font-bold leading-tight"
             style={{ fontSize: "clamp(3rem, 6vw, 6rem)", letterSpacing: "-0.02em" }}

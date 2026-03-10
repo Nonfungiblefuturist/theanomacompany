@@ -10,7 +10,7 @@ const socials = [
 ];
 
 const CTABand = () => (
-  <section className="py-24 md:py-32">
+  <section className="section-card mx-[6px] rounded-[20px] overflow-hidden py-24 md:py-32">
     <div className="max-w-[1400px] mx-auto px-6 md:px-10 lg:px-16 xl:px-20">
       <ScrollReveal type="fade-up">
         <div
@@ -66,7 +66,6 @@ const CTABand = () => (
 
             {/* Right column — dark card with brand text */}
             <div className="hidden lg:flex relative rounded-2xl m-3 overflow-hidden items-center justify-center" style={{ background: "hsl(0 0% 5%)" }}>
-              {/* Ambient gradient overlay */}
               <div
                 className="absolute inset-0 opacity-30"
                 style={{ background: "var(--gradient-spectral)" }}

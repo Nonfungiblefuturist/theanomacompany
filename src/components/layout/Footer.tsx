@@ -5,8 +5,7 @@ import { useState } from "react";
 const pageLinks = [
   { label: "Home", to: "/" },
   { label: "Work", to: "/work" },
-  { label: "Studio", to: "/studio" },
-  { label: "Blog", to: "/blog" },
+  { label: "About Us", to: "/studio" },
   { label: "Contact", to: "/contact" },
 ];
 
@@ -19,14 +18,10 @@ const Footer = () => {
   const [email, setEmail] = useState("");
 
   return (
-    <footer
-      className="bg-card"
-      style={{ borderTopLeftRadius: 24, borderTopRightRadius: 24 }}
-    >
+    <footer className="section-card mx-[6px] overflow-hidden" style={{ borderRadius: "20px 20px 0 0" }}>
       <div className="max-w-[1400px] mx-auto px-6 md:px-10 lg:px-16 xl:px-20 pt-16 md:pt-20">
         {/* Top row: 3 columns */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-8">
-          {/* Logo + Address */}
           <div>
             <span className="font-bold text-foreground text-lg tracking-[0.05em] uppercase">
               The Anoma Company
@@ -34,14 +29,12 @@ const Footer = () => {
             <p className="mt-3 text-muted-foreground text-sm">{siteConfig.address}</p>
           </div>
 
-          {/* Description */}
           <div>
             <p className="text-muted-foreground text-sm" style={{ lineHeight: 1.7 }}>
               {siteConfig.description}
             </p>
           </div>
 
-          {/* Newsletter */}
           <div>
             <p className="text-muted-foreground text-sm mb-3">Stay ahead of the curve.</p>
             <div className="flex gap-2">
@@ -53,8 +46,7 @@ const Footer = () => {
                 className="flex-1 bg-background border border-border rounded-lg px-4 py-2.5 text-sm text-foreground placeholder:text-muted-foreground/50 focus:outline-none focus:border-primary/50 transition-colors"
               />
               <button
-                className="px-5 py-2.5 rounded-lg text-sm font-medium text-primary-foreground whitespace-nowrap"
-                style={{ background: "var(--gradient-spectral)" }}
+                className="px-5 py-2.5 rounded-lg text-sm font-medium bg-foreground text-background hover:opacity-90 transition-opacity whitespace-nowrap"
               >
                 Sign up
               </button>
@@ -62,12 +54,9 @@ const Footer = () => {
           </div>
         </div>
 
-        {/* Divider */}
         <div className="border-t border-border mt-12 pt-10" />
 
-        {/* Link row: 3 columns */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {/* Pages */}
           <div>
             <h4 className="text-sm font-medium uppercase tracking-widest text-muted-foreground mb-4">Pages</h4>
             <ul className="space-y-2">
@@ -81,7 +70,6 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Legal */}
           <div>
             <h4 className="text-sm font-medium uppercase tracking-widest text-muted-foreground mb-4">Legal</h4>
             <ul className="space-y-2">
@@ -95,7 +83,6 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Built by */}
           <div className="md:text-right">
             <h4 className="text-sm font-medium uppercase tracking-widest text-muted-foreground mb-4">Built by</h4>
             <p className="text-sm text-muted-foreground">Designed in Lovable</p>
@@ -103,12 +90,10 @@ const Footer = () => {
           </div>
         </div>
 
-        {/* Spacer + copyright */}
         <div className="mt-20 md:mt-32 text-right">
           <p className="text-xs text-muted-foreground">© {new Date().getFullYear()} All rights reserved.</p>
         </div>
 
-        {/* Giant display text — fully visible, not clipped */}
         <div className="mt-8 pb-8">
           <h2
             className="font-bold text-foreground uppercase tracking-tight select-none whitespace-nowrap text-center"

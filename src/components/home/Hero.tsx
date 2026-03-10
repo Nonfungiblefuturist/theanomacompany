@@ -1,15 +1,11 @@
-import { motion } from "framer-motion";
-import { Link } from "react-router-dom";
-import { ChevronDown } from "lucide-react";
-import ScrollReveal from "@/components/shared/ScrollReveal";
 import { siteConfig } from "@/data/siteConfig";
 
 const Hero = () => (
   <section
-    className="relative overflow-hidden mx-2 md:mx-3 mt-2 md:mt-3"
-    style={{ borderRadius: "20px", minHeight: "calc(100vh - 24px)" }}
+    className="section-card relative overflow-hidden mx-[6px] mt-[6px]"
+    style={{ borderRadius: "20px", minHeight: "calc(100vh - 12px)" }}
   >
-    {/* Video background */}
+    {/* Video background — no overlay */}
     <div className="absolute inset-0">
       <iframe
         src={`https://www.youtube.com/embed/${siteConfig.showreelYoutubeId}?autoplay=1&mute=1&loop=1&playlist=${siteConfig.showreelYoutubeId}&controls=0&showinfo=0&modestbranding=1&playsinline=1&rel=0&enablejsapi=1`}
@@ -18,70 +14,44 @@ const Hero = () => (
         allow="autoplay; encrypted-media"
         title="Background video"
       />
-      <div className="absolute inset-0 bg-background/70" />
+      {/* Light scrim for text readability only */}
+      <div className="absolute inset-0 bg-black/40" />
     </div>
 
-    {/* Center content */}
-    <div className="relative z-10 flex items-center justify-center min-h-[inherit] text-center px-5">
-      <div className="max-w-5xl">
-        <ScrollReveal type="blur-fade">
-          <h1
-            className="text-foreground font-bold"
-            style={{ fontSize: "clamp(3rem, 7vw, 7rem)", letterSpacing: "-0.03em", lineHeight: 1 }}
-          >
-            Everything is noise.
-          </h1>
-        </ScrollReveal>
+    {/* Bottom text bar — tagline left, brand name right */}
+    <div className="absolute bottom-0 left-0 right-0 z-10 flex items-end justify-between px-6 md:px-10 pb-6 md:pb-10 pointer-events-none">
+      {/* Left: tagline */}
+      <p className="text-[13px] text-white/50">
+        Everything is noise.
+      </p>
 
-        <ScrollReveal type="fade-up" delay={0.1}>
-          <p className="mt-6 text-muted-foreground text-lg md:text-xl" style={{ lineHeight: 1.7 }}>
-            We make the signal. AI-first creative studio.
-          </p>
-        </ScrollReveal>
-
-        <ScrollReveal type="fade-up" delay={0.2}>
-          <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
-            <Link
-              to="/work"
-              className="text-sm font-medium px-6 py-3 rounded-full border border-foreground/30 text-foreground hover:border-primary hover:text-primary transition-colors duration-300"
-            >
-              Explore Our Work
-            </Link>
-            <Link
-              to="/contact"
-              className="button-smooth text-sm font-medium px-6 py-3 rounded-full text-primary-foreground"
-              style={{ background: "var(--gradient-spectral)" }}
-            >
-              Get In Touch
-            </Link>
-          </div>
-        </ScrollReveal>
+      {/* Right: brand name + description */}
+      <div className="text-right">
+        <h1
+          className="font-semibold text-white/90 hidden md:block"
+          style={{
+            fontSize: "clamp(3rem, 8vw, 7rem)",
+            letterSpacing: "-0.05em",
+            lineHeight: 1,
+          }}
+        >
+          THE ANOMA COMPANY
+        </h1>
+        <h1
+          className="font-semibold text-white/90 md:hidden"
+          style={{
+            fontSize: "clamp(1.5rem, 8vw, 3rem)",
+            letterSpacing: "-0.05em",
+            lineHeight: 1,
+          }}
+        >
+          THE ANOMA COMPANY
+        </h1>
+        <p className="text-white/50 text-sm mt-3 max-w-[400px] ml-auto" style={{ lineHeight: 1.6 }}>
+          We're an AI-first cinematic production studio dedicated to crafting bold, immersive experiences.
+        </p>
       </div>
     </div>
-
-    {/* Bottom bar — © left, large brand name center/right */}
-    <div className="absolute bottom-0 left-0 right-0 z-10 flex items-end justify-between px-6 md:px-10 pb-6 md:pb-8">
-      <span className="text-xs text-muted-foreground">© 2024 – 2025</span>
-      <h2
-        className="text-foreground/90 font-semibold hidden md:block"
-        style={{
-          fontSize: "clamp(2rem, 6vw, 5rem)",
-          letterSpacing: "-0.05em",
-          lineHeight: 1,
-        }}
-      >
-        THE ANOMA COMPANY
-      </h2>
-    </div>
-
-    {/* Scroll chevron */}
-    <motion.div
-      className="absolute bottom-6 left-1/2 -translate-x-1/2 z-10 md:hidden"
-      animate={{ y: [0, 8, 0] }}
-      transition={{ duration: 2, repeat: Infinity }}
-    >
-      <ChevronDown className="text-foreground/40" size={20} />
-    </motion.div>
   </section>
 );
 

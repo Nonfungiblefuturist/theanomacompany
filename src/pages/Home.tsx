@@ -13,22 +13,22 @@ import ImageMosaic from "@/components/home/ImageMosaic";
 import HomeFAQ from "@/components/home/HomeFAQ";
 
 const Home = () => (
-  <div className="min-h-screen bg-background text-foreground">
+  <div className="min-h-screen text-foreground" style={{ background: "#0F0F0F" }}>
     <NebulaEffects />
     <Navbar />
 
     {/* 1 */}  <Hero />
-    {/* 2 */}  <AboutPreview />
-    {/* 3 */}  <ServicesTabbed />
-    {/* 4 */}  <SelectedWork />
-    {/* 5 */}  <ProcessSteps />
-    {/* 6 */}  <BentoGrid />
-    {/* 7 */}  <Testimonials />
-    {/* 8 */}  <ImageMosaic />
-    {/* 9 */}  <HomeFAQ />
-    {/* 10 */} <CTABand />
+    {/* 2 */}  <div className="mt-[6px]"><AboutPreview /></div>
+    {/* 3 */}  <div className="mt-[6px]"><ServicesTabbed /></div>
+    {/* 4 */}  <div className="mt-[6px]"><SelectedWork /></div>
+    {/* 5 */}  <div className="mt-[6px]"><ProcessSteps /></div>
+    {/* 6 */}  <div className="mt-[6px]"><BentoGrid /></div>
+    {/* 7 */}  <div className="mt-[6px]"><Testimonials /></div>
+    {/* 8 */}  <div className="mt-[6px]"><ImageMosaic /></div>
+    {/* 9 */}  <div className="mt-[6px]"><HomeFAQ /></div>
+    {/* 10 */} <div className="mt-[6px]"><CTABand /></div>
 
-    <Footer />
+    <div className="mt-[6px]"><Footer /></div>
   </div>
 );
 
