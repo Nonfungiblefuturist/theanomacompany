@@ -9,7 +9,7 @@ export const team: TeamMember[] = [
   {
     name: "Surzayon",
     role: "Founder & Creative Director",
-    image: "",
+    image: "/images/surzayon.png",
   },
   {
     name: "Sreejeeta",
@@ -24,7 +24,7 @@ export const team: TeamMember[] = [
   {
     name: "Aeria",
     role: "AI Influencer",
-    image: "",
+    image: "/images/aeria-portrait.png",
     isAI: true,
   },
 ];
