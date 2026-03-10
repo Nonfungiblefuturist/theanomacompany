@@ -34,7 +34,7 @@ const Studio = () => (
             className="text-foreground font-bold"
             style={{ fontSize: "clamp(2.75rem, 5vw, 5.5rem)", letterSpacing: "-0.03em" }}
           >
-            About Us.
+            Our Mission.
           </h1>
         </ScrollReveal>
         <ScrollReveal type="fade-up" delay={0.1}>
