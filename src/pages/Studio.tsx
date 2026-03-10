@@ -61,7 +61,7 @@ const Studio = () => (
 
         {/* Stats row */}
         <ScrollReveal type="fade-up" delay={0.3}>
-          <div className="mt-20 grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12">
+          <div className="mt-20 grid grid-cols-2 md:grid-cols-3 gap-8 md:gap-12">
             {stats.map((s) => (
               <div key={s.label}>
                 <StatsCounter value={s.value} suffix={s.suffix} label={s.label} />
