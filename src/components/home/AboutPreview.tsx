@@ -3,12 +3,15 @@ import ScrollReveal from "@/components/shared/ScrollReveal";
 import StatsCounter from "@/components/shared/StatsCounter";
 import { stats } from "@/data/stats";
 
+const whiteWords = "We blend cinematic vision with AI-native craft, transforming bold ideas".split(" ");
+const grayWords = "into immersive brand experiences, precision-engineered campaigns, and standout digital content.".split(" ");
+
 const AboutPreview = () => (
   <section className="py-20 md:py-28">
     <div className="max-w-[1400px] mx-auto px-6 md:px-10 lg:px-16 xl:px-20">
       {/* Dot label + offset paragraph */}
       <div className="grid grid-cols-1 lg:grid-cols-[25%_1fr] gap-6 lg:gap-12">
-        {/* Left: dot label */}
+        {/* Left: label */}
         <ScrollReveal type="fade-up">
           <p className="flex items-center gap-2 text-sm text-muted-foreground">
             <span className="w-2 h-2 rounded-full bg-primary inline-block" />
@@ -16,14 +19,18 @@ const AboutPreview = () => (
           </p>
         </ScrollReveal>
 
-        {/* Right: two-tone large paragraph */}
+        {/* Right: two-tone large paragraph — word-by-word */}
         <ScrollReveal type="blur-fade">
           <p
             className="font-medium"
             style={{ fontSize: "clamp(1.5rem, 3.5vw, 3.5rem)", lineHeight: 1.25, letterSpacing: "-0.02em" }}
           >
-            <span className="text-foreground">We're a Toronto-based AI-first creative studio. We build tools, brands, and films</span>
-            <span className="text-muted-foreground"> — using AI as the engine and human direction as the compass. Every project follows our CTRL+AI methodology: human control, AI execution.</span>
+            {whiteWords.map((w, i) => (
+              <span key={`w-${i}`} className="text-foreground">{w} </span>
+            ))}
+            {grayWords.map((w, i) => (
+              <span key={`g-${i}`} className="text-muted-foreground">{w} </span>
+            ))}
           </p>
         </ScrollReveal>
       </div>
@@ -41,17 +48,20 @@ const AboutPreview = () => (
           ))}
 
           <ScrollReveal type="fade-up" delay={0.5}>
-            <Link to="/studio" className="inline-flex items-center gap-1 text-sm text-primary hover:text-foreground transition-colors mt-4">
+            <Link
+              to="/studio"
+              className="inline-flex items-center gap-2 text-sm font-medium mt-6 px-5 py-2.5 rounded-[10px] border border-foreground/30 text-foreground hover:bg-foreground hover:text-background transition-colors duration-300"
+            >
               More about us <span>→</span>
             </Link>
           </ScrollReveal>
         </div>
 
-        {/* Right: Large image */}
+        {/* Right: Image — contained, not oversized */}
         <ScrollReveal type="scale-in">
-          <div className="aspect-[4/5] rounded-2xl overflow-hidden">
+          <div className="aspect-[4/3] max-h-[500px] rounded-2xl overflow-hidden">
             <img
-              src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=800&h=1000&fit=crop"
+              src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=800&h=600&fit=crop"
               alt="The Anoma Company studio"
               className="w-full h-full object-cover"
               loading="lazy"

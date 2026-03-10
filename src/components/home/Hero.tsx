@@ -21,6 +21,7 @@ const Hero = () => (
       <div className="absolute inset-0 bg-background/70" />
     </div>
 
+    {/* Center content */}
     <div className="relative z-10 flex items-center justify-center min-h-[inherit] text-center px-5">
       <div className="max-w-5xl">
         <ScrollReveal type="blur-fade">
@@ -44,7 +45,7 @@ const Hero = () => (
               to="/work"
               className="text-sm font-medium px-6 py-3 rounded-full border border-foreground/30 text-foreground hover:border-primary hover:text-primary transition-colors duration-300"
             >
-              View Our Work
+              Explore Our Work
             </Link>
             <Link
               to="/contact"
@@ -58,9 +59,24 @@ const Hero = () => (
       </div>
     </div>
 
-    <span className="absolute bottom-6 left-6 text-xs text-muted-foreground z-10">© 2025</span>
+    {/* Bottom bar — © left, large brand name center/right */}
+    <div className="absolute bottom-0 left-0 right-0 z-10 flex items-end justify-between px-6 md:px-10 pb-6 md:pb-8">
+      <span className="text-xs text-muted-foreground">© 2024 – 2025</span>
+      <h2
+        className="text-foreground/90 font-semibold hidden md:block"
+        style={{
+          fontSize: "clamp(2rem, 6vw, 5rem)",
+          letterSpacing: "-0.05em",
+          lineHeight: 1,
+        }}
+      >
+        THE ANOMA COMPANY
+      </h2>
+    </div>
+
+    {/* Scroll chevron */}
     <motion.div
-      className="absolute bottom-6 left-1/2 -translate-x-1/2 z-10"
+      className="absolute bottom-6 left-1/2 -translate-x-1/2 z-10 md:hidden"
       animate={{ y: [0, 8, 0] }}
       transition={{ duration: 2, repeat: Infinity }}
     >

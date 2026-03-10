@@ -7,21 +7,21 @@ import SectionHeader from "@/components/shared/SectionHeader";
 const services = [
   {
     num: "01",
-    title: "Solutions",
+    title: "AI Solutions",
     desc: "Custom AI tools, autonomous agents, and platforms that automate workflows and solve real operational problems. From chatbots to scheduling engines.",
     timeline: "2 – 6 weeks",
     image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&h=600&fit=crop",
   },
   {
     num: "02",
-    title: "Branding",
+    title: "Creative Campaigns",
     desc: "Identity systems, campaign visuals, pitch decks, and packaging — crafted with AI-enhanced creative pipelines for speed and precision.",
     timeline: "2 – 4 weeks",
     image: "https://images.unsplash.com/photo-1558655146-9f40138edfeb?w=800&h=600&fit=crop",
   },
   {
     num: "03",
-    title: "Video Production",
+    title: "AI Video Production",
     desc: "Cinematic commercials, music videos, and animated spots — from storyboard to final cut using hybrid AI + live-action workflows.",
     timeline: "3 – 8 weeks",
     image: "https://images.unsplash.com/photo-1485846234645-a62644f84728?w=800&h=600&fit=crop",
@@ -48,12 +48,16 @@ const ServicesTabbed = () => {
                 <ScrollReveal key={i} type="fade-up" delay={i * 0.1}>
                   <button
                     onClick={() => setActive(i)}
-                    className={`w-full text-left py-5 border-t border-border transition-colors duration-300 ${
+                    onMouseEnter={() => setActive(i)}
+                    className={`w-full text-left py-5 border-t border-border flex items-center justify-between transition-all duration-300 ${
                       active === i ? "opacity-100" : "opacity-40 hover:opacity-70"
                     }`}
                   >
-                    <span className="text-primary text-sm font-medium">{s.num}</span>
-                    <h3 className="font-semibold text-xl md:text-2xl text-foreground mt-1">{s.title}</h3>
+                    <div>
+                      <span className="text-primary text-sm font-medium">{s.num}</span>
+                      <h3 className="font-semibold text-xl md:text-2xl text-foreground mt-1">{s.title}</h3>
+                    </div>
+                    <span className="text-foreground/50 text-lg">→</span>
                   </button>
                 </ScrollReveal>
               ))}
@@ -91,7 +95,7 @@ const ServicesTabbed = () => {
 
           {/* Right: cross-fade image */}
           <ScrollReveal type="fade-up" delay={0.2}>
-            <div className="aspect-[4/3] rounded-lg overflow-hidden relative sticky top-32">
+            <div className="aspect-[4/3] rounded-2xl overflow-hidden relative sticky top-32">
               <AnimatePresence mode="wait">
                 <motion.img
                   key={active}
