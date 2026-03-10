@@ -36,8 +36,10 @@ const ShowreelBanner = () => {
         <div
           className="relative w-full overflow-hidden rounded-[20px] cursor-pointer group"
           style={{
-            height: isPlaying ? "clamp(400px, 60vh, 80vh)" : "clamp(300px, 50vh, 600px)",
-            transition: "height 0.6s ease",
+            aspectRatio: isPlaying ? "16 / 9" : undefined,
+            height: isPlaying ? "auto" : "clamp(300px, 50vh, 600px)",
+            maxHeight: isPlaying ? "85vh" : undefined,
+            transition: "all 0.6s ease",
           }}
           onClick={handlePlayShowreel}
         >
@@ -50,8 +52,8 @@ const ShowreelBanner = () => {
             muted
             playsInline
             onEnded={handleVideoEnded}
-            className="absolute inset-0 w-full h-full object-cover"
-            style={{ objectFit: "cover" }}
+            className="absolute inset-0 w-full h-full"
+            style={{ objectFit: isPlaying ? "contain" : "cover", background: "#000" }}
           />
 
           {/* Dark overlay — fades out when playing */}

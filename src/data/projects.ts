@@ -318,7 +318,7 @@ export const projects: Project[] = [
     isVideoLightbox: true,
   },
   {
-    slug: "animated-30-seconder",
+    slug: "animated-25-seconder",
     title: "Animated 25-Seconder",
     client: "Multi-client",
     year: 2025,
