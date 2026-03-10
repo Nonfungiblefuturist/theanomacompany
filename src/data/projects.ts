@@ -291,9 +291,9 @@ export const projects: Project[] = [
     filterTag: "Video Production",
     thumbnailType: "video",
     thumbnail: "/images/music-video-1-thumb.jpg",
-    summary: "AI-native music video with cinematic visual language — Part I",
+    summary: "AI-native music video with cinematic visual language",
     intro: "A music video that needed to feel like a short film — narrative-driven, visually dense, and completely original.",
-    metadata: { year: 2024, duration: "5 Weeks", client: "TBA", category: "Music Video" },
+    metadata: { year: 2024, duration: "5 Weeks", client: "MAIA", category: "Music Video" },
     challenges: {
       heading: "The artist wanted a visual world that didn't exist — surreal environments and impossible transitions that live-action alone couldn't deliver.",
       body: "Traditional VFX would have taken months and blown the budget. The creative vision demanded both speed and fidelity.",
