@@ -168,7 +168,18 @@ const Studio = () => (
                   )}
                 </div>
                 <div className="mt-3">
-                  <p className="font-medium text-foreground text-sm">{member.name}</p>
+                  {member.linkedin ? (
+                    <a
+                      href={member.linkedin}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="font-medium text-foreground text-sm hover:underline"
+                    >
+                      {member.name}
+                    </a>
+                  ) : (
+                    <p className="font-medium text-foreground text-sm">{member.name}</p>
+                  )}
                   <p className="text-xs text-muted-foreground">{member.role}</p>
                 </div>
               </div>

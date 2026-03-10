@@ -7,7 +7,7 @@ const services = [
     num: "01",
     title: "AI Solutions",
     desc: "Custom AI tools, autonomous agents, and platforms that automate workflows and solve real operational problems. From chatbots to scheduling engines.",
-    image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&h=600&fit=crop",
+    video: "/videos/typing-workflow.mp4",
   },
   {
     num: "02",
@@ -89,17 +89,30 @@ const ServicesTabbed = () => {
             ))}
           </div>
 
-          {/* Right: cross-fade image — sticky */}
+          {/* Right: cross-fade media — sticky */}
           <div className="aspect-[4/3] rounded-2xl overflow-hidden relative sticky top-24">
             {services.map((s, i) => (
-              <img
-                key={i}
-                src={s.image}
-                alt={s.title}
-                className="absolute inset-0 w-full h-full object-cover transition-opacity duration-400"
-                style={{ opacity: active === i ? 1 : 0 }}
-                loading="lazy"
-              />
+              s.video ? (
+                <video
+                  key={i}
+                  src={s.video}
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  className="absolute inset-0 w-full h-full object-cover transition-opacity duration-400"
+                  style={{ opacity: active === i ? 1 : 0 }}
+                />
+              ) : (
+                <img
+                  key={i}
+                  src={s.image}
+                  alt={s.title}
+                  className="absolute inset-0 w-full h-full object-cover transition-opacity duration-400"
+                  style={{ opacity: active === i ? 1 : 0 }}
+                  loading="lazy"
+                />
+              )
             ))}
           </div>
         </div>
