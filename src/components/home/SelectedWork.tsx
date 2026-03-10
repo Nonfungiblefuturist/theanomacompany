@@ -30,10 +30,10 @@ const SelectedWork = () => (
           <ScrollReveal key={p.slug} type="slide-up" delay={i * 0.1} viewportAmount={0.15}>
             <Link
               to={`/work/${p.slug}`}
-              className="group block rounded-lg overflow-hidden border border-border hover:border-primary/30 transition-all duration-500"
+              className="group block rounded-2xl overflow-hidden border border-border hover:border-primary/30 transition-all duration-500"
             >
-              {/* Large thumbnail */}
-              <div className="aspect-[3/2] relative overflow-hidden">
+              {/* Large cinematic thumbnail */}
+              <div className="aspect-[16/10] relative overflow-hidden">
                 <img
                   src={p.thumbnail}
                   alt={p.title}

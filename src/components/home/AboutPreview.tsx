@@ -6,24 +6,27 @@ import { stats } from "@/data/stats";
 const AboutPreview = () => (
   <section className="py-20 md:py-28">
     <div className="max-w-[1400px] mx-auto px-6 md:px-10 lg:px-16 xl:px-20">
-      {/* Dot label */}
-      <ScrollReveal type="fade-up">
-        <p className="flex items-center gap-2 text-sm text-muted-foreground mb-6">
-          <span className="w-2 h-2 rounded-full bg-primary inline-block" />
-          About us
-        </p>
-      </ScrollReveal>
+      {/* Dot label + offset paragraph */}
+      <div className="grid grid-cols-1 lg:grid-cols-[25%_1fr] gap-6 lg:gap-12">
+        {/* Left: dot label */}
+        <ScrollReveal type="fade-up">
+          <p className="flex items-center gap-2 text-sm text-muted-foreground">
+            <span className="w-2 h-2 rounded-full bg-primary inline-block" />
+            About us
+          </p>
+        </ScrollReveal>
 
-      {/* Two-tone large paragraph — heading-sized */}
-      <ScrollReveal type="blur-fade">
-        <p
-          className="max-w-5xl font-medium"
-          style={{ fontSize: "clamp(1.5rem, 3.5vw, 3.5rem)", lineHeight: 1.25, letterSpacing: "-0.02em" }}
-        >
-          <span className="text-foreground">We're a Toronto-based AI-first creative studio. We build tools, brands, and films</span>
-          <span className="text-muted-foreground"> — using AI as the engine and human direction as the compass. Every project follows our CTRL+AI methodology: human control, AI execution.</span>
-        </p>
-      </ScrollReveal>
+        {/* Right: two-tone large paragraph */}
+        <ScrollReveal type="blur-fade">
+          <p
+            className="font-medium"
+            style={{ fontSize: "clamp(1.5rem, 3.5vw, 3.5rem)", lineHeight: 1.25, letterSpacing: "-0.02em" }}
+          >
+            <span className="text-foreground">We're a Toronto-based AI-first creative studio. We build tools, brands, and films</span>
+            <span className="text-muted-foreground"> — using AI as the engine and human direction as the compass. Every project follows our CTRL+AI methodology: human control, AI execution.</span>
+          </p>
+        </ScrollReveal>
+      </div>
 
       {/* Stats left + Image right */}
       <div className="grid grid-cols-1 lg:grid-cols-[30%_1fr] gap-12 lg:gap-16 mt-16 items-start">
