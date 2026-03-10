@@ -8,21 +8,18 @@ const services = [
     num: "01",
     title: "AI Solutions",
     desc: "Custom AI tools, autonomous agents, and platforms that automate workflows and solve real operational problems. From chatbots to scheduling engines.",
-    timeline: "2 – 6 weeks",
     image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&h=600&fit=crop",
   },
   {
     num: "02",
     title: "Creative Campaigns",
     desc: "Identity systems, campaign visuals, pitch decks, and packaging — crafted with AI-enhanced creative pipelines for speed and precision.",
-    timeline: "2 – 4 weeks",
     image: "https://images.unsplash.com/photo-1558655146-9f40138edfeb?w=800&h=600&fit=crop",
   },
   {
     num: "03",
     title: "AI Video Production",
     desc: "Cinematic commercials, music videos, and animated spots — from storyboard to final cut using hybrid AI + live-action workflows.",
-    timeline: "3 – 8 weeks",
     image: "https://images.unsplash.com/photo-1485846234645-a62644f84728?w=800&h=600&fit=crop",
   },
 ];
@@ -69,7 +66,6 @@ const ServicesTabbed = () => {
                 <div className="flex-1">
                   <span className="text-muted-foreground text-sm">{s.num}</span>
                   <h3 className="font-medium text-xl text-foreground mt-1">{s.title}</h3>
-                  {/* Description + timeline only for active */}
                   <AnimatePresence mode="wait">
                     {active === i && (
                       <motion.div
@@ -81,10 +77,6 @@ const ServicesTabbed = () => {
                         <p className="text-sm text-muted-foreground mt-3" style={{ lineHeight: 1.7 }}>
                           {s.desc}
                         </p>
-                        <div className="mt-3">
-                          <span className="text-xs uppercase tracking-widest text-muted-foreground/60">Timeline</span>
-                          <p className="text-sm text-foreground font-medium mt-1">{s.timeline}</p>
-                        </div>
                       </motion.div>
                     )}
                   </AnimatePresence>

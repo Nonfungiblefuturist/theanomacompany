@@ -42,10 +42,13 @@ const Testimonials = () => {
         </ScrollReveal>
       </div>
 
-      {/* Row 1 — scrolls left */}
-      <div className="relative overflow-hidden" style={{ maskImage: "linear-gradient(to right, transparent, black 10%, black 90%, transparent)" }}>
+      {/* Row 1 — scrolls left, pauses on hover */}
+      <div
+        className="relative overflow-hidden group/row1"
+        style={{ maskImage: "linear-gradient(to right, transparent, black 10%, black 90%, transparent)" }}
+      >
         <motion.div
-          className="flex"
+          className="flex group-hover/row1:[animation-play-state:paused]"
           animate={{ x: ["0%", "-50%"] }}
           transition={{ duration: 40, repeat: Infinity, ease: "linear" }}
         >
@@ -55,10 +58,13 @@ const Testimonials = () => {
         </motion.div>
       </div>
 
-      {/* Row 2 — scrolls right */}
-      <div className="relative overflow-hidden mt-4" style={{ maskImage: "linear-gradient(to right, transparent, black 10%, black 90%, transparent)" }}>
+      {/* Row 2 — scrolls right, pauses on hover */}
+      <div
+        className="relative overflow-hidden mt-4 group/row2"
+        style={{ maskImage: "linear-gradient(to right, transparent, black 10%, black 90%, transparent)" }}
+      >
         <motion.div
-          className="flex"
+          className="flex group-hover/row2:[animation-play-state:paused]"
           animate={{ x: ["-50%", "0%"] }}
           transition={{ duration: 45, repeat: Infinity, ease: "linear" }}
         >

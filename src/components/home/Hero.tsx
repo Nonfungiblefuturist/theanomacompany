@@ -14,42 +14,46 @@ const Hero = () => (
         allow="autoplay; encrypted-media"
         title="Background video"
       />
-      {/* Light scrim for text readability only */}
-      <div className="absolute inset-0 bg-black/40" />
+      {/* Light scrim for text readability */}
+      <div className="absolute inset-0 bg-black/30" />
     </div>
 
-    {/* Bottom text bar — tagline left, brand name right */}
-    <div className="absolute bottom-0 left-0 right-0 z-10 flex items-end justify-between px-6 md:px-10 pb-6 md:pb-10 pointer-events-none">
-      {/* Left: tagline */}
-      <p className="text-[13px] text-white/50">
-        Everything is noise.
-      </p>
+    {/* Bottom text bar — two columns: brand left, tagline+desc right */}
+    <div className="absolute bottom-0 left-0 right-0 z-10 pointer-events-none px-6 md:px-10 pb-8 md:pb-12">
+      <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6">
+        {/* Left: THE ANOMA COMPANY — big */}
+        <h1
+          className="font-bold text-white select-none leading-[0.9]"
+          style={{
+            fontSize: "clamp(3rem, 10vw, 8rem)",
+            letterSpacing: "-0.05em",
+          }}
+        >
+          THE ANOMA<br />COMPANY
+        </h1>
 
-      {/* Right: brand name + description */}
-      <div className="text-right">
-        <h1
-          className="font-semibold text-white/90 hidden md:block"
-          style={{
-            fontSize: "clamp(3rem, 8vw, 7rem)",
-            letterSpacing: "-0.05em",
-            lineHeight: 1,
-          }}
-        >
-          THE ANOMA COMPANY
-        </h1>
-        <h1
-          className="font-semibold text-white/90 md:hidden"
-          style={{
-            fontSize: "clamp(1.5rem, 8vw, 3rem)",
-            letterSpacing: "-0.05em",
-            lineHeight: 1,
-          }}
-        >
-          THE ANOMA COMPANY
-        </h1>
-        <p className="text-white/50 text-sm mt-3 max-w-[400px] ml-auto" style={{ lineHeight: 1.6 }}>
-          We're an AI-first cinematic production studio dedicated to crafting bold, immersive experiences.
-        </p>
+        {/* Right: tagline + description */}
+        <div className="md:text-right md:max-w-[420px]">
+          <p
+            className="font-medium text-white"
+            style={{
+              fontSize: "clamp(1.5rem, 3vw, 2.5rem)",
+              letterSpacing: "-0.02em",
+              lineHeight: 1.2,
+            }}
+          >
+            Everything is noise.
+          </p>
+          <p
+            className="text-white/50 mt-3"
+            style={{
+              fontSize: "clamp(0.875rem, 1.5vw, 1.125rem)",
+              lineHeight: 1.6,
+            }}
+          >
+            We're an AI-first cinematic production studio dedicated to crafting bold, immersive experiences.
+          </p>
+        </div>
       </div>
     </div>
   </section>

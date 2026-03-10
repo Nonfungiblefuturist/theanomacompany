@@ -9,25 +9,26 @@ const grayWords = "into immersive brand experiences, precision-engineered campai
 const AboutPreview = () => (
   <section className="section-card mx-[6px] rounded-[20px] overflow-hidden">
     <div className="max-w-[1400px] mx-auto px-6 md:px-10 lg:px-16 xl:px-20 py-24 md:py-32">
-      {/* About us label */}
-      <ScrollReveal type="fade-up">
-        <p className="text-sm text-muted-foreground mb-8">About us</p>
-      </ScrollReveal>
+      {/* Top row: "About us" label left, two-tone paragraph right — same line */}
+      <div className="grid grid-cols-1 md:grid-cols-[30%_1fr] gap-6 md:gap-12">
+        <ScrollReveal type="fade-up">
+          <p className="text-sm text-muted-foreground">About us</p>
+        </ScrollReveal>
 
-      {/* Two-tone large paragraph — full width */}
-      <ScrollReveal type="blur-fade">
-        <p
-          className="font-normal"
-          style={{ fontSize: "clamp(1.5rem, 3.5vw, 3.5rem)", lineHeight: 1.3, letterSpacing: "-0.02em" }}
-        >
-          {whiteWords.map((w, i) => (
-            <span key={`w-${i}`} className="text-foreground">{w} </span>
-          ))}
-          {grayWords.map((w, i) => (
-            <span key={`g-${i}`} style={{ color: "rgb(117, 117, 117)" }}>{w} </span>
-          ))}
-        </p>
-      </ScrollReveal>
+        <ScrollReveal type="blur-fade">
+          <p
+            className="font-normal"
+            style={{ fontSize: "clamp(1.5rem, 3.5vw, 3.5rem)", lineHeight: 1.3, letterSpacing: "-0.02em" }}
+          >
+            {whiteWords.map((w, i) => (
+              <span key={`w-${i}`} className="text-foreground">{w} </span>
+            ))}
+            {grayWords.map((w, i) => (
+              <span key={`g-${i}`} style={{ color: "rgb(117, 117, 117)" }}>{w} </span>
+            ))}
+          </p>
+        </ScrollReveal>
+      </div>
 
       {/* Stats + Image inner container */}
       <div className="mt-16 rounded-[20px] bg-card p-4 md:p-6">
@@ -54,7 +55,7 @@ const AboutPreview = () => (
 
           {/* Right: Image */}
           <ScrollReveal type="scale-in">
-            <div className="rounded-2xl overflow-hidden h-full min-h-[300px]">
+            <div className="rounded-2xl overflow-hidden h-full min-h-[280px] max-h-[460px]">
               <img
                 src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=800&h=600&fit=crop"
                 alt="The Anoma Company studio"
