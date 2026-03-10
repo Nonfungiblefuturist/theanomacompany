@@ -84,6 +84,8 @@ const CTABand = () => (
                 muted
                 playsInline
                 className="absolute inset-0 w-full h-full object-cover opacity-70"
+                style={{ playbackRate: 0.5 } as React.CSSProperties}
+                ref={(el) => { if (el) el.playbackRate = 0.5; }}
               />
               <div
                 className="absolute inset-0"
