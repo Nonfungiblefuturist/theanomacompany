@@ -98,9 +98,14 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply text-foreground;
     font-family: 'Geist', ui-sans-serif, system-ui, sans-serif;
     font-weight: 400;
+    background-color: #0F0F0F;
+  }
+
+  .section-card {
+    background-color: hsl(var(--background));
   }
 
   h1, h2, h3, h4, h5, h6 {
