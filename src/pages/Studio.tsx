@@ -34,12 +34,12 @@ const Studio = () => (
             className="text-foreground font-bold"
             style={{ fontSize: "clamp(2.75rem, 5vw, 5.5rem)", letterSpacing: "-0.03em" }}
           >
-            About Us.
+            Our Mission.
           </h1>
         </ScrollReveal>
         <ScrollReveal type="fade-up" delay={0.1}>
           <p className="mt-6 text-muted-foreground text-lg md:text-xl max-w-3xl" style={{ lineHeight: 1.7 }}>
-            The Anoma Company is an AI-first cinematic production studio based in Toronto, built for brands that refuse to blend in. Through AI-native craft, cinematic vision, and precision engineering, we transform ideas into unforgettable digital experiences.
+            We believe creative production should be bold, powerful, and unapologetically original. Through AI solutions, cinematic campaigns, and precision-engineered content, we help brands cut through the noise and make a lasting impression.
           </p>
         </ScrollReveal>
 
@@ -48,10 +48,10 @@ const Studio = () => (
           <div className="mt-16 grid grid-cols-1 md:grid-cols-[30%_1fr] gap-8 md:gap-12">
             <p className="flex items-center gap-2 text-sm text-muted-foreground">
               <span className="w-1.5 h-1.5 rounded-full" style={{ backgroundColor: "hsl(var(--cosmic))" }} />
-              Our Mission
+              About Us
             </p>
             <p className="text-foreground text-lg md:text-xl" style={{ lineHeight: 1.7 }}>
-              We believe creative production should be bold, purposeful, and powered by intelligence. Our mission is to help brands break through noise with AI-driven visuals that tell stories, engage audiences, and leave lasting impressions.
+              The Anoma Company is an AI-first cinematic production studio based in Toronto, built for brands that refuse to blend in. We build AI solutions that automate and elevate, produce creative campaigns that demand attention, and deliver content that moves people. Every project is an opportunity to prove that bold ideas, powered by intelligent tools, create unforgettable results.
             </p>
           </div>
         </ScrollReveal>

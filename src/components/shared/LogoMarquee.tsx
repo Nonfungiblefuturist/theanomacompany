@@ -1,20 +1,23 @@
-const logos = [
-  "Runway", "Midjourney", "Pika Labs", "Claude", "Stable Diffusion",
-  "Eleven Labs", "Kling AI", "Luma AI", "Suno", "KREA",
-  "Cursor", "Freepik", "Minimax",
+const clients = [
+  "Claude", "Levi's", "Maya Vision", "Lincoln University",
+  "George Brown College", "San Jose Quakes", "T Series",
 ];
 
 const LogoMarquee = () => (
-  <div className="relative overflow-hidden py-8">
+  <div className="relative overflow-hidden py-10">
     {/* Gradient masks */}
     <div className="absolute left-0 top-0 bottom-0 w-24 z-10 bg-gradient-to-r from-background to-transparent" />
     <div className="absolute right-0 top-0 bottom-0 w-24 z-10 bg-gradient-to-l from-background to-transparent" />
 
+    <p className="text-center text-xs uppercase tracking-[0.2em] text-muted-foreground/40 mb-6 font-medium">
+      Trusted by
+    </p>
+
     <div className="flex animate-marquee whitespace-nowrap">
-      {[...logos, ...logos].map((name, i) => (
+      {[...clients, ...clients, ...clients].map((name, i) => (
         <span
           key={i}
-          className="mx-8 text-sm uppercase tracking-[0.15em] text-muted-foreground/50 font-medium select-none"
+          className="mx-10 text-sm uppercase tracking-[0.15em] text-muted-foreground/50 font-medium select-none"
         >
           {name}
         </span>
