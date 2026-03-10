@@ -47,12 +47,12 @@ const Navbar = () => {
         }`}
       >
         <div className="max-w-[1400px] mx-auto px-6 md:px-10 lg:px-16 flex items-center justify-between h-16 md:h-20">
-          <Link
-            to="/"
-            className="font-semibold text-foreground uppercase whitespace-nowrap"
-            style={{ fontSize: "clamp(11px, 1.1vw, 15px)", letterSpacing: "0.08em" }}
-          >
-            The Anoma Company
+          <Link to="/" className="flex items-center">
+            <img
+              src="/images/anoma-logo.png"
+              alt="The Anoma Company"
+              className="h-8 md:h-10 w-auto"
+            />
           </Link>
 
           <div className="hidden md:flex items-center gap-8">
