@@ -25,6 +25,9 @@ export interface Project {
   };
   gallery: string[];
   externalLink?: string;
+  videoPreviewUrl?: string;
+  videoFullUrl?: string;
+  isVideoLightbox?: boolean;
 }
 
 export const projects: Project[] = [
@@ -51,38 +54,62 @@ export const projects: Project[] = [
     },
     gallery: [
       "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=1200&h=800&fit=crop",
-      "https://images.unsplash.com/photo-1676299081847-824916de030a?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1675557009875-436f7a5c1e71?w=800&h=600&fit=crop",
     ],
+    externalLink: "https://chat-sage-gamma.vercel.app/",
   },
   {
-    slug: "prompt-machine",
-    title: "Prompt Machine",
+    slug: "director-gpt",
+    title: "DirectorGPT",
     client: "Internal",
     year: 2025,
-    category: "Productivity Tool",
+    category: "AI Tool",
     filterTag: "Solutions",
     thumbnailType: "image",
     thumbnail: "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?w=800&h=600&fit=crop",
-    summary: "Structured prompt engineering for creative pipelines",
-    intro: "AI generation quality depends entirely on prompt craft. We built a system that standardizes and optimizes prompt workflows for production teams.",
-    metadata: { year: 2025, duration: "4 Weeks", client: "Internal", category: "Productivity Tool" },
+    summary: "AI-powered film direction and scene planning assistant",
+    intro: "DirectorGPT helps filmmakers pre-visualize scenes, generate shot lists, and plan productions with AI assistance.",
+    metadata: { year: 2025, duration: "4 Weeks", client: "Internal", category: "AI Tool" },
     challenges: {
-      heading: "Prompt quality was inconsistent across team members, leading to wasted generation credits and unpredictable output.",
-      body: "Every artist had their own approach. There was no shared vocabulary, no version control, no way to reproduce results reliably.",
+      heading: "Pre-production planning is time-consuming and requires expensive pre-visualization tools.",
+      body: "Independent filmmakers and small studios lack access to professional pre-viz software, making it hard to communicate creative vision.",
     },
     solutions: {
-      heading: "We built a structured prompt framework with templates, parameter controls, and output tracking — turning prompt craft into a repeatable system.",
-      body: "The platform includes categorized prompt libraries, A/B comparison views, and generation history. Teams now share and iterate on prompts like code.",
+      heading: "We built an AI director assistant that generates shot lists, storyboards, and scene breakdowns from natural language descriptions.",
+      body: "DirectorGPT understands film grammar, camera angles, and lighting setups — turning text descriptions into actionable production plans.",
     },
     gallery: [
       "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?w=1200&h=800&fit=crop",
-      "https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=800&h=600&fit=crop",
     ],
+    externalLink: "https://directorgpt-720109186790.us-west1.run.app/",
+  },
+  {
+    slug: "cinegrade-ai-reporter",
+    title: "CineGrade AI Reporter",
+    client: "Internal",
+    year: 2025,
+    category: "AI Tool",
+    filterTag: "Solutions",
+    thumbnailType: "image",
+    thumbnail: "https://images.unsplash.com/photo-1676299081847-824916de030a?w=800&h=600&fit=crop",
+    summary: "AI-powered film analysis and grading reports",
+    intro: "CineGrade analyzes film footage and generates comprehensive grading reports with AI-driven insights.",
+    metadata: { year: 2025, duration: "5 Weeks", client: "Internal", category: "AI Tool" },
+    challenges: {
+      heading: "Manual footage review and grading reports consumed hours of editor time per project.",
+      body: "Post-production teams needed faster ways to assess footage quality, color consistency, and technical compliance.",
+    },
+    solutions: {
+      heading: "We built an automated reporter that analyzes footage and generates detailed grading assessments with recommendations.",
+      body: "The system evaluates exposure, color balance, sharpness, and continuity — delivering actionable reports in minutes instead of hours.",
+    },
+    gallery: [
+      "https://images.unsplash.com/photo-1676299081847-824916de030a?w=1200&h=800&fit=crop",
+    ],
+    externalLink: "https://cinegrade-ai-reporter-720109186790.us-west1.run.app/",
   },
   {
     slug: "resume-match",
-    title: "Resume Match",
+    title: "ResuMatch AI",
     client: "Intl Campus Admit",
     year: 2024,
     category: "AI Tool",
@@ -103,10 +130,11 @@ export const projects: Project[] = [
     gallery: [
       "https://images.unsplash.com/photo-1586281380349-632531db7ed4?w=1200&h=800&fit=crop",
     ],
+    externalLink: "https://resumatch-ai-720109186790.us-west1.run.app/",
   },
   {
     slug: "work-schedule",
-    title: "Work Schedule",
+    title: "WorkBack",
     client: "Internal",
     year: 2025,
     category: "Productivity Tool",
@@ -127,10 +155,11 @@ export const projects: Project[] = [
     gallery: [
       "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=1200&h=800&fit=crop",
     ],
+    externalLink: "https://workback-720109186790.us-west1.run.app/",
   },
   {
-    slug: "convert-gpa",
-    title: "Convert GPA",
+    slug: "campus-convert",
+    title: "Campus Convert",
     client: "Intl Campus Admit",
     year: 2024,
     category: "AI Tool",
@@ -151,30 +180,7 @@ export const projects: Project[] = [
     gallery: [
       "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=1200&h=800&fit=crop",
     ],
-  },
-  {
-    slug: "ai-agents",
-    title: "AI Agents",
-    client: "Internal / Multi-client",
-    year: 2025,
-    category: "AI Agent",
-    filterTag: "Solutions",
-    thumbnailType: "image",
-    thumbnail: "https://images.unsplash.com/photo-1676299081847-824916de030a?w=800&h=600&fit=crop",
-    summary: "Autonomous AI agents for complex business workflows",
-    intro: "We designed autonomous agents that handle end-to-end processes — from research to execution — without constant human oversight.",
-    metadata: { year: 2025, duration: "6 Weeks", client: "Multi-client", category: "AI Agent" },
-    challenges: {
-      heading: "Repetitive multi-step workflows consumed hours of skilled labor that should have been spent on creative and strategic work.",
-      body: "Tasks like market research compilation, content scheduling, and data pipeline management followed predictable patterns but still required manual execution.",
-    },
-    solutions: {
-      heading: "We built specialized AI agents that execute full workflows autonomously — monitoring, deciding, and acting within defined parameters.",
-      body: "Each agent is scoped to a specific domain with guardrails, logging, and human-in-the-loop checkpoints for critical decisions.",
-    },
-    gallery: [
-      "https://images.unsplash.com/photo-1676299081847-824916de030a?w=1200&h=800&fit=crop",
-    ],
+    externalLink: "https://campus-convert-720109186790.us-west1.run.app/",
   },
 
   // ── BRANDING (5) ──
@@ -323,6 +329,9 @@ export const projects: Project[] = [
     gallery: [
       "https://images.unsplash.com/photo-1524492412937-b28074a5d7da?w=1200&h=800&fit=crop",
     ],
+    videoPreviewUrl: "/videos/jaipur-living-preview.mp4",
+    videoFullUrl: "/videos/jaipur-living-full.mp4",
+    isVideoLightbox: true,
   },
   {
     slug: "lincoln-university",
@@ -347,6 +356,9 @@ export const projects: Project[] = [
     gallery: [
       "https://images.unsplash.com/photo-1523050854058-8df90110c476?w=1200&h=800&fit=crop",
     ],
+    videoPreviewUrl: "/videos/lincoln-preview.mp4",
+    videoFullUrl: "/videos/lincoln-full.mp4",
+    isVideoLightbox: true,
   },
   {
     slug: "music-video",
@@ -371,6 +383,9 @@ export const projects: Project[] = [
     gallery: [
       "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=1200&h=800&fit=crop",
     ],
+    videoPreviewUrl: "/videos/music-video-preview.mp4",
+    videoFullUrl: "/videos/music-video-full.mp4",
+    isVideoLightbox: true,
   },
   {
     slug: "animated-30-seconder",
@@ -395,6 +410,9 @@ export const projects: Project[] = [
     gallery: [
       "https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?w=1200&h=800&fit=crop",
     ],
+    videoPreviewUrl: "/videos/animated-preview.mp4",
+    videoFullUrl: "/videos/animated-full.mp4",
+    isVideoLightbox: true,
   },
 ];
 
