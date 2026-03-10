@@ -189,7 +189,7 @@ export const projects: Project[] = [
     slug: "creator-con",
     title: "Creator Con",
     client: "Creator Con",
-    year: 2024,
+    year: 2025,
     category: "Logo Design",
     filterTag: "Branding",
     thumbnailType: "image",
