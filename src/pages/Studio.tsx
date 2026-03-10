@@ -146,15 +146,21 @@ const Studio = () => (
             <ScrollReveal key={i} type="fade-up" delay={i * 0.08}>
               <div className="group">
                 <div
-                  className="aspect-[3/4] rounded-2xl overflow-hidden relative"
+                  className="aspect-[3/4] rounded-2xl overflow-hidden relative flex items-center justify-center"
                   style={{ background: "hsl(var(--card))", border: "1px solid rgba(255,255,255,0.06)" }}
                 >
-                  <img
-                    src={member.image}
-                    alt={member.name}
-                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.03]"
-                    loading="lazy"
-                  />
+                  {member.image ? (
+                    <img
+                      src={member.image}
+                      alt={member.name}
+                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.03]"
+                      loading="lazy"
+                    />
+                  ) : (
+                    <span className="text-3xl font-bold text-muted-foreground/20">
+                      {member.name.charAt(0)}
+                    </span>
+                  )}
                   {member.isAI && (
                     <span className="absolute top-3 right-3 text-[10px] font-semibold uppercase tracking-widest px-2 py-1 rounded-full" style={{ background: "hsl(var(--cosmic))", color: "white" }}>
                       AI
