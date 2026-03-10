@@ -26,33 +26,49 @@ const ProcessSteps = () => (
             <span style={{ color: "hsl(var(--cosmic))" }}>Process.</span>
           </h2>
         </ScrollReveal>
-        <ScrollReveal type="fade-up" delay={0.1}>
-          <p className="mt-3 text-muted-foreground text-base md:text-lg max-w-2xl" style={{ lineHeight: 1.7 }}>
-            Four steps to finished.
-          </p>
-        </ScrollReveal>
       </div>
 
-      <div className="space-y-0">
-        {steps.map((s, i) => (
-          <ScrollReveal key={i} type="fade-up" delay={i * 0.1}>
-            <div
-              className="py-8 md:py-10 grid grid-cols-1 md:grid-cols-[120px_1fr] gap-6 md:gap-12 items-start"
-              style={{ borderTop: "1px solid rgba(255,255,255,0.08)" }}
+      {/* Two-column: sticky left, steps right */}
+      <div className="grid grid-cols-1 lg:grid-cols-[35%_1fr] gap-12 lg:gap-16">
+        {/* Left — sticky */}
+        <div className="lg:sticky lg:top-24 lg:self-start">
+          <ScrollReveal type="blur-fade">
+            <h3
+              className="font-semibold text-foreground"
+              style={{ fontSize: "clamp(2rem, 4vw, 3.5rem)", letterSpacing: "-0.02em", lineHeight: 1.15 }}
             >
-              <span
-                className="font-semibold"
-                style={{ fontSize: "clamp(3rem, 5vw, 5rem)", letterSpacing: "-0.05em", lineHeight: 1, color: "rgba(255,255,255,0.1)" }}
-              >
-                {s.num}
-              </span>
-              <div>
-                <h3 className="font-medium text-xl md:text-2xl text-foreground">{s.title}</h3>
-                <p className="text-base text-muted-foreground mt-3 max-w-lg" style={{ lineHeight: 1.7 }}>{s.desc}</p>
-              </div>
-            </div>
+              Precision at every stage.
+            </h3>
           </ScrollReveal>
-        ))}
+          <ScrollReveal type="fade-up" delay={0.1}>
+            <p className="mt-4 text-muted-foreground text-base" style={{ lineHeight: 1.7 }}>
+              Our four-step framework ensures every project moves from concept to delivery with clarity, speed, and craft.
+            </p>
+          </ScrollReveal>
+        </div>
+
+        {/* Right — steps */}
+        <div>
+          {steps.map((s, i) => (
+            <ScrollReveal key={i} type="fade-up" delay={i * 0.1}>
+              <div
+                className="py-8 md:py-10 grid grid-cols-[80px_1fr] md:grid-cols-[120px_1fr] gap-4 md:gap-8 items-start"
+                style={{ borderTop: "1px solid rgba(255,255,255,0.08)" }}
+              >
+                <span
+                  className="font-semibold"
+                  style={{ fontSize: "clamp(3rem, 5vw, 5rem)", letterSpacing: "-0.05em", lineHeight: 1, color: "rgba(255,255,255,0.1)" }}
+                >
+                  {s.num}
+                </span>
+                <div>
+                  <h4 className="font-medium text-xl md:text-2xl text-foreground">{s.title}</h4>
+                  <p className="text-base text-muted-foreground mt-3 max-w-lg" style={{ lineHeight: 1.7 }}>{s.desc}</p>
+                </div>
+              </div>
+            </ScrollReveal>
+          ))}
+        </div>
       </div>
     </div>
   </section>

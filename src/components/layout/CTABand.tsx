@@ -1,6 +1,6 @@
-import { Link } from "react-router-dom";
 import { siteConfig } from "@/data/siteConfig";
 import ScrollReveal from "@/components/shared/ScrollReveal";
+import FlipButton from "@/components/shared/FlipButton";
 
 const socials = [
   { label: "Twitter / X", href: siteConfig.socials.twitter },
@@ -21,7 +21,7 @@ const CTABand = () => (
             {/* Left column */}
             <div className="p-8 md:p-12 lg:p-14 flex flex-col justify-center">
               <h2
-                className="text-foreground font-semibold"
+                className="text-foreground font-bold"
                 style={{ fontSize: "clamp(2.5rem, 5vw, 6rem)", letterSpacing: "-0.02em", lineHeight: 1.1 }}
               >
                 Let's Build Something.
@@ -31,13 +31,9 @@ const CTABand = () => (
                 Ready to bring your next project to life with AI-first creative production? Let's talk.
               </p>
 
-              <Link
-                to="/contact"
-                className="mt-8 flex items-center justify-center gap-2 w-full py-4 rounded-2xl bg-foreground text-background font-medium text-sm hover:opacity-90 transition-opacity"
-              >
-                Get in touch
-                <span>→</span>
-              </Link>
+              <div className="mt-8">
+                <FlipButton text="Get in touch" href="/contact" className="w-full justify-center py-4 rounded-2xl" />
+              </div>
 
               <div className="border-t border-border mt-8 pt-6">
                 <a

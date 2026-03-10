@@ -1,5 +1,7 @@
 import { Link } from "react-router-dom";
+import { ArrowUpRight } from "lucide-react";
 import ScrollReveal from "@/components/shared/ScrollReveal";
+import FlipButton from "@/components/shared/FlipButton";
 import { projects } from "@/data/projects";
 
 const curatedSlugs = [
@@ -40,41 +42,56 @@ const SelectedWork = () => (
           </ScrollReveal>
         </div>
         <ScrollReveal type="fade-up" delay={0.15}>
-          <Link
-            to="/work"
-            className="inline-flex items-center gap-2 text-sm font-medium mt-4 md:mt-0 px-5 py-2.5 rounded-[10px] border border-foreground text-foreground hover:bg-foreground hover:text-background transition-colors duration-300"
-          >
-            View all
-          </Link>
+          <FlipButton text="View all" href="/work" />
         </ScrollReveal>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-        {featured.map((p, i) => (
-          <ScrollReveal key={p.slug} type="fade-up" delay={i * 0.08}>
-            <Link to={`/work/${p.slug}`} className="group block">
-              <div className="aspect-[16/10] rounded-2xl overflow-hidden">
-                <img
-                  src={p.thumbnail}
-                  alt={p.title}
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.03]"
-                  loading="lazy"
-                />
-              </div>
-              <div className="pt-4 pb-2">
-                <div className="flex items-center justify-between">
-                  <h3 className="font-medium text-lg text-foreground">{p.title}</h3>
-                  <span className="text-sm text-muted-foreground">{p.year}</span>
+        {featured.map((p, i) => {
+          const isExternal = p.filterTag === "Solutions" && p.externalLink;
+          const CardWrapper = isExternal
+            ? ({ children, className }: any) => (
+                <a href={p.externalLink} target="_blank" rel="noopener noreferrer" className={className}>
+                  {children}
+                </a>
+              )
+            : ({ children, className }: any) => (
+                <Link to={`/work/${p.slug}`} className={className}>
+                  {children}
+                </Link>
+              );
+
+          return (
+            <ScrollReveal key={p.slug} type="fade-up" delay={i * 0.08}>
+              <CardWrapper className="group block">
+                <div className={`aspect-[16/10] rounded-2xl overflow-hidden relative ${isExternal ? "border border-cosmic/30" : ""}`}>
+                  <img
+                    src={p.thumbnail}
+                    alt={p.title}
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.03]"
+                    loading="lazy"
+                  />
+                  {isExternal && (
+                    <span className="absolute top-3 right-3 px-2.5 py-1 rounded-full bg-cosmic/90 text-background text-xs font-medium flex items-center gap-1">
+                      Live App <ArrowUpRight size={10} />
+                    </span>
+                  )}
                 </div>
-                <p className="text-sm text-muted-foreground mt-1">{p.category}</p>
-                <span className="text-sm text-muted-foreground group-hover:text-primary transition-colors mt-2 inline-block">
-                  View project{" "}
-                  <span className="inline-block transition-transform duration-300 group-hover:translate-x-1">→</span>
-                </span>
-              </div>
-            </Link>
-          </ScrollReveal>
-        ))}
+                <div className="pt-4 pb-2">
+                  <div className="flex items-center justify-between">
+                    <h3 className="font-medium text-lg text-foreground">{p.title}</h3>
+                    <span className="text-sm text-muted-foreground">{p.year}</span>
+                  </div>
+                  <p className="text-sm text-muted-foreground mt-1">{p.category}</p>
+                  <span className="text-sm text-muted-foreground group-hover:text-primary transition-colors mt-2 inline-flex items-center gap-1">
+                    {isExternal ? "Launch App" : "View project"}{" "}
+                    <ArrowUpRight size={14} className="inline-block transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                  </span>
+                </div>
+              </CardWrapper>
+            </ScrollReveal>
+          );
+        })}
       </div>
     </div>
   </section>

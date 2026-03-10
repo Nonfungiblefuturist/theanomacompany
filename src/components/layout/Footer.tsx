@@ -84,22 +84,20 @@ const Footer = () => {
           </div>
 
           <div className="md:text-right">
-            <h4 className="text-sm font-medium uppercase tracking-widest text-muted-foreground mb-4">Attribution</h4>
-            <p className="text-sm" style={{ color: "rgba(255,255,255,0.4)" }}>Built by The Anoma Company</p>
+            <p className="text-[13px]" style={{ color: "rgba(255,255,255,0.4)" }}>Built by The Anoma Company</p>
+            <p className="text-xs mt-1" style={{ color: "rgba(255,255,255,0.4)" }}>© {new Date().getFullYear()} All Rights Reserved</p>
           </div>
         </div>
 
-        <div className="mt-20 md:mt-32 text-right">
-          <p className="text-xs text-muted-foreground">© {new Date().getFullYear()} All rights reserved.</p>
-        </div>
-
-        <div className="mt-8 pb-8">
+        <div className="mt-16 md:mt-24 pb-8">
           <h2
-            className="font-bold text-foreground uppercase tracking-tight select-none whitespace-nowrap text-center"
+            className="font-bold text-foreground uppercase tracking-tight select-none text-center"
             style={{
-              fontSize: "clamp(2rem, 8vw, 7rem)",
+              fontSize: "clamp(2.5rem, 10vw, 10rem)",
               lineHeight: 0.9,
               letterSpacing: "-0.05em",
+              whiteSpace: "nowrap",
+              padding: "0 6px",
             }}
           >
             THE ANOMA COMPANY
