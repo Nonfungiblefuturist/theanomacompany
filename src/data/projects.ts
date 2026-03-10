@@ -28,6 +28,7 @@ export interface Project {
   videoPreviewUrl?: string;
   videoFullUrl?: string;
   isVideoLightbox?: boolean;
+  tripleVideoPreview?: string[];
 }
 
 export const projects: Project[] = [
@@ -193,6 +194,12 @@ export const projects: Project[] = [
     filterTag: "Branding",
     thumbnailType: "image",
     thumbnail: "https://images.unsplash.com/photo-1558655146-9f40138edfeb?w=800&h=600&fit=crop",
+    externalLink: "https://www.instagram.com/reel/DNyYORtYvWv/",
+    tripleVideoPreview: [
+      "/videos/creator-con-1.mov",
+      "/videos/creator-con-2.m4v",
+      "/videos/creator-con-3.mov",
+    ],
     summary: "Logo design for a creator economy conference brand",
     intro: "Creator Con needed a visual identity that felt bold, digital-native, and instantly recognizable across social and event signage.",
     metadata: { year: 2024, duration: "2 Weeks", client: "Creator Con", category: "Logo Design" },

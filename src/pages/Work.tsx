@@ -7,6 +7,7 @@ import Footer from "@/components/layout/Footer";
 import CTABand from "@/components/layout/CTABand";
 import ScrollReveal from "@/components/shared/ScrollReveal";
 import VideoLightbox from "@/components/shared/VideoLightbox";
+import TripleVideoPreview from "@/components/shared/TripleVideoPreview";
 import { projects } from "@/data/projects";
 
 const categories = [
@@ -87,7 +88,9 @@ const Work = () => {
               const CardContent = (
                 <>
                   <div className={`aspect-[16/10] rounded-2xl overflow-hidden relative ${isExternal ? "border border-cosmic/30" : ""}`}>
-                    {p.videoPreviewUrl ? (
+                    {p.tripleVideoPreview ? (
+                      <TripleVideoPreview videos={p.tripleVideoPreview} />
+                    ) : p.videoPreviewUrl ? (
                       <video
                         src={p.videoPreviewUrl}
                         autoPlay
