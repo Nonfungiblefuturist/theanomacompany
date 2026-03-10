@@ -1,19 +1,27 @@
-import { Link } from "react-router-dom";
-import SiteLayout from "@/components/site/SiteLayout";
+import { useLocation } from "react-router-dom";
+import { useEffect } from "react";
 
-const NotFound = () => (
-  <SiteLayout>
-    <div className="flex min-h-[70vh] flex-col items-center justify-center px-6 text-center">
-      <h1 className="font-playfair text-7xl text-[hsl(0_0%_96%)]">404</h1>
-      <p className="mt-4 font-inter text-xl text-[hsl(0_0%_40%)]">Lost in the void.</p>
-      <Link
-        to="/home"
-        className="mt-8 rounded-lg bg-[hsl(0_0%_96%)] px-6 py-3 font-inter text-sm font-medium text-[hsl(0_0%_3%)] transition-colors hover:bg-[hsl(330_85%_52%)] hover:text-white"
-      >
-        Return Home →
-      </Link>
+const NotFound = () => {
+  const location = useLocation();
+
+  useEffect(() => {
+    console.error(
+      "404 Error: User attempted to access non-existent route:",
+      location.pathname
+    );
+  }, [location.pathname]);
+
+  return (
+    <div className="min-h-screen flex items-center justify-center bg-gray-100">
+      <div className="text-center">
+        <h1 className="text-4xl font-bold mb-4">404</h1>
+        <p className="text-xl text-gray-600 mb-4">Oops! Page not found</p>
+        <a href="/" className="text-blue-500 hover:text-blue-700 underline">
+          Return to Home
+        </a>
+      </div>
     </div>
-  </SiteLayout>
-);
+  );
+};
 
 export default NotFound;

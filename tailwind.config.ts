@@ -14,9 +14,6 @@ export default {
 			'instrument-serif': ['"Instrument Serif"', 'Georgia', 'serif'],
 			'dm-sans': ['"DM Sans"', 'system-ui', 'sans-serif'],
 			'oswald': ['"Oswald"', 'sans-serif'],
-			'playfair': ['"Playfair Display"', 'Georgia', 'serif'],
-			'inter': ['"Inter"', 'system-ui', 'sans-serif'],
-			'jetbrains': ['"JetBrains Mono"', 'monospace'],
 		},
 		container: {
 			center: true,
