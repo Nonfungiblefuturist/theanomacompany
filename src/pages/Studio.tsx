@@ -8,7 +8,7 @@ import LogoMarquee from "@/components/shared/LogoMarquee";
 import FlipButton from "@/components/shared/FlipButton";
 import { stats } from "@/data/stats";
 import { team } from "@/data/team";
-import { Plus } from "lucide-react";
+
 
 const Studio = () => (
   <div className="min-h-screen text-foreground" style={{ background: "#0F0F0F" }}>
