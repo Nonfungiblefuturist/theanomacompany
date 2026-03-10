@@ -23,8 +23,8 @@ const CTABand = () => (
                 className="text-foreground font-bold"
                 style={{ fontSize: "clamp(2.5rem, 5vw, 6rem)", letterSpacing: "-0.02em", lineHeight: 1.1 }}
               >
-                AI Creative Studio<br />
-                <span style={{ color: "hsl(var(--cosmic))" }}>The Anoma Company.</span>
+                Let's Build Something<br />
+                <span style={{ color: "hsl(var(--cosmic))" }}>Together.</span>
               </h2>
 
               <p className="text-muted-foreground mt-4 text-base max-w-md" style={{ lineHeight: 1.7 }}>
@@ -42,7 +42,22 @@ const CTABand = () => (
                 >
                   {siteConfig.email}
                 </a>
-                <p className="text-sm text-muted-foreground mt-1">{siteConfig.phone}</p>
+                <a
+                  href="https://wa.me/16475648106"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block text-sm text-muted-foreground hover:text-foreground transition-colors mt-1"
+                >
+                  +1 (647) 564-8106
+                </a>
+                <a
+                  href="https://wa.me/918169863268"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block text-sm text-muted-foreground hover:text-foreground transition-colors mt-1"
+                >
+                  +91 81698 63268
+                </a>
               </div>
 
               <div className="border-t border-border mt-6 pt-6 flex flex-wrap gap-5">

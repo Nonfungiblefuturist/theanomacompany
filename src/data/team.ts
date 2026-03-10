@@ -14,12 +14,12 @@ export const team: TeamMember[] = [
   {
     name: "Sreejeeta",
     role: "Co-Founder, Head of Business Operations",
-    image: "",
+    image: "/images/sreejeeta.jpg",
   },
   {
     name: "Diana",
     role: "Head of Internal Operations",
-    image: "",
+    image: "/images/diana.png",
   },
   {
     name: "Aeria",
