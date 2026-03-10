@@ -9,63 +9,44 @@ All colors MUST be HSL.
 @layer base {
   html {
     scroll-behavior: smooth;
-    scroll-padding-top: 6rem; /* Account for fixed nav */
+    scroll-padding-top: 6rem;
   }
   
   :root {
-    /* Void Black as background */
     --background: 0 0% 0%;
     --foreground: 0 0% 100%;
-
-    /* Orbit Grey for cards */
     --card: 0 0% 10%;
     --card-foreground: 0 0% 100%;
-
     --popover: 0 0% 10%;
     --popover-foreground: 0 0% 100%;
-
-    /* Brand colors from Anoma Company - Exact Hex Matches */
-    --primary: 177 100% 50%; /* plasma-cyan: #00FFF5 */
+    --primary: 177 100% 50%;
     --primary-foreground: 0 0% 0%;
     --primary-rgb: 0, 255, 245;
-
-    --secondary: 0 0% 10%; /* orbit-grey: #1A1A1A */
+    --secondary: 0 0% 10%;
     --secondary-foreground: 0 0% 100%;
-
     --muted: 0 0% 10%;
-    --muted-foreground: 0 0% 75%; /* starlight-grey: #BFBFBF */
-
-    --accent: 313 100% 50%; /* solar-magenta: #FF00E0 */
+    --muted-foreground: 0 0% 75%;
+    --accent: 313 100% 50%;
     --accent-foreground: 0 0% 100%;
     --accent-rgb: 255, 0, 224;
-
-    --cosmic: 270 100% 50%; /* cosmic-violet: #6E00FF */
+    --cosmic: 270 100% 50%;
     --cosmic-foreground: 0 0% 100%;
-
-    --amber: 48 100% 50%; /* ion-amber: #FFC600 */
+    --amber: 48 100% 50%;
     --amber-foreground: 0 0% 0%;
-
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 100%;
-
     --border: 0 0% 20%;
     --input: 0 0% 15%;
     --ring: 178 100% 50%;
-
     --radius: 0.75rem;
-
-    /* Chromatic Nebula Gradients with exact brand colors */
     --gradient-spectral: linear-gradient(135deg, hsl(177 100% 50%) 0%, hsl(313 100% 50%) 50%, hsl(270 100% 50%) 100%);
     --gradient-aurora: linear-gradient(45deg, hsl(177 100% 50% / 0.3), hsl(313 100% 50% / 0.3), hsl(270 100% 50% / 0.3), hsl(48 100% 50% / 0.3));
     --gradient-nebula: conic-gradient(from 0deg, hsl(177 100% 50% / 0.1), hsl(313 100% 50% / 0.1), hsl(270 100% 50% / 0.1), hsl(177 100% 50% / 0.1));
     --gradient-subtle: linear-gradient(180deg, hsl(var(--background)) 0%, hsl(0 0% 5%) 100%);
     --gradient-services: linear-gradient(135deg, hsl(177 100% 50% / 0.1) 0%, hsl(313 100% 50% / 0.1) 50%, hsl(270 100% 50% / 0.1) 100%);
     --gradient-cards: linear-gradient(45deg, hsl(var(--card)) 0%, hsl(177 100% 50% / 0.05) 100%);
-
-    /* Nebula effects for side gradients */
     --nebula-left: radial-gradient(circle at left, hsl(177 100% 50% / 0.15), transparent 50%);
     --nebula-right: radial-gradient(circle at right, hsl(313 100% 50% / 0.15), transparent 50%);
-
     --sidebar-background: 0 0% 10%;
     --sidebar-foreground: 0 0% 100%;
     --sidebar-primary: 178 100% 50%;
@@ -77,7 +58,6 @@ All colors MUST be HSL.
   }
 
   .dark {
-    /* Same as root since we're using dark mode by default */
     --background: 0 0% 0%;
     --foreground: 0 0% 100%;
     --card: 0 0% 10%;
@@ -117,7 +97,6 @@ All colors MUST be HSL.
     @apply border-border;
   }
 
-  /* Minimal design system */
   body {
     @apply bg-background text-foreground;
     font-weight: 300;
@@ -127,12 +106,11 @@ All colors MUST be HSL.
     font-weight: 300;
   }
 
-  /* Smooth scrolling */
   html {
     scroll-behavior: smooth;
   }
 
-  /* Professional blur and glass effects */
+  /* Glass effects */
   .glass-card {
     background: rgba(255, 255, 255, 0.02);
     backdrop-filter: blur(20px);
@@ -145,34 +123,7 @@ All colors MUST be HSL.
     border-bottom: 1px solid rgba(255, 255, 255, 0.05);
   }
 
-  /* Smooth reveal animations */
-  .reveal-up {
-    opacity: 0;
-    transform: translateY(30px);
-    animation: reveal-up 0.8s ease-out forwards;
-  }
-
-  .reveal-scale {
-    opacity: 0;
-    transform: scale(0.95);
-    animation: reveal-scale 0.8s ease-out forwards;
-  }
-
-  @keyframes reveal-up {
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-
-  @keyframes reveal-scale {
-    to {
-      opacity: 1;
-      transform: scale(1);
-    }
-  }
-
-  /* Professional hover effects */
+  /* Hover effects */
   .hover-lift {
     transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   }
@@ -181,109 +132,36 @@ All colors MUST be HSL.
     transform: translateY(-8px);
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3), 0 0 60px rgba(var(--primary-rgb), 0.2);
   }
-  .animate-float {
-    animation: float 6s ease-in-out infinite;
+
+  .hover-lift-smooth {
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
   }
 
-  .animate-glow {
-    animation: glow 3s ease-in-out infinite alternate;
+  .hover-lift-smooth:hover {
+    transform: translateY(-12px);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4), 0 0 80px hsl(var(--primary) / 0.3);
   }
 
-  .animate-spectral {
-    background-size: 400% 400%;
-    animation: spectral 12s ease infinite;
-  }
-
-  .animate-nebula {
-    animation: nebula 20s linear infinite;
-  }
-
-  .animate-aurora {
-    animation: aurora 8s ease-in-out infinite;
-  }
-
-  .spectral-trail {
+  /* Button shimmer */
+  .button-smooth {
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
     position: relative;
     overflow: hidden;
   }
 
-  .spectral-trail::before {
+  .button-smooth::before {
     content: '';
     position: absolute;
-    top: -50%;
-    left: -50%;
-    width: 200%;
-    height: 200%;
-    background: var(--gradient-spectral);
-    opacity: 0.1;
-    animation: spectral-rotate 15s linear infinite;
-    border-radius: 50%;
-    filter: blur(40px);
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+    transition: left 0.6s cubic-bezier(0.16, 1, 0.3, 1);
   }
 
-  @keyframes float {
-    0%, 100% {
-      transform: translateY(0px);
-    }
-    50% {
-      transform: translateY(-20px);
-    }
-  }
-
-  @keyframes glow {
-    from {
-      box-shadow: 0 0 30px hsl(var(--primary) / 0.3);
-    }
-    to {
-      box-shadow: 0 0 60px hsl(var(--primary) / 0.6), 0 0 80px hsl(var(--accent) / 0.4), 0 0 120px hsl(var(--cosmic) / 0.2);
-    }
-  }
-
-  @keyframes spectral {
-    0% {
-      background-position: 0% 50%;
-    }
-    50% {
-      background-position: 100% 50%;
-    }
-    100% {
-      background-position: 0% 50%;
-    }
-  }
-
-  @keyframes nebula {
-    0% {
-      transform: rotate(0deg) scale(1);
-      opacity: 0.1;
-    }
-    50% {
-      opacity: 0.3;
-    }
-    100% {
-      transform: rotate(360deg) scale(1.1);
-      opacity: 0.1;
-    }
-  }
-
-  @keyframes aurora {
-    0%, 100% {
-      transform: translateX(-50%) translateY(-50%) rotate(0deg);
-    }
-    33% {
-      transform: translateX(-50%) translateY(-50%) rotate(120deg);
-    }
-    66% {
-      transform: translateX(-50%) translateY(-50%) rotate(240deg);
-    }
-  }
-
-  @keyframes spectral-rotate {
-    0% {
-      transform: rotate(0deg);
-    }
-    100% {
-      transform: rotate(360deg);
-    }
+  .button-smooth:hover::before {
+    left: 100%;
   }
 
   /* Nebula side effects */
@@ -326,229 +204,7 @@ All colors MUST be HSL.
     }
   }
 
-  /* Framer-like motion utilities */
-  .animate-fade-up {
-    animation: fade-up 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-  }
-
-  .animate-fade-up-delay-1 {
-    animation: fade-up 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.2s forwards;
-    opacity: 0;
-  }
-
-  .animate-fade-up-delay-2 {
-    animation: fade-up 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.4s forwards;
-    opacity: 0;
-  }
-
-  .animate-fade-up-delay-3 {
-    animation: fade-up 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.6s forwards;
-    opacity: 0;
-  }
-
-  .animate-scale-in {
-    animation: scale-in-smooth 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-  }
-
-  .animate-slide-in-left {
-    animation: slide-in-left 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-  }
-
-  .animate-slide-in-right {
-    animation: slide-in-right 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-  }
-
-  @keyframes fade-up {
-    from {
-      opacity: 0;
-      transform: translateY(40px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-
-  @keyframes scale-in-smooth {
-    from {
-      opacity: 0;
-      transform: scale(0.8);
-    }
-    to {
-      opacity: 1;
-      transform: scale(1);
-    }
-  }
-
-  @keyframes slide-in-left {
-    from {
-      opacity: 0;
-      transform: translateX(-60px);
-    }
-    to {
-      opacity: 1;
-      transform: translateX(0);
-    }
-  }
-
-  @keyframes slide-in-right {
-    from {
-      opacity: 0;
-      transform: translateX(60px);
-    }
-    to {
-      opacity: 1;
-      transform: translateX(0);
-    }
-  }
-
-  /* Smooth hover transitions */
-  .hover-lift-smooth {
-    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-  }
-
-  .hover-lift-smooth:hover {
-    transform: translateY(-12px);
-    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4), 0 0 80px hsl(var(--primary) / 0.3);
-  }
-
-  /* Smooth button animations */
-  .button-smooth {
-    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-    position: relative;
-    overflow: hidden;
-  }
-
-  .button-smooth::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
-    transition: left 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-  }
-
-  .button-smooth:hover::before {
-    left: 100%;
-  }
-
-  /* Scroll-triggered animations */
-  .scroll-reveal {
-    opacity: 0;
-    transform: translateY(60px) scale(0.95);
-    transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
-  }
-
-  .scroll-reveal.in-view {
-    opacity: 1;
-    transform: translateY(0) scale(1);
-  }
-
-  .parallax-slow {
-    transform: translateY(var(--scroll-y, 0));
-  }
-
-  /* Staggered animations for groups */
-  .stagger-item {
-    opacity: 0;
-    transform: translateY(40px);
-    transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-  }
-
-  .stagger-item.visible {
-    opacity: 1;
-    transform: translateY(0);
-  }
-
-  /* Card hover with subtle parallax */
-  .card-parallax {
-    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-    transform-style: preserve-3d;
-  }
-
-  .card-parallax:hover {
-    transform: translateY(-12px) rotateX(5deg);
-    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.4), 0 0 100px hsl(var(--primary) / 0.3);
-  }
-
-  /* Smooth text reveals */
-  .text-reveal {
-    display: inline-block;
-    overflow: hidden;
-  }
-
-  .text-reveal span {
-    display: inline-block;
-    transform: translateY(100%);
-    transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
-  }
-
-  .text-reveal.visible span {
-    transform: translateY(0);
-  }
-
-  /* Typewriter animations */
-  .typewriter {
-    overflow: hidden;
-    white-space: nowrap;
-    animation: typewriter 3s steps(40, end) forwards;
-  }
-
-  .typewriter-delayed {
-    overflow: hidden;
-    white-space: nowrap;
-    animation: typewriter 2.5s steps(30, end) 3.5s forwards;
-    opacity: 0;
-  }
-
-  .typewriter-delayed.start {
-    opacity: 1;
-  }
-
-  @keyframes typewriter {
-    from {
-      width: 0;
-    }
-    to {
-      width: 100%;
-    }
-  }
-
-  /* Cursor blink effect */
-  .cursor {
-    display: inline-block;
-    background: hsl(var(--primary));
-    width: 3px;
-    animation: blink 1s infinite;
-  }
-
-  @keyframes blink {
-    0%, 50% {
-      opacity: 1;
-    }
-    51%, 100% {
-      opacity: 0;
-    }
-  }
-
-  /* Character-by-character reveal */
-  .char-reveal {
-    display: inline-block;
-    opacity: 0;
-    transform: translateY(40px);
-    animation: charReveal 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-  }
-
-  @keyframes charReveal {
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-
-  /* Gradient text animation */
+  /* Gradient text */
   .gradient-text {
     background: var(--gradient-spectral);
     background-size: 400% 400%;
@@ -567,7 +223,7 @@ All colors MUST be HSL.
     }
   }
 
-  /* Liquid hover effects */
+  /* Liquid hover */
   .liquid-hover {
     position: relative;
     overflow: hidden;
@@ -588,21 +244,7 @@ All colors MUST be HSL.
     left: 100%;
   }
 
-  .liquid-hover::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: radial-gradient(circle at var(--mouse-x, 50%) var(--mouse-y, 50%), hsl(var(--primary) / 0.1) 0%, transparent 50%);
-    opacity: 0;
-    transition: opacity 0.3s ease;
-    pointer-events: none;
-  }
-
-  .liquid-hover:hover::after {
-    opacity: 1;
-  }
-
-  /* Glass button effect */
+  /* Glass button */
   .glass-button {
     position: relative;
     backdrop-filter: blur(20px);
@@ -623,225 +265,5 @@ All colors MUST be HSL.
 
   .glass-button:hover::before {
     opacity: 1;
-  }
-}
-
-
-  grid-template-rows: 1fr 1fr;
-  gap: 6px;
-  height: 100vh;
-  min-height: 700px;
-  position: relative;
-  transition: opacity 0.5s ease;
-}
-
-.studio-hero-text {
-  grid-row: 1 / -1;
-  display: flex;
-  flex-direction: column;
-  padding: 40px 36px;
-}
-
-/* Card hover */
-.studio-card {
-  cursor: none;
-}
-
-.studio-card-img {
-  filter: brightness(0.88) saturate(0.95);
-  transition: transform 0.7s ease, filter 0.7s ease;
-}
-
-.studio-card:hover .studio-card-img {
-  transform: scale(1.04);
-  filter: brightness(0.72) saturate(0.95);
-}
-
-/* Nav pills */
-.studio-nav-pills {
-  position: absolute;
-  top: 24px;
-  right: 24px;
-  display: flex;
-  gap: 8px;
-  z-index: 20;
-}
-
-.studio-pill {
-  display: inline-block;
-  padding: 8px 20px;
-  border-radius: 50px;
-  background: rgba(255,255,255,0.08);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  color: #f0efe8;
-  font-family: "DM Sans", sans-serif;
-  font-size: 13px;
-  text-transform: uppercase;
-  letter-spacing: 1.5px;
-  text-decoration: none;
-  transition: background 0.3s ease;
-  cursor: none;
-}
-
-.studio-pill:hover {
-  background: rgba(255,255,255,0.18);
-}
-
-/* Below-fold grid */
-.studio-below-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 6px;
-  padding: 2px 0 0;
-}
-
-.studio-below-grid .studio-wide {
-  grid-column: span 2;
-}
-
-.studio-below-grid .studio-card {
-  aspect-ratio: 1/1;
-}
-
-.studio-below-grid .studio-wide {
-  aspect-ratio: 16/9;
-}
-
-/* Entrance animations — pure CSS */
-.studio-entrance {
-  opacity: 0;
-  transform: translateY(20px);
-}
-
-.studio-entrance-visible {
-  animation: studio-fade-up 0.7s ease forwards;
-}
-
-.studio-card-entrance {
-  opacity: 0;
-  transform: scale(0.97);
-}
-
-.studio-card-entrance-visible {
-  animation: studio-scale-in 0.8s ease forwards;
-}
-
-@keyframes studio-fade-up {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes studio-scale-in {
-  to {
-    opacity: 1;
-    transform: scale(1);
-  }
-}
-
-/* Scroll reveal for below-fold */
-.studio-scroll-reveal {
-  opacity: 0;
-  transform: translateY(24px);
-  transition: opacity 0.6s ease, transform 0.6s ease;
-}
-
-.studio-scroll-reveal.studio-visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* Mobile info chip always visible */
-@media (max-width: 639px) {
-  .studio-info-chip {
-    opacity: 1 !important;
-    transform: translateY(0) !important;
-  }
-}
-
-/* Responsive */
-@media (max-width: 1023px) {
-  .studio-hero-grid {
-    display: flex;
-    flex-direction: column;
-    height: auto;
-    min-height: auto;
-  }
-
-  .studio-hero-text {
-    padding: 32px 24px;
-  }
-
-  .studio-hero-card {
-    aspect-ratio: 4/5;
-  }
-
-  .studio-below-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .studio-nav-pills {
-    top: 16px;
-    right: 16px;
-  }
-}
-
-@media (min-width: 640px) and (max-width: 1023px) {
-  .studio-hero-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: auto;
-    height: auto;
-  }
-
-  .studio-hero-text {
-    grid-row: auto;
-  }
-
-  /* Create a 2x2 sub-grid for hero cards */
-  .studio-hero-card:nth-child(2) { grid-column: 1; }
-  .studio-hero-card:nth-child(3) { grid-column: 1; }
-}
-
-@media (max-width: 639px) {
-  .studio-hero-grid {
-    display: flex;
-    flex-direction: column;
-    height: auto;
-  }
-
-  .studio-hero-card {
-    height: 280px;
-    aspect-ratio: auto;
-  }
-
-  .studio-below-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .studio-below-grid .studio-wide {
-    grid-column: span 1;
-  }
-
-  .studio-below-grid .studio-card,
-  .studio-below-grid .studio-wide {
-    aspect-ratio: 16/10;
-  }
-
-  .studio-nav-pills {
-    top: 12px;
-    right: 12px;
-    gap: 6px;
-  }
-
-  .studio-pill {
-    font-size: 11px;
-    padding: 6px 14px;
-  }
-
-  .studio-card {
-    cursor: default;
   }
 }
