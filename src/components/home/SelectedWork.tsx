@@ -19,7 +19,10 @@ const SelectedWork = () => (
       <div className="flex flex-col md:flex-row md:items-end md:justify-between mb-12 md:mb-16">
         <div>
           <ScrollReveal type="fade-up">
-            <p className="text-sm text-muted-foreground mb-4">Selected Work</p>
+            <p className="flex items-center gap-2 text-sm text-muted-foreground mb-4">
+              <span className="w-1.5 h-1.5 rounded-full" style={{ backgroundColor: "hsl(var(--cosmic))" }} />
+              Selected Work
+            </p>
           </ScrollReveal>
           <ScrollReveal type="blur-fade">
             <h2
@@ -27,7 +30,7 @@ const SelectedWork = () => (
               style={{ fontSize: "clamp(1.75rem, 3.5vw, 3rem)", letterSpacing: "-0.02em" }}
             >
               <span className="text-foreground">Selected </span>
-              <span className="text-primary">Work.</span>
+              <span style={{ color: "hsl(var(--cosmic))" }}>Work.</span>
             </h2>
           </ScrollReveal>
           <ScrollReveal type="fade-up" delay={0.1}>

@@ -12,7 +12,10 @@ const AboutPreview = () => (
       {/* Top row: "About us" label left, two-tone paragraph right — same line */}
       <div className="grid grid-cols-1 md:grid-cols-[30%_1fr] gap-6 md:gap-12">
         <ScrollReveal type="fade-up">
-          <p className="text-sm text-muted-foreground">About us</p>
+          <p className="flex items-center gap-2 text-sm text-muted-foreground">
+            <span className="w-1.5 h-1.5 rounded-full" style={{ backgroundColor: "hsl(var(--cosmic))" }} />
+            About us
+          </p>
         </ScrollReveal>
 
         <ScrollReveal type="blur-fade">
