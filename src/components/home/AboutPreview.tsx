@@ -50,23 +50,10 @@ const AboutPreview = () => (
             {/* 100+ Satisfied Clients */}
             <ScrollReveal type="fade-up" delay={0.1 + stats.length * 0.1}>
               <div className="py-5 border-t border-border">
-                <div className="flex items-center -space-x-2 mb-2">
-                  {avatarUrls.map((url, i) => (
-                    <img
-                      key={i}
-                      src={url}
-                      alt="Client"
-                      className="w-8 h-8 rounded-full border-2 object-cover"
-                      style={{ borderColor: "hsl(var(--card))" }}
-                      loading="lazy"
-                    />
+                <div className="flex items-center gap-1 mb-2">
+                  {[1, 2, 3, 4, 5].map((i) => (
+                    <span key={i} className="text-yellow-400 text-xs">★</span>
                   ))}
-                  <span
-                    className="w-8 h-8 rounded-full flex items-center justify-center text-[10px] font-bold text-foreground"
-                    style={{ backgroundColor: "hsl(var(--cosmic))", borderColor: "hsl(var(--card))", borderWidth: 2 }}
-                  >
-                    +
-                  </span>
                 </div>
                 <div className="text-4xl md:text-5xl font-bold text-primary">
                   100<span className="text-muted-foreground">+</span>
