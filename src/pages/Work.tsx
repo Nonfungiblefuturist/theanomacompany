@@ -6,6 +6,7 @@ import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import CTABand from "@/components/layout/CTABand";
 import ScrollReveal from "@/components/shared/ScrollReveal";
+import VideoLightbox from "@/components/shared/VideoLightbox";
 import { projects } from "@/data/projects";
 
 const categories = [
@@ -18,6 +19,7 @@ const categories = [
 const Work = () => {
   const [searchParams, setSearchParams] = useSearchParams();
   const activeFilter = searchParams.get("category") || "all";
+  const [lightbox, setLightbox] = useState<{ open: boolean; url: string }>({ open: false, url: "" });
 
   const filtered = activeFilter === "all"
     ? projects
@@ -73,16 +75,36 @@ const Work = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-12">
             {filtered.map((p, i) => {
               const isExternal = p.filterTag === "Solutions" && p.externalLink;
+              const isVideoLightbox = p.isVideoLightbox && p.videoFullUrl;
+
+              const handleClick = (e: React.MouseEvent) => {
+                if (isVideoLightbox) {
+                  e.preventDefault();
+                  setLightbox({ open: true, url: p.videoFullUrl! });
+                }
+              };
 
               const CardContent = (
                 <>
                   <div className={`aspect-[16/10] rounded-2xl overflow-hidden relative ${isExternal ? "border border-cosmic/30" : ""}`}>
-                    <img
-                      src={p.thumbnail}
-                      alt={p.title}
-                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.03]"
-                      loading="lazy"
-                    />
+                    {p.videoPreviewUrl ? (
+                      <video
+                        src={p.videoPreviewUrl}
+                        autoPlay
+                        loop
+                        muted
+                        playsInline
+                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.03]"
+                        poster={p.thumbnail}
+                      />
+                    ) : (
+                      <img
+                        src={p.thumbnail}
+                        alt={p.title}
+                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.03]"
+                        loading="lazy"
+                      />
+                    )}
                     {isExternal && (
                       <span className="absolute top-3 right-3 px-2.5 py-1 rounded-full bg-cosmic/90 text-background text-xs font-medium flex items-center gap-1">
                         Live App <ArrowUpRight size={10} />
@@ -96,7 +118,7 @@ const Work = () => {
                     </div>
                     <p className="text-sm text-muted-foreground mt-1">{p.category}</p>
                     <span className="text-sm text-muted-foreground group-hover:text-primary transition-colors mt-2 inline-flex items-center gap-1">
-                      {isExternal ? "Launch App" : "View project"}{" "}
+                      {isExternal ? "Launch App" : isVideoLightbox ? "Watch" : "View project"}{" "}
                       <ArrowUpRight size={14} className="inline-block transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                     </span>
                   </div>
@@ -109,6 +131,10 @@ const Work = () => {
                     <a href={p.externalLink} target="_blank" rel="noopener noreferrer" className="group block">
                       {CardContent}
                     </a>
+                  ) : isVideoLightbox ? (
+                    <div className="group block cursor-pointer" onClick={handleClick}>
+                      {CardContent}
+                    </div>
                   ) : (
                     <Link to={`/work/${p.slug}`} className="group block">
                       {CardContent}
@@ -123,6 +149,12 @@ const Work = () => {
 
       <div className="mt-[6px]"><CTABand /></div>
       <div className="mt-[6px]"><Footer /></div>
+
+      <VideoLightbox
+        videoUrl={lightbox.url}
+        isOpen={lightbox.open}
+        onClose={() => setLightbox({ open: false, url: "" })}
+      />
     </div>
   );
 };

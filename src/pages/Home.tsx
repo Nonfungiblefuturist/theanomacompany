@@ -5,6 +5,7 @@ import CTABand from "@/components/layout/CTABand";
 import Hero from "@/components/home/Hero";
 import AboutPreview from "@/components/home/AboutPreview";
 import ImageMosaic from "@/components/home/ImageMosaic";
+import ShowreelBanner from "@/components/home/ShowreelBanner";
 import SelectedWork from "@/components/home/SelectedWork";
 import ServicesTabbed from "@/components/home/ServicesTabbed";
 import ProcessSteps from "@/components/home/ProcessSteps";
@@ -19,7 +20,7 @@ const Home = () => (
 
     {/* 1 */}  <Hero />
     {/* 2 */}  <div className="mt-[6px]"><AboutPreview /></div>
-    {/* 3 */}  <div className="mt-[6px]"><ImageMosaic /></div>
+    {/* 3 */}  <div className="mt-[6px]"><ShowreelBanner /></div>
     {/* 4 */}  <div className="mt-[6px]"><SelectedWork /></div>
     {/* 5 */}  <div className="mt-[6px]"><ServicesTabbed /></div>
     {/* 6 */}  <div className="mt-[6px]"><ProcessSteps /></div>
