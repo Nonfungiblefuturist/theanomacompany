@@ -8,7 +8,7 @@ const FAQItem = ({ faq, isOpen, onToggle, delay }: { faq: typeof faqs[0]; isOpen
   <ScrollReveal type="fade-up" delay={delay}>
     <button
       onClick={onToggle}
-      className="w-full text-left rounded-2xl border border-border bg-card p-5 md:p-6 transition-colors hover:border-foreground/20"
+      className="w-full text-left rounded-2xl border border-border bg-card p-6 transition-colors hover:border-foreground/20"
     >
       <div className="flex items-start justify-between gap-4">
         <span className="font-medium text-foreground text-sm md:text-base">{faq.question}</span>
@@ -31,8 +31,8 @@ const HomeFAQ = () => {
 
   return (
     <section className="section-card mx-[6px] rounded-[20px] overflow-hidden">
-      <div className="max-w-[1400px] mx-auto px-6 md:px-10 lg:px-16 xl:px-20 py-20 md:py-28">
-        <div className="grid grid-cols-1 lg:grid-cols-[35%_1fr] gap-12 lg:gap-16">
+      <div className="max-w-[1400px] mx-auto px-6 md:px-10 lg:px-16 xl:px-20 py-28 md:py-40">
+        <div className="grid grid-cols-1 lg:grid-cols-[35%_1fr] gap-16 lg:gap-20">
           {/* Left: Title + CTA */}
           <div>
             <ScrollReveal type="blur-fade">
@@ -59,7 +59,7 @@ const HomeFAQ = () => {
           </div>
 
           {/* Right: Accordion cards */}
-          <div className="flex flex-col gap-2">
+          <div className="flex flex-col gap-3">
             {faqs.map((faq, i) => (
               <FAQItem
                 key={i}

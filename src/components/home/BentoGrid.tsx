@@ -2,42 +2,6 @@ import { Link } from "react-router-dom";
 import ScrollReveal from "@/components/shared/ScrollReveal";
 import LogoMarquee from "@/components/shared/LogoMarquee";
 
-const benefits = [
-  {
-    title: "AI-Native Pipeline",
-    desc: "Every project built on AI from day one — not bolted on after.",
-    image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&h=600&fit=crop",
-  },
-  {
-    title: "Cinematic Quality",
-    desc: "Cinema-grade output. PhotoVogue-featured visuals. No compromises on craft.",
-  },
-  {
-    title: "Fast Turnaround",
-    desc: "3–5x faster than traditional production without sacrificing quality.",
-    image: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=600&h=400&fit=crop",
-  },
-  {
-    title: "End-to-End Production",
-    desc: "Strategy, production, and delivery — all under one roof.",
-  },
-  {
-    title: "Hybrid Workflows",
-    desc: "We know when to shoot and when to generate. The art is in the blend.",
-  },
-  {
-    title: "Creative Direction",
-    desc: "AI handles execution. Humans steer the vision. Always.",
-  },
-];
-
-const galleryImages = [
-  { src: "https://images.unsplash.com/photo-1524492412937-b28074a5d7da?w=400&h=600&fit=crop", aspect: "aspect-[2/3]" },
-  { src: "https://images.unsplash.com/photo-1558655146-9f40138edfeb?w=400&h=400&fit=crop", aspect: "aspect-square" },
-  { src: "https://images.unsplash.com/photo-1485846234645-a62644f84728?w=600&h=400&fit=crop", aspect: "aspect-[3/2]" },
-  { src: "https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?w=400&h=600&fit=crop", aspect: "aspect-[2/3]" },
-];
-
 const BentoGrid = () => (
   <section className="section-card mx-[6px] rounded-[20px] overflow-hidden">
     <div className="max-w-[1600px] mx-auto px-6 md:px-10 lg:px-16 xl:px-20 py-20 md:py-28">
@@ -68,82 +32,149 @@ const BentoGrid = () => (
         </ScrollReveal>
       </div>
 
-      {/* Asymmetric bento grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-3" style={{ gridAutoRows: "minmax(200px, auto)" }}>
-        {/* Card 1 — tall left with image */}
+      {/* 3-column asymmetric bento grid */}
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-[6px]">
+        {/* Col 1 — tall card spanning 2 rows */}
         <ScrollReveal type="fade-up" delay={0}>
-          <div className="relative rounded-2xl border border-border overflow-hidden md:min-h-[440px]" style={{ background: "hsl(var(--card))" }}>
-            <img src={benefits[0].image} alt={benefits[0].title} className="absolute inset-0 w-full h-full object-cover opacity-30" loading="lazy" />
-            <div className="relative z-10 p-6 md:p-8 flex flex-col justify-end h-full bg-gradient-to-t from-card via-card/80 to-transparent">
-              <h3 className="font-semibold text-xl text-foreground">{benefits[0].title}</h3>
-              <p className="text-sm text-muted-foreground mt-2" style={{ lineHeight: 1.7 }}>{benefits[0].desc}</p>
+          <div
+            className="relative rounded-2xl border border-border overflow-hidden md:row-span-2 min-h-[420px] md:min-h-[500px]"
+            style={{ background: "hsl(var(--card))" }}
+          >
+            <img
+              src="https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&h=1000&fit=crop"
+              alt="AI-Native Pipeline"
+              className="absolute inset-0 w-full h-full object-cover opacity-40"
+              loading="lazy"
+            />
+            <div className="relative z-10 p-6 md:p-8 flex flex-col justify-between h-full">
+              <div>
+                <h3
+                  className="font-bold text-foreground/10 select-none"
+                  style={{ fontSize: "clamp(2rem, 4vw, 3.5rem)", letterSpacing: "-0.03em", lineHeight: 1 }}
+                >
+                  AI-Native<br />Pipeline
+                </h3>
+              </div>
+              <div>
+                <h3 className="font-semibold text-lg text-foreground">AI-Native Pipeline</h3>
+                <p className="text-sm text-muted-foreground mt-2" style={{ lineHeight: 1.7 }}>
+                  Every project built on AI from day one — not bolted on after.
+                </p>
+              </div>
             </div>
           </div>
         </ScrollReveal>
 
-        {/* Card 2 — top right */}
+        {/* Col 2, Row 1 — 24/7 Support */}
         <ScrollReveal type="fade-up" delay={0.05}>
-          <div className="rounded-2xl border border-border p-6 md:p-8 flex flex-col justify-end min-h-[200px]" style={{ background: "hsl(var(--card))" }}>
-            <h3 className="font-semibold text-lg text-foreground">{benefits[1].title}</h3>
-            <p className="text-sm text-muted-foreground mt-2" style={{ lineHeight: 1.7 }}>{benefits[1].desc}</p>
+          <div
+            className="rounded-2xl border border-border p-6 md:p-8 flex flex-col justify-end min-h-[220px]"
+            style={{ background: "hsl(var(--card))" }}
+          >
+            <span className="text-2xl mb-4">✉</span>
+            <h3 className="font-semibold text-lg text-foreground">24/7 Support</h3>
+            <p className="text-sm text-muted-foreground mt-2" style={{ lineHeight: 1.7 }}>
+              Round-the-clock communication. We're always reachable during production.
+            </p>
           </div>
         </ScrollReveal>
 
-        {/* Card 3 — end-to-end */}
+        {/* Col 3, Row 1 — Seamless Collaboration */}
         <ScrollReveal type="fade-up" delay={0.08}>
-          <div className="rounded-2xl border border-border p-6 md:p-8 flex flex-col justify-end min-h-[200px]" style={{ background: "hsl(var(--card))" }}>
-            <h3 className="font-semibold text-lg text-foreground">{benefits[3].title}</h3>
-            <p className="text-sm text-muted-foreground mt-2" style={{ lineHeight: 1.7 }}>{benefits[3].desc}</p>
+          <div
+            className="relative rounded-2xl border border-border p-6 md:p-8 overflow-hidden min-h-[220px]"
+            style={{ background: "hsl(var(--card))" }}
+          >
+            <h3 className="font-semibold text-lg text-foreground">Seamless Collaboration</h3>
+            <p className="text-sm text-muted-foreground mt-2" style={{ lineHeight: 1.7 }}>
+              Real-time reviews, instant feedback loops, and transparent progress tracking.
+            </p>
           </div>
         </ScrollReveal>
 
-        {/* Card 4 — fast turnaround with image */}
+        {/* Col 2, Row 2 — Fast Turnarounds (tall with image) */}
         <ScrollReveal type="fade-up" delay={0.1}>
-          <div className="relative rounded-2xl border border-border overflow-hidden min-h-[220px]" style={{ background: "hsl(var(--card))" }}>
-            <img src={benefits[2].image} alt={benefits[2].title} className="absolute inset-0 w-full h-full object-cover opacity-30" loading="lazy" />
-            <div className="relative z-10 p-6 md:p-8 flex flex-col justify-end h-full bg-gradient-to-t from-card via-card/80 to-transparent">
-              <h3 className="font-semibold text-lg text-foreground">{benefits[2].title}</h3>
-              <p className="text-sm text-muted-foreground mt-2" style={{ lineHeight: 1.7 }}>{benefits[2].desc}</p>
+          <div
+            className="relative rounded-2xl border border-border overflow-hidden min-h-[260px]"
+            style={{ background: "hsl(var(--card))" }}
+          >
+            <img
+              src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=600&h=400&fit=crop"
+              alt="Fast Turnarounds"
+              className="absolute inset-0 w-full h-full object-cover opacity-30"
+              loading="lazy"
+            />
+            <div className="relative z-10 p-6 md:p-8 flex flex-col justify-end h-full bg-gradient-to-t from-card via-card/70 to-transparent">
+              <h3 className="font-semibold text-lg text-foreground">Fast Turnarounds</h3>
+              <p className="text-sm text-muted-foreground mt-2" style={{ lineHeight: 1.7 }}>
+                3–5x faster than traditional production without sacrificing quality.
+              </p>
             </div>
           </div>
         </ScrollReveal>
 
-        {/* Card 5 — hybrid */}
+        {/* Col 3, Row 2 — Future-Ready Solutions */}
         <ScrollReveal type="fade-up" delay={0.12}>
-          <div className="rounded-2xl border border-border p-6 md:p-8 flex flex-col justify-end min-h-[200px]" style={{ background: "hsl(var(--card))" }}>
-            <h3 className="font-semibold text-lg text-foreground">{benefits[4].title}</h3>
-            <p className="text-sm text-muted-foreground mt-2" style={{ lineHeight: 1.7 }}>{benefits[4].desc}</p>
+          <div
+            className="rounded-2xl border border-border p-6 md:p-8 flex flex-col justify-end min-h-[220px]"
+            style={{ background: "hsl(var(--card))" }}
+          >
+            <span className="text-2xl mb-4">✦</span>
+            <h3 className="font-semibold text-lg text-foreground">Future-Ready Solutions</h3>
+            <p className="text-sm text-muted-foreground mt-2" style={{ lineHeight: 1.7 }}>
+              We build with tomorrow's tech today, so your content never feels dated.
+            </p>
           </div>
         </ScrollReveal>
 
-        {/* Card 6 — creative direction */}
+        {/* Full-width bottom card — Proven Expertise */}
         <ScrollReveal type="fade-up" delay={0.14}>
-          <div className="rounded-2xl border border-border p-6 md:p-8 flex flex-col justify-end min-h-[200px]" style={{ background: "hsl(var(--card))" }}>
-            <h3 className="font-semibold text-lg text-foreground">{benefits[5].title}</h3>
-            <p className="text-sm text-muted-foreground mt-2" style={{ lineHeight: 1.7 }}>{benefits[5].desc}</p>
+          <div
+            className="md:col-span-3 rounded-2xl border border-border p-6 md:p-8 flex flex-col md:flex-row md:items-center md:justify-between gap-4"
+            style={{ background: "hsl(var(--card))" }}
+          >
+            <div>
+              <span className="text-2xl mb-2 block">◇</span>
+              <h3 className="font-semibold text-lg text-foreground">Proven Expertise</h3>
+              <p className="text-sm text-muted-foreground mt-2 max-w-lg" style={{ lineHeight: 1.7 }}>
+                29+ projects delivered across 3 countries with 100% client retention. Cinema-grade output, every time.
+              </p>
+            </div>
+            <Link
+              to="/work"
+              className="text-sm text-primary hover:text-foreground transition-colors shrink-0"
+            >
+              See our work →
+            </Link>
           </div>
         </ScrollReveal>
       </div>
 
-      {/* Gallery row */}
+      {/* Stat + Avatars row */}
       <ScrollReveal type="fade-up" delay={0.2}>
-        <div className="mt-12 grid grid-cols-2 md:grid-cols-4 gap-4">
-          {galleryImages.map((img, i) => (
-            <div key={i} className={`${img.aspect} rounded-2xl overflow-hidden`}>
-              <img src={img.src} alt="" className="w-full h-full object-cover" loading="lazy" />
+        <div className="mt-12 flex flex-col md:flex-row md:items-center md:justify-between gap-6">
+          <div className="flex items-center gap-4">
+            <div className="flex -space-x-2">
+              {[1, 2, 3, 4, 5].map((i) => (
+                <div
+                  key={i}
+                  className="w-8 h-8 rounded-full border-2 border-background bg-muted"
+                />
+              ))}
             </div>
-          ))}
+            <div>
+              <div className="flex items-center gap-1">
+                {[1, 2, 3, 4, 5].map((i) => (
+                  <span key={i} className="text-yellow-400 text-xs">★</span>
+                ))}
+              </div>
+              <p className="text-sm text-foreground font-medium">200+ Satisfied Clients</p>
+            </div>
+          </div>
         </div>
       </ScrollReveal>
 
-      {/* Stat + Marquee */}
-      <ScrollReveal type="fade-up" delay={0.3}>
-        <div className="mt-12 text-center">
-          <p className="text-4xl md:text-5xl font-bold text-foreground">200+</p>
-          <p className="text-sm text-muted-foreground mt-2">Satisfied Clients</p>
-        </div>
-      </ScrollReveal>
-
+      {/* Logo marquee */}
       <div className="mt-8">
         <LogoMarquee />
       </div>

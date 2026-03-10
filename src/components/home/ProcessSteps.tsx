@@ -18,10 +18,11 @@ const ProcessSteps = () => (
           </ScrollReveal>
           <ScrollReveal type="blur-fade">
             <h2
-              className="text-foreground font-semibold"
+              className="font-semibold"
               style={{ fontSize: "clamp(1.75rem, 3.5vw, 3rem)", letterSpacing: "-0.02em" }}
             >
-              Process.
+              <span className="text-foreground">Our </span>
+              <span className="text-primary">Process.</span>
             </h2>
           </ScrollReveal>
           <ScrollReveal type="fade-up" delay={0.1}>
@@ -40,9 +41,9 @@ const ProcessSteps = () => (
       <div className="space-y-0">
         {steps.map((s, i) => (
           <ScrollReveal key={i} type="fade-up" delay={i * 0.1}>
-            <div className="py-10 md:py-12 border-t border-border grid grid-cols-1 md:grid-cols-[120px_1fr] gap-6 md:gap-12 items-start">
+            <div className="py-8 md:py-10 border-t border-border/50 grid grid-cols-1 md:grid-cols-[120px_1fr] gap-6 md:gap-12 items-start">
               <span
-                className="font-semibold text-foreground/15"
+                className="font-semibold text-primary/10"
                 style={{ fontSize: "clamp(3rem, 5vw, 5rem)", letterSpacing: "-0.05em", lineHeight: 1 }}
               >
                 {s.num}

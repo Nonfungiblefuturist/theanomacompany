@@ -4,12 +4,12 @@ import Footer from "@/components/layout/Footer";
 import CTABand from "@/components/layout/CTABand";
 import Hero from "@/components/home/Hero";
 import AboutPreview from "@/components/home/AboutPreview";
+import ImageMosaic from "@/components/home/ImageMosaic";
 import SelectedWork from "@/components/home/SelectedWork";
 import ServicesTabbed from "@/components/home/ServicesTabbed";
 import ProcessSteps from "@/components/home/ProcessSteps";
 import BentoGrid from "@/components/home/BentoGrid";
 import Testimonials from "@/components/home/Testimonials";
-import ImageMosaic from "@/components/home/ImageMosaic";
 import HomeFAQ from "@/components/home/HomeFAQ";
 
 const Home = () => (
@@ -19,12 +19,12 @@ const Home = () => (
 
     {/* 1 */}  <Hero />
     {/* 2 */}  <div className="mt-[6px]"><AboutPreview /></div>
-    {/* 3 */}  <div className="mt-[6px]"><ServicesTabbed /></div>
+    {/* 3 */}  <div className="mt-[6px]"><ImageMosaic /></div>
     {/* 4 */}  <div className="mt-[6px]"><SelectedWork /></div>
-    {/* 5 */}  <div className="mt-[6px]"><ProcessSteps /></div>
-    {/* 6 */}  <div className="mt-[6px]"><BentoGrid /></div>
-    {/* 7 */}  <div className="mt-[6px]"><Testimonials /></div>
-    {/* 8 */}  <div className="mt-[6px]"><ImageMosaic /></div>
+    {/* 5 */}  <div className="mt-[6px]"><ServicesTabbed /></div>
+    {/* 6 */}  <div className="mt-[6px]"><ProcessSteps /></div>
+    {/* 7 */}  <div className="mt-[6px]"><BentoGrid /></div>
+    {/* 8 */}  <div className="mt-[6px]"><Testimonials /></div>
     {/* 9 */}  <div className="mt-[6px]"><HomeFAQ /></div>
     {/* 10 */} <div className="mt-[6px]"><CTABand /></div>
 

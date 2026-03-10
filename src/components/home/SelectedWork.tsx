@@ -6,8 +6,6 @@ const curatedSlugs = [
   "jaipur-living",
   "ai-chatbot",
   "vaseline-campaign",
-  "lincoln-university",
-  "stand-store",
   "prompt-machine",
 ];
 const featured = curatedSlugs
@@ -25,10 +23,11 @@ const SelectedWork = () => (
           </ScrollReveal>
           <ScrollReveal type="blur-fade">
             <h2
-              className="text-foreground font-semibold"
+              className="font-semibold"
               style={{ fontSize: "clamp(1.75rem, 3.5vw, 3rem)", letterSpacing: "-0.02em" }}
             >
-              Selected Work.
+              <span className="text-foreground">Selected </span>
+              <span className="text-primary">Work.</span>
             </h2>
           </ScrollReveal>
           <ScrollReveal type="fade-up" delay={0.1}>
@@ -51,7 +50,6 @@ const SelectedWork = () => (
         {featured.map((p, i) => (
           <ScrollReveal key={p.slug} type="fade-up" delay={i * 0.08}>
             <Link to={`/work/${p.slug}`} className="group block">
-              {/* Large cinematic thumbnail */}
               <div className="aspect-[16/10] rounded-2xl overflow-hidden">
                 <img
                   src={p.thumbnail}
@@ -60,7 +58,6 @@ const SelectedWork = () => (
                   loading="lazy"
                 />
               </div>
-              {/* Info — clean text, no bar */}
               <div className="pt-4 pb-2">
                 <div className="flex items-center justify-between">
                   <h3 className="font-medium text-lg text-foreground">{p.title}</h3>
