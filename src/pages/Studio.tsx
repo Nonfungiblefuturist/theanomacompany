@@ -43,14 +43,17 @@ const Studio = () => (
           </p>
         </ScrollReveal>
 
-        {/* Mission */}
+        {/* About Us */}
         <ScrollReveal type="fade-up" delay={0.2}>
           <div className="mt-16 grid grid-cols-1 md:grid-cols-[30%_1fr] gap-8 md:gap-12">
             <p className="flex items-center gap-2 text-sm text-muted-foreground">
               <span className="w-1.5 h-1.5 rounded-full" style={{ backgroundColor: "hsl(var(--cosmic))" }} />
               About Us
             </p>
-            <p className="text-foreground text-lg md:text-xl" style={{ lineHeight: 1.7 }}>
+            <p
+              className="font-normal text-foreground"
+              style={{ fontSize: "clamp(1.25rem, 2.5vw, 1.75rem)", lineHeight: 1.7 }}
+            >
               The Anoma Company is an AI-first cinematic production studio based in Toronto, built for brands that refuse to blend in. We build AI solutions that automate and elevate, produce creative campaigns that demand attention, and deliver content that moves people. Every project is an opportunity to prove that bold ideas, powered by intelligent tools, create unforgettable results.
             </p>
           </div>
