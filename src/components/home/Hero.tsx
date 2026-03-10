@@ -2,30 +2,34 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { ChevronDown } from "lucide-react";
 import ScrollReveal from "@/components/shared/ScrollReveal";
+import { siteConfig } from "@/data/siteConfig";
 
 const Hero = () => (
   <section className="relative h-screen min-h-[600px] flex items-center justify-center overflow-hidden">
+    {/* Video background */}
     <div className="absolute inset-0">
-      <img
-        src="https://images.unsplash.com/photo-1485846234645-a62644f84728?w=1920&h=1080&fit=crop"
-        alt=""
-        className="w-full h-full object-cover"
+      <iframe
+        src={`https://www.youtube.com/embed/${siteConfig.showreelYoutubeId}?autoplay=1&mute=1&loop=1&playlist=${siteConfig.showreelYoutubeId}&controls=0&showinfo=0&modestbranding=1&playsinline=1&rel=0&enablejsapi=1`}
+        className="absolute top-1/2 left-1/2 w-[177.78vh] min-w-full min-h-full -translate-x-1/2 -translate-y-1/2 pointer-events-none"
+        style={{ border: 0 }}
+        allow="autoplay; encrypted-media"
+        title="Background video"
       />
-      <div className="absolute inset-0 bg-background/60" />
+      <div className="absolute inset-0 bg-background/70" />
     </div>
 
     <div className="relative z-10 text-center px-5 max-w-5xl">
       <ScrollReveal type="blur-fade">
         <h1
           className="text-foreground font-bold"
-          style={{ fontSize: "clamp(2.75rem, 5vw, 5.5rem)", letterSpacing: "-0.03em" }}
+          style={{ fontSize: "clamp(3rem, 7vw, 7rem)", letterSpacing: "-0.03em", lineHeight: 1 }}
         >
           Everything is noise.
         </h1>
       </ScrollReveal>
 
       <ScrollReveal type="fade-up" delay={0.1}>
-        <p className="mt-4 text-muted-foreground text-lg md:text-xl" style={{ lineHeight: 1.7 }}>
+        <p className="mt-6 text-muted-foreground text-lg md:text-xl" style={{ lineHeight: 1.7 }}>
           We make the signal. AI-first creative studio.
         </p>
       </ScrollReveal>
