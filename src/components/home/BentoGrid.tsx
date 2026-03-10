@@ -5,33 +5,39 @@ import LogoMarquee from "@/components/shared/LogoMarquee";
 const benefits = [
   {
     title: "AI-Native Pipeline",
-    desc: "Every project built on AI from day one — not bolted on after. Our pipeline is designed around generative tools from the ground up.",
+    desc: "Every project built on AI from day one — not bolted on after.",
     image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&h=600&fit=crop",
+    tall: true,
   },
   {
     title: "Cinematic Quality",
     desc: "Cinema-grade output. PhotoVogue-featured visuals. No compromises on craft.",
     image: null,
+    tall: false,
   },
   {
     title: "Fast Turnaround",
     desc: "3–5x faster than traditional production without sacrificing quality.",
     image: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=600&h=400&fit=crop",
+    tall: false,
   },
   {
     title: "End-to-End Production",
-    desc: "Strategy, production, and delivery — all under one roof. No handoffs, no gaps.",
+    desc: "Strategy, production, and delivery — all under one roof.",
     image: null,
+    tall: false,
   },
   {
     title: "Hybrid Workflows",
     desc: "We know when to shoot and when to generate. The art is in the blend.",
     image: null,
+    tall: true,
   },
   {
     title: "Creative Direction",
     desc: "AI handles execution. Humans steer the vision. Always.",
     image: null,
+    tall: false,
   },
 ];
 
@@ -75,79 +81,74 @@ const BentoGrid = () => (
         </ScrollReveal>
       </div>
 
-      {/* Asymmetric bento grid — Scarlet layout */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-        {/* Left column */}
-        <div className="flex flex-col gap-4">
-          {/* Tall card with image — spans visually tall */}
-          <ScrollReveal type="fade-up" delay={0}>
-            <div className="relative rounded-2xl border border-border bg-card overflow-hidden min-h-[400px] md:min-h-[480px]">
-              <img
-                src={benefits[0].image!}
-                alt={benefits[0].title}
-                className="absolute inset-0 w-full h-full object-cover opacity-30"
-                loading="lazy"
-              />
-              <div className="relative z-10 p-6 md:p-8 flex flex-col justify-end h-full bg-gradient-to-t from-card via-card/80 to-transparent">
-                <h3 className="font-semibold text-xl text-foreground">{benefits[0].title}</h3>
-                <p className="text-sm text-muted-foreground mt-2" style={{ lineHeight: 1.7 }}>
-                  {benefits[0].desc}
-                </p>
-              </div>
+      {/* Asymmetric bento grid using CSS Grid */}
+      <div
+        className="grid grid-cols-1 md:grid-cols-2 gap-3"
+        style={{ gridAutoRows: "minmax(180px, auto)" }}
+      >
+        {/* Card 1 — tall left, spans 2 rows */}
+        <ScrollReveal type="fade-up" delay={0}>
+          <div className="relative rounded-2xl border border-border bg-card overflow-hidden h-full md:min-h-[420px]">
+            <img
+              src={benefits[0].image!}
+              alt={benefits[0].title}
+              className="absolute inset-0 w-full h-full object-cover opacity-30"
+              loading="lazy"
+            />
+            <div className="relative z-10 p-6 md:p-8 flex flex-col justify-end h-full bg-gradient-to-t from-card via-card/80 to-transparent">
+              <h3 className="font-semibold text-xl text-foreground">{benefits[0].title}</h3>
+              <p className="text-sm text-muted-foreground mt-2" style={{ lineHeight: 1.7 }}>{benefits[0].desc}</p>
             </div>
-          </ScrollReveal>
-
-          {/* Two text cards side by side */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            <ScrollReveal type="fade-up" delay={0.08}>
-              <div className="rounded-2xl border border-border bg-card p-6 md:p-8 h-full flex flex-col justify-end min-h-[180px]">
-                <h3 className="font-semibold text-lg text-foreground">{benefits[3].title}</h3>
-                <p className="text-sm text-muted-foreground mt-2" style={{ lineHeight: 1.7 }}>{benefits[3].desc}</p>
-              </div>
-            </ScrollReveal>
-            <ScrollReveal type="fade-up" delay={0.12}>
-              <div className="rounded-2xl border border-border bg-card p-6 md:p-8 h-full flex flex-col justify-end min-h-[180px]">
-                <h3 className="font-semibold text-lg text-foreground">{benefits[4].title}</h3>
-                <p className="text-sm text-muted-foreground mt-2" style={{ lineHeight: 1.7 }}>{benefits[4].desc}</p>
-              </div>
-            </ScrollReveal>
           </div>
-        </div>
+        </ScrollReveal>
 
-        {/* Right column */}
-        <div className="flex flex-col gap-4">
-          {/* Text card */}
-          <ScrollReveal type="fade-up" delay={0.04}>
-            <div className="rounded-2xl border border-border bg-card p-6 md:p-8 flex flex-col justify-end min-h-[180px]">
-              <h3 className="font-semibold text-lg text-foreground">{benefits[1].title}</h3>
-              <p className="text-sm text-muted-foreground mt-2" style={{ lineHeight: 1.7 }}>{benefits[1].desc}</p>
-            </div>
-          </ScrollReveal>
+        {/* Card 2 — top right, standard */}
+        <ScrollReveal type="fade-up" delay={0.05}>
+          <div className="rounded-2xl border border-border bg-card p-6 md:p-8 flex flex-col justify-end min-h-[180px]">
+            <h3 className="font-semibold text-lg text-foreground">{benefits[1].title}</h3>
+            <p className="text-sm text-muted-foreground mt-2" style={{ lineHeight: 1.7 }}>{benefits[1].desc}</p>
+          </div>
+        </ScrollReveal>
 
-          {/* Image card */}
-          <ScrollReveal type="fade-up" delay={0.08}>
-            <div className="relative rounded-2xl border border-border bg-card overflow-hidden min-h-[240px]">
-              <img
-                src={benefits[2].image!}
-                alt={benefits[2].title}
-                className="absolute inset-0 w-full h-full object-cover opacity-30"
-                loading="lazy"
-              />
-              <div className="relative z-10 p-6 md:p-8 flex flex-col justify-end h-full bg-gradient-to-t from-card via-card/80 to-transparent">
-                <h3 className="font-semibold text-lg text-foreground">{benefits[2].title}</h3>
-                <p className="text-sm text-muted-foreground mt-2" style={{ lineHeight: 1.7 }}>{benefits[2].desc}</p>
-              </div>
-            </div>
-          </ScrollReveal>
+        {/* Card 3 — mid left, standard with image */}
+        <ScrollReveal type="fade-up" delay={0.08}>
+          <div className="rounded-2xl border border-border bg-card p-6 md:p-8 flex flex-col justify-end min-h-[180px]">
+            <h3 className="font-semibold text-lg text-foreground">{benefits[3].title}</h3>
+            <p className="text-sm text-muted-foreground mt-2" style={{ lineHeight: 1.7 }}>{benefits[3].desc}</p>
+          </div>
+        </ScrollReveal>
 
-          {/* Text card */}
-          <ScrollReveal type="fade-up" delay={0.12}>
-            <div className="rounded-2xl border border-border bg-card p-6 md:p-8 flex flex-col justify-end min-h-[180px]">
-              <h3 className="font-semibold text-lg text-foreground">{benefits[5].title}</h3>
-              <p className="text-sm text-muted-foreground mt-2" style={{ lineHeight: 1.7 }}>{benefits[5].desc}</p>
+        {/* Card 4 — mid right, with image */}
+        <ScrollReveal type="fade-up" delay={0.1}>
+          <div className="relative rounded-2xl border border-border bg-card overflow-hidden min-h-[220px]">
+            <img
+              src={benefits[2].image!}
+              alt={benefits[2].title}
+              className="absolute inset-0 w-full h-full object-cover opacity-30"
+              loading="lazy"
+            />
+            <div className="relative z-10 p-6 md:p-8 flex flex-col justify-end h-full bg-gradient-to-t from-card via-card/80 to-transparent">
+              <h3 className="font-semibold text-lg text-foreground">{benefits[2].title}</h3>
+              <p className="text-sm text-muted-foreground mt-2" style={{ lineHeight: 1.7 }}>{benefits[2].desc}</p>
             </div>
-          </ScrollReveal>
-        </div>
+          </div>
+        </ScrollReveal>
+
+        {/* Card 5 — bottom left, text */}
+        <ScrollReveal type="fade-up" delay={0.12}>
+          <div className="rounded-2xl border border-border bg-card p-6 md:p-8 flex flex-col justify-end min-h-[180px]">
+            <h3 className="font-semibold text-lg text-foreground">{benefits[4].title}</h3>
+            <p className="text-sm text-muted-foreground mt-2" style={{ lineHeight: 1.7 }}>{benefits[4].desc}</p>
+          </div>
+        </ScrollReveal>
+
+        {/* Card 6 — bottom right, text */}
+        <ScrollReveal type="fade-up" delay={0.14}>
+          <div className="rounded-2xl border border-border bg-card p-6 md:p-8 flex flex-col justify-end min-h-[180px]">
+            <h3 className="font-semibold text-lg text-foreground">{benefits[5].title}</h3>
+            <p className="text-sm text-muted-foreground mt-2" style={{ lineHeight: 1.7 }}>{benefits[5].desc}</p>
+          </div>
+        </ScrollReveal>
       </div>
 
       {/* Gallery row */}
@@ -155,12 +156,7 @@ const BentoGrid = () => (
         <div className="mt-12 grid grid-cols-2 md:grid-cols-4 gap-4">
           {galleryImages.map((img, i) => (
             <div key={i} className={`${img.aspect} rounded-2xl overflow-hidden`}>
-              <img
-                src={img.src}
-                alt=""
-                className="w-full h-full object-cover"
-                loading="lazy"
-              />
+              <img src={img.src} alt="" className="w-full h-full object-cover" loading="lazy" />
             </div>
           ))}
         </div>
