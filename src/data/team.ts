@@ -2,7 +2,7 @@ export interface TeamMember {
   name: string;
   role: string;
   image: string;
-  isHiring?: boolean;
+  isAI?: boolean;
 }
 
 export const team: TeamMember[] = [
@@ -12,35 +12,19 @@ export const team: TeamMember[] = [
     image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=500&fit=crop&crop=face",
   },
   {
-    name: "Co-Founder",
-    role: "Operations",
-    image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=500&fit=crop&crop=face",
+    name: "Srijita",
+    role: "Co-Founder, Head of Business Operations",
+    image: "https://images.unsplash.com/photo-1494790108755-2616b612b786?w=400&h=500&fit=crop&crop=face",
   },
   {
-    name: "Business Relations",
-    role: "Head of Partnerships",
+    name: "Diana",
+    role: "Head of Internal Operations",
     image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&h=500&fit=crop&crop=face",
   },
   {
-    name: "Mihir",
-    role: "Director",
-    image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&h=500&fit=crop&crop=face",
-  },
-  {
-    name: "Reid",
-    role: "Cinematographer",
-    image: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=400&h=500&fit=crop&crop=face",
-  },
-  {
-    name: "Your Name Here",
-    role: "We're Hiring",
-    image: "",
-    isHiring: true,
-  },
-  {
-    name: "Your Name Here",
-    role: "We're Hiring",
-    image: "",
-    isHiring: true,
+    name: "Aeria",
+    role: "AI Influencer",
+    image: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=400&h=500&fit=crop&crop=face",
+    isAI: true,
   },
 ];

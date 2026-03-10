@@ -139,36 +139,30 @@ const Studio = () => (
           </div>
         </ScrollReveal>
 
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 mt-16">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-16">
           {team.map((member, i) => (
             <ScrollReveal key={i} type="fade-up" delay={i * 0.08}>
               <div className="group">
                 <div
-                  className="aspect-[3/4] rounded-2xl overflow-hidden"
+                  className="aspect-[3/4] rounded-2xl overflow-hidden relative"
                   style={{ background: "hsl(var(--card))", border: "1px solid rgba(255,255,255,0.06)" }}
                 >
-                  {member.isHiring ? (
-                    <div className="w-full h-full flex flex-col items-center justify-center gap-3">
-                      <div className="w-12 h-12 rounded-full border-2 border-dashed border-muted-foreground/30 flex items-center justify-center">
-                        <Plus size={20} className="text-muted-foreground/50" />
-                      </div>
-                      <p className="text-sm text-muted-foreground">We're Hiring</p>
-                    </div>
-                  ) : (
-                    <img
-                      src={member.image}
-                      alt={member.name}
-                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.03]"
-                      loading="lazy"
-                    />
+                  <img
+                    src={member.image}
+                    alt={member.name}
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.03]"
+                    loading="lazy"
+                  />
+                  {member.isAI && (
+                    <span className="absolute top-3 right-3 text-[10px] font-semibold uppercase tracking-widest px-2 py-1 rounded-full" style={{ background: "hsl(var(--cosmic))", color: "white" }}>
+                      AI
+                    </span>
                   )}
                 </div>
-                {!member.isHiring && (
-                  <div className="mt-3">
-                    <p className="font-medium text-foreground text-sm">{member.name}</p>
-                    <p className="text-xs text-muted-foreground">{member.role}</p>
-                  </div>
-                )}
+                <div className="mt-3">
+                  <p className="font-medium text-foreground text-sm">{member.name}</p>
+                  <p className="text-xs text-muted-foreground">{member.role}</p>
+                </div>
               </div>
             </ScrollReveal>
           ))}

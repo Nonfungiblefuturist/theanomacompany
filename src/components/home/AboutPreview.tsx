@@ -94,11 +94,13 @@ const AboutPreview = () => (
           <ScrollReveal type="scale-in">
             <div className="rounded-2xl overflow-hidden h-full min-h-[280px] max-h-[460px]">
               <img
-                src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=800&h=600&fit=crop"
+                src="/images/studio-hero.jpg"
                 alt="The Anoma Company studio"
                 className="w-full h-full object-cover"
                 loading="lazy"
               />
+            </div>
+          </ScrollReveal>
             </div>
           </ScrollReveal>
         </div>

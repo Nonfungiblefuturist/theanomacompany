@@ -1,15 +1,15 @@
 const clients = [
-  "Claude", "Levi's", "Maya Vision", "Lincoln University",
+  "Claude", "Levi's", "Maia Vision", "Lincoln University",
   "George Brown College", "San Jose Quakes", "T Series",
 ];
 
 const LogoMarquee = () => (
-  <div className="relative overflow-hidden py-10">
+  <div className="relative overflow-hidden py-6">
     {/* Gradient masks */}
     <div className="absolute left-0 top-0 bottom-0 w-24 z-10 bg-gradient-to-r from-background to-transparent" />
     <div className="absolute right-0 top-0 bottom-0 w-24 z-10 bg-gradient-to-l from-background to-transparent" />
 
-    <p className="text-center text-xs uppercase tracking-[0.2em] text-muted-foreground/40 mb-6 font-medium">
+    <p className="text-center text-xs uppercase tracking-[0.2em] text-muted-foreground/40 mb-4 font-medium">
       Trusted by
     </p>
 
