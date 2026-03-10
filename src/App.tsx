@@ -35,8 +35,8 @@ const App = () => (
       <BrowserRouter>
         <Suspense fallback={<PageFallback />}>
           <Routes>
-            <Route path="/" element={<Index />} />
-            <Route path="/home" element={<Home />} />
+            <Route path="/" element={<Home />} />
+            <Route path="/legacy" element={<Index />} />
             <Route path="/studio" element={<Studio />} />
             <Route path="/branding" element={<Branding />} />
             <Route path="/branding/:slug" element={<BrandingProject />} />
