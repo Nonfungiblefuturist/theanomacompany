@@ -284,8 +284,8 @@ export const projects: Project[] = [
   // ── VIDEO PRODUCTION (3) ──
   {
     slug: "music-video-1",
-    title: "Music Video — I",
-    client: "Artist (TBA)",
+    title: "F**k Them",
+    client: "MAIA",
     year: 2024,
     category: "Music Video",
     filterTag: "Video Production",
