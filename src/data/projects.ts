@@ -365,8 +365,8 @@ export const projects: Project[] = [
     gallery: [
       "https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?w=1200&h=800&fit=crop",
     ],
-    videoPreviewUrl: "/videos/animated-preview.mp4",
-    videoFullUrl: "/videos/animated-full.mp4",
+    videoPreviewUrl: "/videos/animated-25-seconder.mov",
+    videoFullUrl: "/videos/animated-25-seconder.mov",
     isVideoLightbox: true,
   },
 ];

@@ -108,11 +108,11 @@ const Work = () => {
                         loading="lazy"
                       />
                     )}
-                    {isExternal && (
-                      <span className="absolute top-3 right-3 px-2.5 py-1 rounded-full bg-cosmic/90 text-background text-xs font-medium flex items-center gap-1">
-                        {p.filterTag === "Solutions" ? "Live App" : "Launch Project"} <ArrowUpRight size={10} />
-                      </span>
-                    )}
+                    {isExternal && p.filterTag === "Solutions" && (
+                       <span className="absolute top-3 right-3 px-2.5 py-1 rounded-full bg-cosmic/90 text-white text-xs font-medium flex items-center gap-1">
+                         Live App <ArrowUpRight size={10} />
+                       </span>
+                     )}
                   </div>
                   <div className="pt-4 pb-2">
                     <div className="flex items-center justify-between">
