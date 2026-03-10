@@ -67,10 +67,10 @@ const BentoGrid = () => (
             <img
               src="/images/aeria-bento.png"
               alt="Aeria — AI Influencer"
-              className="absolute bottom-0 right-0 z-10 pointer-events-none select-none"
+               className="absolute bottom-0 left-0 z-10 pointer-events-none select-none"
               style={{
-                width: "75%",
-                maxWidth: "320px",
+                width: "80%",
+                maxWidth: "340px",
                 objectFit: "contain",
                 filter: "drop-shadow(0 -10px 30px rgba(0,0,0,0.5))",
               }}
