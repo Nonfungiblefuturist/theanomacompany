@@ -7,37 +7,27 @@ const benefits = [
     title: "AI-Native Pipeline",
     desc: "Every project built on AI from day one — not bolted on after.",
     image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&h=600&fit=crop",
-    tall: true,
   },
   {
     title: "Cinematic Quality",
     desc: "Cinema-grade output. PhotoVogue-featured visuals. No compromises on craft.",
-    image: null,
-    tall: false,
   },
   {
     title: "Fast Turnaround",
     desc: "3–5x faster than traditional production without sacrificing quality.",
     image: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=600&h=400&fit=crop",
-    tall: false,
   },
   {
     title: "End-to-End Production",
     desc: "Strategy, production, and delivery — all under one roof.",
-    image: null,
-    tall: false,
   },
   {
     title: "Hybrid Workflows",
     desc: "We know when to shoot and when to generate. The art is in the blend.",
-    image: null,
-    tall: true,
   },
   {
     title: "Creative Direction",
     desc: "AI handles execution. Humans steer the vision. Always.",
-    image: null,
-    tall: false,
   },
 ];
 
@@ -49,16 +39,13 @@ const galleryImages = [
 ];
 
 const BentoGrid = () => (
-  <section className="py-20 md:py-28">
-    <div className="max-w-[1600px] mx-auto px-6 md:px-10 lg:px-16 xl:px-20">
+  <section className="section-card mx-[6px] rounded-[20px] overflow-hidden">
+    <div className="max-w-[1600px] mx-auto px-6 md:px-10 lg:px-16 xl:px-20 py-20 md:py-28">
       {/* Header */}
       <div className="flex flex-col md:flex-row md:items-end md:justify-between mb-12 md:mb-16">
         <div>
           <ScrollReveal type="fade-up">
-            <p className="flex items-center gap-2 text-sm text-muted-foreground mb-4">
-              <span className="w-2 h-2 rounded-full bg-primary inline-block" />
-              Benefits
-            </p>
+            <p className="text-sm text-muted-foreground mb-4">Benefits</p>
           </ScrollReveal>
           <ScrollReveal type="blur-fade">
             <h2
@@ -81,20 +68,12 @@ const BentoGrid = () => (
         </ScrollReveal>
       </div>
 
-      {/* Asymmetric bento grid using CSS Grid */}
-      <div
-        className="grid grid-cols-1 md:grid-cols-2 gap-3"
-        style={{ gridAutoRows: "minmax(180px, auto)" }}
-      >
-        {/* Card 1 — tall left, spans 2 rows */}
+      {/* Asymmetric bento grid */}
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-3" style={{ gridAutoRows: "minmax(200px, auto)" }}>
+        {/* Card 1 — tall left with image */}
         <ScrollReveal type="fade-up" delay={0}>
-          <div className="relative rounded-2xl border border-border bg-card overflow-hidden h-full md:min-h-[420px]">
-            <img
-              src={benefits[0].image!}
-              alt={benefits[0].title}
-              className="absolute inset-0 w-full h-full object-cover opacity-30"
-              loading="lazy"
-            />
+          <div className="relative rounded-2xl border border-border overflow-hidden md:min-h-[440px]" style={{ background: "hsl(var(--card))" }}>
+            <img src={benefits[0].image} alt={benefits[0].title} className="absolute inset-0 w-full h-full object-cover opacity-30" loading="lazy" />
             <div className="relative z-10 p-6 md:p-8 flex flex-col justify-end h-full bg-gradient-to-t from-card via-card/80 to-transparent">
               <h3 className="font-semibold text-xl text-foreground">{benefits[0].title}</h3>
               <p className="text-sm text-muted-foreground mt-2" style={{ lineHeight: 1.7 }}>{benefits[0].desc}</p>
@@ -102,31 +81,26 @@ const BentoGrid = () => (
           </div>
         </ScrollReveal>
 
-        {/* Card 2 — top right, standard */}
+        {/* Card 2 — top right */}
         <ScrollReveal type="fade-up" delay={0.05}>
-          <div className="rounded-2xl border border-border bg-card p-6 md:p-8 flex flex-col justify-end min-h-[180px]">
+          <div className="rounded-2xl border border-border p-6 md:p-8 flex flex-col justify-end min-h-[200px]" style={{ background: "hsl(var(--card))" }}>
             <h3 className="font-semibold text-lg text-foreground">{benefits[1].title}</h3>
             <p className="text-sm text-muted-foreground mt-2" style={{ lineHeight: 1.7 }}>{benefits[1].desc}</p>
           </div>
         </ScrollReveal>
 
-        {/* Card 3 — mid left, standard with image */}
+        {/* Card 3 — end-to-end */}
         <ScrollReveal type="fade-up" delay={0.08}>
-          <div className="rounded-2xl border border-border bg-card p-6 md:p-8 flex flex-col justify-end min-h-[180px]">
+          <div className="rounded-2xl border border-border p-6 md:p-8 flex flex-col justify-end min-h-[200px]" style={{ background: "hsl(var(--card))" }}>
             <h3 className="font-semibold text-lg text-foreground">{benefits[3].title}</h3>
             <p className="text-sm text-muted-foreground mt-2" style={{ lineHeight: 1.7 }}>{benefits[3].desc}</p>
           </div>
         </ScrollReveal>
 
-        {/* Card 4 — mid right, with image */}
+        {/* Card 4 — fast turnaround with image */}
         <ScrollReveal type="fade-up" delay={0.1}>
-          <div className="relative rounded-2xl border border-border bg-card overflow-hidden min-h-[220px]">
-            <img
-              src={benefits[2].image!}
-              alt={benefits[2].title}
-              className="absolute inset-0 w-full h-full object-cover opacity-30"
-              loading="lazy"
-            />
+          <div className="relative rounded-2xl border border-border overflow-hidden min-h-[220px]" style={{ background: "hsl(var(--card))" }}>
+            <img src={benefits[2].image} alt={benefits[2].title} className="absolute inset-0 w-full h-full object-cover opacity-30" loading="lazy" />
             <div className="relative z-10 p-6 md:p-8 flex flex-col justify-end h-full bg-gradient-to-t from-card via-card/80 to-transparent">
               <h3 className="font-semibold text-lg text-foreground">{benefits[2].title}</h3>
               <p className="text-sm text-muted-foreground mt-2" style={{ lineHeight: 1.7 }}>{benefits[2].desc}</p>
@@ -134,17 +108,17 @@ const BentoGrid = () => (
           </div>
         </ScrollReveal>
 
-        {/* Card 5 — bottom left, text */}
+        {/* Card 5 — hybrid */}
         <ScrollReveal type="fade-up" delay={0.12}>
-          <div className="rounded-2xl border border-border bg-card p-6 md:p-8 flex flex-col justify-end min-h-[180px]">
+          <div className="rounded-2xl border border-border p-6 md:p-8 flex flex-col justify-end min-h-[200px]" style={{ background: "hsl(var(--card))" }}>
             <h3 className="font-semibold text-lg text-foreground">{benefits[4].title}</h3>
             <p className="text-sm text-muted-foreground mt-2" style={{ lineHeight: 1.7 }}>{benefits[4].desc}</p>
           </div>
         </ScrollReveal>
 
-        {/* Card 6 — bottom right, text */}
+        {/* Card 6 — creative direction */}
         <ScrollReveal type="fade-up" delay={0.14}>
-          <div className="rounded-2xl border border-border bg-card p-6 md:p-8 flex flex-col justify-end min-h-[180px]">
+          <div className="rounded-2xl border border-border p-6 md:p-8 flex flex-col justify-end min-h-[200px]" style={{ background: "hsl(var(--card))" }}>
             <h3 className="font-semibold text-lg text-foreground">{benefits[5].title}</h3>
             <p className="text-sm text-muted-foreground mt-2" style={{ lineHeight: 1.7 }}>{benefits[5].desc}</p>
           </div>

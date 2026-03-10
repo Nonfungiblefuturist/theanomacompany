@@ -38,10 +38,9 @@ const MobileMenu = ({ links, onClose }: MobileMenuProps) => (
       <Link
         to="/contact"
         onClick={onClose}
-        className="button-smooth text-lg font-medium px-8 py-3 rounded-full text-primary-foreground mt-4 inline-block"
-        style={{ background: "var(--gradient-spectral)" }}
+        className="text-lg font-medium px-8 py-3 rounded-[10px] border border-foreground text-foreground hover:bg-foreground hover:text-background transition-colors duration-300 mt-4 inline-block"
       >
-        Get In Touch
+        Contact us
       </Link>
     </motion.div>
   </motion.div>

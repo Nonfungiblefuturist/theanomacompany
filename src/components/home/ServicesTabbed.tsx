@@ -2,7 +2,6 @@ import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import ScrollReveal from "@/components/shared/ScrollReveal";
-import SectionHeader from "@/components/shared/SectionHeader";
 
 const services = [
   {
@@ -32,56 +31,67 @@ const ServicesTabbed = () => {
   const [active, setActive] = useState(0);
 
   return (
-    <section className="py-20 md:py-28">
-      <div className="max-w-[1400px] mx-auto px-6 md:px-10 lg:px-16 xl:px-20">
-        <SectionHeader
-          title="What We Offer."
-          subtitle="Three verticals. One integrated pipeline."
-          dotLabel="Services"
-        />
+    <section className="section-card mx-[6px] rounded-[20px] overflow-hidden">
+      <div className="max-w-[1400px] mx-auto px-6 md:px-10 lg:px-16 xl:px-20 py-20 md:py-28">
+        <div className="mb-12 md:mb-16">
+          <ScrollReveal type="fade-up">
+            <p className="text-sm text-muted-foreground mb-4">Services</p>
+          </ScrollReveal>
+          <ScrollReveal type="blur-fade">
+            <h2
+              className="text-foreground font-semibold"
+              style={{ fontSize: "clamp(1.75rem, 3.5vw, 3rem)", letterSpacing: "-0.02em" }}
+            >
+              What We Offer.
+            </h2>
+          </ScrollReveal>
+          <ScrollReveal type="fade-up" delay={0.1}>
+            <p className="mt-3 text-muted-foreground text-base md:text-lg max-w-2xl" style={{ lineHeight: 1.7 }}>
+              Three verticals. One integrated pipeline.
+            </p>
+          </ScrollReveal>
+        </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-[40%_1fr] gap-12 lg:gap-16 items-start">
-          {/* Left: numbered list + description */}
+          {/* Left: numbered list */}
           <div>
-            <div className="space-y-0">
-              {services.map((s, i) => (
-                <ScrollReveal key={i} type="fade-up" delay={i * 0.1}>
-                  <button
-                    onClick={() => setActive(i)}
-                    onMouseEnter={() => setActive(i)}
-                    className={`w-full text-left py-5 border-t border-border flex items-center justify-between transition-all duration-300 ${
-                      active === i ? "opacity-100" : "opacity-40 hover:opacity-70"
-                    }`}
-                  >
-                    <div>
-                      <span className="text-primary text-sm font-medium">{s.num}</span>
-                      <h3 className="font-semibold text-xl md:text-2xl text-foreground mt-1">{s.title}</h3>
-                    </div>
-                    <span className="text-foreground/50 text-lg">→</span>
-                  </button>
-                </ScrollReveal>
-              ))}
-            </div>
-
-            {/* Description + timeline for active service */}
-            <AnimatePresence mode="wait">
-              <motion.div
-                key={active}
-                initial={{ opacity: 0, y: 10 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -10 }}
-                transition={{ duration: 0.3 }}
-                className="mt-6 pt-6 border-t border-border"
+            {services.map((s, i) => (
+              <button
+                key={i}
+                onClick={() => setActive(i)}
+                onMouseEnter={() => setActive(i)}
+                className={`w-full text-left py-6 border-t border-border flex items-start justify-between gap-4 transition-all duration-300 ${
+                  active === i
+                    ? "opacity-100 bg-foreground/[0.03] border-l-2 border-l-primary pl-4 -ml-4"
+                    : "opacity-40 hover:opacity-70"
+                }`}
               >
-                <p className="text-muted-foreground text-sm" style={{ lineHeight: 1.7 }}>
-                  {services[active].desc}
-                </p>
-                <div className="mt-4">
-                  <span className="text-xs uppercase tracking-widest text-muted-foreground/60">Timeline</span>
-                  <p className="text-sm text-foreground font-medium mt-1">{services[active].timeline}</p>
+                <div className="flex-1">
+                  <span className="text-muted-foreground text-sm">{s.num}</span>
+                  <h3 className="font-medium text-xl text-foreground mt-1">{s.title}</h3>
+                  {/* Description + timeline only for active */}
+                  <AnimatePresence mode="wait">
+                    {active === i && (
+                      <motion.div
+                        initial={{ opacity: 0, height: 0 }}
+                        animate={{ opacity: 1, height: "auto" }}
+                        exit={{ opacity: 0, height: 0 }}
+                        transition={{ duration: 0.3 }}
+                      >
+                        <p className="text-sm text-muted-foreground mt-3" style={{ lineHeight: 1.7 }}>
+                          {s.desc}
+                        </p>
+                        <div className="mt-3">
+                          <span className="text-xs uppercase tracking-widest text-muted-foreground/60">Timeline</span>
+                          <p className="text-sm text-foreground font-medium mt-1">{s.timeline}</p>
+                        </div>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
                 </div>
-              </motion.div>
-            </AnimatePresence>
+                <span className="text-foreground/50 text-lg mt-1">→</span>
+              </button>
+            ))}
 
             <ScrollReveal type="fade-up" delay={0.3}>
               <Link
@@ -93,23 +103,19 @@ const ServicesTabbed = () => {
             </ScrollReveal>
           </div>
 
-          {/* Right: cross-fade image */}
-          <ScrollReveal type="fade-up" delay={0.2}>
-            <div className="aspect-[4/3] rounded-2xl overflow-hidden relative sticky top-32">
-              <AnimatePresence mode="wait">
-                <motion.img
-                  key={active}
-                  src={services[active].image}
-                  alt={services[active].title}
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  exit={{ opacity: 0 }}
-                  transition={{ duration: 0.3 }}
-                  className="absolute inset-0 w-full h-full object-cover"
-                />
-              </AnimatePresence>
-            </div>
-          </ScrollReveal>
+          {/* Right: cross-fade image — sticky */}
+          <div className="aspect-[4/3] rounded-2xl overflow-hidden relative sticky top-24">
+            {services.map((s, i) => (
+              <img
+                key={i}
+                src={s.image}
+                alt={s.title}
+                className="absolute inset-0 w-full h-full object-cover transition-opacity duration-400"
+                style={{ opacity: active === i ? 1 : 0 }}
+                loading="lazy"
+              />
+            ))}
+          </div>
         </div>
       </div>
     </section>

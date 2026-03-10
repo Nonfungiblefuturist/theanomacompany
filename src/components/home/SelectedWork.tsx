@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
 import ScrollReveal from "@/components/shared/ScrollReveal";
-import SectionHeader from "@/components/shared/SectionHeader";
 import { projects } from "@/data/projects";
 
 const curatedSlugs = [
@@ -16,18 +15,41 @@ const featured = curatedSlugs
   .filter(Boolean) as typeof projects;
 
 const SelectedWork = () => (
-  <section className="py-20 md:py-28">
-    <div className="max-w-[1600px] mx-auto px-6 md:px-10 lg:px-16 xl:px-20">
-      <SectionHeader
-        title="Selected Work."
-        subtitle="Recent projects across all verticals."
-        link={{ label: "View all", to: "/work" }}
-        dotLabel="Selected Work"
-      />
+  <section className="section-card mx-[6px] rounded-[20px] overflow-hidden">
+    <div className="max-w-[1600px] mx-auto px-6 md:px-10 lg:px-16 xl:px-20 py-20 md:py-28">
+      {/* Header with View all button */}
+      <div className="flex flex-col md:flex-row md:items-end md:justify-between mb-12 md:mb-16">
+        <div>
+          <ScrollReveal type="fade-up">
+            <p className="text-sm text-muted-foreground mb-4">Selected Work</p>
+          </ScrollReveal>
+          <ScrollReveal type="blur-fade">
+            <h2
+              className="text-foreground font-semibold"
+              style={{ fontSize: "clamp(1.75rem, 3.5vw, 3rem)", letterSpacing: "-0.02em" }}
+            >
+              Selected Work.
+            </h2>
+          </ScrollReveal>
+          <ScrollReveal type="fade-up" delay={0.1}>
+            <p className="mt-3 text-muted-foreground text-base md:text-lg max-w-2xl" style={{ lineHeight: 1.7 }}>
+              Recent projects across all verticals.
+            </p>
+          </ScrollReveal>
+        </div>
+        <ScrollReveal type="fade-up" delay={0.15}>
+          <Link
+            to="/work"
+            className="inline-flex items-center gap-2 text-sm font-medium mt-4 md:mt-0 px-5 py-2.5 rounded-[10px] border border-foreground text-foreground hover:bg-foreground hover:text-background transition-colors duration-300"
+          >
+            View all
+          </Link>
+        </ScrollReveal>
+      </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         {featured.map((p, i) => (
-          <ScrollReveal key={p.slug} type="slide-up" delay={i * 0.1} viewportAmount={0.15}>
+          <ScrollReveal key={p.slug} type="fade-up" delay={i * 0.08}>
             <Link to={`/work/${p.slug}`} className="group block">
               {/* Large cinematic thumbnail */}
               <div className="aspect-[16/10] rounded-2xl overflow-hidden">
@@ -38,13 +60,14 @@ const SelectedWork = () => (
                   loading="lazy"
                 />
               </div>
-              {/* Info — no background bar, just text on page bg */}
+              {/* Info — clean text, no bar */}
               <div className="pt-4 pb-2">
                 <div className="flex items-center justify-between">
                   <h3 className="font-medium text-lg text-foreground">{p.title}</h3>
                   <span className="text-sm text-muted-foreground">{p.year}</span>
                 </div>
-                <span className="text-sm text-muted-foreground group-hover:text-foreground transition-colors mt-1 inline-block">
+                <p className="text-sm text-muted-foreground mt-1">{p.category}</p>
+                <span className="text-sm text-muted-foreground group-hover:text-primary transition-colors mt-2 inline-block">
                   View project{" "}
                   <span className="inline-block transition-transform duration-300 group-hover:translate-x-1">→</span>
                 </span>

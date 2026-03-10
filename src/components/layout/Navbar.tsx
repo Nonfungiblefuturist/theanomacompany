@@ -5,10 +5,8 @@ import { AnimatePresence } from "framer-motion";
 import MobileMenu from "./MobileMenu";
 
 const navLinks = [
+  { label: "About Us", to: "/studio" },
   { label: "Work", to: "/work" },
-  { label: "Studio", to: "/studio" },
-  { label: "Blog", to: "/blog" },
-  { label: "Contact", to: "/contact" },
 ];
 
 const Navbar = () => {
@@ -53,12 +51,16 @@ const Navbar = () => {
                 {l.label}
               </Link>
             ))}
+
+            {/* Vertical separator */}
+            <div className="w-px h-5 bg-foreground/30" />
+
+            {/* Contact us — outlined button */}
             <Link
               to="/contact"
-              className="button-smooth text-sm font-medium px-5 py-2.5 rounded-full text-primary-foreground"
-              style={{ background: "var(--gradient-spectral)" }}
+              className="text-sm font-medium px-5 py-2 rounded-[10px] border border-foreground text-foreground hover:bg-foreground hover:text-background transition-colors duration-300"
             >
-              Get In Touch
+              Contact us
             </Link>
           </div>
 

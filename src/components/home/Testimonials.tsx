@@ -1,10 +1,9 @@
 import { motion } from "framer-motion";
 import ScrollReveal from "@/components/shared/ScrollReveal";
-import SectionHeader from "@/components/shared/SectionHeader";
 import { testimonials } from "@/data/testimonials";
 
 const TestimonialCard = ({ t }: { t: (typeof testimonials)[0] }) => (
-  <div className="flex-none w-[350px] md:w-[420px] p-6 rounded-lg border border-border bg-card mx-3">
+  <div className="flex-none w-[350px] md:w-[420px] p-6 rounded-2xl border border-border mx-2" style={{ background: "hsl(var(--card))" }}>
     <p className="text-muted-foreground text-sm flex-1" style={{ lineHeight: 1.7 }}>
       "{t.quote}"
     </p>
@@ -23,44 +22,51 @@ const Testimonials = () => {
   const row2 = [...testimonials.slice().reverse(), ...testimonials.slice().reverse()];
 
   return (
-    <section className="py-20 md:py-28 overflow-hidden">
-      <div className="max-w-[1600px] mx-auto px-6 md:px-10 lg:px-16 xl:px-20">
-        <SectionHeader title="Testimonials." subtitle="What our clients say." dotLabel="Testimonials" />
+    <section className="section-card mx-[6px] rounded-[20px] overflow-hidden py-20 md:py-28">
+      <div className="max-w-[1600px] mx-auto px-6 md:px-10 lg:px-16 xl:px-20 mb-12">
+        <ScrollReveal type="fade-up">
+          <p className="text-sm text-muted-foreground mb-4">Testimonials</p>
+        </ScrollReveal>
+        <ScrollReveal type="blur-fade">
+          <h2
+            className="text-foreground font-semibold"
+            style={{ fontSize: "clamp(1.75rem, 3.5vw, 3rem)", letterSpacing: "-0.02em" }}
+          >
+            Testimonials.
+          </h2>
+        </ScrollReveal>
+        <ScrollReveal type="fade-up" delay={0.1}>
+          <p className="mt-3 text-muted-foreground text-base md:text-lg" style={{ lineHeight: 1.7 }}>
+            What our clients say.
+          </p>
+        </ScrollReveal>
       </div>
 
       {/* Row 1 — scrolls left */}
-      <ScrollReveal type="fade-up">
-        <div className="relative">
-          <div className="absolute left-0 top-0 bottom-0 w-24 z-10 bg-gradient-to-r from-background to-transparent" />
-          <div className="absolute right-0 top-0 bottom-0 w-24 z-10 bg-gradient-to-l from-background to-transparent" />
-          <motion.div
-            className="flex"
-            animate={{ x: ["0%", "-50%"] }}
-            transition={{ duration: 40, repeat: Infinity, ease: "linear" }}
-          >
-            {row1.map((t, i) => (
-              <TestimonialCard key={`r1-${i}`} t={t} />
-            ))}
-          </motion.div>
-        </div>
-      </ScrollReveal>
+      <div className="relative overflow-hidden" style={{ maskImage: "linear-gradient(to right, transparent, black 10%, black 90%, transparent)" }}>
+        <motion.div
+          className="flex"
+          animate={{ x: ["0%", "-50%"] }}
+          transition={{ duration: 40, repeat: Infinity, ease: "linear" }}
+        >
+          {row1.map((t, i) => (
+            <TestimonialCard key={`r1-${i}`} t={t} />
+          ))}
+        </motion.div>
+      </div>
 
       {/* Row 2 — scrolls right */}
-      <ScrollReveal type="fade-up" delay={0.1}>
-        <div className="relative mt-4">
-          <div className="absolute left-0 top-0 bottom-0 w-24 z-10 bg-gradient-to-r from-background to-transparent" />
-          <div className="absolute right-0 top-0 bottom-0 w-24 z-10 bg-gradient-to-l from-background to-transparent" />
-          <motion.div
-            className="flex"
-            animate={{ x: ["-50%", "0%"] }}
-            transition={{ duration: 45, repeat: Infinity, ease: "linear" }}
-          >
-            {row2.map((t, i) => (
-              <TestimonialCard key={`r2-${i}`} t={t} />
-            ))}
-          </motion.div>
-        </div>
-      </ScrollReveal>
+      <div className="relative overflow-hidden mt-4" style={{ maskImage: "linear-gradient(to right, transparent, black 10%, black 90%, transparent)" }}>
+        <motion.div
+          className="flex"
+          animate={{ x: ["-50%", "0%"] }}
+          transition={{ duration: 45, repeat: Infinity, ease: "linear" }}
+        >
+          {row2.map((t, i) => (
+            <TestimonialCard key={`r2-${i}`} t={t} />
+          ))}
+        </motion.div>
+      </div>
     </section>
   );
 };
