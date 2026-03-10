@@ -4,12 +4,12 @@ const clients = [
 ];
 
 const LogoMarquee = () => (
-  <div className="relative overflow-hidden py-6">
+  <div className="relative overflow-hidden py-8">
     {/* Gradient masks */}
-    <div className="absolute left-0 top-0 bottom-0 w-24 z-10 bg-gradient-to-r from-background to-transparent" />
-    <div className="absolute right-0 top-0 bottom-0 w-24 z-10 bg-gradient-to-l from-background to-transparent" />
+    <div className="absolute left-0 top-0 bottom-0 w-16 z-10 bg-gradient-to-r from-background to-transparent" />
+    <div className="absolute right-0 top-0 bottom-0 w-16 z-10 bg-gradient-to-l from-background to-transparent" />
 
-    <p className="text-center text-xs uppercase tracking-[0.2em] text-muted-foreground/40 mb-4 font-medium">
+    <p className="text-center text-sm uppercase tracking-[0.25em] text-muted-foreground/50 mb-6 font-medium">
       Trusted by
     </p>
 
@@ -17,7 +17,7 @@ const LogoMarquee = () => (
       {[...clients, ...clients, ...clients].map((name, i) => (
         <span
           key={i}
-          className="mx-10 text-sm uppercase tracking-[0.15em] text-muted-foreground/50 font-medium select-none"
+          className="mx-12 text-base uppercase tracking-[0.18em] text-muted-foreground/50 font-medium select-none"
         >
           {name}
         </span>

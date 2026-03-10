@@ -7,6 +7,11 @@ export interface TeamMember {
 
 export const team: TeamMember[] = [
   {
+    name: "Dr. Uday Ghosh",
+    role: "Chairman Emeritus",
+    image: "/images/uday-ghosh.jpg",
+  },
+  {
     name: "Surzayon",
     role: "Founder & Creative Director",
     image: "/images/surzayon.png",
