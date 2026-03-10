@@ -57,7 +57,7 @@ const SelectedWork = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {featured.map((p, i) => {
-              const isExternal = p.filterTag === "Solutions" && p.externalLink;
+              const isExternal = !!p.externalLink;
               const isVideoLightbox = p.isVideoLightbox && p.videoFullUrl;
 
               const handleClick = (e: React.MouseEvent) => {
