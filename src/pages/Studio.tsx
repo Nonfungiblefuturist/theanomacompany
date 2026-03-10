@@ -76,7 +76,7 @@ const Studio = () => (
     <section className="section-card mx-[6px] mt-[6px] rounded-[20px] overflow-hidden">
       <div className="aspect-[16/7] w-full">
         <img
-          src="https://images.unsplash.com/photo-1485846234645-a62644f84728?w=1600&h=700&fit=crop"
+          src="/images/studio-hero.jpg"
           alt="Cinematic production"
           className="w-full h-full object-cover"
           loading="lazy"
