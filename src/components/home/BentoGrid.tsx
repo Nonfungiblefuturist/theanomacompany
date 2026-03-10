@@ -1,5 +1,5 @@
-import { Link } from "react-router-dom";
 import ScrollReveal from "@/components/shared/ScrollReveal";
+import FlipButton from "@/components/shared/FlipButton";
 import LogoMarquee from "@/components/shared/LogoMarquee";
 
 const BentoGrid = () => (
@@ -30,19 +30,18 @@ const BentoGrid = () => (
           </ScrollReveal>
         </div>
         <ScrollReveal type="fade-up" delay={0.15}>
-          <Link to="/contact" className="text-sm text-primary hover:text-foreground transition-colors mt-4 md:mt-0">
-            Let's talk →
-          </Link>
+          <FlipButton text="Let's talk" href="/contact" variant="cosmic" />
         </ScrollReveal>
       </div>
 
-      {/* 3-column bento grid — desktop only, no ScrollReveal wrappers to preserve grid placement */}
+      {/* 3-column bento grid — desktop */}
       <ScrollReveal type="fade-up">
         <div
-          className="hidden md:grid gap-[6px]"
+          className="hidden md:grid"
           style={{
             gridTemplateColumns: "1fr 1fr 1fr",
             gridTemplateRows: "200px 260px 160px",
+            gap: "12px",
           }}
         >
           {/* Card 1 — TALL left, spans 2 rows */}
@@ -115,6 +114,15 @@ const BentoGrid = () => (
             <p className="text-sm text-muted-foreground" style={{ lineHeight: 1.5 }}>
               We work closely with you, keeping communication transparent and revisions efficient.
             </p>
+            {/* Device mockup placeholder */}
+            <div
+              className="absolute bottom-[-20px] right-[-20px] w-[80%] rounded-xl"
+              style={{
+                height: "60%",
+                background: "linear-gradient(135deg, #1a1a1a 0%, #222 100%)",
+                border: "1px solid rgba(255,255,255,0.06)",
+              }}
+            />
           </div>
 
           {/* Card 4 — Middle center, image + text overlay */}
@@ -176,7 +184,7 @@ const BentoGrid = () => (
       </ScrollReveal>
 
       {/* Mobile: stacked cards */}
-      <div className="flex flex-col gap-[6px] md:hidden">
+      <div className="flex flex-col gap-3 md:hidden">
         {[
           { title: "AI-Native Pipeline", desc: "Every project built on AI from day one — not bolted on after.", icon: "" },
           { title: "24/7 Support", desc: "Always available to ensure a smooth and hassle-free experience.", icon: "⏱" },

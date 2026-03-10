@@ -1,6 +1,6 @@
-import { Link } from "react-router-dom";
 import ScrollReveal from "@/components/shared/ScrollReveal";
 import StatsCounter from "@/components/shared/StatsCounter";
+import FlipButton from "@/components/shared/FlipButton";
 import { stats } from "@/data/stats";
 
 const whiteWords = "We blend cinematic vision with AI-native craft, transforming bold ideas".split(" ");
@@ -47,12 +47,9 @@ const AboutPreview = () => (
             ))}
 
             <ScrollReveal type="fade-up" delay={0.5}>
-              <Link
-                to="/studio"
-                className="inline-flex items-center gap-2 text-sm font-medium mt-6 px-5 py-2.5 rounded-[10px] border border-foreground/30 text-foreground hover:bg-foreground hover:text-background transition-colors duration-300"
-              >
-                More about us <span>→</span>
-              </Link>
+              <div className="mt-6">
+                <FlipButton text="More about us" href="/studio" />
+              </div>
             </ScrollReveal>
           </div>
 

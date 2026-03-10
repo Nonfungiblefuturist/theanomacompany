@@ -1,62 +1,76 @@
+import { useState, useEffect } from "react";
 import { siteConfig } from "@/data/siteConfig";
 
-const Hero = () => (
-  <section
-    className="section-card relative overflow-hidden mx-[6px] mt-[6px]"
-    style={{ borderRadius: "20px", minHeight: "calc(100vh - 12px)" }}
-  >
-    {/* Video background — no overlay */}
-    <div className="absolute inset-0">
-      <iframe
-        src={`https://www.youtube.com/embed/${siteConfig.showreelYoutubeId}?autoplay=1&mute=1&loop=1&playlist=${siteConfig.showreelYoutubeId}&controls=0&showinfo=0&modestbranding=1&playsinline=1&rel=0&enablejsapi=1`}
-        className="absolute top-1/2 left-1/2 w-[177.78vh] min-w-full min-h-full -translate-x-1/2 -translate-y-1/2 pointer-events-none"
-        style={{ border: 0 }}
-        allow="autoplay; encrypted-media"
-        title="Background video"
-      />
-      {/* Light scrim for text readability */}
-      <div className="absolute inset-0 bg-black/30" />
-    </div>
+const Hero = () => {
+  const [scrollY, setScrollY] = useState(0);
 
-    {/* Bottom text bar — two columns: brand left, tagline+desc right */}
-    <div className="absolute bottom-0 left-0 right-0 z-10 pointer-events-none px-6 md:px-10 pb-8 md:pb-12">
-      <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6">
-        {/* Left: THE ANOMA COMPANY — big */}
-        <h1
-          className="font-bold text-white select-none leading-[0.9]"
-          style={{
-            fontSize: "clamp(3rem, 10vw, 8rem)",
-            letterSpacing: "-0.05em",
-          }}
-        >
-          THE ANOMA<br />COMPANY
-        </h1>
+  useEffect(() => {
+    const handleScroll = () => setScrollY(window.scrollY);
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
-        {/* Right: tagline + description */}
-        <div className="md:text-right md:max-w-[420px]">
-          <p
-            className="font-medium text-white"
+  return (
+    <section
+      className="section-card relative overflow-hidden mx-[6px] mt-[6px]"
+      style={{ borderRadius: "20px", minHeight: "calc(100vh - 12px)" }}
+    >
+      {/* Video background — no overlay */}
+      <div className="absolute inset-0">
+        <iframe
+          src={`https://www.youtube.com/embed/${siteConfig.showreelYoutubeId}?autoplay=1&mute=1&loop=1&playlist=${siteConfig.showreelYoutubeId}&controls=0&showinfo=0&modestbranding=1&playsinline=1&rel=0&enablejsapi=1`}
+          className="absolute top-1/2 left-1/2 w-[177.78vh] min-w-full min-h-full -translate-x-1/2 -translate-y-1/2 pointer-events-none"
+          style={{ border: 0 }}
+          allow="autoplay; encrypted-media"
+          title="Background video"
+        />
+        {/* Light scrim for text readability */}
+        <div className="absolute inset-0 bg-black/30" />
+      </div>
+
+      {/* Bottom text bar — parallax effect on scroll */}
+      <div
+        className="absolute bottom-0 left-0 right-0 z-10 pointer-events-none px-6 md:px-10 pb-8 md:pb-12"
+        style={{ transform: `translateY(${scrollY * 0.2}px)` }}
+      >
+        <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6">
+          {/* Left: THE ANOMA COMPANY — big */}
+          <h1
+            className="font-bold text-foreground select-none leading-[0.9]"
             style={{
-              fontSize: "clamp(1.5rem, 3vw, 2.5rem)",
-              letterSpacing: "-0.02em",
-              lineHeight: 1.2,
+              fontSize: "clamp(3rem, 10vw, 8rem)",
+              letterSpacing: "-0.05em",
             }}
           >
-            Everything is noise.
-          </p>
-          <p
-            className="text-white/50 mt-3"
-            style={{
-              fontSize: "clamp(0.875rem, 1.5vw, 1.125rem)",
-              lineHeight: 1.6,
-            }}
-          >
-            We're an AI-first cinematic production studio dedicated to crafting bold, immersive experiences.
-          </p>
+            THE ANOMA<br />COMPANY
+          </h1>
+
+          {/* Right: tagline + description */}
+          <div className="md:text-right md:max-w-[420px]">
+            <p
+              className="font-medium text-foreground"
+              style={{
+                fontSize: "clamp(1.5rem, 3vw, 2.5rem)",
+                letterSpacing: "-0.02em",
+                lineHeight: 1.2,
+              }}
+            >
+              Everything is noise.
+            </p>
+            <p
+              className="text-foreground/50 mt-3"
+              style={{
+                fontSize: "clamp(0.875rem, 1.5vw, 1.125rem)",
+                lineHeight: 1.6,
+              }}
+            >
+              We're an AI-first cinematic production studio dedicated to crafting bold, immersive experiences.
+            </p>
+          </div>
         </div>
       </div>
-    </div>
-  </section>
-);
+    </section>
+  );
+};
 
 export default Hero;

@@ -1,7 +1,7 @@
 import { useState, useMemo } from "react";
-import { Link } from "react-router-dom";
 import { ChevronDown, Search } from "lucide-react";
 import ScrollReveal from "@/components/shared/ScrollReveal";
+import FlipButton from "@/components/shared/FlipButton";
 import { faqs } from "@/data/faqs";
 
 const FAQItem = ({ faq, isOpen, onToggle, delay }: { faq: typeof faqs[0]; isOpen: boolean; onToggle: () => void; delay: number }) => (
@@ -86,12 +86,9 @@ const HomeFAQ = () => {
               <p className="mt-6 text-sm text-muted-foreground">
                 Can't find what you're looking for?
               </p>
-              <Link
-                to="/contact"
-                className="inline-flex items-center gap-2 text-sm font-medium mt-2 text-foreground hover:text-primary transition-colors"
-              >
-                Contact us <span>→</span>
-              </Link>
+              <div className="mt-2">
+                <FlipButton text="Contact us" href="/contact" />
+              </div>
             </ScrollReveal>
           </div>
 

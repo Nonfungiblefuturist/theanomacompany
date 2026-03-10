@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Link, useSearchParams } from "react-router-dom";
+import { ArrowUpRight } from "lucide-react";
 import NebulaEffects from "@/components/shared/NebulaEffects";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
@@ -70,16 +71,23 @@ const Work = () => {
 
           {/* Project grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-12">
-            {filtered.map((p, i) => (
-              <ScrollReveal key={p.slug} type="fade-up" delay={i * 0.05}>
-                <Link to={`/work/${p.slug}`} className="group block">
-                  <div className="aspect-[16/10] rounded-2xl overflow-hidden">
+            {filtered.map((p, i) => {
+              const isExternal = p.filterTag === "Solutions" && p.externalLink;
+
+              const CardContent = (
+                <>
+                  <div className={`aspect-[16/10] rounded-2xl overflow-hidden relative ${isExternal ? "border border-cosmic/30" : ""}`}>
                     <img
                       src={p.thumbnail}
                       alt={p.title}
                       className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.03]"
                       loading="lazy"
                     />
+                    {isExternal && (
+                      <span className="absolute top-3 right-3 px-2.5 py-1 rounded-full bg-cosmic/90 text-background text-xs font-medium flex items-center gap-1">
+                        Live App <ArrowUpRight size={10} />
+                      </span>
+                    )}
                   </div>
                   <div className="pt-4 pb-2">
                     <div className="flex items-center justify-between">
@@ -87,14 +95,28 @@ const Work = () => {
                       <span className="text-sm text-muted-foreground">{p.year}</span>
                     </div>
                     <p className="text-sm text-muted-foreground mt-1">{p.category}</p>
-                    <span className="text-sm text-muted-foreground group-hover:text-primary transition-colors mt-2 inline-block">
-                      View project{" "}
-                      <span className="inline-block transition-transform duration-300 group-hover:translate-x-1">→</span>
+                    <span className="text-sm text-muted-foreground group-hover:text-primary transition-colors mt-2 inline-flex items-center gap-1">
+                      {isExternal ? "Launch App" : "View project"}{" "}
+                      <ArrowUpRight size={14} className="inline-block transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                     </span>
                   </div>
-                </Link>
-              </ScrollReveal>
-            ))}
+                </>
+              );
+
+              return (
+                <ScrollReveal key={p.slug} type="fade-up" delay={i * 0.05}>
+                  {isExternal ? (
+                    <a href={p.externalLink} target="_blank" rel="noopener noreferrer" className="group block">
+                      {CardContent}
+                    </a>
+                  ) : (
+                    <Link to={`/work/${p.slug}`} className="group block">
+                      {CardContent}
+                    </Link>
+                  )}
+                </ScrollReveal>
+              );
+            })}
           </div>
         </div>
       </section>
