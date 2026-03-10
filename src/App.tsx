@@ -4,7 +4,7 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { lazy, Suspense } from "react";
-import Index from "./pages/Index";
+const Index = lazy(() => import("./pages/Index"));
 import Studio from "./pages/Studio";
 import Branding from "./pages/Branding";
 import BrandingProject from "./pages/BrandingProject";
