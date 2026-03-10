@@ -36,18 +36,18 @@ const BentoGrid = () => (
         </ScrollReveal>
       </div>
 
-      {/* 3-column bento grid with explicit grid placement */}
-      <div
-        className="hidden md:grid gap-[6px]"
-        style={{
-          gridTemplateColumns: "1fr 1fr 1fr",
-          gridTemplateRows: "200px 260px 160px",
-        }}
-      >
-        {/* Card 1 — TALL left, spans 2 rows */}
-        <ScrollReveal type="fade-up" delay={0}>
+      {/* 3-column bento grid — desktop only, no ScrollReveal wrappers to preserve grid placement */}
+      <ScrollReveal type="fade-up">
+        <div
+          className="hidden md:grid gap-[6px]"
+          style={{
+            gridTemplateColumns: "1fr 1fr 1fr",
+            gridTemplateRows: "200px 260px 160px",
+          }}
+        >
+          {/* Card 1 — TALL left, spans 2 rows */}
           <div
-            className="relative rounded-2xl overflow-hidden h-full"
+            className="relative rounded-2xl overflow-hidden"
             style={{
               background: "hsl(var(--card))",
               border: "1px solid rgba(255,255,255,0.06)",
@@ -83,12 +83,10 @@ const BentoGrid = () => (
               </div>
             </div>
           </div>
-        </ScrollReveal>
 
-        {/* Card 2 — Top middle, text only */}
-        <ScrollReveal type="fade-up" delay={0.05}>
+          {/* Card 2 — Top middle */}
           <div
-            className="rounded-2xl p-6 md:p-8 flex flex-col justify-between h-full"
+            className="rounded-2xl p-6 md:p-8 flex flex-col justify-between"
             style={{
               background: "hsl(var(--card))",
               border: "1px solid rgba(255,255,255,0.06)",
@@ -102,12 +100,10 @@ const BentoGrid = () => (
               Always available to ensure a smooth and hassle-free experience. 24 hours response time.
             </p>
           </div>
-        </ScrollReveal>
 
-        {/* Card 3 — Top right, spans 2 rows */}
-        <ScrollReveal type="fade-up" delay={0.08}>
+          {/* Card 3 — Top right, spans 2 rows */}
           <div
-            className="relative rounded-2xl p-6 md:p-8 overflow-hidden h-full"
+            className="relative rounded-2xl p-6 md:p-8 overflow-hidden"
             style={{
               background: "hsl(var(--card))",
               border: "1px solid rgba(255,255,255,0.06)",
@@ -120,12 +116,10 @@ const BentoGrid = () => (
               We work closely with you, keeping communication transparent and revisions efficient.
             </p>
           </div>
-        </ScrollReveal>
 
-        {/* Card 4 — Middle center, image + text overlay */}
-        <ScrollReveal type="fade-up" delay={0.1}>
+          {/* Card 4 — Middle center, image + text overlay */}
           <div
-            className="relative rounded-2xl overflow-hidden h-full"
+            className="relative rounded-2xl overflow-hidden"
             style={{
               background: "hsl(var(--card))",
               border: "1px solid rgba(255,255,255,0.06)",
@@ -138,20 +132,15 @@ const BentoGrid = () => (
               loading="lazy"
             />
             <div className="relative z-10 flex flex-col justify-end h-full p-6 md:p-8 bg-gradient-to-t from-card via-card/70 to-transparent">
-              <h4
-                className="font-semibold text-foreground"
-                style={{ fontSize: "clamp(1.2rem, 2vw, 1.8rem)" }}
-              >
+              <h4 className="font-semibold text-foreground" style={{ fontSize: "clamp(1.2rem, 2vw, 1.8rem)" }}>
                 Fast & Efficient Turnarounds
               </h4>
             </div>
           </div>
-        </ScrollReveal>
 
-        {/* Card 5 — Bottom left, text only */}
-        <ScrollReveal type="fade-up" delay={0.12}>
+          {/* Card 5 — Bottom left */}
           <div
-            className="rounded-2xl p-6 md:p-8 flex flex-col justify-center h-full"
+            className="rounded-2xl p-6 md:p-8 flex flex-col justify-center"
             style={{
               background: "hsl(var(--card))",
               border: "1px solid rgba(255,255,255,0.06)",
@@ -165,12 +154,10 @@ const BentoGrid = () => (
               We've helped multiple brands create stunning, high-impact designs that drive results.
             </p>
           </div>
-        </ScrollReveal>
 
-        {/* Card 6 — Bottom right, spans 2 columns */}
-        <ScrollReveal type="fade-up" delay={0.14}>
+          {/* Card 6 — Bottom right, spans 2 columns */}
           <div
-            className="rounded-2xl p-6 md:p-8 flex flex-col justify-center h-full"
+            className="rounded-2xl p-6 md:p-8 flex flex-col justify-center"
             style={{
               background: "hsl(var(--card))",
               border: "1px solid rgba(255,255,255,0.06)",
@@ -185,8 +172,8 @@ const BentoGrid = () => (
               Our designs grow with your brand, ensuring long-term success and adaptability.
             </p>
           </div>
-        </ScrollReveal>
-      </div>
+        </div>
+      </ScrollReveal>
 
       {/* Mobile: stacked cards */}
       <div className="flex flex-col gap-[6px] md:hidden">
@@ -224,10 +211,7 @@ const BentoGrid = () => (
           <div className="flex items-center gap-4">
             <div className="flex -space-x-2">
               {[1, 2, 3, 4].map((i) => (
-                <div
-                  key={i}
-                  className="w-8 h-8 rounded-full border-2 border-background bg-muted"
-                />
+                <div key={i} className="w-8 h-8 rounded-full border-2 border-background bg-muted" />
               ))}
             </div>
             <div>
