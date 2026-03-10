@@ -63,7 +63,19 @@ const BentoGrid = () => (
               playsInline
               className="absolute inset-0 w-full h-full object-cover opacity-50"
             />
-            <div className="relative z-10 p-6 md:p-8 flex flex-col justify-between h-full">
+            {/* Aeria popping out */}
+            <img
+              src="/images/aeria-bento.png"
+              alt="Aeria — AI Influencer"
+              className="absolute bottom-0 right-0 z-10 pointer-events-none select-none"
+              style={{
+                width: "75%",
+                maxWidth: "320px",
+                objectFit: "contain",
+                filter: "drop-shadow(0 -10px 30px rgba(0,0,0,0.5))",
+              }}
+            />
+            <div className="relative z-20 p-6 md:p-8 flex flex-col justify-between h-full">
               <h3
                 className="select-none"
                 style={{
