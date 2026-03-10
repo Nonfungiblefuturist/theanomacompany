@@ -1,58 +1,94 @@
-import { useState } from "react";
-import { Play } from "lucide-react";
-import VideoLightbox from "@/components/shared/VideoLightbox";
+import { useState, useRef } from "react";
+import { Play, Pause } from "lucide-react";
 import ScrollReveal from "@/components/shared/ScrollReveal";
 
 const ShowreelBanner = () => {
-  const [lightboxOpen, setLightboxOpen] = useState(false);
+  const [isPlaying, setIsPlaying] = useState(false);
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  const handlePlayShowreel = () => {
+    const video = videoRef.current;
+    if (!video) return;
+
+    if (!isPlaying) {
+      video.muted = false;
+      video.loop = false;
+      video.play();
+      setIsPlaying(true);
+    } else {
+      video.pause();
+      setIsPlaying(false);
+    }
+  };
+
+  const handleVideoEnded = () => {
+    const video = videoRef.current;
+    if (!video) return;
+    video.muted = true;
+    video.loop = true;
+    video.play();
+    setIsPlaying(false);
+  };
 
   return (
-    <>
-      <section className="section-card mx-[6px] rounded-[20px] overflow-hidden">
-        <ScrollReveal type="fade-up">
+    <section className="section-card mx-[6px] rounded-[20px] overflow-hidden">
+      <ScrollReveal type="fade-up">
+        <div
+          className="relative w-full overflow-hidden rounded-[20px] cursor-pointer group"
+          style={{
+            height: isPlaying ? "clamp(400px, 60vh, 80vh)" : "clamp(300px, 50vh, 600px)",
+            transition: "height 0.6s ease",
+          }}
+          onClick={handlePlayShowreel}
+        >
+          {/* Video background */}
+          <video
+            ref={videoRef}
+            src="/videos/showreel.mov"
+            autoPlay
+            loop
+            muted
+            playsInline
+            onEnded={handleVideoEnded}
+            className="absolute inset-0 w-full h-full object-cover"
+          />
+
+          {/* Dark overlay — fades out when playing */}
           <div
-            className="relative w-full overflow-hidden rounded-[20px] cursor-pointer group"
-            style={{ height: "clamp(300px, 50vh, 600px)" }}
-            onClick={() => setLightboxOpen(true)}
+            className="absolute inset-0 transition-opacity duration-500"
+            style={{
+              background: "rgba(0,0,0,0.3)",
+              opacity: isPlaying ? 0 : 1,
+            }}
+          />
+
+          {/* Play / Pause button */}
+          <button
+            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex items-center gap-3 px-8 py-4 rounded-full text-foreground font-medium transition-all duration-300 group-hover:border-white/40 group-hover:bg-white/15"
+            style={{
+              background: "rgba(0,0,0,0.5)",
+              backdropFilter: "blur(8px)",
+              border: "1px solid rgba(255,255,255,0.2)",
+              fontSize: "16px",
+              letterSpacing: "-0.02em",
+              opacity: isPlaying ? 0.6 : 1,
+            }}
           >
-            {/* Placeholder background — replace with <video> when assets are ready */}
-            <div
-              className="absolute inset-0"
-              style={{
-                background: "linear-gradient(135deg, #111 0%, #0a0a0a 50%, #151515 100%)",
-              }}
-            />
-
-            {/* Dark overlay */}
-            <div
-              className="absolute inset-0"
-              style={{ background: "rgba(0,0,0,0.3)" }}
-            />
-
-            {/* Play Showreel button */}
-            <button
-              className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex items-center gap-3 px-8 py-4 rounded-full text-foreground font-medium transition-all duration-300 group-hover:border-white/40 group-hover:bg-white/15"
-              style={{
-                background: "rgba(0,0,0,0.5)",
-                backdropFilter: "blur(8px)",
-                border: "1px solid rgba(255,255,255,0.2)",
-                fontSize: "16px",
-                letterSpacing: "-0.02em",
-              }}
-            >
-              <Play size={18} fill="currentColor" />
-              Play Showreel
-            </button>
-          </div>
-        </ScrollReveal>
-      </section>
-
-      <VideoLightbox
-        videoUrl="/videos/showreel.mp4"
-        isOpen={lightboxOpen}
-        onClose={() => setLightboxOpen(false)}
-      />
-    </>
+            {isPlaying ? (
+              <>
+                <Pause size={18} fill="currentColor" />
+                Pause
+              </>
+            ) : (
+              <>
+                <Play size={18} fill="currentColor" />
+                Play Showreel
+              </>
+            )}
+          </button>
+        </div>
+      </ScrollReveal>
+    </section>
   );
 };
 

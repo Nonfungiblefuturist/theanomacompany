@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-import { siteConfig } from "@/data/siteConfig";
 
 const Hero = () => {
   const [scrollY, setScrollY] = useState(0);
@@ -15,14 +14,15 @@ const Hero = () => {
       className="section-card relative overflow-hidden mx-[6px] mt-[6px]"
       style={{ borderRadius: "20px", minHeight: "calc(100vh - 12px)" }}
     >
-      {/* Video background — no overlay */}
+      {/* Video background */}
       <div className="absolute inset-0">
-        <iframe
-          src={`https://www.youtube.com/embed/${siteConfig.showreelYoutubeId}?autoplay=1&mute=1&loop=1&playlist=${siteConfig.showreelYoutubeId}&controls=0&showinfo=0&modestbranding=1&playsinline=1&rel=0&enablejsapi=1`}
-          className="absolute top-1/2 left-1/2 w-[177.78vh] min-w-full min-h-full -translate-x-1/2 -translate-y-1/2 pointer-events-none"
-          style={{ border: 0 }}
-          allow="autoplay; encrypted-media"
-          title="Background video"
+        <video
+          src="/videos/hero-bg.mov"
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="absolute inset-0 w-full h-full object-cover"
         />
         {/* Light scrim for text readability */}
         <div className="absolute inset-0 bg-black/30" />

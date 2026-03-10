@@ -7,10 +7,10 @@ import VideoLightbox from "@/components/shared/VideoLightbox";
 import { projects } from "@/data/projects";
 
 const curatedSlugs = [
-  "jaipur-living",
+  "music-video-1",
   "ai-chatbot",
   "vaseline-campaign",
-  "director-gpt",
+  "animated-30-seconder",
 ];
 const featured = curatedSlugs
   .map((slug) => projects.find((p) => p.slug === slug))
