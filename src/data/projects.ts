@@ -183,7 +183,7 @@ export const projects: Project[] = [
     externalLink: "https://campus-convert-720109186790.us-west1.run.app/",
   },
 
-  // ── BRANDING (5) ──
+  // ── BRANDING (4) ──
   {
     slug: "creator-con",
     title: "Creator Con",
@@ -206,30 +206,6 @@ export const projects: Project[] = [
     },
     gallery: [
       "https://images.unsplash.com/photo-1558655146-9f40138edfeb?w=1200&h=800&fit=crop",
-    ],
-  },
-  {
-    slug: "stand-store",
-    title: "Stand Store",
-    client: "Stand Store",
-    year: 2024,
-    category: "Website Design",
-    filterTag: "Branding",
-    thumbnailType: "image",
-    thumbnail: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop",
-    summary: "E-commerce website design and development for a direct-to-consumer brand",
-    intro: "Stand Store needed a high-converting online presence that matched their product quality with a premium shopping experience.",
-    metadata: { year: 2024, duration: "4 Weeks", client: "Stand Store", category: "Website Design" },
-    challenges: {
-      heading: "Their previous site was template-based with poor mobile performance and a generic checkout flow.",
-      body: "Bounce rates were high on mobile. The brand aesthetic was not translating to the digital storefront.",
-    },
-    solutions: {
-      heading: "We designed and built a custom e-commerce experience — mobile-first, fast, and visually aligned with the brand.",
-      body: "The new site features product storytelling sections, streamlined checkout, and responsive design that performs across all devices.",
-    },
-    gallery: [
-      "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200&h=800&fit=crop",
     ],
   },
   {
@@ -305,71 +281,17 @@ export const projects: Project[] = [
     ],
   },
 
-  // ── VIDEO PRODUCTION (4) ──
+  // ── VIDEO PRODUCTION (3) ──
   {
-    slug: "jaipur-living",
-    title: "Jaipur Living",
-    client: "Jaipur Living",
-    year: 2025,
-    category: "Commercial Production",
-    filterTag: "Video Production",
-    thumbnailType: "video",
-    thumbnail: "https://images.unsplash.com/photo-1524492412937-b28074a5d7da?w=800&h=600&fit=crop",
-    summary: "Multi-location cinematic campaign blending live-action, 3D, and AI video across Rajasthan",
-    intro: "Jaipur Living needed a campaign that brought their artisan rug brand to life against the architectural grandeur of Rajasthan.",
-    metadata: { year: 2025, duration: "8 Weeks", client: "Jaipur Living", category: "Commercial Production" },
-    challenges: {
-      heading: "Shooting across multiple heritage locations in Rajasthan with a hybrid live-action + AI pipeline required precise coordination.",
-      body: "Locations like Chand Baori and Panna Meena stepwells have strict permitting. The production needed to blend real footage with 3D and AI-generated elements seamlessly.",
-    },
-    solutions: {
-      heading: "We developed a hybrid production workflow that combined scouted live-action footage with AI-extended environments and 3D product placement.",
-      body: "Each location was shot practically then enhanced with AI to create impossible angles and lighting. The client reviewed storyboards in real-time through our interactive preview system.",
-    },
-    gallery: [
-      "https://images.unsplash.com/photo-1524492412937-b28074a5d7da?w=1200&h=800&fit=crop",
-    ],
-    videoPreviewUrl: "/videos/jaipur-living-preview.mp4",
-    videoFullUrl: "/videos/jaipur-living-full.mp4",
-    isVideoLightbox: true,
-  },
-  {
-    slug: "lincoln-university",
-    title: "Lincoln University MBA",
-    client: "Lincoln University",
-    year: 2025,
-    category: "Admissions Commercial",
-    filterTag: "Video Production",
-    thumbnailType: "image",
-    thumbnail: "https://images.unsplash.com/photo-1523050854058-8df90110c476?w=800&h=600&fit=crop",
-    summary: "AI-native admissions commercial for Lincoln University's MBA program",
-    intro: "Lincoln University needed a polished admissions spot that could compete with schools spending 10x their budget.",
-    metadata: { year: 2025, duration: "4 Weeks", client: "Lincoln University", category: "Admissions Commercial" },
-    challenges: {
-      heading: "The budget was a fraction of what traditional university commercials cost, but the quality expectations were the same.",
-      body: "With no on-campus shoot budget, the entire production needed to be executed through AI generation and stock-hybrid workflows.",
-    },
-    solutions: {
-      heading: "We produced a fully AI-native 60-second spot with storyboarded scenes, voiceover, and cinematic pacing.",
-      body: "Using our CTRL+AI methodology, we generated campus environments, student interactions, and aspirational sequences. An interactive storyboard editor let the client approve each frame before final production.",
-    },
-    gallery: [
-      "https://images.unsplash.com/photo-1523050854058-8df90110c476?w=1200&h=800&fit=crop",
-    ],
-    videoPreviewUrl: "/videos/lincoln-preview.mp4",
-    videoFullUrl: "/videos/lincoln-full.mp4",
-    isVideoLightbox: true,
-  },
-  {
-    slug: "music-video",
-    title: "Music Video",
+    slug: "music-video-1",
+    title: "Music Video — I",
     client: "Artist (TBA)",
     year: 2024,
     category: "Music Video",
     filterTag: "Video Production",
-    thumbnailType: "image",
-    thumbnail: "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=800&h=600&fit=crop",
-    summary: "AI-native and hybrid music video production with cinematic visual language",
+    thumbnailType: "video",
+    thumbnail: "/images/music-video-1-thumb.jpg",
+    summary: "AI-native music video with cinematic visual language — Part I",
     intro: "A music video that needed to feel like a short film — narrative-driven, visually dense, and completely original.",
     metadata: { year: 2024, duration: "5 Weeks", client: "TBA", category: "Music Video" },
     challenges: {
@@ -380,11 +302,34 @@ export const projects: Project[] = [
       heading: "We combined AI video generation with live-action performance footage, creating seamless transitions between real and surreal.",
       body: "Each scene was pre-visualized in AI, then shot and composited to match. The result plays like a high-budget production at a fraction of the cost and timeline.",
     },
-    gallery: [
-      "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=1200&h=800&fit=crop",
-    ],
-    videoPreviewUrl: "/videos/music-video-preview.mp4",
-    videoFullUrl: "/videos/music-video-full.mp4",
+    gallery: [],
+    videoPreviewUrl: "/videos/music-video-1-preview.mp4",
+    videoFullUrl: "/videos/music-video-1-full.mp4",
+    isVideoLightbox: true,
+  },
+  {
+    slug: "music-video-2",
+    title: "Music Video — II",
+    client: "Artist (TBA)",
+    year: 2024,
+    category: "Music Video",
+    filterTag: "Video Production",
+    thumbnailType: "video",
+    thumbnail: "/images/music-video-2-thumb.jpg",
+    summary: "AI-native music video with cinematic visual language — Part II",
+    intro: "The second installment in a visual series exploring AI-generated worlds blended with live performance.",
+    metadata: { year: 2024, duration: "4 Weeks", client: "TBA", category: "Music Video" },
+    challenges: {
+      heading: "Maintaining visual continuity with Part I while pushing into new creative territory required a refined pipeline.",
+      body: "The sequel needed to feel connected yet distinct — evolving the visual language without repeating it.",
+    },
+    solutions: {
+      heading: "We evolved the AI pipeline from Part I, introducing new generative techniques for environments and transitions.",
+      body: "The result is a visual companion piece that stands alone while rewarding viewers who experience both parts together.",
+    },
+    gallery: [],
+    videoPreviewUrl: "/videos/music-video-2-preview.mp4",
+    videoFullUrl: "/videos/music-video-2-full.mp4",
     isVideoLightbox: true,
   },
   {
