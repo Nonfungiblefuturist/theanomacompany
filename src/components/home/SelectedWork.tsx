@@ -4,6 +4,7 @@ import { ArrowUpRight } from "lucide-react";
 import ScrollReveal from "@/components/shared/ScrollReveal";
 import FlipButton from "@/components/shared/FlipButton";
 import VideoLightbox from "@/components/shared/VideoLightbox";
+import TripleVideoPreview from "@/components/shared/TripleVideoPreview";
 import { projects } from "@/data/projects";
 
 const curatedSlugs = [
