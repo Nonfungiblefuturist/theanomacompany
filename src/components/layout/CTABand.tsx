@@ -4,10 +4,10 @@ import ScrollReveal from "@/components/shared/ScrollReveal";
 
 const CTABand = () => (
   <section className="py-24 md:py-32 border-t border-border">
-    <div className="max-w-7xl mx-auto px-5 md:px-10 text-center">
+    <div className="max-w-[1400px] mx-auto px-6 md:px-10 lg:px-16 text-center">
       <ScrollReveal type="blur-fade">
         <h2
-          className="font-['Anta'] text-foreground"
+          className="text-foreground font-semibold"
           style={{ fontSize: "clamp(2rem, 4vw, 4rem)", letterSpacing: "-0.02em" }}
         >
           Let's Build Something.
@@ -17,7 +17,7 @@ const CTABand = () => (
         <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
           <Link
             to="/contact"
-            className="button-smooth font-['Anta'] text-sm px-8 py-3 rounded-full text-primary-foreground"
+            className="button-smooth text-sm font-medium px-8 py-3 rounded-full text-primary-foreground"
             style={{ background: "var(--gradient-spectral)" }}
           >
             Get In Touch

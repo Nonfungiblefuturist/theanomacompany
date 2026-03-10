@@ -7,11 +7,12 @@ const featured = projects.slice(0, 6);
 
 const SelectedWork = () => (
   <section className="py-20 md:py-28">
-    <div className="max-w-7xl mx-auto px-5 md:px-10">
+    <div className="max-w-[1600px] mx-auto px-6 md:px-10 lg:px-16">
       <SectionHeader
         title="Selected Work."
         subtitle="Recent projects across all verticals."
         link={{ label: "View all", to: "/work" }}
+        dotLabel="Selected Work"
       />
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -31,7 +32,7 @@ const SelectedWork = () => (
               </div>
               <div className="p-5 bg-card flex items-center justify-between">
                 <div>
-                  <h3 className="font-['Anta'] text-base text-foreground">{p.title}</h3>
+                  <h3 className="font-semibold text-base text-foreground">{p.title}</h3>
                   <span className="text-xs text-muted-foreground">{p.year}</span>
                 </div>
                 <span className="text-sm text-muted-foreground group-hover:text-foreground transition-colors">

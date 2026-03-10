@@ -7,10 +7,9 @@ const brandingProjects = projects.filter((p) => p.filterTag === "Branding");
 
 const BrandingShowcase = () => (
   <section className="py-20 md:py-28">
-    <div className="max-w-7xl mx-auto px-5 md:px-10">
-      <SectionHeader title="Branding." subtitle="Identity systems and creative campaigns." />
+    <div className="max-w-[1400px] mx-auto px-6 md:px-10 lg:px-16">
+      <SectionHeader title="Branding." subtitle="Identity systems and creative campaigns." dotLabel="Branding" />
 
-      {/* Masonry-like grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         {brandingProjects.map((p, i) => (
           <ScrollReveal
@@ -33,7 +32,7 @@ const BrandingShowcase = () => (
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent" />
                 <div className="absolute bottom-0 left-0 right-0 p-5">
-                  <h3 className="font-['Anta'] text-lg text-foreground">{p.title}</h3>
+                  <h3 className="font-semibold text-lg text-foreground">{p.title}</h3>
                   <p className="text-xs text-muted-foreground mt-1 uppercase tracking-widest">{p.category}</p>
                   <span className="inline-block mt-2 text-sm text-foreground/70 group-hover:text-primary transition-colors">
                     View Project →

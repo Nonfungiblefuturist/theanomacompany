@@ -7,8 +7,8 @@ const videoProjects = projects.filter((p) => p.filterTag === "Video Production")
 
 const VideoProductionGrid = () => (
   <section className="py-20 md:py-28">
-    <div className="max-w-7xl mx-auto px-5 md:px-10">
-      <SectionHeader title="Video Production." subtitle="From storyboard to final cut." />
+    <div className="max-w-[1400px] mx-auto px-6 md:px-10 lg:px-16">
+      <SectionHeader title="Video Production." subtitle="From storyboard to final cut." dotLabel="Video Production" />
 
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
         {videoProjects.map((p, i) => (
@@ -27,7 +27,7 @@ const VideoProductionGrid = () => (
                 <div className="absolute inset-0 bg-gradient-to-t from-background/60 to-transparent" />
               </div>
               <div className="p-5 bg-card">
-                <h3 className="font-['Anta'] text-lg text-foreground">{p.title}</h3>
+                <h3 className="font-semibold text-lg text-foreground">{p.title}</h3>
                 <p className="text-sm text-muted-foreground mt-1">{p.summary}</p>
               </div>
             </Link>

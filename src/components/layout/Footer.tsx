@@ -1,7 +1,9 @@
 import { Link } from "react-router-dom";
 import { siteConfig } from "@/data/siteConfig";
+import { useState } from "react";
 
-const footerLinks = [
+const pageLinks = [
+  { label: "Home", to: "/" },
   { label: "Work", to: "/work" },
   { label: "Studio", to: "/studio" },
   { label: "Blog", to: "/blog" },
@@ -9,72 +11,119 @@ const footerLinks = [
 ];
 
 const legalLinks = [
-  { label: "Privacy Policy", to: "/privacy-policy" },
-  { label: "Terms & Conditions", to: "/terms" },
+  { label: "Privacy Policy.", to: "/privacy-policy" },
+  { label: "Terms & Conditions.", to: "/terms" },
 ];
 
-const Footer = () => (
-  <footer className="bg-card border-t border-border">
-    <div className="max-w-7xl mx-auto px-5 md:px-10 py-16 md:py-20">
-      <div className="grid grid-cols-1 md:grid-cols-4 gap-12 md:gap-8">
-        {/* Brand */}
-        <div className="md:col-span-2">
-          <span className="font-['Anta'] text-lg tracking-[0.05em] uppercase gradient-text">
-            The Anoma Company
-          </span>
-          <p className="mt-4 text-muted-foreground text-sm max-w-sm" style={{ lineHeight: 1.7 }}>
-            {siteConfig.description}
-          </p>
-          <p className="mt-4 text-muted-foreground text-sm">{siteConfig.email}</p>
+const Footer = () => {
+  const [email, setEmail] = useState("");
+
+  return (
+    <footer
+      className="bg-card overflow-hidden"
+      style={{ borderTopLeftRadius: 24, borderTopRightRadius: 24 }}
+    >
+      <div className="max-w-[1400px] mx-auto px-6 md:px-10 lg:px-16 pt-16 md:pt-20">
+        {/* Top row: 3 columns */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-8">
+          {/* Logo + Address */}
+          <div>
+            <span className="font-semibold text-foreground text-lg tracking-[0.05em] uppercase">
+              The Anoma Company
+            </span>
+            <p className="mt-3 text-muted-foreground text-sm">{siteConfig.address}</p>
+          </div>
+
+          {/* Description */}
+          <div>
+            <p className="text-muted-foreground text-sm" style={{ lineHeight: 1.7 }}>
+              {siteConfig.description}
+            </p>
+          </div>
+
+          {/* Newsletter */}
+          <div>
+            <p className="text-muted-foreground text-sm mb-3">Stay ahead of the curve.</p>
+            <div className="flex gap-2">
+              <input
+                type="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                placeholder="Your email"
+                className="flex-1 bg-background border border-border rounded-lg px-4 py-2.5 text-sm text-foreground placeholder:text-muted-foreground/50 focus:outline-none focus:border-primary/50 transition-colors"
+              />
+              <button
+                className="px-5 py-2.5 rounded-lg text-sm font-medium text-primary-foreground whitespace-nowrap"
+                style={{ background: "var(--gradient-spectral)" }}
+              >
+                Sign up
+              </button>
+            </div>
+          </div>
         </div>
 
-        {/* Pages */}
-        <div>
-          <h4 className="font-['Anta'] text-sm uppercase tracking-widest text-muted-foreground mb-4">Pages</h4>
-          <ul className="space-y-2">
-            {footerLinks.map((l) => (
-              <li key={l.to}>
-                <Link to={l.to} className="text-sm text-muted-foreground hover:text-foreground transition-colors duration-200">
-                  {l.label}
-                </Link>
-              </li>
-            ))}
-          </ul>
+        {/* Divider */}
+        <div className="border-t border-border mt-12 pt-10" />
+
+        {/* Link row: 3 columns */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {/* Pages */}
+          <div>
+            <h4 className="text-sm font-medium uppercase tracking-widest text-muted-foreground mb-4">Pages</h4>
+            <ul className="space-y-2">
+              {pageLinks.map((l) => (
+                <li key={l.to}>
+                  <Link to={l.to} className="text-sm text-muted-foreground hover:text-foreground transition-colors duration-200">
+                    {l.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Legal */}
+          <div>
+            <h4 className="text-sm font-medium uppercase tracking-widest text-muted-foreground mb-4">Legal</h4>
+            <ul className="space-y-2">
+              {legalLinks.map((l) => (
+                <li key={l.to}>
+                  <Link to={l.to} className="text-sm text-muted-foreground hover:text-foreground transition-colors duration-200">
+                    {l.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Built by */}
+          <div className="md:text-right">
+            <h4 className="text-sm font-medium uppercase tracking-widest text-muted-foreground mb-4">Built by</h4>
+            <p className="text-sm text-muted-foreground">Designed in Lovable</p>
+            <p className="text-sm text-muted-foreground">By The Anoma Company</p>
+          </div>
         </div>
 
-        {/* Socials */}
-        <div>
-          <h4 className="font-['Anta'] text-sm uppercase tracking-widest text-muted-foreground mb-4">Connect</h4>
-          <ul className="space-y-2">
-            {Object.entries(siteConfig.socials).map(([name, url]) => (
-              <li key={name}>
-                <a
-                  href={url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-sm text-muted-foreground hover:text-foreground transition-colors duration-200 capitalize"
-                >
-                  {name}
-                </a>
-              </li>
-            ))}
-          </ul>
+        {/* Spacer + copyright */}
+        <div className="mt-20 md:mt-32 text-right">
+          <p className="text-xs text-muted-foreground">© {new Date().getFullYear()} All rights reserved.</p>
+        </div>
+
+        {/* Giant display text */}
+        <div className="mt-8 -mb-[0.15em]">
+          <h2
+            className="font-bold text-foreground uppercase tracking-tight select-none whitespace-nowrap text-center"
+            style={{
+              fontSize: "clamp(8rem, 18vw, 20rem)",
+              lineHeight: 0.85,
+              letterSpacing: "-0.02em",
+            }}
+          >
+            THE ANOMA COMPANY
+          </h2>
         </div>
       </div>
-
-      {/* Bottom bar */}
-      <div className="mt-12 pt-8 border-t border-border flex flex-col md:flex-row justify-between items-center gap-4">
-        <p className="text-xs text-muted-foreground">© {new Date().getFullYear()} {siteConfig.name}. All rights reserved.</p>
-        <div className="flex gap-6">
-          {legalLinks.map((l) => (
-            <Link key={l.to} to={l.to} className="text-xs text-muted-foreground hover:text-foreground transition-colors">
-              {l.label}
-            </Link>
-          ))}
-        </div>
-      </div>
-    </div>
-  </footer>
-);
+    </footer>
+  );
+};
 
 export default Footer;

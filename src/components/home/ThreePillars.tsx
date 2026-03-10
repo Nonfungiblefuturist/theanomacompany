@@ -28,8 +28,8 @@ const pillars = [
 
 const ThreePillars = () => (
   <section className="py-20 md:py-28">
-    <div className="max-w-7xl mx-auto px-5 md:px-10">
-      <SectionHeader title="What We Do." subtitle="Three verticals. One integrated pipeline." />
+    <div className="max-w-[1400px] mx-auto px-6 md:px-10 lg:px-16">
+      <SectionHeader title="What We Do." subtitle="Three verticals. One integrated pipeline." dotLabel="What we do" />
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
         {pillars.map((p, i) => (
@@ -47,8 +47,8 @@ const ThreePillars = () => (
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-transparent" />
                 <div className="absolute bottom-0 left-0 right-0 p-6">
-                  <span className="text-primary font-['Anta'] text-sm">{p.num}</span>
-                  <h3 className="font-['Anta'] text-2xl text-foreground mt-1">{p.title}</h3>
+                  <span className="text-primary text-sm font-medium">{p.num}</span>
+                  <h3 className="font-semibold text-2xl text-foreground mt-1">{p.title}</h3>
                   <p className="text-muted-foreground text-sm mt-1">{p.desc}</p>
                   <span className="inline-block mt-3 text-sm text-foreground/70 group-hover:text-primary transition-colors">
                     Explore →

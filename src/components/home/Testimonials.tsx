@@ -11,8 +11,8 @@ const Testimonials = () => {
 
   return (
     <section className="py-20 md:py-28">
-      <div className="max-w-7xl mx-auto px-5 md:px-10">
-        <SectionHeader title="Testimonials." subtitle="What our clients say." />
+      <div className="max-w-[1600px] mx-auto px-6 md:px-10 lg:px-16">
+        <SectionHeader title="Testimonials." subtitle="What our clients say." dotLabel="Testimonials" />
 
         <ScrollReveal type="fade-up">
           <div className="overflow-hidden" ref={emblaRef}>
@@ -24,7 +24,7 @@ const Testimonials = () => {
                       "{t.quote}"
                     </p>
                     <div className="mt-4 pt-4 border-t border-border">
-                      <p className="font-['Anta'] text-foreground text-sm">{t.author}</p>
+                      <p className="font-semibold text-foreground text-sm">{t.author}</p>
                       <p className="text-xs text-muted-foreground">{t.role}</p>
                     </div>
                   </div>

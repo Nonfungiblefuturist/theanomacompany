@@ -10,15 +10,15 @@ const steps = [
 
 const ProcessSteps = () => (
   <section className="py-20 md:py-28">
-    <div className="max-w-7xl mx-auto px-5 md:px-10">
-      <SectionHeader title="Process." subtitle="Four steps to finished." />
+    <div className="max-w-[1400px] mx-auto px-6 md:px-10 lg:px-16">
+      <SectionHeader title="Process." subtitle="Four steps to finished." dotLabel="Process" />
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
         {steps.map((s, i) => (
           <ScrollReveal key={i} type="fade-up" delay={i * 0.1}>
             <div className="relative">
-              <span className="font-['Anta'] text-5xl text-primary/20">{s.num}</span>
-              <h3 className="font-['Anta'] text-lg text-foreground mt-2">{s.title}</h3>
+              <span className="text-5xl font-bold text-primary/20">{s.num}</span>
+              <h3 className="font-semibold text-lg text-foreground mt-2">{s.title}</h3>
               <p className="text-sm text-muted-foreground mt-2" style={{ lineHeight: 1.7 }}>{s.desc}</p>
             </div>
           </ScrollReveal>
