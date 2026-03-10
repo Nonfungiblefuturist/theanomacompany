@@ -219,7 +219,7 @@ export const projects: Project[] = [
     slug: "vaseline-campaign",
     title: "Vaseline",
     client: "Vaseline",
-    year: 2023,
+    year: 2024,
     category: "Creative Campaign",
     filterTag: "Branding",
     thumbnailType: "video",
@@ -227,7 +227,7 @@ export const projects: Project[] = [
     videoPreviewUrl: "/videos/vaseline-preview.mov",
     summary: "Creative marketing campaign with AI-enhanced visual assets",
     intro: "Vaseline needed a fresh campaign that stood out in a saturated personal care market using modern creative techniques.",
-    metadata: { year: 2023, duration: "3 Weeks", client: "Vaseline", category: "Creative Campaign" },
+    metadata: { year: 2024, duration: "3 Weeks", client: "Vaseline", category: "Creative Campaign" },
     challenges: {
       heading: "The brand wanted to feel contemporary and innovative without alienating its trusted, heritage audience.",
       body: "Balancing tradition with innovation required careful creative direction — bold enough to turn heads, familiar enough to feel trusted.",
