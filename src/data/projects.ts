@@ -266,13 +266,13 @@ export const projects: Project[] = [
   },
   {
     slug: "youtube-pitch-deck",
-    title: "YouTube Pitch Deck",
+    title: "Twenty Years of YouTube",
     client: "YouTube (concept)",
     year: 2024,
     category: "Pitch Deck",
     filterTag: "Branding",
     thumbnailType: "image",
-    thumbnail: "https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?w=800&h=600&fit=crop",
+    thumbnail: "/images/youtube-pitch-thumb.jpg",
     summary: "Investor and partnership pitch deck with cinematic visual storytelling",
     intro: "A pitch deck that needed to close rooms — not just inform, but persuade with visual authority.",
     metadata: { year: 2024, duration: "2 Weeks", client: "YouTube (concept)", category: "Pitch Deck" },
@@ -285,8 +285,9 @@ export const projects: Project[] = [
       body: "The deck uses cinematic composition, data visualization with personality, and a clear narrative structure. It ships as both a presentation and a leave-behind PDF.",
     },
     gallery: [
-      "https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?w=1200&h=800&fit=crop",
+      "/images/youtube-pitch-thumb.jpg",
     ],
+    externalLink: "https://www.canva.com/design/DAGiFpnFNE4/sg7LVWncTVPlmwoQRmg09g/view?utm_content=DAGiFpnFNE4&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h9854372f9a",
   },
 
   // ── VIDEO PRODUCTION (3) ──
