@@ -39,7 +39,7 @@ const Studio = () => (
         </ScrollReveal>
         <ScrollReveal type="fade-up" delay={0.1}>
           <p className="mt-6 text-muted-foreground text-lg md:text-xl max-w-3xl" style={{ lineHeight: 1.7 }}>
-            The Anoma Company is an AI-first cinematic production studio based in Toronto, built for brands that refuse to blend in. Through AI-native craft, cinematic vision, and precision engineering, we transform ideas into unforgettable digital experiences.
+            We believe creative production should be bold, powerful, and unapologetically original. Through AI solutions, cinematic campaigns, and precision-engineered content, we help brands cut through the noise and make a lasting impression.
           </p>
         </ScrollReveal>
 
