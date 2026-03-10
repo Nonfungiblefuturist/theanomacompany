@@ -30,7 +30,7 @@ const ServicesTabbed = () => {
   return (
     <section className="py-20 md:py-28">
       <div className="max-w-[1400px] mx-auto px-6 md:px-10 lg:px-16">
-        <SectionHeader title="Services." subtitle="What we deliver." dotLabel="Services" />
+        <SectionHeader title="What We Do." subtitle="Three verticals. One integrated pipeline." dotLabel="What We Do" />
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
           <div className="space-y-0">

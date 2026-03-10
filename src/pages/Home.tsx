@@ -3,14 +3,10 @@ import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import CTABand from "@/components/layout/CTABand";
 import Hero from "@/components/home/Hero";
-import ThreePillars from "@/components/home/ThreePillars";
-import SolutionsGrid from "@/components/home/SolutionsGrid";
-import BrandingShowcase from "@/components/home/BrandingShowcase";
-import VideoProductionGrid from "@/components/home/VideoProductionGrid";
-import SelectedWork from "@/components/home/SelectedWork";
 import AboutPreview from "@/components/home/AboutPreview";
-import ServicesTabbed from "@/components/home/ServicesTabbed";
 import ImageMosaic from "@/components/home/ImageMosaic";
+import SelectedWork from "@/components/home/SelectedWork";
+import ServicesTabbed from "@/components/home/ServicesTabbed";
 import ProcessSteps from "@/components/home/ProcessSteps";
 import BentoGrid from "@/components/home/BentoGrid";
 import Testimonials from "@/components/home/Testimonials";
@@ -23,20 +19,16 @@ const Home = () => (
     <Navbar />
 
     {/* 1 */}  <Hero />
-    {/* 2 */}  <ThreePillars />
-    {/* 3 */}  <SolutionsGrid />
-    {/* 4 */}  <BrandingShowcase />
-    {/* 5 */}  <VideoProductionGrid />
-    {/* 6 */}  <SelectedWork />
-    {/* 7 */}  <AboutPreview />
-    {/* 8 */}  <ServicesTabbed />
-    {/* 9 */}  <ImageMosaic />
-    {/* 10 */ } <ProcessSteps />
-    {/* 11 */ } <BentoGrid />
-    {/* 12 */ } <Testimonials />
-    {/* 13 */ } <HomeFAQ />
-    {/* 14 */ } <BlogPreview />
-    {/* 15 */ } <CTABand />
+    {/* 2 */}  <AboutPreview />
+    {/* 3 */}  <ImageMosaic />
+    {/* 4 */}  <SelectedWork />
+    {/* 5 */}  <ServicesTabbed />
+    {/* 6 */}  <ProcessSteps />
+    {/* 7 */}  <BentoGrid />
+    {/* 8 */}  <Testimonials />
+    {/* 9 */}  <HomeFAQ />
+    {/* 10 */} <BlogPreview />
+    {/* 11 */} <CTABand />
 
     <Footer />
   </div>

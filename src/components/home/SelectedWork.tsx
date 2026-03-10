@@ -3,7 +3,17 @@ import ScrollReveal from "@/components/shared/ScrollReveal";
 import SectionHeader from "@/components/shared/SectionHeader";
 import { projects } from "@/data/projects";
 
-const featured = projects.slice(0, 6);
+const curatedSlugs = [
+  "jaipur-living",
+  "ai-chatbot",
+  "vaseline-campaign",
+  "lincoln-university",
+  "stand-store",
+  "prompt-machine",
+];
+const featured = curatedSlugs
+  .map((slug) => projects.find((p) => p.slug === slug))
+  .filter(Boolean) as typeof projects;
 
 const SelectedWork = () => (
   <section className="py-20 md:py-28">
