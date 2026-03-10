@@ -29,16 +29,18 @@ const Studio = () => (
     {/* About section */}
     <section className="section-card mx-[6px] mt-[6px] rounded-[20px] overflow-hidden">
       <div className="max-w-[1400px] mx-auto px-6 md:px-10 lg:px-16 xl:px-20 py-24 md:py-32">
-        <ScrollReveal type="blur-fade">
-          <h1
-            className="text-foreground font-bold"
-            style={{ fontSize: "clamp(2.75rem, 5vw, 5.5rem)", letterSpacing: "-0.03em" }}
-          >
-            Our Mission.
-          </h1>
+        {/* Our Mission */}
+        <ScrollReveal type="fade-up">
+          <p className="flex items-center gap-2 text-sm text-muted-foreground mb-4">
+            <span className="w-1.5 h-1.5 rounded-full" style={{ backgroundColor: "hsl(var(--cosmic))" }} />
+            Our Mission
+          </p>
         </ScrollReveal>
-        <ScrollReveal type="fade-up" delay={0.1}>
-          <p className="mt-6 text-muted-foreground text-lg md:text-xl max-w-3xl" style={{ lineHeight: 1.7 }}>
+        <ScrollReveal type="blur-fade">
+          <p
+            className="font-normal text-foreground"
+            style={{ fontSize: "clamp(1.5rem, 3.5vw, 3.5rem)", lineHeight: 1.3, letterSpacing: "-0.02em" }}
+          >
             We believe creative production should be bold, powerful, and unapologetically original. Through AI solutions, cinematic campaigns, and precision-engineered content, we help brands cut through the noise and make a lasting impression.
           </p>
         </ScrollReveal>
@@ -144,15 +146,21 @@ const Studio = () => (
             <ScrollReveal key={i} type="fade-up" delay={i * 0.08}>
               <div className="group">
                 <div
-                  className="aspect-[3/4] rounded-2xl overflow-hidden relative"
+                  className="aspect-[3/4] rounded-2xl overflow-hidden relative flex items-center justify-center"
                   style={{ background: "hsl(var(--card))", border: "1px solid rgba(255,255,255,0.06)" }}
                 >
-                  <img
-                    src={member.image}
-                    alt={member.name}
-                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.03]"
-                    loading="lazy"
-                  />
+                  {member.image ? (
+                    <img
+                      src={member.image}
+                      alt={member.name}
+                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.03]"
+                      loading="lazy"
+                    />
+                  ) : (
+                    <span className="text-3xl font-bold text-muted-foreground/20">
+                      {member.name.charAt(0)}
+                    </span>
+                  )}
                   {member.isAI && (
                     <span className="absolute top-3 right-3 text-[10px] font-semibold uppercase tracking-widest px-2 py-1 rounded-full" style={{ background: "hsl(var(--cosmic))", color: "white" }}>
                       AI

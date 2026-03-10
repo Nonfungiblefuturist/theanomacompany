@@ -8,8 +8,27 @@ const steps = [
 ];
 
 const ProcessSteps = () => (
-  <section className="section-card mx-[6px] rounded-[20px] overflow-hidden">
-    <div className="max-w-[1400px] mx-auto px-6 md:px-10 lg:px-16 xl:px-20 py-20 md:py-28">
+  <section className="section-card mx-[6px] rounded-[20px] overflow-hidden" style={{ position: "relative" }}>
+    {/* Background node graph */}
+    <img
+      src="/images/workflow-nodegraph.png"
+      alt=""
+      aria-hidden="true"
+      style={{
+        position: "absolute",
+        top: "50%",
+        left: "50%",
+        transform: "translate(-50%, -50%)",
+        width: "120%",
+        height: "120%",
+        objectFit: "cover",
+        opacity: 0.06,
+        filter: "blur(1px)",
+        pointerEvents: "none",
+        userSelect: "none",
+      }}
+    />
+    <div className="max-w-[1400px] mx-auto px-6 md:px-10 lg:px-16 xl:px-20 py-20 md:py-28" style={{ position: "relative", zIndex: 1 }}>
       <div className="mb-12 md:mb-16">
         <ScrollReveal type="fade-up">
           <p className="flex items-center gap-2 text-sm text-muted-foreground mb-4">
