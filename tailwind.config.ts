@@ -11,7 +11,7 @@ export default {
 	prefix: "",
 	theme: {
 		fontFamily: {
-			'anta': ['"Anta"', 'sans-serif'],
+			'geist': ['"Geist"', 'ui-sans-serif', 'system-ui', 'sans-serif'],
 		},
 		container: {
 			center: true,

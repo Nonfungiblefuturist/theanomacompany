@@ -8,9 +8,9 @@ const Contact = () => (
     <NebulaEffects />
     <Navbar />
     <section className="pt-32 pb-20 md:pt-40 md:pb-28">
-      <div className="max-w-7xl mx-auto px-5 md:px-10">
+      <div className="max-w-[1400px] mx-auto px-6 md:px-10 lg:px-16">
         <ScrollReveal type="blur-fade">
-          <h1 className="font-['Anta'] text-foreground" style={{ fontSize: "clamp(2.75rem, 5vw, 5.5rem)", letterSpacing: "-0.03em" }}>
+          <h1 className="text-foreground font-bold" style={{ fontSize: "clamp(2.75rem, 5vw, 5.5rem)", letterSpacing: "-0.03em" }}>
             Contact.
           </h1>
         </ScrollReveal>

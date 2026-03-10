@@ -5,8 +5,8 @@ import { blogPosts } from "@/data/blogPosts";
 
 const BlogPreview = () => (
   <section className="py-20 md:py-28">
-    <div className="max-w-7xl mx-auto px-5 md:px-10">
-      <SectionHeader title="Blog." subtitle="Insights from the studio." link={{ label: "All posts", to: "/blog" }} />
+    <div className="max-w-[1400px] mx-auto px-6 md:px-10 lg:px-16">
+      <SectionHeader title="Blog." subtitle="Insights from the studio." link={{ label: "All posts", to: "/blog" }} dotLabel="Blog" />
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
         {blogPosts.slice(0, 3).map((post, i) => (
@@ -25,7 +25,7 @@ const BlogPreview = () => (
               </div>
               <div className="p-5 bg-card">
                 <span className="text-xs text-muted-foreground">{post.date} · {post.readTime}</span>
-                <h3 className="font-['Anta'] text-base text-foreground mt-2">{post.title}</h3>
+                <h3 className="font-semibold text-base text-foreground mt-2">{post.title}</h3>
                 <p className="text-sm text-muted-foreground mt-1" style={{ lineHeight: 1.6 }}>
                   {post.excerpt}
                 </p>

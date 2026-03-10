@@ -7,8 +7,8 @@ const solutions = projects.filter((p) => p.filterTag === "Solutions");
 
 const SolutionsGrid = () => (
   <section className="py-20 md:py-28">
-    <div className="max-w-7xl mx-auto px-5 md:px-10">
-      <SectionHeader title="Solutions." subtitle="AI-powered tools built to solve real problems." />
+    <div className="max-w-[1400px] mx-auto px-6 md:px-10 lg:px-16">
+      <SectionHeader title="Solutions." subtitle="AI-powered tools built to solve real problems." dotLabel="Solutions" />
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
         {solutions.map((p, i) => (
@@ -26,7 +26,7 @@ const SolutionsGrid = () => (
                 />
               </div>
               <div className="p-5">
-                <h3 className="font-['Anta'] text-lg text-foreground">{p.title}</h3>
+                <h3 className="font-semibold text-lg text-foreground">{p.title}</h3>
                 <p className="text-sm text-muted-foreground mt-1" style={{ lineHeight: 1.6 }}>
                   {p.summary}
                 </p>

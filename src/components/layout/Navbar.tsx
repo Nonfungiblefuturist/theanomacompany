@@ -35,19 +35,17 @@ const Navbar = () => {
             : "bg-transparent"
         }`}
       >
-        <div className="max-w-7xl mx-auto px-5 md:px-10 flex items-center justify-between h-16 md:h-20">
-          {/* Logo */}
-          <Link to="/" className="font-['Anta'] text-foreground text-sm md:text-base tracking-[0.05em] uppercase">
+        <div className="max-w-[1400px] mx-auto px-6 md:px-10 lg:px-16 flex items-center justify-between h-16 md:h-20">
+          <Link to="/" className="font-bold text-foreground text-sm md:text-base tracking-[0.05em] uppercase">
             The Anoma Company
           </Link>
 
-          {/* Desktop nav */}
           <div className="hidden md:flex items-center gap-8">
             {navLinks.map((l) => (
               <Link
                 key={l.to}
                 to={l.to}
-                className={`font-['Anta'] text-sm tracking-wide transition-opacity duration-300 relative
+                className={`text-sm font-medium tracking-wide transition-opacity duration-300 relative
                   after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-full after:h-px after:bg-foreground
                   after:origin-left after:scale-x-0 after:transition-transform after:duration-300 hover:after:scale-x-100
                   ${location.pathname.startsWith(l.to) ? "text-foreground after:scale-x-100" : "text-foreground/70 hover:text-foreground"}`}
@@ -57,14 +55,13 @@ const Navbar = () => {
             ))}
             <Link
               to="/contact"
-              className="button-smooth font-['Anta'] text-sm px-5 py-2.5 rounded-full text-primary-foreground"
+              className="button-smooth text-sm font-medium px-5 py-2.5 rounded-full text-primary-foreground"
               style={{ background: "var(--gradient-spectral)" }}
             >
               Get In Touch
             </Link>
           </div>
 
-          {/* Mobile hamburger */}
           <button
             className="md:hidden text-foreground p-2"
             onClick={() => setMenuOpen(!menuOpen)}

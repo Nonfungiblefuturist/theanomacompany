@@ -41,12 +41,12 @@ const StatsCounter = ({ value, suffix, label }: StatsCounterProps) => {
   }, [started, value]);
 
   return (
-    <div ref={ref} className="text-center md:text-left">
-      <div className="font-['Anta'] text-4xl md:text-5xl text-primary">
+    <div ref={ref}>
+      <div className="text-4xl md:text-5xl font-bold text-primary">
         {count}
         <span className="text-muted-foreground">{suffix}</span>
       </div>
-      <p className="mt-1 text-sm text-muted-foreground uppercase tracking-widest">{label}</p>
+      <p className="mt-1 text-sm font-medium text-muted-foreground uppercase tracking-widest">{label}</p>
     </div>
   );
 };

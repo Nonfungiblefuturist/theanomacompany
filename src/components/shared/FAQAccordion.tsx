@@ -11,7 +11,7 @@ const FAQAccordion = ({ items }: FAQAccordionProps) => (
     {items.map((faq, i) => (
       <ScrollReveal key={i} type="fade-up" delay={i * 0.05}>
         <AccordionItem value={`faq-${i}`} className="border-border">
-          <AccordionTrigger className="font-['Anta'] text-foreground text-left text-base md:text-lg py-5 hover:text-primary transition-colors [&[data-state=open]>svg]:text-primary">
+          <AccordionTrigger className="text-foreground font-semibold text-left text-base md:text-lg py-5 hover:text-primary transition-colors [&[data-state=open]>svg]:text-primary">
             {faq.question}
           </AccordionTrigger>
           <AccordionContent className="text-muted-foreground text-base pb-5" style={{ lineHeight: 1.7 }}>

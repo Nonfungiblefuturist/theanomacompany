@@ -29,11 +29,10 @@ const ServicesTabbed = () => {
 
   return (
     <section className="py-20 md:py-28">
-      <div className="max-w-7xl mx-auto px-5 md:px-10">
-        <SectionHeader title="Services." subtitle="What we deliver." />
+      <div className="max-w-[1400px] mx-auto px-6 md:px-10 lg:px-16">
+        <SectionHeader title="Services." subtitle="What we deliver." dotLabel="Services" />
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
-          {/* Left: tabs */}
           <div className="space-y-0">
             {services.map((s, i) => (
               <ScrollReveal key={i} type="fade-up" delay={i * 0.1}>
@@ -43,8 +42,8 @@ const ServicesTabbed = () => {
                     active === i ? "" : "opacity-60 hover:opacity-100"
                   }`}
                 >
-                  <span className="text-primary text-sm font-['Anta']">{s.num}</span>
-                  <h3 className="font-['Anta'] text-xl md:text-2xl text-foreground mt-1">{s.title}</h3>
+                  <span className="text-primary text-sm font-medium">{s.num}</span>
+                  <h3 className="font-semibold text-xl md:text-2xl text-foreground mt-1">{s.title}</h3>
                   <AnimatePresence mode="wait">
                     {active === i && (
                       <motion.p
@@ -64,7 +63,6 @@ const ServicesTabbed = () => {
             ))}
           </div>
 
-          {/* Right: image */}
           <ScrollReveal type="fade-up" delay={0.2}>
             <div className="aspect-[4/3] rounded-lg overflow-hidden relative">
               <AnimatePresence mode="wait">

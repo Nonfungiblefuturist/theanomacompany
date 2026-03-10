@@ -24,7 +24,7 @@ const MobileMenu = ({ links, onClose }: MobileMenuProps) => (
         <Link
           to={l.to}
           onClick={onClose}
-          className="font-['Anta'] text-3xl text-foreground hover:text-primary transition-colors"
+          className="text-3xl font-semibold text-foreground hover:text-primary transition-colors"
         >
           {l.label}
         </Link>
@@ -38,7 +38,7 @@ const MobileMenu = ({ links, onClose }: MobileMenuProps) => (
       <Link
         to="/contact"
         onClick={onClose}
-        className="button-smooth font-['Anta'] text-lg px-8 py-3 rounded-full text-primary-foreground mt-4 inline-block"
+        className="button-smooth text-lg font-medium px-8 py-3 rounded-full text-primary-foreground mt-4 inline-block"
         style={{ background: "var(--gradient-spectral)" }}
       >
         Get In Touch
