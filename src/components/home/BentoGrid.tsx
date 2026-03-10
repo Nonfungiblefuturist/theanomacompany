@@ -2,6 +2,14 @@ import ScrollReveal from "@/components/shared/ScrollReveal";
 import FlipButton from "@/components/shared/FlipButton";
 import LogoMarquee from "@/components/shared/LogoMarquee";
 
+const avatarUrls = [
+  "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=80&h=80&fit=crop&crop=face",
+  "https://images.unsplash.com/photo-1494790108755-2616b612b786?w=80&h=80&fit=crop&crop=face",
+  "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=80&h=80&fit=crop&crop=face",
+  "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=80&h=80&fit=crop&crop=face",
+  "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=80&h=80&fit=crop&crop=face",
+];
+
 const BentoGrid = () => (
   <section className="section-card mx-[6px] rounded-[20px] overflow-hidden">
     <div className="max-w-[1600px] mx-auto px-6 md:px-10 lg:px-16 xl:px-20 py-20 md:py-28">
@@ -44,7 +52,7 @@ const BentoGrid = () => (
             gap: "12px",
           }}
         >
-          {/* Card 1 — TALL left, spans 2 rows */}
+          {/* Card 1 — TALL left, spans 2 rows — Aeria / AI-Native Pipeline */}
           <div
             className="relative rounded-2xl overflow-hidden"
             style={{
@@ -54,11 +62,13 @@ const BentoGrid = () => (
               gridRow: "1 / 3",
             }}
           >
-            <img
-              src="https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&h=1000&fit=crop"
-              alt="AI-Native Pipeline"
-              className="absolute inset-0 w-full h-full object-cover opacity-40"
-              loading="lazy"
+            <video
+              src="/videos/aeria-intro.mp4"
+              autoPlay
+              loop
+              muted
+              playsInline
+              className="absolute inset-0 w-full h-full object-cover opacity-50"
             />
             <div className="relative z-10 p-6 md:p-8 flex flex-col justify-between h-full">
               <h3
@@ -83,26 +93,34 @@ const BentoGrid = () => (
             </div>
           </div>
 
-          {/* Card 2 — Top middle */}
+          {/* Card 2 — Top middle — 24/7 Support */}
           <div
-            className="rounded-2xl p-6 md:p-8 flex flex-col justify-between"
+            className="relative rounded-2xl overflow-hidden"
             style={{
               background: "hsl(var(--card))",
               border: "1px solid rgba(255,255,255,0.06)",
             }}
           >
-            <div className="flex justify-between items-start">
-              <h4 className="font-medium text-xl text-foreground">24/7 Support</h4>
-              <span className="text-muted-foreground">⏱</span>
+            <img
+              src="https://images.unsplash.com/photo-1553877522-43269d4ea984?w=600&h=400&fit=crop"
+              alt="24/7 Support"
+              className="absolute inset-0 w-full h-full object-cover opacity-20"
+              loading="lazy"
+            />
+            <div className="relative z-10 p-6 md:p-8 flex flex-col justify-between h-full">
+              <div className="flex justify-between items-start">
+                <h4 className="font-medium text-xl text-foreground">24/7 Support</h4>
+                <span className="text-muted-foreground">⏱</span>
+              </div>
+              <p className="text-sm text-muted-foreground" style={{ lineHeight: 1.5 }}>
+                Round-the-clock communication with guaranteed 24-hour response times. Your project never stalls.
+              </p>
             </div>
-            <p className="text-sm text-muted-foreground" style={{ lineHeight: 1.5 }}>
-              Always available to ensure a smooth and hassle-free experience. 24 hours response time.
-            </p>
           </div>
 
-          {/* Card 3 — Top right, spans 2 rows */}
+          {/* Card 3 — Top right, spans 2 rows — Seamless Collaboration */}
           <div
-            className="relative rounded-2xl p-6 md:p-8 overflow-hidden"
+            className="relative rounded-2xl overflow-hidden"
             style={{
               background: "hsl(var(--card))",
               border: "1px solid rgba(255,255,255,0.06)",
@@ -110,22 +128,38 @@ const BentoGrid = () => (
               gridRow: "1 / 3",
             }}
           >
-            <h4 className="font-medium text-xl text-foreground mb-2">Seamless Collaboration</h4>
-            <p className="text-sm text-muted-foreground" style={{ lineHeight: 1.5 }}>
-              We work closely with you, keeping communication transparent and revisions efficient.
-            </p>
-            {/* Device mockup placeholder */}
-            <div
-              className="absolute bottom-[-20px] right-[-20px] w-[80%] rounded-xl"
-              style={{
-                height: "60%",
-                background: "linear-gradient(135deg, #1a1a1a 0%, #222 100%)",
-                border: "1px solid rgba(255,255,255,0.06)",
-              }}
+            <img
+              src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=800&h=1000&fit=crop"
+              alt="Seamless Collaboration"
+              className="absolute inset-0 w-full h-full object-cover opacity-20"
+              loading="lazy"
             />
+            <div className="relative z-10 p-6 md:p-8 flex flex-col justify-between h-full">
+              <div>
+                <h4 className="font-medium text-xl text-foreground mb-2">Seamless Collaboration</h4>
+                <p className="text-sm text-muted-foreground" style={{ lineHeight: 1.5 }}>
+                  Real-time updates, transparent feedback loops, and efficient revision cycles. We work as an extension of your team.
+                </p>
+              </div>
+              <div
+                className="mt-4 rounded-xl p-4"
+                style={{
+                  background: "rgba(255,255,255,0.03)",
+                  border: "1px solid rgba(255,255,255,0.06)",
+                }}
+              >
+                <div className="flex items-center gap-2 mb-2">
+                  <div className="w-2 h-2 rounded-full" style={{ background: "hsl(var(--cosmic))" }} />
+                  <span className="text-xs text-muted-foreground">Live sync</span>
+                </div>
+                <div className="h-1 rounded-full bg-border overflow-hidden">
+                  <div className="h-full w-3/4 rounded-full" style={{ background: "hsl(var(--cosmic))" }} />
+                </div>
+              </div>
+            </div>
           </div>
 
-          {/* Card 4 — Middle center, image + text overlay */}
+          {/* Card 4 — Middle center — Fast Turnarounds */}
           <div
             className="relative rounded-2xl overflow-hidden"
             style={{
@@ -136,13 +170,16 @@ const BentoGrid = () => (
             <img
               src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=600&h=400&fit=crop"
               alt="Fast Turnarounds"
-              className="absolute inset-0 w-full h-full object-cover opacity-30"
+              className="absolute inset-0 w-full h-full object-cover opacity-20"
               loading="lazy"
             />
-            <div className="relative z-10 flex flex-col justify-end h-full p-6 md:p-8 bg-gradient-to-t from-card via-card/70 to-transparent">
+            <div className="relative z-10 flex flex-col justify-end h-full p-6 md:p-8">
               <h4 className="font-semibold text-foreground" style={{ fontSize: "clamp(1.2rem, 2vw, 1.8rem)" }}>
                 Fast & Efficient Turnarounds
               </h4>
+              <p className="text-sm text-muted-foreground mt-2" style={{ lineHeight: 1.5 }}>
+                3–5x faster than traditional production without sacrificing quality. AI-accelerated workflows deliver on deadline, every time.
+              </p>
             </div>
           </div>
 
@@ -159,7 +196,7 @@ const BentoGrid = () => (
               <span className="text-muted-foreground">◇</span>
             </div>
             <p className="text-sm text-muted-foreground mt-2" style={{ lineHeight: 1.5 }}>
-              We've helped multiple brands create stunning, high-impact designs that drive results.
+              29+ projects delivered across video, branding, and AI solutions — with 100% client retention.
             </p>
           </div>
 
@@ -177,7 +214,7 @@ const BentoGrid = () => (
               <span className="text-muted-foreground">✦</span>
             </div>
             <p className="text-sm text-muted-foreground mt-2" style={{ lineHeight: 1.5 }}>
-              Our designs grow with your brand, ensuring long-term success and adaptability.
+              Our designs grow with your brand, ensuring long-term success and adaptability. Built to scale, engineered to last.
             </p>
           </div>
         </div>
@@ -187,10 +224,10 @@ const BentoGrid = () => (
       <div className="flex flex-col gap-3 md:hidden">
         {[
           { title: "AI-Native Pipeline", desc: "Every project built on AI from day one — not bolted on after.", icon: "" },
-          { title: "24/7 Support", desc: "Always available to ensure a smooth and hassle-free experience.", icon: "⏱" },
-          { title: "Seamless Collaboration", desc: "We work closely with you, keeping communication transparent and revisions efficient.", icon: "" },
+          { title: "24/7 Support", desc: "Round-the-clock communication with guaranteed 24-hour response times.", icon: "⏱" },
+          { title: "Seamless Collaboration", desc: "Real-time updates, transparent feedback loops, and efficient revision cycles.", icon: "" },
           { title: "Fast & Efficient Turnarounds", desc: "3–5x faster than traditional production without sacrificing quality.", icon: "" },
-          { title: "Proven Expertise", desc: "We've helped multiple brands create stunning, high-impact designs that drive results.", icon: "◇" },
+          { title: "Proven Expertise", desc: "29+ projects delivered across video, branding, and AI solutions.", icon: "◇" },
           { title: "Future-Ready Solutions", desc: "Our designs grow with your brand, ensuring long-term success and adaptability.", icon: "✦" },
         ].map((card, i) => (
           <ScrollReveal key={i} type="fade-up" delay={i * 0.05}>
@@ -215,11 +252,18 @@ const BentoGrid = () => (
 
       {/* Stat + Avatars + Logo marquee row */}
       <ScrollReveal type="fade-up" delay={0.2}>
-        <div className="mt-12 flex flex-col md:flex-row md:items-center md:justify-between gap-6">
-          <div className="flex items-center gap-4">
+        <div className="mt-16 pt-8 border-t border-border flex flex-col md:flex-row md:items-center md:justify-between gap-8 px-2">
+          <div className="flex items-center gap-5">
             <div className="flex -space-x-2">
-              {[1, 2, 3, 4].map((i) => (
-                <div key={i} className="w-8 h-8 rounded-full border-2 border-background bg-muted" />
+              {avatarUrls.map((url, i) => (
+                <img
+                  key={i}
+                  src={url}
+                  alt="Client"
+                  className="w-9 h-9 rounded-full border-2 object-cover"
+                  style={{ borderColor: "hsl(var(--card))" }}
+                  loading="lazy"
+                />
               ))}
             </div>
             <div>
@@ -228,7 +272,7 @@ const BentoGrid = () => (
                   <span key={i} className="text-yellow-400 text-xs">★</span>
                 ))}
               </div>
-              <p className="text-sm text-foreground font-medium">200+ Satisfied Clients</p>
+              <p className="text-sm text-foreground font-medium">100+ Satisfied Clients</p>
             </div>
           </div>
           <div className="flex-1 max-w-[500px]">
