@@ -202,7 +202,7 @@ export const projects: Project[] = [
     ],
     summary: "Logo design for a creator economy conference brand",
     intro: "Creator Con needed a visual identity that felt bold, digital-native, and instantly recognizable across social and event signage.",
-    metadata: { year: 2024, duration: "2 Weeks", client: "Creator Con", category: "Logo Design" },
+    metadata: { year: 2025, duration: "2 Weeks", client: "Creator Con", category: "Logo Design" },
     challenges: {
       heading: "The brand had no visual identity — just a name. It needed to feel premium but accessible, digital but human.",
       body: "The logo would live across screens, signage, merch, and social media — it had to be versatile and instantly recognizable at any scale.",
