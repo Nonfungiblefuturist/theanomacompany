@@ -31,10 +31,16 @@ const HomeFAQ = () => {
 
   return (
     <section className="section-card mx-[6px] rounded-[20px] overflow-hidden">
-      <div className="max-w-[1400px] mx-auto px-6 md:px-10 lg:px-16 xl:px-20 py-28 md:py-40">
+      <div className="max-w-[1400px] mx-auto px-6 md:px-10 lg:px-16 xl:px-20 py-32 md:py-40">
         <div className="grid grid-cols-1 lg:grid-cols-[35%_1fr] gap-16 lg:gap-20">
           {/* Left: Title + CTA */}
           <div>
+            <ScrollReveal type="fade-up">
+              <p className="flex items-center gap-2 text-sm text-muted-foreground mb-4">
+                <span className="w-1.5 h-1.5 rounded-full" style={{ backgroundColor: "hsl(var(--cosmic))" }} />
+                FAQs
+              </p>
+            </ScrollReveal>
             <ScrollReveal type="blur-fade">
               <h2
                 className="text-foreground font-semibold"

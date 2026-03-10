@@ -18,7 +18,7 @@ const Footer = () => {
   const [email, setEmail] = useState("");
 
   return (
-    <footer className="section-card mx-[6px] overflow-hidden" style={{ borderRadius: "20px 20px 0 0" }}>
+    <footer className="section-card mx-[6px]" style={{ borderRadius: "20px 20px 0 0" }}>
       <div className="max-w-[1400px] mx-auto px-6 md:px-10 lg:px-16 xl:px-20 pt-16 md:pt-20">
         {/* Top row: 3 columns */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-8">
@@ -84,9 +84,8 @@ const Footer = () => {
           </div>
 
           <div className="md:text-right">
-            <h4 className="text-sm font-medium uppercase tracking-widest text-muted-foreground mb-4">Built by</h4>
-            <p className="text-sm text-muted-foreground">Designed in Lovable</p>
-            <p className="text-sm text-muted-foreground">By The Anoma Company</p>
+            <h4 className="text-sm font-medium uppercase tracking-widest text-muted-foreground mb-4">Attribution</h4>
+            <p className="text-sm" style={{ color: "rgba(255,255,255,0.4)" }}>Built by The Anoma Company</p>
           </div>
         </div>
 
@@ -98,9 +97,9 @@ const Footer = () => {
           <h2
             className="font-bold text-foreground uppercase tracking-tight select-none whitespace-nowrap text-center"
             style={{
-              fontSize: "clamp(3rem, 10vw, 10rem)",
+              fontSize: "clamp(2rem, 8vw, 7rem)",
               lineHeight: 0.9,
-              letterSpacing: "-0.02em",
+              letterSpacing: "-0.05em",
             }}
           >
             THE ANOMA COMPANY

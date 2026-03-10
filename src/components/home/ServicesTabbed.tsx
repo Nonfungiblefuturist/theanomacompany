@@ -32,7 +32,10 @@ const ServicesTabbed = () => {
       <div className="max-w-[1400px] mx-auto px-6 md:px-10 lg:px-16 xl:px-20 py-20 md:py-28">
         <div className="mb-12 md:mb-16">
           <ScrollReveal type="fade-up">
-            <p className="text-sm text-muted-foreground mb-4">Services</p>
+            <p className="flex items-center gap-2 text-sm text-muted-foreground mb-4">
+              <span className="w-1.5 h-1.5 rounded-full" style={{ backgroundColor: "hsl(var(--cosmic))" }} />
+              Services
+            </p>
           </ScrollReveal>
           <ScrollReveal type="blur-fade">
             <h2
@@ -59,9 +62,10 @@ const ServicesTabbed = () => {
                 onMouseEnter={() => setActive(i)}
                 className={`w-full text-left py-6 border-t border-border flex items-start justify-between gap-4 transition-all duration-300 ${
                   active === i
-                    ? "opacity-100 bg-foreground/[0.03] border-l-2 border-l-primary pl-4 -ml-4"
+                    ? "opacity-100 bg-foreground/[0.03] border-l-2 pl-4 -ml-4"
                     : "opacity-40 hover:opacity-70"
                 }`}
+                style={active === i ? { borderLeftColor: "hsl(var(--cosmic))" } : {}}
               >
                 <div className="flex-1">
                   <span className="text-muted-foreground text-sm">{s.num}</span>

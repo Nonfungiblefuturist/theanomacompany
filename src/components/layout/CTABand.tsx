@@ -14,15 +14,15 @@ const CTABand = () => (
     <div className="max-w-[1400px] mx-auto px-6 md:px-10 lg:px-16 xl:px-20">
       <ScrollReveal type="fade-up">
         <div
-          className="rounded-2xl border-2 border-cosmic/40 overflow-hidden"
-          style={{ background: "hsl(var(--card))" }}
+          className="rounded-2xl overflow-hidden"
+          style={{ background: "hsl(var(--card))", border: "2px solid hsl(var(--cosmic) / 0.4)" }}
         >
           <div className="grid grid-cols-1 lg:grid-cols-[55%_45%] min-h-[500px]">
             {/* Left column */}
             <div className="p-8 md:p-12 lg:p-14 flex flex-col justify-center">
               <h2
                 className="text-foreground font-semibold"
-                style={{ fontSize: "clamp(2rem, 5vw, 4.5rem)", letterSpacing: "-0.02em", lineHeight: 1.1 }}
+                style={{ fontSize: "clamp(2.5rem, 5vw, 6rem)", letterSpacing: "-0.02em", lineHeight: 1.1 }}
               >
                 Let's Build Something.
               </h2>
@@ -64,21 +64,26 @@ const CTABand = () => (
               </div>
             </div>
 
-            {/* Right column — dark card with brand text */}
-            <div className="hidden lg:flex relative rounded-2xl m-3 overflow-hidden items-center justify-center" style={{ background: "hsl(0 0% 5%)" }}>
+            {/* Right column — dark card with video placeholder */}
+            <div className="hidden lg:flex relative rounded-2xl m-3 overflow-hidden flex-col justify-end" style={{ background: "rgb(15,15,15)" }}>
+              {/* Ambient gradient placeholder for video */}
               <div
-                className="absolute inset-0 opacity-30"
+                className="absolute inset-0"
+                style={{ background: "linear-gradient(135deg, #111 0%, #1a1a1a 50%, #111 100%)" }}
+              />
+              <div
+                className="absolute inset-0 opacity-20"
                 style={{ background: "var(--gradient-spectral)" }}
               />
-              <div className="relative z-10 text-center px-8">
+              <div className="relative z-10 p-8">
+                <p className="text-xs uppercase tracking-widest text-muted-foreground mb-3">
+                  AI-First Creative Studio
+                </p>
                 <p
                   className="font-bold text-foreground/80 uppercase select-none"
-                  style={{ fontSize: "clamp(2rem, 4vw, 4rem)", lineHeight: 1, letterSpacing: "-0.03em" }}
+                  style={{ fontSize: "clamp(1.5rem, 3vw, 2.5rem)", lineHeight: 1, letterSpacing: "-0.03em" }}
                 >
                   The Anoma<br />Company
-                </p>
-                <p className="text-muted-foreground text-xs uppercase tracking-widest mt-4">
-                  AI-First Creative Studio
                 </p>
               </div>
             </div>

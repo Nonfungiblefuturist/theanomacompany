@@ -25,7 +25,10 @@ const Testimonials = () => {
     <section className="section-card mx-[6px] rounded-[20px] overflow-hidden py-20 md:py-28">
       <div className="max-w-[1600px] mx-auto px-6 md:px-10 lg:px-16 xl:px-20 mb-12">
         <ScrollReveal type="fade-up">
-          <p className="text-sm text-muted-foreground mb-4">Testimonials</p>
+          <p className="flex items-center gap-2 text-sm text-muted-foreground mb-4">
+            <span className="w-1.5 h-1.5 rounded-full" style={{ backgroundColor: "hsl(var(--cosmic))" }} />
+            Testimonials
+          </p>
         </ScrollReveal>
         <ScrollReveal type="blur-fade">
           <h2

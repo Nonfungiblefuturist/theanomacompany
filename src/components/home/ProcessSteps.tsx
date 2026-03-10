@@ -14,7 +14,10 @@ const ProcessSteps = () => (
       <div className="flex flex-col md:flex-row md:items-end md:justify-between mb-12 md:mb-16">
         <div>
           <ScrollReveal type="fade-up">
-            <p className="text-sm text-muted-foreground mb-4">Our process</p>
+            <p className="flex items-center gap-2 text-sm text-muted-foreground mb-4">
+              <span className="w-1.5 h-1.5 rounded-full" style={{ backgroundColor: "hsl(var(--cosmic))" }} />
+              Our Process
+            </p>
           </ScrollReveal>
           <ScrollReveal type="blur-fade">
             <h2
@@ -22,7 +25,7 @@ const ProcessSteps = () => (
               style={{ fontSize: "clamp(1.75rem, 3.5vw, 3rem)", letterSpacing: "-0.02em" }}
             >
               <span className="text-foreground">Our </span>
-              <span className="text-primary">Process.</span>
+              <span style={{ color: "hsl(var(--cosmic))" }}>Process.</span>
             </h2>
           </ScrollReveal>
           <ScrollReveal type="fade-up" delay={0.1}>
@@ -43,8 +46,8 @@ const ProcessSteps = () => (
           <ScrollReveal key={i} type="fade-up" delay={i * 0.1}>
             <div className="py-8 md:py-10 border-t border-border/50 grid grid-cols-1 md:grid-cols-[120px_1fr] gap-6 md:gap-12 items-start">
               <span
-                className="font-semibold text-primary/10"
-                style={{ fontSize: "clamp(3rem, 5vw, 5rem)", letterSpacing: "-0.05em", lineHeight: 1 }}
+                className="font-semibold"
+                style={{ fontSize: "clamp(3rem, 5vw, 5rem)", letterSpacing: "-0.05em", lineHeight: 1, color: "hsla(var(--cosmic) / 0.15)" }}
               >
                 {s.num}
               </span>

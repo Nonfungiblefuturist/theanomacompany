@@ -34,7 +34,11 @@ const Navbar = () => {
         }`}
       >
         <div className="max-w-[1400px] mx-auto px-6 md:px-10 lg:px-16 flex items-center justify-between h-16 md:h-20">
-          <Link to="/" className="font-bold text-foreground text-sm md:text-base tracking-[0.05em] uppercase">
+          <Link
+            to="/"
+            className="font-semibold text-foreground uppercase whitespace-nowrap"
+            style={{ fontSize: "clamp(12px, 1.2vw, 16px)", letterSpacing: "0.05em" }}
+          >
             The Anoma Company
           </Link>
 
@@ -53,12 +57,24 @@ const Navbar = () => {
             ))}
 
             {/* Vertical separator */}
-            <div className="w-px h-5 bg-foreground/30" />
+            <div className="w-px h-5" style={{ backgroundColor: "rgba(255,255,255,0.3)" }} />
 
-            {/* Contact us — outlined button */}
+            {/* Contact us — purple outlined button */}
             <Link
               to="/contact"
-              className="text-sm font-medium px-5 py-2 rounded-[10px] border border-foreground text-foreground hover:bg-foreground hover:text-background transition-colors duration-300"
+              className="text-sm font-medium px-5 py-2 rounded-[10px] text-foreground transition-all duration-300"
+              style={{
+                border: "1px solid hsl(var(--cosmic))",
+                background: "transparent",
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.background = "hsl(var(--cosmic))";
+                e.currentTarget.style.color = "black";
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.background = "transparent";
+                e.currentTarget.style.color = "";
+              }}
             >
               Contact us
             </Link>
