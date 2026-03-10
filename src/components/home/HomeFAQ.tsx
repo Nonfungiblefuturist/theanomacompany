@@ -1,6 +1,6 @@
-import { useState } from "react";
+import { useState, useMemo } from "react";
 import { Link } from "react-router-dom";
-import { ChevronDown } from "lucide-react";
+import { ChevronDown, Search } from "lucide-react";
 import ScrollReveal from "@/components/shared/ScrollReveal";
 import { faqs } from "@/data/faqs";
 
@@ -28,12 +28,19 @@ const FAQItem = ({ faq, isOpen, onToggle, delay }: { faq: typeof faqs[0]; isOpen
 
 const HomeFAQ = () => {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
+  const [searchQuery, setSearchQuery] = useState("");
+
+  const filteredFaqs = useMemo(() => {
+    if (!searchQuery.trim()) return faqs;
+    const q = searchQuery.toLowerCase();
+    return faqs.filter((faq) => faq.question.toLowerCase().includes(q) || faq.answer.toLowerCase().includes(q));
+  }, [searchQuery]);
 
   return (
     <section className="section-card mx-[6px] rounded-[20px] overflow-hidden">
       <div className="max-w-[1400px] mx-auto px-6 md:px-10 lg:px-16 xl:px-20 py-32 md:py-40">
         <div className="grid grid-cols-1 lg:grid-cols-[35%_1fr] gap-16 lg:gap-20">
-          {/* Left: Title + CTA */}
+          {/* Left: Title + Search */}
           <div>
             <ScrollReveal type="fade-up">
               <p className="flex items-center gap-2 text-sm text-muted-foreground mb-4">
@@ -49,15 +56,39 @@ const HomeFAQ = () => {
                 Frequently Asked Questions.
               </h2>
             </ScrollReveal>
+
+            {/* Search bar */}
             <ScrollReveal type="fade-up" delay={0.1}>
-              <p className="mt-4 text-muted-foreground text-base" style={{ lineHeight: 1.7 }}>
-                Have more questions? Reach out to us.
-              </p>
+              <div className="relative mt-6 max-w-[360px]">
+                <Search
+                  size={18}
+                  className="absolute left-3.5 top-1/2 -translate-y-1/2 text-muted-foreground"
+                  style={{ opacity: 0.4 }}
+                />
+                <input
+                  type="text"
+                  placeholder="Search questions..."
+                  value={searchQuery}
+                  onChange={(e) => {
+                    setSearchQuery(e.target.value);
+                    setOpenIndex(null);
+                  }}
+                  className="w-full py-3.5 pl-11 pr-5 rounded-xl text-foreground text-[15px] font-sans outline-none transition-colors placeholder:text-muted-foreground"
+                  style={{
+                    background: "rgba(255,255,255,0.06)",
+                    border: "1px solid rgba(255,255,255,0.1)",
+                  }}
+                />
+              </div>
             </ScrollReveal>
+
             <ScrollReveal type="fade-up" delay={0.15}>
+              <p className="mt-6 text-sm text-muted-foreground">
+                Can't find what you're looking for?
+              </p>
               <Link
                 to="/contact"
-                className="inline-flex items-center gap-2 text-sm font-medium mt-6 px-5 py-2.5 rounded-[10px] border border-foreground/30 text-foreground hover:bg-foreground hover:text-background transition-colors duration-300"
+                className="inline-flex items-center gap-2 text-sm font-medium mt-2 text-foreground hover:text-primary transition-colors"
               >
                 Contact us <span>→</span>
               </Link>
@@ -66,15 +97,19 @@ const HomeFAQ = () => {
 
           {/* Right: Accordion cards */}
           <div className="flex flex-col gap-3">
-            {faqs.map((faq, i) => (
-              <FAQItem
-                key={i}
-                faq={faq}
-                isOpen={openIndex === i}
-                onToggle={() => setOpenIndex(openIndex === i ? null : i)}
-                delay={i * 0.05}
-              />
-            ))}
+            {filteredFaqs.length === 0 ? (
+              <p className="text-muted-foreground text-sm py-8">No matching questions found.</p>
+            ) : (
+              filteredFaqs.map((faq, i) => (
+                <FAQItem
+                  key={faq.question}
+                  faq={faq}
+                  isOpen={openIndex === i}
+                  onToggle={() => setOpenIndex(openIndex === i ? null : i)}
+                  delay={i * 0.05}
+                />
+              ))
+            )}
           </div>
         </div>
       </div>

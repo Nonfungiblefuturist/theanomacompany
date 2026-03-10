@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import ScrollReveal from "@/components/shared/ScrollReveal";
 
 const steps = [
@@ -11,43 +10,39 @@ const steps = [
 const ProcessSteps = () => (
   <section className="section-card mx-[6px] rounded-[20px] overflow-hidden">
     <div className="max-w-[1400px] mx-auto px-6 md:px-10 lg:px-16 xl:px-20 py-20 md:py-28">
-      <div className="flex flex-col md:flex-row md:items-end md:justify-between mb-12 md:mb-16">
-        <div>
-          <ScrollReveal type="fade-up">
-            <p className="flex items-center gap-2 text-sm text-muted-foreground mb-4">
-              <span className="w-1.5 h-1.5 rounded-full" style={{ backgroundColor: "hsl(var(--cosmic))" }} />
-              Our Process
-            </p>
-          </ScrollReveal>
-          <ScrollReveal type="blur-fade">
-            <h2
-              className="font-semibold"
-              style={{ fontSize: "clamp(1.75rem, 3.5vw, 3rem)", letterSpacing: "-0.02em" }}
-            >
-              <span className="text-foreground">Our </span>
-              <span style={{ color: "hsl(var(--cosmic))" }}>Process.</span>
-            </h2>
-          </ScrollReveal>
-          <ScrollReveal type="fade-up" delay={0.1}>
-            <p className="mt-3 text-muted-foreground text-base md:text-lg max-w-2xl" style={{ lineHeight: 1.7 }}>
-              Four steps to finished.
-            </p>
-          </ScrollReveal>
-        </div>
-        <ScrollReveal type="fade-up" delay={0.15}>
-          <Link to="/contact" className="text-sm text-primary hover:text-foreground transition-colors mt-4 md:mt-0">
-            Let's get started →
-          </Link>
+      <div className="mb-12 md:mb-16">
+        <ScrollReveal type="fade-up">
+          <p className="flex items-center gap-2 text-sm text-muted-foreground mb-4">
+            <span className="w-1.5 h-1.5 rounded-full" style={{ backgroundColor: "hsl(var(--cosmic))" }} />
+            Our Process
+          </p>
+        </ScrollReveal>
+        <ScrollReveal type="blur-fade">
+          <h2
+            className="font-semibold"
+            style={{ fontSize: "clamp(1.75rem, 3.5vw, 3rem)", letterSpacing: "-0.02em" }}
+          >
+            <span className="text-foreground">Our </span>
+            <span style={{ color: "hsl(var(--cosmic))" }}>Process.</span>
+          </h2>
+        </ScrollReveal>
+        <ScrollReveal type="fade-up" delay={0.1}>
+          <p className="mt-3 text-muted-foreground text-base md:text-lg max-w-2xl" style={{ lineHeight: 1.7 }}>
+            Four steps to finished.
+          </p>
         </ScrollReveal>
       </div>
 
       <div className="space-y-0">
         {steps.map((s, i) => (
           <ScrollReveal key={i} type="fade-up" delay={i * 0.1}>
-            <div className="py-8 md:py-10 border-t border-border/50 grid grid-cols-1 md:grid-cols-[120px_1fr] gap-6 md:gap-12 items-start">
+            <div
+              className="py-8 md:py-10 grid grid-cols-1 md:grid-cols-[120px_1fr] gap-6 md:gap-12 items-start"
+              style={{ borderTop: "1px solid rgba(255,255,255,0.08)" }}
+            >
               <span
                 className="font-semibold"
-                style={{ fontSize: "clamp(3rem, 5vw, 5rem)", letterSpacing: "-0.05em", lineHeight: 1, color: "hsla(var(--cosmic) / 0.15)" }}
+                style={{ fontSize: "clamp(3rem, 5vw, 5rem)", letterSpacing: "-0.05em", lineHeight: 1, color: "rgba(255,255,255,0.1)" }}
               >
                 {s.num}
               </span>

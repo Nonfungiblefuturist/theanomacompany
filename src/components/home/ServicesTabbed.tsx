@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import { Link } from "react-router-dom";
 import ScrollReveal from "@/components/shared/ScrollReveal";
 
 const services = [
@@ -88,15 +87,6 @@ const ServicesTabbed = () => {
                 <span className="text-foreground/50 text-lg mt-1">→</span>
               </button>
             ))}
-
-            <ScrollReveal type="fade-up" delay={0.3}>
-              <Link
-                to="/contact"
-                className="inline-flex items-center gap-1 text-sm text-primary hover:text-foreground transition-colors mt-6"
-              >
-                Get in touch <span>→</span>
-              </Link>
-            </ScrollReveal>
           </div>
 
           {/* Right: cross-fade image — sticky */}

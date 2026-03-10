@@ -36,13 +36,24 @@ const BentoGrid = () => (
         </ScrollReveal>
       </div>
 
-      {/* 3-column asymmetric bento grid */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-[6px]">
-        {/* Col 1 — tall card spanning 2 rows */}
-        <ScrollReveal type="fade-up" delay={0}>
+      {/* 3-column bento grid — desktop only, no ScrollReveal wrappers to preserve grid placement */}
+      <ScrollReveal type="fade-up">
+        <div
+          className="hidden md:grid gap-[6px]"
+          style={{
+            gridTemplateColumns: "1fr 1fr 1fr",
+            gridTemplateRows: "200px 260px 160px",
+          }}
+        >
+          {/* Card 1 — TALL left, spans 2 rows */}
           <div
-            className="relative rounded-2xl border border-border overflow-hidden md:row-span-2 min-h-[420px] md:min-h-[500px]"
-            style={{ background: "hsl(var(--card))" }}
+            className="relative rounded-2xl overflow-hidden"
+            style={{
+              background: "hsl(var(--card))",
+              border: "1px solid rgba(255,255,255,0.06)",
+              gridColumn: "1",
+              gridRow: "1 / 3",
+            }}
           >
             <img
               src="https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&h=1000&fit=crop"
@@ -51,56 +62,68 @@ const BentoGrid = () => (
               loading="lazy"
             />
             <div className="relative z-10 p-6 md:p-8 flex flex-col justify-between h-full">
+              <h3
+                className="select-none"
+                style={{
+                  fontSize: "clamp(2rem, 3vw, 3.5rem)",
+                  fontWeight: 400,
+                  color: "rgba(255,255,255,0.15)",
+                  lineHeight: 1.1,
+                  letterSpacing: "-0.03em",
+                }}
+              >
+                Cutting-Edge{" "}
+                <span style={{ color: "rgba(255,255,255,0.4)" }}>Creativity</span>
+              </h3>
               <div>
-                <h3
-                  className="font-bold text-foreground/10 select-none"
-                  style={{ fontSize: "clamp(2rem, 4vw, 3.5rem)", letterSpacing: "-0.03em", lineHeight: 1 }}
-                >
-                  AI-Native<br />Pipeline
-                </h3>
-              </div>
-              <div>
-                <h3 className="font-semibold text-lg text-foreground">AI-Native Pipeline</h3>
+                <h4 className="font-semibold text-lg text-foreground">AI-Native Pipeline</h4>
                 <p className="text-sm text-muted-foreground mt-2" style={{ lineHeight: 1.7 }}>
                   Every project built on AI from day one — not bolted on after.
                 </p>
               </div>
             </div>
           </div>
-        </ScrollReveal>
 
-        {/* Col 2, Row 1 — 24/7 Support */}
-        <ScrollReveal type="fade-up" delay={0.05}>
+          {/* Card 2 — Top middle */}
           <div
-            className="rounded-2xl border border-border p-6 md:p-8 flex flex-col justify-end min-h-[220px]"
-            style={{ background: "hsl(var(--card))" }}
+            className="rounded-2xl p-6 md:p-8 flex flex-col justify-between"
+            style={{
+              background: "hsl(var(--card))",
+              border: "1px solid rgba(255,255,255,0.06)",
+            }}
           >
-            <span className="text-2xl mb-4">✉</span>
-            <h3 className="font-semibold text-lg text-foreground">24/7 Support</h3>
-            <p className="text-sm text-muted-foreground mt-2" style={{ lineHeight: 1.7 }}>
-              Round-the-clock communication. We're always reachable during production.
+            <div className="flex justify-between items-start">
+              <h4 className="font-medium text-xl text-foreground">24/7 Support</h4>
+              <span className="text-muted-foreground">⏱</span>
+            </div>
+            <p className="text-sm text-muted-foreground" style={{ lineHeight: 1.5 }}>
+              Always available to ensure a smooth and hassle-free experience. 24 hours response time.
             </p>
           </div>
-        </ScrollReveal>
 
-        {/* Col 3, Row 1 — Seamless Collaboration */}
-        <ScrollReveal type="fade-up" delay={0.08}>
+          {/* Card 3 — Top right, spans 2 rows */}
           <div
-            className="relative rounded-2xl border border-border p-6 md:p-8 overflow-hidden min-h-[220px]"
-            style={{ background: "hsl(var(--card))" }}
+            className="relative rounded-2xl p-6 md:p-8 overflow-hidden"
+            style={{
+              background: "hsl(var(--card))",
+              border: "1px solid rgba(255,255,255,0.06)",
+              gridColumn: "3",
+              gridRow: "1 / 3",
+            }}
           >
-            <h3 className="font-semibold text-lg text-foreground">Seamless Collaboration</h3>
-            <p className="text-sm text-muted-foreground mt-2" style={{ lineHeight: 1.7 }}>
-              Real-time reviews, instant feedback loops, and transparent progress tracking.
+            <h4 className="font-medium text-xl text-foreground mb-2">Seamless Collaboration</h4>
+            <p className="text-sm text-muted-foreground" style={{ lineHeight: 1.5 }}>
+              We work closely with you, keeping communication transparent and revisions efficient.
             </p>
           </div>
-        </ScrollReveal>
 
-        {/* Col 2, Row 2 — Fast Turnarounds (tall with image) */}
-        <ScrollReveal type="fade-up" delay={0.1}>
+          {/* Card 4 — Middle center, image + text overlay */}
           <div
-            className="relative rounded-2xl border border-border overflow-hidden min-h-[260px]"
-            style={{ background: "hsl(var(--card))" }}
+            className="relative rounded-2xl overflow-hidden"
+            style={{
+              background: "hsl(var(--card))",
+              border: "1px solid rgba(255,255,255,0.06)",
+            }}
           >
             <img
               src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=600&h=400&fit=crop"
@@ -108,62 +131,87 @@ const BentoGrid = () => (
               className="absolute inset-0 w-full h-full object-cover opacity-30"
               loading="lazy"
             />
-            <div className="relative z-10 p-6 md:p-8 flex flex-col justify-end h-full bg-gradient-to-t from-card via-card/70 to-transparent">
-              <h3 className="font-semibold text-lg text-foreground">Fast Turnarounds</h3>
-              <p className="text-sm text-muted-foreground mt-2" style={{ lineHeight: 1.7 }}>
-                3–5x faster than traditional production without sacrificing quality.
-              </p>
+            <div className="relative z-10 flex flex-col justify-end h-full p-6 md:p-8 bg-gradient-to-t from-card via-card/70 to-transparent">
+              <h4 className="font-semibold text-foreground" style={{ fontSize: "clamp(1.2rem, 2vw, 1.8rem)" }}>
+                Fast & Efficient Turnarounds
+              </h4>
             </div>
           </div>
-        </ScrollReveal>
 
-        {/* Col 3, Row 2 — Future-Ready Solutions */}
-        <ScrollReveal type="fade-up" delay={0.12}>
+          {/* Card 5 — Bottom left */}
           <div
-            className="rounded-2xl border border-border p-6 md:p-8 flex flex-col justify-end min-h-[220px]"
-            style={{ background: "hsl(var(--card))" }}
+            className="rounded-2xl p-6 md:p-8 flex flex-col justify-center"
+            style={{
+              background: "hsl(var(--card))",
+              border: "1px solid rgba(255,255,255,0.06)",
+            }}
           >
-            <span className="text-2xl mb-4">✦</span>
-            <h3 className="font-semibold text-lg text-foreground">Future-Ready Solutions</h3>
-            <p className="text-sm text-muted-foreground mt-2" style={{ lineHeight: 1.7 }}>
-              We build with tomorrow's tech today, so your content never feels dated.
+            <div className="flex justify-between items-start">
+              <h4 className="font-medium text-xl text-foreground">Proven Expertise</h4>
+              <span className="text-muted-foreground">◇</span>
+            </div>
+            <p className="text-sm text-muted-foreground mt-2" style={{ lineHeight: 1.5 }}>
+              We've helped multiple brands create stunning, high-impact designs that drive results.
             </p>
           </div>
-        </ScrollReveal>
 
-        {/* Full-width bottom card — Proven Expertise */}
-        <ScrollReveal type="fade-up" delay={0.14}>
+          {/* Card 6 — Bottom right, spans 2 columns */}
           <div
-            className="md:col-span-3 rounded-2xl border border-border p-6 md:p-8 flex flex-col md:flex-row md:items-center md:justify-between gap-4"
-            style={{ background: "hsl(var(--card))" }}
+            className="rounded-2xl p-6 md:p-8 flex flex-col justify-center"
+            style={{
+              background: "hsl(var(--card))",
+              border: "1px solid rgba(255,255,255,0.06)",
+              gridColumn: "2 / 4",
+            }}
           >
-            <div>
-              <span className="text-2xl mb-2 block">◇</span>
-              <h3 className="font-semibold text-lg text-foreground">Proven Expertise</h3>
-              <p className="text-sm text-muted-foreground mt-2 max-w-lg" style={{ lineHeight: 1.7 }}>
-                29+ projects delivered across 3 countries with 100% client retention. Cinema-grade output, every time.
+            <div className="flex justify-between items-start">
+              <h4 className="font-medium text-xl text-foreground">Future-Ready Solutions</h4>
+              <span className="text-muted-foreground">✦</span>
+            </div>
+            <p className="text-sm text-muted-foreground mt-2" style={{ lineHeight: 1.5 }}>
+              Our designs grow with your brand, ensuring long-term success and adaptability.
+            </p>
+          </div>
+        </div>
+      </ScrollReveal>
+
+      {/* Mobile: stacked cards */}
+      <div className="flex flex-col gap-[6px] md:hidden">
+        {[
+          { title: "AI-Native Pipeline", desc: "Every project built on AI from day one — not bolted on after.", icon: "" },
+          { title: "24/7 Support", desc: "Always available to ensure a smooth and hassle-free experience.", icon: "⏱" },
+          { title: "Seamless Collaboration", desc: "We work closely with you, keeping communication transparent and revisions efficient.", icon: "" },
+          { title: "Fast & Efficient Turnarounds", desc: "3–5x faster than traditional production without sacrificing quality.", icon: "" },
+          { title: "Proven Expertise", desc: "We've helped multiple brands create stunning, high-impact designs that drive results.", icon: "◇" },
+          { title: "Future-Ready Solutions", desc: "Our designs grow with your brand, ensuring long-term success and adaptability.", icon: "✦" },
+        ].map((card, i) => (
+          <ScrollReveal key={i} type="fade-up" delay={i * 0.05}>
+            <div
+              className="rounded-2xl p-6"
+              style={{
+                background: "hsl(var(--card))",
+                border: "1px solid rgba(255,255,255,0.06)",
+              }}
+            >
+              <div className="flex justify-between items-start">
+                <h4 className="font-medium text-lg text-foreground">{card.title}</h4>
+                {card.icon && <span className="text-muted-foreground">{card.icon}</span>}
+              </div>
+              <p className="text-sm text-muted-foreground mt-2" style={{ lineHeight: 1.5 }}>
+                {card.desc}
               </p>
             </div>
-            <Link
-              to="/work"
-              className="text-sm text-primary hover:text-foreground transition-colors shrink-0"
-            >
-              See our work →
-            </Link>
-          </div>
-        </ScrollReveal>
+          </ScrollReveal>
+        ))}
       </div>
 
-      {/* Stat + Avatars row */}
+      {/* Stat + Avatars + Logo marquee row */}
       <ScrollReveal type="fade-up" delay={0.2}>
         <div className="mt-12 flex flex-col md:flex-row md:items-center md:justify-between gap-6">
           <div className="flex items-center gap-4">
             <div className="flex -space-x-2">
-              {[1, 2, 3, 4, 5].map((i) => (
-                <div
-                  key={i}
-                  className="w-8 h-8 rounded-full border-2 border-background bg-muted"
-                />
+              {[1, 2, 3, 4].map((i) => (
+                <div key={i} className="w-8 h-8 rounded-full border-2 border-background bg-muted" />
               ))}
             </div>
             <div>
@@ -175,13 +223,11 @@ const BentoGrid = () => (
               <p className="text-sm text-foreground font-medium">200+ Satisfied Clients</p>
             </div>
           </div>
+          <div className="flex-1 max-w-[500px]">
+            <LogoMarquee />
+          </div>
         </div>
       </ScrollReveal>
-
-      {/* Logo marquee */}
-      <div className="mt-8">
-        <LogoMarquee />
-      </div>
     </div>
   </section>
 );
