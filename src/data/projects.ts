@@ -1,0 +1,411 @@
+export interface Project {
+  slug: string;
+  title: string;
+  client: string;
+  year: number;
+  category: string;
+  filterTag: "Solutions" | "Branding" | "Video Production";
+  thumbnailType: "image" | "video";
+  thumbnail: string;
+  summary: string;
+  intro: string;
+  metadata: {
+    year: number;
+    duration: string;
+    client: string;
+    category: string;
+  };
+  challenges: {
+    heading: string;
+    body: string;
+  };
+  solutions: {
+    heading: string;
+    body: string;
+  };
+  gallery: string[];
+  externalLink?: string;
+}
+
+export const projects: Project[] = [
+  // ── SOLUTIONS (6) ──
+  {
+    slug: "ai-chatbot",
+    title: "AI Chatbot",
+    client: "Internal / Multi-client",
+    year: 2025,
+    category: "AI Agent",
+    filterTag: "Solutions",
+    thumbnailType: "image",
+    thumbnail: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&h=600&fit=crop",
+    summary: "Conversational AI agents for client engagement",
+    intro: "Businesses needed always-on client communication without scaling headcount. We built a conversational AI system that handles intake, qualification, and routing.",
+    metadata: { year: 2025, duration: "3 Weeks", client: "Multi-client", category: "AI Agent" },
+    challenges: {
+      heading: "Most chatbot solutions felt robotic and generic, failing to capture brand voice or handle nuanced queries.",
+      body: "Off-the-shelf chatbots created frustrating user experiences. Clients needed something that understood context, maintained personality, and escalated intelligently.",
+    },
+    solutions: {
+      heading: "We engineered a custom conversational agent with brand-specific training, context memory, and smart handoff to human operators.",
+      body: "The system adapts tone to match each client's brand, remembers conversation history within sessions, and routes complex queries to the right team member. Deployment takes under a week.",
+    },
+    gallery: [
+      "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=1200&h=800&fit=crop",
+      "https://images.unsplash.com/photo-1676299081847-824916de030a?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1675557009875-436f7a5c1e71?w=800&h=600&fit=crop",
+    ],
+  },
+  {
+    slug: "prompt-machine",
+    title: "Prompt Machine",
+    client: "Internal",
+    year: 2025,
+    category: "Productivity Tool",
+    filterTag: "Solutions",
+    thumbnailType: "image",
+    thumbnail: "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?w=800&h=600&fit=crop",
+    summary: "Structured prompt engineering for creative pipelines",
+    intro: "AI generation quality depends entirely on prompt craft. We built a system that standardizes and optimizes prompt workflows for production teams.",
+    metadata: { year: 2025, duration: "4 Weeks", client: "Internal", category: "Productivity Tool" },
+    challenges: {
+      heading: "Prompt quality was inconsistent across team members, leading to wasted generation credits and unpredictable output.",
+      body: "Every artist had their own approach. There was no shared vocabulary, no version control, no way to reproduce results reliably.",
+    },
+    solutions: {
+      heading: "We built a structured prompt framework with templates, parameter controls, and output tracking — turning prompt craft into a repeatable system.",
+      body: "The platform includes categorized prompt libraries, A/B comparison views, and generation history. Teams now share and iterate on prompts like code.",
+    },
+    gallery: [
+      "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?w=1200&h=800&fit=crop",
+      "https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=800&h=600&fit=crop",
+    ],
+  },
+  {
+    slug: "resume-match",
+    title: "Resume Match",
+    client: "Intl Campus Admit",
+    year: 2024,
+    category: "AI Tool",
+    filterTag: "Solutions",
+    thumbnailType: "image",
+    thumbnail: "https://images.unsplash.com/photo-1586281380349-632531db7ed4?w=800&h=600&fit=crop",
+    summary: "AI-powered resume screening and candidate matching",
+    intro: "Admissions and HR teams were drowning in applications with no efficient way to surface the best-fit candidates.",
+    metadata: { year: 2024, duration: "5 Weeks", client: "Intl Campus Admit", category: "AI Tool" },
+    challenges: {
+      heading: "Manual resume review was slow, inconsistent, and unable to scale with application volume.",
+      body: "Reviewers spent hours on each batch. Qualified candidates were missed. Bias crept in from fatigue.",
+    },
+    solutions: {
+      heading: "We developed an AI matching engine that scores candidates against role requirements, surfacing top matches instantly.",
+      body: "The system parses resumes, extracts structured data, and ranks candidates on configurable criteria. Review time dropped by over 80%.",
+    },
+    gallery: [
+      "https://images.unsplash.com/photo-1586281380349-632531db7ed4?w=1200&h=800&fit=crop",
+    ],
+  },
+  {
+    slug: "work-schedule",
+    title: "Work Schedule",
+    client: "Internal",
+    year: 2025,
+    category: "Productivity Tool",
+    filterTag: "Solutions",
+    thumbnailType: "image",
+    thumbnail: "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=800&h=600&fit=crop",
+    summary: "Intelligent scheduling and workflow optimization",
+    intro: "Managing overlapping productions, contractor availability, and delivery deadlines across time zones needed a smarter system.",
+    metadata: { year: 2025, duration: "4 Weeks", client: "Internal", category: "Productivity Tool" },
+    challenges: {
+      heading: "Spreadsheet-based scheduling created conflicts, missed deadlines, and zero visibility into team capacity.",
+      body: "With contractors across multiple time zones and overlapping project timelines, manual coordination was breaking down.",
+    },
+    solutions: {
+      heading: "We built an automated scheduler that factors in availability, dependencies, and deadlines — with real-time conflict detection.",
+      body: "The tool syncs with team calendars, flags bottlenecks before they happen, and provides a visual timeline of all active productions.",
+    },
+    gallery: [
+      "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=1200&h=800&fit=crop",
+    ],
+  },
+  {
+    slug: "convert-gpa",
+    title: "Convert GPA",
+    client: "Intl Campus Admit",
+    year: 2024,
+    category: "AI Tool",
+    filterTag: "Solutions",
+    thumbnailType: "image",
+    thumbnail: "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=800&h=600&fit=crop",
+    summary: "Automated GPA conversion across global education systems",
+    intro: "International admissions required converting grades from dozens of country-specific systems into a standardized format.",
+    metadata: { year: 2024, duration: "3 Weeks", client: "Intl Campus Admit", category: "AI Tool" },
+    challenges: {
+      heading: "Each country uses a different grading scale, and manual conversion was error-prone and time-consuming.",
+      body: "Admissions staff spent significant time cross-referencing conversion tables. Errors led to incorrect eligibility assessments.",
+    },
+    solutions: {
+      heading: "We built an automated converter supporting 50+ global grading systems with instant, accurate results.",
+      body: "The tool handles percentage-based, letter-grade, and point-based systems. It provides equivalency explanations and supports batch processing.",
+    },
+    gallery: [
+      "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=1200&h=800&fit=crop",
+    ],
+  },
+  {
+    slug: "ai-agents",
+    title: "AI Agents",
+    client: "Internal / Multi-client",
+    year: 2025,
+    category: "AI Agent",
+    filterTag: "Solutions",
+    thumbnailType: "image",
+    thumbnail: "https://images.unsplash.com/photo-1676299081847-824916de030a?w=800&h=600&fit=crop",
+    summary: "Autonomous AI agents for complex business workflows",
+    intro: "We designed autonomous agents that handle end-to-end processes — from research to execution — without constant human oversight.",
+    metadata: { year: 2025, duration: "6 Weeks", client: "Multi-client", category: "AI Agent" },
+    challenges: {
+      heading: "Repetitive multi-step workflows consumed hours of skilled labor that should have been spent on creative and strategic work.",
+      body: "Tasks like market research compilation, content scheduling, and data pipeline management followed predictable patterns but still required manual execution.",
+    },
+    solutions: {
+      heading: "We built specialized AI agents that execute full workflows autonomously — monitoring, deciding, and acting within defined parameters.",
+      body: "Each agent is scoped to a specific domain with guardrails, logging, and human-in-the-loop checkpoints for critical decisions.",
+    },
+    gallery: [
+      "https://images.unsplash.com/photo-1676299081847-824916de030a?w=1200&h=800&fit=crop",
+    ],
+  },
+
+  // ── BRANDING (5) ──
+  {
+    slug: "creator-con",
+    title: "Creator Con",
+    client: "Creator Con",
+    year: 2024,
+    category: "Logo Design",
+    filterTag: "Branding",
+    thumbnailType: "image",
+    thumbnail: "https://images.unsplash.com/photo-1558655146-9f40138edfeb?w=800&h=600&fit=crop",
+    summary: "Logo design for a creator economy conference brand",
+    intro: "Creator Con needed a visual identity that felt bold, digital-native, and instantly recognizable across social and event signage.",
+    metadata: { year: 2024, duration: "2 Weeks", client: "Creator Con", category: "Logo Design" },
+    challenges: {
+      heading: "The brand had no visual identity — just a name. It needed to feel premium but accessible, digital but human.",
+      body: "The logo would live across screens, signage, merch, and social media — it had to be versatile and instantly recognizable at any scale.",
+    },
+    solutions: {
+      heading: "We developed a bold, geometric wordmark with a dynamic color system that adapts across digital and physical contexts.",
+      body: "The identity system includes primary and secondary lockups, a custom color palette, and usage guidelines. It launched across all conference materials.",
+    },
+    gallery: [
+      "https://images.unsplash.com/photo-1558655146-9f40138edfeb?w=1200&h=800&fit=crop",
+    ],
+  },
+  {
+    slug: "stand-store",
+    title: "Stand Store",
+    client: "Stand Store",
+    year: 2024,
+    category: "Website Design",
+    filterTag: "Branding",
+    thumbnailType: "image",
+    thumbnail: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop",
+    summary: "E-commerce website design and development for a direct-to-consumer brand",
+    intro: "Stand Store needed a high-converting online presence that matched their product quality with a premium shopping experience.",
+    metadata: { year: 2024, duration: "4 Weeks", client: "Stand Store", category: "Website Design" },
+    challenges: {
+      heading: "Their previous site was template-based with poor mobile performance and a generic checkout flow.",
+      body: "Bounce rates were high on mobile. The brand aesthetic was not translating to the digital storefront.",
+    },
+    solutions: {
+      heading: "We designed and built a custom e-commerce experience — mobile-first, fast, and visually aligned with the brand.",
+      body: "The new site features product storytelling sections, streamlined checkout, and responsive design that performs across all devices.",
+    },
+    gallery: [
+      "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200&h=800&fit=crop",
+    ],
+  },
+  {
+    slug: "vaseline-campaign",
+    title: "Vaseline",
+    client: "Vaseline",
+    year: 2023,
+    category: "Creative Campaign",
+    filterTag: "Branding",
+    thumbnailType: "image",
+    thumbnail: "/lovable-uploads/a2bc0601-961e-40cb-80c4-ee53a8664039.png",
+    summary: "Creative marketing campaign with AI-enhanced visual assets",
+    intro: "Vaseline needed a fresh campaign that stood out in a saturated personal care market using modern creative techniques.",
+    metadata: { year: 2023, duration: "3 Weeks", client: "Vaseline", category: "Creative Campaign" },
+    challenges: {
+      heading: "The brand wanted to feel contemporary and innovative without alienating its trusted, heritage audience.",
+      body: "Balancing tradition with innovation required careful creative direction — bold enough to turn heads, familiar enough to feel trusted.",
+    },
+    solutions: {
+      heading: "We produced an AI-enhanced campaign that blended product photography with generative textures and environments.",
+      body: "The campaign assets ran across social, digital display, and print. AI generation accelerated production while maintaining art-directed quality.",
+    },
+    gallery: [
+      "/lovable-uploads/a2bc0601-961e-40cb-80c4-ee53a8664039.png",
+    ],
+    externalLink: "https://readymag.website/surzayon/5140874/",
+  },
+  {
+    slug: "wine-label",
+    title: "Wine Label",
+    client: "CHCA Wines",
+    year: 2023,
+    category: "Packaging Design",
+    filterTag: "Branding",
+    thumbnailType: "image",
+    thumbnail: "/assets/chca-wine-label.jpg",
+    summary: "Label and packaging design for an artisanal wine brand",
+    intro: "CHCA Wines needed a label that communicated craft, provenance, and shelf presence in a crowded retail environment.",
+    metadata: { year: 2023, duration: "3 Weeks", client: "CHCA Wines", category: "Packaging Design" },
+    challenges: {
+      heading: "The existing label was forgettable on the shelf, blending into a sea of similar boutique wine branding.",
+      body: "The wine itself was exceptional but the packaging told no story. Retailers and consumers weren't picking it up.",
+    },
+    solutions: {
+      heading: "We designed a label system with bold typography, textured stock, and a distinctive color palette that commands attention.",
+      body: "The final design tells the vineyard story through layered print techniques — embossing, foil, and custom illustration. Sales increased measurably after relaunch.",
+    },
+    gallery: [],
+    externalLink: "https://www.s.pictures/design/chcawinelabel",
+  },
+  {
+    slug: "youtube-pitch-deck",
+    title: "YouTube Pitch Deck",
+    client: "YouTube (concept)",
+    year: 2024,
+    category: "Pitch Deck",
+    filterTag: "Branding",
+    thumbnailType: "image",
+    thumbnail: "https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?w=800&h=600&fit=crop",
+    summary: "Investor and partnership pitch deck with cinematic visual storytelling",
+    intro: "A pitch deck that needed to close rooms — not just inform, but persuade with visual authority.",
+    metadata: { year: 2024, duration: "2 Weeks", client: "YouTube (concept)", category: "Pitch Deck" },
+    challenges: {
+      heading: "Standard pitch decks rely on bullet points and charts. This needed to feel cinematic — more film pitch than startup deck.",
+      body: "The audience was senior decision-makers with no patience for generic slides. Every frame needed to earn its place.",
+    },
+    solutions: {
+      heading: "We designed a narrative-driven deck with full-bleed visuals, minimal text, and a story arc that builds to the ask.",
+      body: "The deck uses cinematic composition, data visualization with personality, and a clear narrative structure. It ships as both a presentation and a leave-behind PDF.",
+    },
+    gallery: [
+      "https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?w=1200&h=800&fit=crop",
+    ],
+  },
+
+  // ── VIDEO PRODUCTION (4) ──
+  {
+    slug: "jaipur-living",
+    title: "Jaipur Living",
+    client: "Jaipur Living",
+    year: 2025,
+    category: "Commercial Production",
+    filterTag: "Video Production",
+    thumbnailType: "video",
+    thumbnail: "https://images.unsplash.com/photo-1524492412937-b28074a5d7da?w=800&h=600&fit=crop",
+    summary: "Multi-location cinematic campaign blending live-action, 3D, and AI video across Rajasthan",
+    intro: "Jaipur Living needed a campaign that brought their artisan rug brand to life against the architectural grandeur of Rajasthan.",
+    metadata: { year: 2025, duration: "8 Weeks", client: "Jaipur Living", category: "Commercial Production" },
+    challenges: {
+      heading: "Shooting across multiple heritage locations in Rajasthan with a hybrid live-action + AI pipeline required precise coordination.",
+      body: "Locations like Chand Baori and Panna Meena stepwells have strict permitting. The production needed to blend real footage with 3D and AI-generated elements seamlessly.",
+    },
+    solutions: {
+      heading: "We developed a hybrid production workflow that combined scouted live-action footage with AI-extended environments and 3D product placement.",
+      body: "Each location was shot practically then enhanced with AI to create impossible angles and lighting. The client reviewed storyboards in real-time through our interactive preview system.",
+    },
+    gallery: [
+      "https://images.unsplash.com/photo-1524492412937-b28074a5d7da?w=1200&h=800&fit=crop",
+    ],
+  },
+  {
+    slug: "lincoln-university",
+    title: "Lincoln University MBA",
+    client: "Lincoln University",
+    year: 2025,
+    category: "Admissions Commercial",
+    filterTag: "Video Production",
+    thumbnailType: "image",
+    thumbnail: "https://images.unsplash.com/photo-1523050854058-8df90110c476?w=800&h=600&fit=crop",
+    summary: "AI-native admissions commercial for Lincoln University's MBA program",
+    intro: "Lincoln University needed a polished admissions spot that could compete with schools spending 10x their budget.",
+    metadata: { year: 2025, duration: "4 Weeks", client: "Lincoln University", category: "Admissions Commercial" },
+    challenges: {
+      heading: "The budget was a fraction of what traditional university commercials cost, but the quality expectations were the same.",
+      body: "With no on-campus shoot budget, the entire production needed to be executed through AI generation and stock-hybrid workflows.",
+    },
+    solutions: {
+      heading: "We produced a fully AI-native 60-second spot with storyboarded scenes, voiceover, and cinematic pacing.",
+      body: "Using our CTRL+AI methodology, we generated campus environments, student interactions, and aspirational sequences. An interactive storyboard editor let the client approve each frame before final production.",
+    },
+    gallery: [
+      "https://images.unsplash.com/photo-1523050854058-8df90110c476?w=1200&h=800&fit=crop",
+    ],
+  },
+  {
+    slug: "music-video",
+    title: "Music Video",
+    client: "Artist (TBA)",
+    year: 2024,
+    category: "Music Video",
+    filterTag: "Video Production",
+    thumbnailType: "image",
+    thumbnail: "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=800&h=600&fit=crop",
+    summary: "AI-native and hybrid music video production with cinematic visual language",
+    intro: "A music video that needed to feel like a short film — narrative-driven, visually dense, and completely original.",
+    metadata: { year: 2024, duration: "5 Weeks", client: "TBA", category: "Music Video" },
+    challenges: {
+      heading: "The artist wanted a visual world that didn't exist — surreal environments and impossible transitions that live-action alone couldn't deliver.",
+      body: "Traditional VFX would have taken months and blown the budget. The creative vision demanded both speed and fidelity.",
+    },
+    solutions: {
+      heading: "We combined AI video generation with live-action performance footage, creating seamless transitions between real and surreal.",
+      body: "Each scene was pre-visualized in AI, then shot and composited to match. The result plays like a high-budget production at a fraction of the cost and timeline.",
+    },
+    gallery: [
+      "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=1200&h=800&fit=crop",
+    ],
+  },
+  {
+    slug: "animated-30-seconder",
+    title: "Animated 30-Seconder",
+    client: "Multi-client",
+    year: 2024,
+    category: "Animation",
+    filterTag: "Video Production",
+    thumbnailType: "image",
+    thumbnail: "https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?w=800&h=600&fit=crop",
+    summary: "Short-form animated commercial spots for social and digital placement",
+    intro: "Brands needed punchy, scroll-stopping 30-second spots optimized for Instagram, TikTok, and YouTube pre-roll.",
+    metadata: { year: 2024, duration: "2 Weeks", client: "Multi-client", category: "Animation" },
+    challenges: {
+      heading: "Animated ads needed to hook in under 3 seconds, deliver a message in 30, and work without sound.",
+      body: "Attention spans on social are brutal. The animations needed to be visually compelling enough to stop a thumb mid-scroll.",
+    },
+    solutions: {
+      heading: "We developed a rapid-production pipeline for animated spots — from concept to delivery in under two weeks.",
+      body: "Each spot uses bold motion design, kinetic typography, and AI-assisted asset generation. Text overlays ensure the message lands with or without audio.",
+    },
+    gallery: [
+      "https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?w=1200&h=800&fit=crop",
+    ],
+  },
+];
+
+export function getRelatedProjects(currentSlug: string): Project[] {
+  return projects
+    .filter((p) => p.slug !== currentSlug)
+    .sort(() => Math.random() - 0.5)
+    .slice(0, 2);
+}
+
+export function filterProjects(tag: string): Project[] {
+  if (tag === "All") return projects;
+  return projects.filter((p) => p.filterTag === tag);
+}
