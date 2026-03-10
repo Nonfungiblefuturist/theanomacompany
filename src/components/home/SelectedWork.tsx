@@ -12,6 +12,9 @@ const curatedSlugs = [
   "vaseline-campaign",
   "animated-30-seconder",
 ];
+
+// Vaseline is treated as external (readymag portfolio)
+
 const featured = curatedSlugs
   .map((slug) => projects.find((p) => p.slug === slug))
   .filter(Boolean) as typeof projects;

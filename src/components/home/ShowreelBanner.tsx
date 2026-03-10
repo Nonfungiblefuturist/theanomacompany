@@ -51,6 +51,7 @@ const ShowreelBanner = () => {
             playsInline
             onEnded={handleVideoEnded}
             className="absolute inset-0 w-full h-full object-cover"
+            style={{ objectFit: "cover" }}
           />
 
           {/* Dark overlay — fades out when playing */}

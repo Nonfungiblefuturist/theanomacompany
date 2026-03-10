@@ -303,7 +303,7 @@ export const projects: Project[] = [
       body: "Each scene was pre-visualized in AI, then shot and composited to match. The result plays like a high-budget production at a fraction of the cost and timeline.",
     },
     gallery: [],
-    videoPreviewUrl: "/videos/music-video-1-preview.mp4",
+    videoPreviewUrl: "/videos/music-video-1-full.mp4",
     videoFullUrl: "/videos/music-video-1-full.mp4",
     isVideoLightbox: true,
   },
