@@ -1,44 +1,110 @@
 
 
-# Navbar Redesign + Routing Cleanup
+# Billy Boman-Style Studio Page — New Route `/studio`
 
-## What Changes
+## Key Decision
+This will be a **new page at `/studio`**, keeping your existing Anoma homepage completely intact.
 
-The prompt refines the navbar to match a secretlevel.co-inspired design and clarifies that the homepage should live at `/`. Most pages are already built — this is primarily a **navbar upgrade** and **routing adjustment**.
+## Addressing Your Feedback
 
-### 1. Navbar Redesign (`src/components/site/Navbar.tsx`)
+### 1. No destructive overwrite
+The current `Index.tsx` remains untouched. A new `Studio.tsx` page is created and added to the router.
 
-Current navbar is functional but basic. The new spec adds:
+### 2. caseStudies field mapping
+Your existing data uses `title`, `description`, `type`, `link`, `image`, `youtubeId`. The new design needs `title`, `category`, `thumbnailUrl`, `videoUrl`. An adapter will map:
+- `type` → `category`
+- `image` → `thumbnailUrl`
+- `youtubeId` → converted to YouTube embed URL for hover video
+- Items without `image` will use a dark placeholder
 
-- **Logo**: Switch from Playfair to Inter 600 weight; gradient bar fixed at 60px width, 2px height
-- **Desktop links**: Uppercase, `letter-spacing: 0.15em`, `font-size: 0.7rem`, Inter 500, `rgba(255,255,255,0.7)` color with hover underline that animates in from left (gradient-colored, `width: 0→100%`)
-- **"Get in Touch" CTA**: Pill-shaped button after nav links — gradient border, transparent fill, white text; hover fills with gradient
-- **Dropdowns**: Dark bg `rgba(12,12,12,0.95)`, no visible border, subtle shadow, fade + `translateY(-4px→0)` animation over 0.2s, same uppercase link style
-- **Scroll behavior**: Threshold 50px (currently 40px), `rgba(8,8,8,0.85)` bg, `backdrop-filter: blur(12px)`, bottom border `rgba(255,255,255,0.06)`
-- **Z-index**: nav=1000, mobile overlay=1001 (currently z-50 and z-100)
-- **Mobile**: "Menu" text label + hamburger icon instead of just icon; full-screen overlay with Playfair 2.5rem links with **staggered fade-in** (50ms delay per link); category labels above grouped links; "Get in Touch" button at bottom
+### 3. Email confirmed
+`surzayon@theanoma.company` with `mailto:` link, matching your current setup.
 
-### 2. Routing Change
+### 4. Pure CSS instead of Framer Motion
+Agreed — the entrance animations are simple staggered fades/scales. Using CSS `@keyframes` + `animation-delay` instead of Framer Motion. No extra bundle weight.
 
-- Move `Home` component from `/home` to `/` — the homepage IS the root
-- Keep existing `Index.tsx` accessible at `/legacy` or remove it (it's the old single-page site)
-- Update logo link from `/home` to `/`
+### 5. Nav pill styling (was missing)
+Explicitly specced:
+- `background: rgba(255,255,255,0.08)`
+- `backdrop-filter: blur(12px)`
+- `border-radius: 50px`
+- `padding: 8px 20px`
+- `font-size: 13px`, uppercase, letter-spacing 1.5px
+- Hover: `background: rgba(255,255,255,0.18)`
+- 8px gap between pills
+- Absolutely positioned top-right of the grid
 
-### 3. CSS Additions (`src/index.css`)
+### 6. Scroll progress bar (was underspecified)
+Functional scroll tracker:
+```
+fillWidth = (scrollY / (documentHeight - viewportHeight)) * 100%
+```
+Updates on scroll event. 180px wide, 3px tall, white fill, `transition: width 0.3s linear`.
 
-- Navbar underline animation keyframes (width 0→100%)
-- Mobile overlay staggered fade-in animation
-- Dropdown fade+slide animation
+---
 
-### Files Modified
+## Files to Create
 
-| File | Change |
-|------|--------|
-| `src/components/site/Navbar.tsx` | Full rewrite with secretlevel.co-inspired design |
-| `src/App.tsx` | Swap `/` and `/home` routes — Home becomes root |
-| `src/index.css` | Add navbar animation CSS |
+### `src/pages/Studio.tsx`
+The full Billy Boman-style single-page layout:
+- Page loader overlay (progress bar, fades out after 0.9s)
+- Unified hero grid: 3 columns x 2 rows, 100vh
+  - Column 1 (spans both rows): Logo ("THE ANOMA COMPANY" in Oswald), scroll progress bar, headline ("AI powered Content Studio" in Instrument Serif italic), description, LET'S TALK + mailto link
+  - Columns 2-3: 4 project cards from your caseStudies data
+- Frosted nav pills (Home, Work, About, Contact) floating top-right
+- Below-fold project grid: 3 columns, first card spans 2 cols, same 6px gap
+- Footer: centered nav links, top border `rgba(255,255,255,0.05)`
 
-### No Changes To
+### `src/components/studio/ProjectCard.tsx`
+Reusable card component:
+- Full-bleed thumbnail (`object-fit: cover`, `brightness(0.88)`)
+- On hover: image `scale(1.04) + brightness(0.72)`, 0.7s ease
+- Video lazy-load on first hover (set src from data attribute, play, fade to opacity 1)
+- Gradient overlay (always visible, pointer-events none)
+- Info chip: frosted glass (`rgba(60,60,55,0.65)`, `backdrop-filter: blur(16px)`, `border-radius: 8px`), slides up from `translateY(10px)` on hover
+- Mobile: info chip always visible, no video
 
-All other pages (Solutions, Branding, Video, About, Contact, NotFound) and components (SiteLayout, Footer, FilmGrain, ScrollReveal, PillarCard, SolutionCard, etc.) remain unchanged.
+### `src/components/studio/CustomCursor.tsx`
+Desktop only (hidden on touch):
+- Dot: 6px white circle, `mix-blend-mode: difference`, instant mouse follow
+- Ring: 32px, 1px border `rgba(240,239,232,0.35)`, LERP follow (`rx += (mouseX - rx) * 0.12` per rAF frame)
+- Hover states: nav/links = 50px ring, project cards = 70px ring with brighter border
 
+### `src/components/studio/PageLoader.tsx`
+- Full-screen `#0a0a0a` overlay, z-50
+- 120px progress bar fills 0-100% over 0.8s
+- Fades out after 0.9s
+- Triggers staggered entrance of hero elements via CSS animation-delay
+
+## Files to Modify
+
+### `src/App.tsx`
+- Add route: `<Route path="/studio" element={<Studio />} />`
+
+### `index.html`
+- Add Google Fonts: Instrument Serif, DM Sans, Oswald
+
+### `src/index.css`
+- Add studio-specific CSS variables scoped under a `.studio-page` class (does NOT touch existing variables)
+- Add card hover keyframes, entrance animations, cursor styles
+
+### `tailwind.config.ts`
+- Add font families: `instrument-serif`, `dm-sans`, `oswald`
+
+---
+
+## Entrance Animation Sequence (Pure CSS)
+
+All using `@keyframes` + `animation-delay`, no Framer Motion:
+
+1. Loader progress bar fills (0-0.8s), loader fades out (0.9s)
+2. Hero cards stagger in: 0.3s, 0.45s, 0.55s, 0.65s delay — `opacity 0 + scale(0.97)` to visible
+3. Hero text staggers: logo 0.6s, progress bar 0.7s, headline 0.85s, CTA 1.0s — `opacity 0 + translateY(20px)` to visible
+4. Nav pills slide down from `translateY(-10px)` at 0.8s
+5. Below-fold: IntersectionObserver, threshold 0.08, +80ms stagger per card
+
+## Responsive
+
+- **Desktop (1024px+)**: Full 3-column hero grid
+- **Tablet (640-1024px)**: Hero text full-width top, 2x2 cards below, below-fold 2 columns
+- **Mobile (< 640px)**: Single column, 280px cards, info chips always visible, no cursor, no video autoplay
