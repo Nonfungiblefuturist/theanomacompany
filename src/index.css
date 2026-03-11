@@ -103,6 +103,23 @@ All colors MUST be HSL.
     font-family: 'Geist', ui-sans-serif, system-ui, sans-serif;
     font-weight: 400;
     background-color: #0F0F0F;
+    line-height: 1.5;
+  }
+
+  /* Global focus-visible outline */
+  :focus-visible {
+    outline: 2px solid hsl(var(--ring));
+    outline-offset: 2px;
+  }
+
+  /* Minimum touch targets for interactive elements */
+  button, a, input, select, textarea {
+    min-height: 44px;
+  }
+
+  /* Inline links inside prose don't need 44px height */
+  p a, li a, span a {
+    min-height: unset;
   }
 
   .section-card {
