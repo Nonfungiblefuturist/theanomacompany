@@ -56,7 +56,7 @@ const BentoGrid = () => (
             }}
           >
             <img
-              src="/images/aeria-bento.png"
+              src="/images/cutting-edge-creativity.png"
               alt="Cutting-Edge Creativity"
               className="absolute inset-0 w-full h-full object-cover object-top opacity-40"
               loading="lazy"
