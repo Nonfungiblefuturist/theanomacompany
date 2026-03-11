@@ -323,7 +323,7 @@ export const projects: Project[] = [
     client: "MAIA",
     year: 2025,
     category: "Music Video",
-    filterTag: "Video Production",
+    filterTag: "AI Video Production",
     thumbnailType: "video",
     thumbnail: "/videos/music-video-1-full.mp4",
     summary: "AI-native music video with cinematic visual language",
