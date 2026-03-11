@@ -13,7 +13,7 @@ const navLinks = [
 const NavFlipLink = ({ label, to }: { label: string; to: string }) => (
   <Link
     to={to}
-    className="relative overflow-hidden inline-flex flex-col text-[15px] font-medium text-foreground no-underline cursor-pointer group/nav"
+    className="relative overflow-hidden inline-flex flex-col text-[16px] font-medium text-foreground no-underline cursor-pointer group/nav"
     style={{ height: "1.2em", lineHeight: "1.2" }}
   >
     <span className="block transition-transform duration-300 group-hover/nav:-translate-y-full">{label}</span>
