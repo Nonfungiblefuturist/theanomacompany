@@ -7,7 +7,7 @@ const pillars = [
     num: "01",
     title: "Solutions",
     desc: "AI-powered tools built to solve real problems.",
-    image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=600&h=800&fit=crop&fm=webp&q=75",
+    image: "/images/ai-chatbot.webp",
     filter: "Solutions",
   },
   {
