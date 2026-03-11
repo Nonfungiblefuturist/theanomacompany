@@ -12,7 +12,7 @@ const ImageMosaic = () => (
             <span className="text-foreground">Cinematic Vision</span>
             <span className="inline-flex align-middle mx-3 md:mx-5">
               <img
-                src="https://images.unsplash.com/photo-1518675219903-c682c4b16b7e?w=200&h=130&fit=crop"
+                src="https://images.unsplash.com/photo-1518675219903-c682c4b16b7e?w=200&h=130&fit=crop&fm=webp&q=75"
                 alt="Vision"
                 className="w-[80px] h-[55px] md:w-[120px] md:h-[80px] rounded-2xl object-cover"
                 style={{ transform: "rotate(-3deg)" }}
