@@ -129,7 +129,7 @@ export const projects: Project[] = [
       body: "The tool syncs with team calendars, flags bottlenecks before they happen, and provides a visual timeline of all active productions.",
     },
     gallery: [
-      "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=1200&h=800&fit=crop",
+      "/images/work-schedule.webp",
     ],
     externalLink: "https://workback-720109186790.us-west1.run.app/",
   },
