@@ -1,147 +1,180 @@
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { ArrowUpRight } from "lucide-react";
-import ScrollReveal from "@/components/shared/ScrollReveal";
+import { ArrowUpRight, ChevronDown } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
 import FlipButton from "@/components/shared/FlipButton";
 import VideoLightbox from "@/components/shared/VideoLightbox";
-import TripleVideoPreview from "@/components/shared/TripleVideoPreview";
 import { projects } from "@/data/projects";
 
-const curatedSlugs = [
-  "music-video-1",
-  "comedy-mockumentary-teaser",
-  "vaseline-campaign",
-  "animated-25-seconder",
-];
-
-// Vaseline is treated as external (readymag portfolio)
-
-const featured = curatedSlugs
-  .map((slug) => projects.find((p) => p.slug === slug))
-  .filter(Boolean) as typeof projects;
+// Only video production projects for the full-screen scroll
+const videoProjects = projects.filter(
+  (p) => p.filterTag === "AI Video Production" && p.videoPreviewUrl
+);
 
 const SelectedWork = () => {
   const [lightbox, setLightbox] = useState<{ open: boolean; url: string }>({ open: false, url: "" });
+  const [activeIndex, setActiveIndex] = useState(0);
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const container = containerRef.current;
+    if (!container) return;
+
+    const handleScroll = () => {
+      const scrollTop = container.scrollTop;
+      const height = container.clientHeight;
+      const index = Math.round(scrollTop / height);
+      setActiveIndex(Math.min(index, videoProjects.length - 1));
+    };
+
+    container.addEventListener("scroll", handleScroll, { passive: true });
+    return () => container.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
     <>
-      <section className="section-card mx-[6px] rounded-[20px] overflow-hidden">
-        <div className="max-w-[1600px] mx-auto px-6 md:px-10 lg:px-16 xl:px-20 py-20 md:py-28">
-          {/* Header */}
-          <div className="flex flex-col md:flex-row md:items-end md:justify-between mb-12 md:mb-16">
-            <div>
-              <ScrollReveal type="fade-up">
-                <p className="flex items-center gap-2 text-sm text-muted-foreground mb-4">
-                  <span className="w-1.5 h-1.5 rounded-full" style={{ backgroundColor: "hsl(var(--cosmic))" }} />
-                  Selected Work
-                </p>
-              </ScrollReveal>
-              <ScrollReveal type="blur-fade">
-                <h2
-                  className="font-semibold"
-                  style={{ fontSize: "clamp(1.75rem, 3.5vw, 3rem)", letterSpacing: "-0.02em" }}
+      <section className="relative" style={{ height: "100vh" }}>
+        {/* Scroll container */}
+        <div
+          ref={containerRef}
+          className="h-full overflow-y-scroll"
+          style={{
+            scrollSnapType: "y mandatory",
+            scrollBehavior: "smooth",
+          }}
+        >
+          {videoProjects.map((p, i) => (
+            <div
+              key={p.slug}
+              className="relative w-full overflow-hidden"
+              style={{
+                height: "100vh",
+                scrollSnapAlign: "start",
+              }}
+            >
+              {/* Background video */}
+              <video
+                src={p.videoPreviewUrl}
+                autoPlay
+                loop
+                muted
+                playsInline
+                className="absolute inset-0 w-full h-full object-cover"
+                preload="metadata"
+              />
+
+              {/* Gradient overlay */}
+              <div
+                className="absolute inset-0"
+                style={{
+                  background: "linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.2) 40%, transparent 60%)",
+                }}
+              />
+
+              {/* Bottom overlay content */}
+              <div className="absolute bottom-0 left-0 right-0 px-6 md:px-10 lg:px-16 xl:px-20 pb-12 md:pb-16 flex items-end justify-between">
+                <div>
+                  <p
+                    className="text-[13px] uppercase tracking-[0.05em] mb-2"
+                    style={{ color: "rgba(255,255,255,0.5)" }}
+                  >
+                    {p.category}
+                  </p>
+                  <h2
+                    className="font-semibold text-foreground"
+                    style={{
+                      fontSize: "clamp(2rem, 4vw, 3.5rem)",
+                      letterSpacing: "-0.03em",
+                      lineHeight: 1.1,
+                    }}
+                  >
+                    {p.title}
+                  </h2>
+                  <p className="text-muted-foreground text-sm mt-2 max-w-md">{p.summary}</p>
+                </div>
+
+                <button
+                  onClick={() => {
+                    if (p.videoFullUrl) {
+                      setLightbox({ open: true, url: p.videoFullUrl });
+                    }
+                  }}
+                  className="hidden md:inline-flex items-center gap-2 px-6 py-3 rounded-full text-[14px] font-medium text-foreground cursor-pointer transition-all duration-300 hover:scale-105 shrink-0"
+                  style={{
+                    background: "rgba(255,255,255,0.1)",
+                    backdropFilter: "blur(12px)",
+                    border: "1px solid rgba(255,255,255,0.15)",
+                  }}
                 >
-                  <span className="text-foreground">Selected </span>
-                  <span style={{ color: "hsl(var(--cosmic))" }}>Work.</span>
-                </h2>
-              </ScrollReveal>
-              <ScrollReveal type="fade-up" delay={0.1}>
-                <p className="mt-3 text-muted-foreground text-base md:text-lg max-w-2xl" style={{ lineHeight: 1.7 }}>
-                  Recent projects across all verticals.
-                </p>
-              </ScrollReveal>
+                  Watch Project <ArrowUpRight size={14} />
+                </button>
+              </div>
+
+              {/* Mobile watch button */}
+              <button
+                onClick={() => {
+                  if (p.videoFullUrl) {
+                    setLightbox({ open: true, url: p.videoFullUrl });
+                  }
+                }}
+                className="md:hidden absolute bottom-6 right-6 flex items-center gap-2 px-5 py-2.5 rounded-full text-[13px] font-medium text-foreground cursor-pointer"
+                style={{
+                  background: "rgba(255,255,255,0.1)",
+                  backdropFilter: "blur(12px)",
+                  border: "1px solid rgba(255,255,255,0.15)",
+                }}
+              >
+                Watch <ArrowUpRight size={12} />
+              </button>
             </div>
-            <ScrollReveal type="fade-up" delay={0.15}>
-              <FlipButton text="View all" href="/work" />
-            </ScrollReveal>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {featured.map((p, i) => {
-              const isExternal = !!p.externalLink;
-              const isVideoLightbox = p.isVideoLightbox && p.videoFullUrl;
-
-              const handleClick = (e: React.MouseEvent) => {
-                if (isVideoLightbox) {
-                  e.preventDefault();
-                  setLightbox({ open: true, url: p.videoFullUrl! });
-                }
-              };
-
-              const cardContent = (
-                <>
-                  <div className={`aspect-[16/10] rounded-2xl overflow-hidden relative ${isExternal ? "border border-cosmic/30" : ""}`}>
-                    {p.tripleVideoPreview ? (
-                      <TripleVideoPreview videos={p.tripleVideoPreview} />
-                    ) : p.videoPreviewUrl ? (
-                      <video
-                        src={p.videoPreviewUrl}
-                        autoPlay
-                        loop
-                        muted
-                        playsInline
-                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.03]"
-                        poster={p.thumbnail}
-                      />
-                    ) : (
-                      <img
-                        src={p.thumbnail}
-                        alt={p.title}
-                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.03]"
-                        loading="lazy"
-                      />
-                    )}
-                    {isExternal && p.filterTag === "Solutions" && (
-                      <span className="absolute top-3 right-3 px-2.5 py-1 rounded-full bg-cosmic/90 text-white text-xs font-medium flex items-center gap-1">
-                        Live App <ArrowUpRight size={10} />
-                      </span>
-                    )}
-                  </div>
-                  <div className="pt-4 pb-2">
-                    <div className="flex items-center justify-between">
-                      <h3 className="font-medium text-lg text-foreground">{p.title}</h3>
-                      <span className="text-sm text-muted-foreground">{p.year}</span>
-                    </div>
-                    <p className="text-sm text-muted-foreground mt-1">{p.category}</p>
-                    <span className="text-sm text-muted-foreground group-hover:text-primary transition-colors mt-2 inline-flex items-center gap-1">
-                      {isExternal ? (p.filterTag === "Solutions" ? "Launch App" : "Launch Project") : isVideoLightbox ? "Watch" : "View project"}{" "}
-                      <ArrowUpRight size={14} className="inline-block transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-                    </span>
-                  </div>
-                </>
-              );
-
-              if (isExternal) {
-                return (
-                  <ScrollReveal key={p.slug} type="fade-up" delay={i * 0.08}>
-                    <a href={p.externalLink} target="_blank" rel="noopener noreferrer" className="group block">
-                      {cardContent}
-                    </a>
-                  </ScrollReveal>
-                );
-              }
-
-              if (isVideoLightbox) {
-                return (
-                  <ScrollReveal key={p.slug} type="fade-up" delay={i * 0.08}>
-                    <div className="group block cursor-pointer" onClick={handleClick}>
-                      {cardContent}
-                    </div>
-                  </ScrollReveal>
-                );
-              }
-
-              return (
-                <ScrollReveal key={p.slug} type="fade-up" delay={i * 0.08}>
-                  <Link to={`/work/${p.slug}`} className="group block">
-                    {cardContent}
-                  </Link>
-                </ScrollReveal>
-              );
-            })}
-          </div>
+          ))}
         </div>
+
+        {/* Scroll progress dots */}
+        <div className="absolute right-4 md:right-8 top-1/2 -translate-y-1/2 flex flex-col gap-2 z-10">
+          {videoProjects.map((_, i) => (
+            <button
+              key={i}
+              onClick={() => {
+                const container = containerRef.current;
+                if (container) {
+                  container.scrollTo({ top: i * container.clientHeight, behavior: "smooth" });
+                }
+              }}
+              className="w-2 h-2 rounded-full transition-all duration-300 cursor-pointer"
+              style={{
+                background: i === activeIndex ? "hsl(var(--cosmic))" : "rgba(255,255,255,0.25)",
+                transform: i === activeIndex ? "scale(1.5)" : "scale(1)",
+              }}
+            />
+          ))}
+        </div>
+
+        {/* Scroll hint on first slide */}
+        {activeIndex === 0 && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="absolute bottom-6 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1 z-10 pointer-events-none"
+          >
+            <span className="text-[11px] text-muted-foreground uppercase tracking-wider">Scroll</span>
+            <motion.div
+              animate={{ y: [0, 6, 0] }}
+              transition={{ duration: 1.5, repeat: Infinity }}
+            >
+              <ChevronDown size={16} className="text-muted-foreground" />
+            </motion.div>
+          </motion.div>
+        )}
       </section>
+
+      {/* See all work link */}
+      <div className="section-card mx-[6px] rounded-[20px] overflow-hidden">
+        <div className="flex justify-center py-12">
+          <FlipButton text="See all work" href="/work" />
+        </div>
+      </div>
 
       <VideoLightbox
         videoUrl={lightbox.url}
