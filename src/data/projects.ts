@@ -168,7 +168,7 @@ export const projects: Project[] = [
     category: "Logo Design",
     filterTag: "Branding",
     thumbnailType: "image",
-    thumbnail: "https://images.unsplash.com/photo-1558655146-9f40138edfeb?w=800&h=600&fit=crop",
+    thumbnail: "/images/branding-creative.webp",
     externalLink: "https://www.instagram.com/reel/DNyYORtYvWv/",
     tripleVideoPreview: [
       "/videos/creator-con-1.mov",
