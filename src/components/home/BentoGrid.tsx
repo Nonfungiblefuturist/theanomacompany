@@ -93,7 +93,7 @@ const BentoGrid = () => (
             }}
           >
             <img
-              src="https://images.unsplash.com/photo-1553877522-43269d4ea984?w=600&h=400&fit=crop"
+              src="https://images.unsplash.com/photo-1553877522-43269d4ea984?w=600&h=400&fit=crop&fm=webp&q=75"
               alt="24/7 Support"
               className="absolute inset-0 w-full h-full object-cover opacity-20"
               loading="lazy"
