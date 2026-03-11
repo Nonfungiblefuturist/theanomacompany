@@ -52,7 +52,7 @@ const Navbar = () => {
           <img
             src="/images/anoma-logo.png"
             alt="The Anoma Company"
-            className="h-28 md:h-32 w-auto"
+            className="h-32 md:h-36 w-auto"
           />
         </Link>
 
