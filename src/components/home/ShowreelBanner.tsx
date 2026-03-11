@@ -51,6 +51,7 @@ const ShowreelBanner = () => {
             loop
             muted
             playsInline
+            preload="metadata"
             onEnded={handleVideoEnded}
             className="absolute inset-0 w-full h-full"
             style={{ objectFit: isPlaying ? "contain" : "cover", background: "#000" }}
