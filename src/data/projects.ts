@@ -41,7 +41,7 @@ export const projects: Project[] = [
     category: "AI Agent",
     filterTag: "Solutions",
     thumbnailType: "image",
-    thumbnail: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&h=600&fit=crop",
+    thumbnail: "/images/ai-chatbot.webp",
     summary: "Conversational AI agents for client engagement",
     intro: "Businesses needed always-on client communication without scaling headcount. We built a conversational AI system that handles intake, qualification, and routing.",
     metadata: { year: 2026, duration: "3 Weeks", client: "Multi-client", category: "AI Agent" },
