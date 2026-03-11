@@ -105,11 +105,17 @@ const Footer = () => {
 
         {/* Dotted world map with pulsing pins */}
         <div className="relative mt-16 md:mt-24" style={{ aspectRatio: "2.5/1" }}>
-          <WorldMapSVG />
+          <img
+            src="/images/dotted-world-map.png"
+            alt=""
+            className="w-full h-full object-contain"
+            style={{ opacity: 0.55 }}
+            aria-hidden="true"
+          />
           {[
-            { city: "Toronto", left: "22%", top: "30%" },
-            { city: "Dubai", left: "56%", top: "40%" },
-            { city: "Mumbai", left: "64%", top: "45%" },
+            { city: "Toronto", left: "24%", top: "32%" },
+            { city: "Dubai", left: "58%", top: "42%" },
+            { city: "Mumbai", left: "65%", top: "48%" },
           ].map((pin) => (
             <div key={pin.city} className="absolute" style={{ left: pin.left, top: pin.top, transform: "translate(-50%, -50%)" }}>
               <div className="relative flex items-center justify-center">
