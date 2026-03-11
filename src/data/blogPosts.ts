@@ -17,7 +17,7 @@ export const blogPosts: BlogPost[] = [
     date: "Mar 2025",
     readTime: "6 min read",
     category: "Industry",
-    thumbnail: "https://images.unsplash.com/photo-1485846234645-a62644f84728?w=800&h=500&fit=crop",
+    thumbnail: "/images/filmmaking.webp",
     content: "AI is not replacing filmmakers — it's removing the barriers that kept great ideas from becoming great productions...",
   },
   {
@@ -27,7 +27,7 @@ export const blogPosts: BlogPost[] = [
     date: "Feb 2025",
     readTime: "8 min read",
     category: "Process",
-    thumbnail: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=800&h=500&fit=crop",
+    thumbnail: "/images/bento-tech.webp",
     content: "Every project at The Anoma Company follows the same framework — CTRL+AI...",
   },
   {
@@ -37,7 +37,7 @@ export const blogPosts: BlogPost[] = [
     date: "Jan 2025",
     readTime: "5 min read",
     category: "Workflow",
-    thumbnail: "https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?w=800&h=500&fit=crop",
+    thumbnail: "/images/mosaic-production.webp",
     content: "The best productions in 2025 aren't purely AI or purely traditional — they're hybrid...",
   },
   {
@@ -47,7 +47,7 @@ export const blogPosts: BlogPost[] = [
     date: "Dec 2024",
     readTime: "7 min read",
     category: "Behind the Scenes",
-    thumbnail: "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=800&h=500&fit=crop",
+    thumbnail: "/images/blog-ai-studio.webp",
     content: "When we started The Anoma Company, the question wasn't whether to use AI — it was how to build everything around it...",
   },
 ];

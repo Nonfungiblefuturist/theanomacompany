@@ -41,7 +41,7 @@ export const projects: Project[] = [
     category: "AI Agent",
     filterTag: "Solutions",
     thumbnailType: "image",
-    thumbnail: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&h=600&fit=crop",
+    thumbnail: "/images/ai-chatbot.webp",
     summary: "Conversational AI agents for client engagement",
     intro: "Businesses needed always-on client communication without scaling headcount. We built a conversational AI system that handles intake, qualification, and routing.",
     metadata: { year: 2026, duration: "3 Weeks", client: "Multi-client", category: "AI Agent" },
@@ -54,7 +54,7 @@ export const projects: Project[] = [
       body: "The system adapts tone to match each client's brand, remembers conversation history within sessions, and routes complex queries to the right team member. Deployment takes under a week.",
     },
     gallery: [
-      "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=1200&h=800&fit=crop",
+      "/images/ai-chatbot.webp",
     ],
     externalLink: "https://chat-sage-gamma.vercel.app/",
   },
@@ -91,7 +91,7 @@ export const projects: Project[] = [
     category: "AI Tool",
     filterTag: "Solutions",
     thumbnailType: "image",
-    thumbnail: "https://images.unsplash.com/photo-1586281380349-632531db7ed4?w=800&h=600&fit=crop",
+    thumbnail: "/images/resume-match.webp",
     summary: "AI-powered resume screening and candidate matching",
     intro: "Admissions and HR teams were drowning in applications with no efficient way to surface the best-fit candidates.",
     metadata: { year: 2026, duration: "5 Weeks", client: "Intl Campus Admit", category: "AI Tool" },
@@ -104,7 +104,7 @@ export const projects: Project[] = [
       body: "The system parses resumes, extracts structured data, and ranks candidates on configurable criteria. Review time dropped by over 80%.",
     },
     gallery: [
-      "https://images.unsplash.com/photo-1586281380349-632531db7ed4?w=1200&h=800&fit=crop",
+      "/images/resume-match.webp",
     ],
     externalLink: "https://resumatch-ai-720109186790.us-west1.run.app/",
   },
@@ -116,7 +116,7 @@ export const projects: Project[] = [
     category: "Productivity Tool",
     filterTag: "Solutions",
     thumbnailType: "image",
-    thumbnail: "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=800&h=600&fit=crop",
+    thumbnail: "/images/work-schedule.webp",
     summary: "Intelligent scheduling and workflow optimization",
     intro: "Managing overlapping productions, contractor availability, and delivery deadlines across time zones needed a smarter system.",
     metadata: { year: 2026, duration: "4 Weeks", client: "Internal", category: "Productivity Tool" },
@@ -129,7 +129,7 @@ export const projects: Project[] = [
       body: "The tool syncs with team calendars, flags bottlenecks before they happen, and provides a visual timeline of all active productions.",
     },
     gallery: [
-      "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=1200&h=800&fit=crop",
+      "/images/work-schedule.webp",
     ],
     externalLink: "https://workback-720109186790.us-west1.run.app/",
   },
@@ -154,7 +154,7 @@ export const projects: Project[] = [
       body: "The tool handles percentage-based, letter-grade, and point-based systems. It provides equivalency explanations and supports batch processing.",
     },
     gallery: [
-      "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=1200&h=800&fit=crop",
+      "/images/campus-education.webp",
     ],
     externalLink: "https://campus-convert-720109186790.us-west1.run.app/",
   },
@@ -168,7 +168,7 @@ export const projects: Project[] = [
     category: "Logo Design",
     filterTag: "Branding",
     thumbnailType: "image",
-    thumbnail: "https://images.unsplash.com/photo-1558655146-9f40138edfeb?w=800&h=600&fit=crop",
+    thumbnail: "/images/branding-creative.webp",
     externalLink: "https://www.instagram.com/reel/DNyYORtYvWv/",
     tripleVideoPreview: [
       "/videos/creator-con-1.mov",
@@ -187,7 +187,7 @@ export const projects: Project[] = [
       body: "The identity system includes primary and secondary lockups, a custom color palette, and usage guidelines. It launched across all conference materials.",
     },
     gallery: [
-      "https://images.unsplash.com/photo-1558655146-9f40138edfeb?w=1200&h=800&fit=crop",
+      "/images/branding-creative.webp",
     ],
   },
   {
@@ -388,7 +388,7 @@ export const projects: Project[] = [
       body: "Each spot uses bold motion design, kinetic typography, and AI-assisted asset generation. Text overlays ensure the message lands with or without audio.",
     },
     gallery: [
-      "https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?w=1200&h=800&fit=crop",
+      "/images/animated-gallery.webp",
     ],
     videoPreviewUrl: "/videos/animated-25-seconder.mov",
     videoFullUrl: "/videos/animated-25-seconder.mov",
