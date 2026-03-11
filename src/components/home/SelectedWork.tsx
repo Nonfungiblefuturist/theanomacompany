@@ -197,15 +197,7 @@ const SelectedWork = () => {
             Watch Project <Play size={12} fill="currentColor" />
           </button>
 
-          <Link
-            to="/work"
-            className="text-[13px] no-underline transition-colors duration-300"
-            style={{ color: "rgba(255,255,255,0.5)" }}
-            onMouseEnter={(e) => (e.currentTarget.style.color = "white")}
-            onMouseLeave={(e) => (e.currentTarget.style.color = "rgba(255,255,255,0.5)")}
-          >
-            See all work ↗
-          </Link>
+          <FlipButton text="See All Projects" href="/work" variant="outline" className="!py-2 !px-4 !text-[13px] !border-white/20" />
         </div>
 
         {/* Scroll hint on first slide */}

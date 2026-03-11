@@ -102,11 +102,61 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="mt-16 md:mt-24 pb-8">
+        {/* Dotted world map with pulsing pins */}
+        <div className="relative mt-16 md:mt-24" style={{ aspectRatio: "2.5/1" }}>
+          <img
+            src="/images/dotted-world-map.png"
+            alt="Global presence"
+            className="w-full h-full object-contain"
+            style={{ opacity: 0.25 }}
+            loading="lazy"
+          />
+          {[
+            { city: "Toronto", left: "22%", top: "30%" },
+            { city: "Dubai", left: "56%", top: "40%" },
+            { city: "Mumbai", left: "64%", top: "45%" },
+          ].map((pin) => (
+            <div key={pin.city} className="absolute" style={{ left: pin.left, top: pin.top, transform: "translate(-50%, -50%)" }}>
+              <div className="relative flex items-center justify-center">
+                <span
+                  className="absolute rounded-full"
+                  style={{
+                    width: 8, height: 8,
+                    background: "#8000FF",
+                    zIndex: 2,
+                  }}
+                />
+                <span
+                  className="absolute rounded-full"
+                  style={{
+                    width: 8, height: 8,
+                    border: "2px solid #8000FF",
+                    animation: "footerPinPulse 2.5s ease-out infinite",
+                    zIndex: 1,
+                  }}
+                />
+              </div>
+              <span
+                className="absolute left-1/2 -translate-x-1/2 whitespace-nowrap text-[11px] text-muted-foreground"
+                style={{ top: 14 }}
+              >
+                {pin.city}
+              </span>
+            </div>
+          ))}
+          <style>{`
+            @keyframes footerPinPulse {
+              0% { transform: scale(1); opacity: 0.8; }
+              100% { transform: scale(5); opacity: 0; }
+            }
+          `}</style>
+        </div>
+
+        <div className="mt-8 md:mt-12 pb-8">
           <h2
             className="font-bold text-foreground uppercase tracking-tight select-none text-center"
             style={{
-              fontSize: "clamp(2rem, 8vw, 7rem)",
+              fontSize: "clamp(2.5rem, 10vw, 9rem)",
               lineHeight: 0.9,
               letterSpacing: "-0.05em",
               whiteSpace: "nowrap",
