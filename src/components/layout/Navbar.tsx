@@ -13,8 +13,8 @@ const navLinks = [
 const NavFlipLink = ({ label, to }: { label: string; to: string }) => (
   <Link
     to={to}
-    className="relative overflow-hidden inline-flex flex-col text-[16px] font-medium text-foreground no-underline cursor-pointer group/nav"
-    style={{ height: "1.2em", lineHeight: "1.2" }}
+    className="relative overflow-hidden inline-flex flex-col font-medium text-foreground no-underline cursor-pointer group/nav"
+    style={{ fontSize: "clamp(16px, 1.4vw, 20px)", height: "1.2em", lineHeight: "1.2" }}
   >
     <span className="block transition-transform duration-300 group-hover/nav:-translate-y-full">{label}</span>
     <span className="absolute top-full left-0 block transition-transform duration-300 group-hover/nav:-translate-y-full">{label}</span>
@@ -42,9 +42,9 @@ const Navbar = () => {
       <nav
         className="fixed left-0 right-0 z-50 flex items-center justify-between px-6 md:px-10 lg:px-16"
         style={{
-          top: scrolled ? 12 : 20,
+          top: scrolled ? 8 : 24,
           transition: "all 0.4s ease",
-          height: 64,
+          height: "clamp(90px, 16vw, 140px)",
         }}
       >
         {/* Logo — left */}
@@ -52,13 +52,14 @@ const Navbar = () => {
           <img
             src="/images/anoma-logo.png"
             alt="The Anoma Company"
-            className="h-36 md:h-44 w-auto"
+            style={{ height: "clamp(11rem, 20vw, 18rem)" }}
+            className="w-auto"
           />
         </Link>
 
         {/* Glass pill — center (desktop) */}
         <div
-          className="hidden md:flex items-center gap-6 px-6 py-2.5 rounded-full transition-all duration-400"
+          className="hidden md:flex items-center gap-8 px-8 py-3 rounded-full transition-all duration-400"
           style={{
             background: scrolled ? "rgba(0,0,0,0.4)" : "rgba(0,0,0,0.12)",
             backdropFilter: "blur(20px)",
@@ -74,8 +75,9 @@ const Navbar = () => {
         {/* Contact pill — right (desktop) */}
         <button
           onClick={() => setContactOpen(true)}
-          className="hidden md:inline-flex relative overflow-hidden items-center gap-1.5 text-[16px] font-medium px-7 py-3 rounded-full text-foreground cursor-pointer transition-all duration-300 group/contact"
+          className="hidden md:inline-flex relative overflow-hidden items-center gap-1.5 font-medium px-8 py-3.5 rounded-full text-foreground cursor-pointer transition-all duration-300 group/contact"
           style={{
+            fontSize: "clamp(16px, 1.4vw, 20px)",
             background: "transparent",
             border: "1px solid hsl(var(--cosmic))",
           }}
