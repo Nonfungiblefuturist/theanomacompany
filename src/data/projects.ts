@@ -4,7 +4,7 @@ export interface Project {
   client: string;
   year: number;
   category: string;
-  filterTag: "Solutions" | "Branding" | "Video Production";
+  filterTag: "Solutions" | "Branding" | "Video Production" | "AI Video Production";
   thumbnailType: "image" | "video";
   thumbnail: string;
   summary: string;
@@ -266,14 +266,64 @@ export const projects: Project[] = [
     externalLink: "https://www.canva.com/design/DAGiFpnFNE4/sg7LVWncTVPlmwoQRmg09g/view?utm_content=DAGiFpnFNE4&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h9854372f9a",
   },
 
-  // ── VIDEO PRODUCTION (3) ──
+  // ── AI VIDEO PRODUCTION ──
+  {
+    slug: "comedy-mockumentary-teaser",
+    title: "Comedy Mockumentary Teaser",
+    client: "Internal",
+    year: 2025,
+    category: "Short Film",
+    filterTag: "AI Video Production",
+    thumbnailType: "video",
+    thumbnail: "/videos/comedy-mockumentary-teaser.mp4",
+    summary: "A comedy mockumentary teaser exploring the absurdity of being your own boss",
+    intro: "A short-form comedy piece blending mockumentary style with AI-generated visuals.",
+    metadata: { year: 2025, duration: "2 Weeks", client: "Internal", category: "Short Film" },
+    challenges: {
+      heading: "Creating authentic mockumentary tone with AI-generated footage required careful direction.",
+      body: "The comedy needed to land naturally while using AI tools — balancing humor with visual quality.",
+    },
+    solutions: {
+      heading: "We combined AI video generation with sharp writing and precise editing to deliver genuine laughs.",
+      body: "The result is a punchy teaser that proves AI-native content can carry comedic timing and tonal nuance.",
+    },
+    gallery: [],
+    videoPreviewUrl: "/videos/comedy-mockumentary-teaser.mp4",
+    videoFullUrl: "/videos/comedy-mockumentary-teaser.mp4",
+    isVideoLightbox: true,
+  },
+  {
+    slug: "on-spec-ad",
+    title: "On Spec Ad",
+    client: "Internal",
+    year: 2025,
+    category: "Ad Spec",
+    filterTag: "AI Video Production",
+    thumbnailType: "video",
+    thumbnail: "/videos/on-spec-ad.mp4",
+    summary: "A spec ad created entirely using AI tools — Runway Gen-4, Midjourney, and more",
+    intro: "A spec commercial demonstrating the full power of AI-native ad production.",
+    metadata: { year: 2025, duration: "1 Week", client: "Internal", category: "Ad Spec" },
+    challenges: {
+      heading: "Producing a broadcast-quality spec ad using only AI tools pushed every pipeline to its limits.",
+      body: "The ad needed to look indistinguishable from traditional production while being made entirely with generative AI.",
+    },
+    solutions: {
+      heading: "We combined Runway Gen-4, Midjourney, and custom compositing to deliver a polished spec spot.",
+      body: "The final piece demonstrates that AI-native production can match the quality bar of traditional ad filmmaking.",
+    },
+    gallery: [],
+    videoPreviewUrl: "/videos/on-spec-ad.mp4",
+    videoFullUrl: "/videos/on-spec-ad.mp4",
+    isVideoLightbox: true,
+  },
   {
     slug: "music-video-1",
     title: "F**k Them",
     client: "MAIA",
     year: 2025,
     category: "Music Video",
-    filterTag: "Video Production",
+    filterTag: "AI Video Production",
     thumbnailType: "video",
     thumbnail: "/videos/music-video-1-full.mp4",
     summary: "AI-native music video with cinematic visual language",
@@ -298,7 +348,7 @@ export const projects: Project[] = [
     client: "Artist (TBA)",
     year: 2025,
     category: "Music Video",
-    filterTag: "Video Production",
+    filterTag: "AI Video Production",
     thumbnailType: "video",
     thumbnail: "/videos/music-video-2-full.mp4",
     summary: "AI-native music video with cinematic visual language — Part II",
@@ -323,7 +373,7 @@ export const projects: Project[] = [
     client: "Multi-client",
     year: 2025,
     category: "Animation",
-    filterTag: "Video Production",
+    filterTag: "AI Video Production",
     thumbnailType: "video",
     thumbnail: "/videos/animated-25-seconder.mov",
     summary: "Short-form animated commercial spots for social and digital placement",

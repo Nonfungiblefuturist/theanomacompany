@@ -13,7 +13,7 @@ const navLinks = [
 const NavFlipLink = ({ label, to }: { label: string; to: string }) => (
   <Link
     to={to}
-    className="relative overflow-hidden inline-flex flex-col text-[13px] font-medium text-foreground no-underline cursor-pointer group/nav"
+    className="relative overflow-hidden inline-flex flex-col text-[15px] font-medium text-foreground no-underline cursor-pointer group/nav"
     style={{ height: "1.2em", lineHeight: "1.2" }}
   >
     <span className="block transition-transform duration-300 group-hover/nav:-translate-y-full">{label}</span>
@@ -52,7 +52,7 @@ const Navbar = () => {
           <img
             src="/images/anoma-logo.png"
             alt="The Anoma Company"
-            className="h-28 md:h-32 w-auto"
+            className="h-32 md:h-36 w-auto"
           />
         </Link>
 
@@ -74,7 +74,7 @@ const Navbar = () => {
         {/* Contact pill — right (desktop) */}
         <button
           onClick={() => setContactOpen(true)}
-          className="hidden md:inline-flex relative overflow-hidden items-center gap-1.5 text-[13px] font-medium px-5 py-2.5 rounded-full text-foreground cursor-pointer transition-all duration-300 group/contact"
+          className="hidden md:inline-flex relative overflow-hidden items-center gap-1.5 text-[15px] font-medium px-6 py-2.5 rounded-full text-foreground cursor-pointer transition-all duration-300 group/contact"
           style={{
             background: "transparent",
             border: "1px solid hsl(var(--cosmic))",
