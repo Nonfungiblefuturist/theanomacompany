@@ -13,7 +13,7 @@ const services = [
     num: "02",
     title: "Creative Campaigns",
     desc: "Identity systems, campaign visuals, pitch decks, and packaging — crafted with AI-enhanced creative pipelines for speed and precision.",
-    image: "https://images.unsplash.com/photo-1558655146-9f40138edfeb?w=800&h=600&fit=crop&fm=webp&q=75",
+    image: "/images/branding-creative.webp",
   },
   {
     num: "03",
