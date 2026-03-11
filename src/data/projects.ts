@@ -54,7 +54,7 @@ export const projects: Project[] = [
       body: "The system adapts tone to match each client's brand, remembers conversation history within sessions, and routes complex queries to the right team member. Deployment takes under a week.",
     },
     gallery: [
-      "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=1200&h=800&fit=crop",
+      "/images/ai-chatbot.webp",
     ],
     externalLink: "https://chat-sage-gamma.vercel.app/",
   },
