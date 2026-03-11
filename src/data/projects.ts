@@ -4,7 +4,7 @@ export interface Project {
   client: string;
   year: number;
   category: string;
-  filterTag: "Solutions" | "Branding" | "Video Production";
+  filterTag: "Solutions" | "Branding" | "Video Production" | "AI Video Production";
   thumbnailType: "image" | "video";
   thumbnail: string;
   summary: string;
