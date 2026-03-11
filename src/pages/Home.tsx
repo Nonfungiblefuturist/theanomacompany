@@ -11,7 +11,7 @@ import ServicesTabbed from "@/components/home/ServicesTabbed";
 import ProcessSteps from "@/components/home/ProcessSteps";
 import WorkflowShowcase from "@/components/home/WorkflowShowcase";
 import BentoGrid from "@/components/home/BentoGrid";
-import WorldMap from "@/components/home/WorldMap";
+
 import Testimonials from "@/components/home/Testimonials";
 import HomeFAQ from "@/components/home/HomeFAQ";
 
