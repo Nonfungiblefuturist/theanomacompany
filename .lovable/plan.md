@@ -1,110 +1,45 @@
 
 
-# Billy Boman-Style Studio Page — New Route `/studio`
+# Accessibility & Legibility Audit — Implementation Plan
 
-## Key Decision
-This will be a **new page at `/studio`**, keeping your existing Anoma homepage completely intact.
+## Summary
 
-## Addressing Your Feedback
+Apply a focused set of accessibility, legibility, and design-agnostic improvements across the codebase. The site already uses CSS variables and has `focus-visible` on UI primitives, but lacks global focus styles, reduced-motion support, semantic landmarks, and proper touch targets.
 
-### 1. No destructive overwrite
-The current `Index.tsx` remains untouched. A new `Studio.tsx` page is created and added to the router.
+## Changes
 
-### 2. caseStudies field mapping
-Your existing data uses `title`, `description`, `type`, `link`, `image`, `youtubeId`. The new design needs `title`, `category`, `thumbnailUrl`, `videoUrl`. An adapter will map:
-- `type` → `category`
-- `image` → `thumbnailUrl`
-- `youtubeId` → converted to YouTube embed URL for hover video
-- Items without `image` will use a dark placeholder
+### 1. Global CSS additions (`src/index.css`)
+- Add global `:focus-visible` outline (`2px solid hsl(var(--ring))`) as a catch-all for any interactive element not covered by Radix primitives.
+- Add `@media (prefers-reduced-motion: reduce)` to disable all CSS animations and transitions site-wide.
+- Set base font size to `16px` on `html`, ensure `line-height: 1.5` on `body`.
+- Add minimum touch-target rule: all `button`, `a`, `input`, `select`, `textarea` get `min-height: 44px; min-width: 44px` (via a utility class or base layer).
+- Ensure `font-display: swap` is already handled (it is, via Google Fonts URL — confirmed).
 
-### 3. Email confirmed
-`surzayon@theanoma.company` with `mailto:` link, matching your current setup.
+### 2. Semantic HTML landmarks
+- **`src/components/layout/Navbar.tsx`**: The `<nav>` is correct. Add `aria-label="Main navigation"`.
+- **`src/components/layout/Footer.tsx`**: Already uses `<footer>`. Add `aria-label="Site footer"`.
+- **`src/pages/Home.tsx`** (and other page components): Wrap main page content in `<main>` if not already present. Add `role` attributes only where HTML5 semantics are insufficient.
 
-### 4. Pure CSS instead of Framer Motion
-Agreed — the entrance animations are simple staggered fades/scales. Using CSS `@keyframes` + `animation-delay` instead of Framer Motion. No extra bundle weight.
+### 3. Reduced-motion support in JS animations
+- **`src/components/home/Hero.tsx`**: Wrap the parallax scroll listener in a `prefers-reduced-motion` check — skip `setScrollY` if user prefers reduced motion.
+- **Framer Motion components** (MobileMenu, ScrollReveal, etc.): Add a global `MotionConfig` wrapper with `reducedMotion="user"` in `App.tsx` so Framer Motion respects the OS setting automatically.
 
-### 5. Nav pill styling (was missing)
-Explicitly specced:
-- `background: rgba(255,255,255,0.08)`
-- `backdrop-filter: blur(12px)`
-- `border-radius: 50px`
-- `padding: 8px 20px`
-- `font-size: 13px`, uppercase, letter-spacing 1.5px
-- Hover: `background: rgba(255,255,255,0.18)`
-- 8px gap between pills
-- Absolutely positioned top-right of the grid
+### 4. Contrast & muted-foreground check
+- `--muted-foreground: 0 0% 75%` on black background = `#BFBFBF` on `#000` = contrast ratio ~13:1 (passes AAA). No change needed.
+- Footer inline `rgba(255,255,255,0.4)` = ~2.5:1 ratio — **fails AA**. Bump to `rgba(255,255,255,0.6)` (~4.8:1, passes AA).
 
-### 6. Scroll progress bar (was underspecified)
-Functional scroll tracker:
-```
-fillWidth = (scrollY / (documentHeight - viewportHeight)) * 100%
-```
-Updates on scroll event. 180px wide, 3px tall, white fill, `transition: width 0.3s linear`.
+### 5. Delete unused `App.css`
+- `src/App.css` contains leftover Vite boilerplate (logo spin, card padding). Remove it and any import reference.
 
----
+### 6. `index.html` cleanup
+- Remove invalid `<link rel="preload" ... as="video" type="video/mp4">` for `.mov` file (browsers don't preload video this way effectively; it may cause a warning). Replace with a simple `<link rel="prefetch">` or remove entirely.
 
-## Files to Create
+## Files to modify
+- `src/index.css` — global focus, reduced-motion, touch targets, line-height
+- `src/App.tsx` — wrap with `MotionConfig reducedMotion="user"`, remove App.css import, ensure `<main>` wrapping
+- `src/components/layout/Navbar.tsx` — add `aria-label`
+- `src/components/layout/Footer.tsx` — add `aria-label`, fix low-contrast text
+- `src/components/home/Hero.tsx` — reduced-motion guard on scroll
+- `index.html` — remove broken video preload
+- `src/App.css` — delete file
 
-### `src/pages/Studio.tsx`
-The full Billy Boman-style single-page layout:
-- Page loader overlay (progress bar, fades out after 0.9s)
-- Unified hero grid: 3 columns x 2 rows, 100vh
-  - Column 1 (spans both rows): Logo ("THE ANOMA COMPANY" in Oswald), scroll progress bar, headline ("AI powered Content Studio" in Instrument Serif italic), description, LET'S TALK + mailto link
-  - Columns 2-3: 4 project cards from your caseStudies data
-- Frosted nav pills (Home, Work, About, Contact) floating top-right
-- Below-fold project grid: 3 columns, first card spans 2 cols, same 6px gap
-- Footer: centered nav links, top border `rgba(255,255,255,0.05)`
-
-### `src/components/studio/ProjectCard.tsx`
-Reusable card component:
-- Full-bleed thumbnail (`object-fit: cover`, `brightness(0.88)`)
-- On hover: image `scale(1.04) + brightness(0.72)`, 0.7s ease
-- Video lazy-load on first hover (set src from data attribute, play, fade to opacity 1)
-- Gradient overlay (always visible, pointer-events none)
-- Info chip: frosted glass (`rgba(60,60,55,0.65)`, `backdrop-filter: blur(16px)`, `border-radius: 8px`), slides up from `translateY(10px)` on hover
-- Mobile: info chip always visible, no video
-
-### `src/components/studio/CustomCursor.tsx`
-Desktop only (hidden on touch):
-- Dot: 6px white circle, `mix-blend-mode: difference`, instant mouse follow
-- Ring: 32px, 1px border `rgba(240,239,232,0.35)`, LERP follow (`rx += (mouseX - rx) * 0.12` per rAF frame)
-- Hover states: nav/links = 50px ring, project cards = 70px ring with brighter border
-
-### `src/components/studio/PageLoader.tsx`
-- Full-screen `#0a0a0a` overlay, z-50
-- 120px progress bar fills 0-100% over 0.8s
-- Fades out after 0.9s
-- Triggers staggered entrance of hero elements via CSS animation-delay
-
-## Files to Modify
-
-### `src/App.tsx`
-- Add route: `<Route path="/studio" element={<Studio />} />`
-
-### `index.html`
-- Add Google Fonts: Instrument Serif, DM Sans, Oswald
-
-### `src/index.css`
-- Add studio-specific CSS variables scoped under a `.studio-page` class (does NOT touch existing variables)
-- Add card hover keyframes, entrance animations, cursor styles
-
-### `tailwind.config.ts`
-- Add font families: `instrument-serif`, `dm-sans`, `oswald`
-
----
-
-## Entrance Animation Sequence (Pure CSS)
-
-All using `@keyframes` + `animation-delay`, no Framer Motion:
-
-1. Loader progress bar fills (0-0.8s), loader fades out (0.9s)
-2. Hero cards stagger in: 0.3s, 0.45s, 0.55s, 0.65s delay — `opacity 0 + scale(0.97)` to visible
-3. Hero text staggers: logo 0.6s, progress bar 0.7s, headline 0.85s, CTA 1.0s — `opacity 0 + translateY(20px)` to visible
-4. Nav pills slide down from `translateY(-10px)` at 0.8s
-5. Below-fold: IntersectionObserver, threshold 0.08, +80ms stagger per card
-
-## Responsive
-
-- **Desktop (1024px+)**: Full 3-column hero grid
-- **Tablet (640-1024px)**: Hero text full-width top, 2x2 cards below, below-fold 2 columns
-- **Mobile (< 640px)**: Single column, 280px cards, info chips always visible, no cursor, no video autoplay
