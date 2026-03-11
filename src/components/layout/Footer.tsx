@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { siteConfig } from "@/data/siteConfig";
 import { useContactOverlay } from "@/contexts/ContactOverlayContext";
+import DottedWorldMapCanvas from "@/components/shared/DottedWorldMapCanvas";
 
 
 const pageLinks = [
@@ -103,8 +104,13 @@ const Footer = () => {
           </div>
         </div>
 
+        {/* Dotted World Map */}
+        <div className="mt-16 md:mt-24">
+          <DottedWorldMapCanvas />
+        </div>
+
         {/* Tagline + Locations */}
-        <div className="mt-16 md:mt-24 text-center">
+        <div className="mt-8 md:mt-10 text-center">
           <p className="text-muted-foreground text-sm md:text-base" style={{ lineHeight: 1.7 }}>
             AI-first creative studio — campaigns, tools, and brand.
           </p>
