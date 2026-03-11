@@ -74,7 +74,7 @@ const Navbar = () => {
         {/* Contact pill — right (desktop) */}
         <button
           onClick={() => setContactOpen(true)}
-          className="hidden md:inline-flex relative overflow-hidden items-center gap-1.5 text-[15px] font-medium px-6 py-2.5 rounded-full text-foreground cursor-pointer transition-all duration-300 group/contact"
+          className="hidden md:inline-flex relative overflow-hidden items-center gap-1.5 text-[16px] font-medium px-7 py-3 rounded-full text-foreground cursor-pointer transition-all duration-300 group/contact"
           style={{
             background: "transparent",
             border: "1px solid hsl(var(--cosmic))",
