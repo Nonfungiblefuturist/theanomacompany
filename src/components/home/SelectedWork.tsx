@@ -70,12 +70,23 @@ const SelectedWork = () => {
             <div className="video-stack-inner relative w-full h-full rounded-[20px] overflow-hidden" style={{ background: "#0a0a0a" }}>
               <video
                 src={p.videoPreviewUrl}
-                autoPlay
+                autoPlay={i === 0}
                 loop
                 muted
                 playsInline
                 className="absolute inset-0 w-full h-full object-cover"
-                preload="metadata"
+                preload={i === 0 ? "metadata" : "none"}
+                ref={(el) => {
+                  if (!el) return;
+                  const observer = new IntersectionObserver(
+                    ([entry]) => {
+                      if (entry.isIntersecting) { el.play().catch(() => {}); }
+                      else { el.pause(); }
+                    },
+                    { threshold: 0.3 }
+                  );
+                  observer.observe(el);
+                }}
               />
               <div
                 className="absolute inset-0"
