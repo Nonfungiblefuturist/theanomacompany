@@ -100,8 +100,14 @@ const ServicesTabbed = () => {
                   loop
                   muted
                   playsInline
+                  preload="none"
                   className="absolute inset-0 w-full h-full object-cover transition-opacity duration-400"
                   style={{ opacity: active === i ? 1 : 0 }}
+                  ref={(el) => {
+                    if (!el) return;
+                    if (active === i) { el.play().catch(() => {}); }
+                    else { el.pause(); }
+                  }}
                 />
               ) : (
                 <img

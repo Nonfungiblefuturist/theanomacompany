@@ -147,7 +147,7 @@ const SelectedWork = () => {
                 muted
                 playsInline
                 className="w-full h-full object-cover"
-                preload="metadata"
+                preload="none"
               />
             ) : (
               <div className="w-full h-full" style={{ background: "rgba(255,255,255,0.08)" }} />

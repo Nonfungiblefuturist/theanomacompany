@@ -103,54 +103,14 @@ const Footer = () => {
           </div>
         </div>
 
-        {/* Dotted world map with pulsing pins */}
-        <div className="relative mt-16 md:mt-24" style={{ aspectRatio: "2.5/1" }}>
-          <img
-            src="/images/dotted-world-map.png"
-            alt=""
-            className="w-full h-full object-contain"
-            style={{ opacity: 0.55 }}
-            aria-hidden="true"
-          />
-          {[
-            { city: "Toronto", left: "24%", top: "32%" },
-            { city: "Dubai", left: "58%", top: "42%" },
-            { city: "Mumbai", left: "65%", top: "48%" },
-          ].map((pin) => (
-            <div key={pin.city} className="absolute" style={{ left: pin.left, top: pin.top, transform: "translate(-50%, -50%)" }}>
-              <div className="relative flex items-center justify-center">
-                <span
-                  className="absolute rounded-full"
-                  style={{
-                    width: 8, height: 8,
-                    background: "#8000FF",
-                    zIndex: 2,
-                  }}
-                />
-                <span
-                  className="absolute rounded-full"
-                  style={{
-                    width: 8, height: 8,
-                    border: "2px solid #8000FF",
-                    animation: "footerPinPulse 2.5s ease-out infinite",
-                    zIndex: 1,
-                  }}
-                />
-              </div>
-              <span
-                className="absolute left-1/2 -translate-x-1/2 whitespace-nowrap text-[11px] text-muted-foreground"
-                style={{ top: 14 }}
-              >
-                {pin.city}
-              </span>
-            </div>
-          ))}
-          <style>{`
-            @keyframes footerPinPulse {
-              0% { transform: scale(1); opacity: 0.8; }
-              100% { transform: scale(5); opacity: 0; }
-            }
-          `}</style>
+        {/* Tagline + Locations */}
+        <div className="mt-16 md:mt-24 text-center">
+          <p className="text-muted-foreground text-sm md:text-base" style={{ lineHeight: 1.7 }}>
+            AI-first creative studio — campaigns, tools, and brand.
+          </p>
+          <p className="text-muted-foreground/50 text-xs md:text-sm mt-3 tracking-wide">
+            Toronto, Ontario, Canada · Mumbai, India · Dubai, UAE · San Francisco, California
+          </p>
         </div>
 
         <div className="mt-8 md:mt-12 pb-8">
