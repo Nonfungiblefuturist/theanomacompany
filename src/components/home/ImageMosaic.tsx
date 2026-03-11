@@ -47,7 +47,7 @@ const ImageMosaic = () => (
             <span className="text-muted-foreground">Create Without</span>
             <span className="inline-flex align-middle mx-3 md:mx-5">
               <img
-                src="https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?w=200&h=130&fit=crop"
+                src="https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?w=200&h=130&fit=crop&fm=webp&q=75"
                 alt="Production"
                 className="w-[80px] h-[55px] md:w-[120px] md:h-[80px] rounded-2xl object-cover"
                 style={{ transform: "rotate(-2deg)" }}

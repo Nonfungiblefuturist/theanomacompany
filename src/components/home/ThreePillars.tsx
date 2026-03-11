@@ -21,7 +21,7 @@ const pillars = [
     num: "03",
     title: "Video Production",
     desc: "From storyboard to final cut.",
-    image: "https://images.unsplash.com/photo-1485846234645-a62644f84728?w=600&h=800&fit=crop",
+    image: "https://images.unsplash.com/photo-1485846234645-a62644f84728?w=600&h=800&fit=crop&fm=webp&q=75",
     filter: "Video Production",
   },
 ];
