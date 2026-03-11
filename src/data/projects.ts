@@ -116,7 +116,7 @@ export const projects: Project[] = [
     category: "Productivity Tool",
     filterTag: "Solutions",
     thumbnailType: "image",
-    thumbnail: "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=800&h=600&fit=crop",
+    thumbnail: "/images/work-schedule.webp",
     summary: "Intelligent scheduling and workflow optimization",
     intro: "Managing overlapping productions, contractor availability, and delivery deadlines across time zones needed a smarter system.",
     metadata: { year: 2026, duration: "4 Weeks", client: "Internal", category: "Productivity Tool" },
