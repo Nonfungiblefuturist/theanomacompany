@@ -20,7 +20,7 @@ const Footer = () => {
   const { setContactOpen } = useContactOverlay();
 
   return (
-    <footer className="section-card mx-[6px]" style={{ borderRadius: "20px 20px 0 0" }}>
+    <footer aria-label="Site footer" className="section-card mx-[6px]" style={{ borderRadius: "20px 20px 0 0" }}>
       <div className="max-w-[1400px] mx-auto px-6 md:px-10 lg:px-16 xl:px-20 pt-16 md:pt-20">
         {/* Top row: 3 columns */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-8">
