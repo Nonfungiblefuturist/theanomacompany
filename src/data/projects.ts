@@ -373,7 +373,7 @@ export const projects: Project[] = [
     client: "Multi-client",
     year: 2025,
     category: "Animation",
-    filterTag: "Video Production",
+    filterTag: "AI Video Production",
     thumbnailType: "video",
     thumbnail: "/videos/animated-25-seconder.mov",
     summary: "Short-form animated commercial spots for social and digital placement",

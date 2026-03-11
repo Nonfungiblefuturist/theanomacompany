@@ -12,7 +12,7 @@ import { projects } from "@/data/projects";
 
 const categories = [
   { label: "All", value: "all" },
-  { label: "Video Production", value: "Video Production" },
+  { label: "AI Video Production", value: "AI Video Production" },
   { label: "Creative Campaigns", value: "Branding" },
   { label: "AI Solutions", value: "Solutions" },
 ];
