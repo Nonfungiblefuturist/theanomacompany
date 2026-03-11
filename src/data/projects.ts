@@ -154,7 +154,7 @@ export const projects: Project[] = [
       body: "The tool handles percentage-based, letter-grade, and point-based systems. It provides equivalency explanations and supports batch processing.",
     },
     gallery: [
-      "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=1200&h=800&fit=crop",
+      "/images/campus-education.webp",
     ],
     externalLink: "https://campus-convert-720109186790.us-west1.run.app/",
   },
