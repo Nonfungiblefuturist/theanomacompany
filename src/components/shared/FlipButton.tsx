@@ -1,5 +1,6 @@
 import { ArrowUpRight } from "lucide-react";
 import { Link } from "react-router-dom";
+import { useContactOverlay } from "@/contexts/ContactOverlayContext";
 
 interface FlipButtonProps {
   text: string;
@@ -10,6 +11,9 @@ interface FlipButtonProps {
 }
 
 const FlipButton = ({ text, href, variant = "outline", external, className = "" }: FlipButtonProps) => {
+  const { setContactOpen } = useContactOverlay();
+  const isContact = href === "/contact";
+
   const baseClass = `
     inline-flex items-center gap-1.5 px-5 py-2.5 rounded-[10px] text-sm font-medium
     cursor-pointer no-underline overflow-hidden transition-all duration-300
@@ -25,18 +29,24 @@ const FlipButton = ({ text, href, variant = "outline", external, className = "" 
 
   const inner = (
     <>
-      {/* Text flip container */}
       <span className="relative overflow-hidden inline-flex flex-col" style={{ height: "1.2em" }}>
         <span className="block transition-transform duration-300 group-hover/flip:-translate-y-full">{text}</span>
         <span className="absolute top-full left-0 block transition-transform duration-300 group-hover/flip:-translate-y-full">{text}</span>
       </span>
-      {/* Arrow flip container */}
       <span className="relative overflow-hidden inline-flex flex-col" style={{ height: 14, width: 14 }}>
         <span className="block transition-transform duration-300 group-hover/flip:-translate-y-full"><ArrowUpRight size={14} /></span>
         <span className="absolute top-full left-0 block transition-transform duration-300 group-hover/flip:-translate-y-full"><ArrowUpRight size={14} /></span>
       </span>
     </>
   );
+
+  if (isContact) {
+    return (
+      <button onClick={() => setContactOpen(true)} className={baseClass}>
+        {inner}
+      </button>
+    );
+  }
 
   if (external) {
     return (
