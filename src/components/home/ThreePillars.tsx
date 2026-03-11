@@ -14,7 +14,7 @@ const pillars = [
     num: "02",
     title: "Branding",
     desc: "Identity systems and creative campaigns.",
-    image: "https://images.unsplash.com/photo-1558655146-9f40138edfeb?w=600&h=800&fit=crop",
+    image: "https://images.unsplash.com/photo-1558655146-9f40138edfeb?w=600&h=800&fit=crop&fm=webp&q=75",
     filter: "Branding",
   },
   {
