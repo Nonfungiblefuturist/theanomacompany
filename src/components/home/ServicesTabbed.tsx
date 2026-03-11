@@ -13,13 +13,13 @@ const services = [
     num: "02",
     title: "Creative Campaigns",
     desc: "Identity systems, campaign visuals, pitch decks, and packaging — crafted with AI-enhanced creative pipelines for speed and precision.",
-    image: "https://images.unsplash.com/photo-1558655146-9f40138edfeb?w=800&h=600&fit=crop",
+    image: "https://images.unsplash.com/photo-1558655146-9f40138edfeb?w=800&h=600&fit=crop&fm=webp&q=75",
   },
   {
     num: "03",
     title: "AI Video Production",
     desc: "Cinematic commercials, music videos, and animated spots — from storyboard to final cut using hybrid AI + live-action workflows.",
-    image: "https://images.unsplash.com/photo-1485846234645-a62644f84728?w=800&h=600&fit=crop",
+    image: "https://images.unsplash.com/photo-1485846234645-a62644f84728?w=800&h=600&fit=crop&fm=webp&q=75",
   },
 ];
 
