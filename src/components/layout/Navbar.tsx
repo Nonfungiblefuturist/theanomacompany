@@ -44,7 +44,7 @@ const Navbar = () => {
         style={{
           top: scrolled ? 12 : 20,
           transition: "all 0.4s ease",
-          height: 56,
+          height: 64,
         }}
       >
         {/* Logo — left */}

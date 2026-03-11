@@ -1,0 +1,28 @@
+# The Anoma Company
+> AI-first cinematic production studio based in Toronto, Canada.
+
+## Services
+- AI Video Production: Cinematic commercials, music videos, animated spots using hybrid AI + live-action workflows.
+- Creative Campaigns: End-to-end campaign production — strategy, visuals, motion, delivery.
+- AI Solutions: Custom AI tools, chatbots, workflow automation for businesses.
+- Branding: Visual identity, brand systems, and creative direction.
+
+## Key Facts
+- Founded in Toronto, Ontario, Canada
+- Operates across Toronto, Dubai, and Mumbai
+- 29+ projects delivered
+- 6 AI tools built
+- 100% client retention
+- AI-first methodology embedded in every stage of production
+
+## Contact
+- Email: admin@theanoma.company
+- Website: https://theanoma.company
+- Instagram: @theanomacompany
+
+## Notable Work
+- CineGrade AI Reporter: https://cinegrade-ai-reporter-720109186790.us-west1.run.app/
+- DirectorGPT: https://directorgpt-720109186790.us-west1.run.app/
+- ResuMatch AI: https://resumatch-ai-720109186790.us-west1.run.app/
+- WorkBack: https://workback-720109186790.us-west1.run.app/
+- Campus Convert: https://campus-convert-720109186790.us-west1.run.app/
