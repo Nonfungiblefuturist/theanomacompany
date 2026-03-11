@@ -91,7 +91,7 @@ export const projects: Project[] = [
     category: "AI Tool",
     filterTag: "Solutions",
     thumbnailType: "image",
-    thumbnail: "https://images.unsplash.com/photo-1586281380349-632531db7ed4?w=800&h=600&fit=crop",
+    thumbnail: "/images/resume-match.webp",
     summary: "AI-powered resume screening and candidate matching",
     intro: "Admissions and HR teams were drowning in applications with no efficient way to surface the best-fit candidates.",
     metadata: { year: 2026, duration: "5 Weeks", client: "Intl Campus Admit", category: "AI Tool" },
