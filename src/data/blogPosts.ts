@@ -37,7 +37,7 @@ export const blogPosts: BlogPost[] = [
     date: "Jan 2025",
     readTime: "5 min read",
     category: "Workflow",
-    thumbnail: "https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?w=800&h=500&fit=crop",
+    thumbnail: "/images/mosaic-production.webp",
     content: "The best productions in 2025 aren't purely AI or purely traditional — they're hybrid...",
   },
   {
