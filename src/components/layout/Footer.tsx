@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { siteConfig } from "@/data/siteConfig";
 import { useContactOverlay } from "@/contexts/ContactOverlayContext";
+import WorldMapSVG from "@/components/shared/WorldMapSVG";
 
 const pageLinks = [
   { label: "Home", to: "/" },
