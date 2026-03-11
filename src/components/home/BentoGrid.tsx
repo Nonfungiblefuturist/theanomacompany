@@ -120,7 +120,7 @@ const BentoGrid = () => (
             }}
           >
             <img
-              src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=800&h=1000&fit=crop"
+              src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=800&h=1000&fit=crop&fm=webp&q=75"
               alt="Seamless Collaboration"
               className="absolute inset-0 w-full h-full object-cover opacity-20"
               loading="lazy"
