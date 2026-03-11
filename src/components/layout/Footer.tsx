@@ -20,7 +20,7 @@ const Footer = () => {
   const { setContactOpen } = useContactOverlay();
 
   return (
-    <footer className="section-card mx-[6px]" style={{ borderRadius: "20px 20px 0 0" }}>
+    <footer aria-label="Site footer" className="section-card mx-[6px]" style={{ borderRadius: "20px 20px 0 0" }}>
       <div className="max-w-[1400px] mx-auto px-6 md:px-10 lg:px-16 xl:px-20 pt-16 md:pt-20">
         {/* Top row: 3 columns */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-8">
@@ -99,8 +99,8 @@ const Footer = () => {
 
         <div className="border-t border-border mt-12 pt-8">
           <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
-            <p className="text-[13px]" style={{ color: "rgba(255,255,255,0.4)" }}>Built by The Anoma Company</p>
-            <p className="text-xs" style={{ color: "rgba(255,255,255,0.4)" }}>© {new Date().getFullYear()} All Rights Reserved</p>
+            <p className="text-[13px]" style={{ color: "rgba(255,255,255,0.6)" }}>Built by The Anoma Company</p>
+            <p className="text-xs" style={{ color: "rgba(255,255,255,0.6)" }}>© {new Date().getFullYear()} All Rights Reserved</p>
           </div>
         </div>
 

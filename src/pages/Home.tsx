@@ -19,6 +19,7 @@ const Home = () => (
   <div className="min-h-screen text-foreground" style={{ background: "#0F0F0F" }}>
     <NebulaEffects />
     <Navbar />
+    <main>
 
     {/* 1 */}  <Hero />
     {/* 2 */}  <div className="mt-[6px]"><AboutPreview /></div>
@@ -34,6 +35,7 @@ const Home = () => (
     {/* 12 */} <div className="mt-[6px]"><HomeFAQ /></div>
     {/* 13 */} <div className="mt-[6px]"><CTABand /></div>
 
+    </main>
     <div className="mt-[6px]"><Footer /></div>
   </div>
 );
