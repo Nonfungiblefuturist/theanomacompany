@@ -17,7 +17,7 @@ export const blogPosts: BlogPost[] = [
     date: "Mar 2025",
     readTime: "6 min read",
     category: "Industry",
-    thumbnail: "https://images.unsplash.com/photo-1485846234645-a62644f84728?w=800&h=500&fit=crop",
+    thumbnail: "/images/filmmaking.webp",
     content: "AI is not replacing filmmakers — it's removing the barriers that kept great ideas from becoming great productions...",
   },
   {
