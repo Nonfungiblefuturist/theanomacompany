@@ -20,8 +20,14 @@
     <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin" />
     <meta http-equiv="Permissions-Policy" content="geolocation=(), microphone=(), camera=()" />
     
-    <!-- Geist from Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Preconnect for faster font loading -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <!-- Geist from Google Fonts — async load -->
+    <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&display=swap" rel="stylesheet" /></noscript>
+    <!-- Preload hero video for fast LCP -->
+    <link rel="preload" href="/videos/hero-bg.mov" as="video" type="video/mp4" />
 
     <!-- Open Graph Tags -->
     <meta property="og:title" content="The Anoma Company — AI-First Cinematic Production Studio" />
