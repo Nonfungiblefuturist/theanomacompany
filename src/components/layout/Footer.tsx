@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { siteConfig } from "@/data/siteConfig";
 import { useContactOverlay } from "@/contexts/ContactOverlayContext";
+import DottedWorldMapCanvas from "@/components/shared/DottedWorldMapCanvas";
 
 
 const pageLinks = [
