@@ -3,7 +3,7 @@ const WorldMapSVG = () => (
     viewBox="0 0 1000 500"
     xmlns="http://www.w3.org/2000/svg"
     className="w-full h-full"
-    style={{ opacity: 0.18 }}
+    style={{ opacity: 0.55 }}
     aria-hidden="true"
   >
     {/* Simplified dotted world map - major landmasses as dot clusters */}
