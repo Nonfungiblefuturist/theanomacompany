@@ -42,9 +42,9 @@ const Navbar = () => {
       <nav
         className="fixed left-0 right-0 z-50 flex items-center justify-between px-6 md:px-10 lg:px-16"
         style={{
-          top: scrolled ? 12 : 20,
+          top: scrolled ? 8 : 24,
           transition: "all 0.4s ease",
-          height: 64,
+          height: "clamp(90px, 16vw, 140px)",
         }}
       >
         {/* Logo — left */}
@@ -52,7 +52,8 @@ const Navbar = () => {
           <img
             src="/images/anoma-logo.png"
             alt="The Anoma Company"
-            className="h-36 md:h-44 w-auto"
+            style={{ height: "clamp(11rem, 20vw, 18rem)" }}
+            className="w-auto"
           />
         </Link>
 
