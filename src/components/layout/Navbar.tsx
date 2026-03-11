@@ -59,7 +59,7 @@ const Navbar = () => {
 
         {/* Glass pill — center (desktop) */}
         <div
-          className="hidden md:flex items-center gap-6 px-6 py-2.5 rounded-full transition-all duration-400"
+          className="hidden md:flex items-center gap-8 px-8 py-3 rounded-full transition-all duration-400"
           style={{
             background: scrolled ? "rgba(0,0,0,0.4)" : "rgba(0,0,0,0.12)",
             backdropFilter: "blur(20px)",
