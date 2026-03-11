@@ -11,7 +11,7 @@ import ServicesTabbed from "@/components/home/ServicesTabbed";
 import ProcessSteps from "@/components/home/ProcessSteps";
 import WorkflowShowcase from "@/components/home/WorkflowShowcase";
 import BentoGrid from "@/components/home/BentoGrid";
-import WorldMap from "@/components/home/WorldMap";
+
 import Testimonials from "@/components/home/Testimonials";
 import HomeFAQ from "@/components/home/HomeFAQ";
 
@@ -29,7 +29,7 @@ const Home = () => (
     {/* 7 */}  <div className="mt-[6px]"><ProcessSteps /></div>
     {/* 8 */}  <div className="mt-[6px]"><WorkflowShowcase /></div>
     {/* 9 */}  <div className="mt-[6px]"><BentoGrid /></div>
-    {/* 10 */} <div className="mt-[6px]"><WorldMap /></div>
+    
     {/* 11 */} <div className="mt-[6px]"><Testimonials /></div>
     {/* 12 */} <div className="mt-[6px]"><HomeFAQ /></div>
     {/* 13 */} <div className="mt-[6px]"><CTABand /></div>
