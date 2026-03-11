@@ -27,7 +27,7 @@ export const blogPosts: BlogPost[] = [
     date: "Feb 2025",
     readTime: "8 min read",
     category: "Process",
-    thumbnail: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=800&h=500&fit=crop",
+    thumbnail: "/images/bento-tech.webp",
     content: "Every project at The Anoma Company follows the same framework — CTRL+AI...",
   },
   {
