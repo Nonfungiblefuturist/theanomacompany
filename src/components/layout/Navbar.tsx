@@ -40,6 +40,7 @@ const Navbar = () => {
   return (
     <>
       <nav
+        aria-label="Main navigation"
         className="fixed left-0 right-0 z-50 flex items-center justify-between px-6 md:px-10 lg:px-16"
         style={{
           top: scrolled ? 8 : 24,

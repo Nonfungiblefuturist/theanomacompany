@@ -75,6 +75,7 @@ const App = () => (
         </BrowserRouter>
       </ContactOverlayProvider>
     </TooltipProvider>
+    </MotionConfig>
   </QueryClientProvider>
 );
 
