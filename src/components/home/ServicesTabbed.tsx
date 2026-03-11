@@ -19,7 +19,7 @@ const services = [
     num: "03",
     title: "AI Video Production",
     desc: "Cinematic commercials, music videos, and animated spots — from storyboard to final cut using hybrid AI + live-action workflows.",
-    image: "https://images.unsplash.com/photo-1485846234645-a62644f84728?w=800&h=600&fit=crop&fm=webp&q=75",
+    image: "/images/filmmaking.webp",
   },
 ];
 

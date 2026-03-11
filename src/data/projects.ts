@@ -187,7 +187,7 @@ export const projects: Project[] = [
       body: "The identity system includes primary and secondary lockups, a custom color palette, and usage guidelines. It launched across all conference materials.",
     },
     gallery: [
-      "https://images.unsplash.com/photo-1558655146-9f40138edfeb?w=1200&h=800&fit=crop",
+      "/images/branding-creative.webp",
     ],
   },
   {

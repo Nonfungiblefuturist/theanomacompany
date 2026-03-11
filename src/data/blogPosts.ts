@@ -47,7 +47,7 @@ export const blogPosts: BlogPost[] = [
     date: "Dec 2024",
     readTime: "7 min read",
     category: "Behind the Scenes",
-    thumbnail: "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=800&h=500&fit=crop",
+    thumbnail: "/images/blog-ai-studio.webp",
     content: "When we started The Anoma Company, the question wasn't whether to use AI — it was how to build everything around it...",
   },
 ];

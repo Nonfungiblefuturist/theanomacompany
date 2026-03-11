@@ -159,7 +159,7 @@ const BentoGrid = () => (
             }}
           >
             <img
-              src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=600&h=400&fit=crop&fm=webp&q=75"
+              src="/images/bento-tech.webp"
               alt="Fast Turnarounds"
               className="absolute inset-0 w-full h-full object-cover opacity-20"
               loading="lazy"
