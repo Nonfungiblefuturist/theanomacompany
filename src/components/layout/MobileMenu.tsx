@@ -4,9 +4,10 @@ import { Link } from "react-router-dom";
 interface MobileMenuProps {
   links: { label: string; to: string }[];
   onClose: () => void;
+  onContactOpen?: () => void;
 }
 
-const MobileMenu = ({ links, onClose }: MobileMenuProps) => (
+const MobileMenu = ({ links, onClose, onContactOpen }: MobileMenuProps) => (
   <motion.div
     initial={{ opacity: 0 }}
     animate={{ opacity: 1 }}
@@ -35,13 +36,12 @@ const MobileMenu = ({ links, onClose }: MobileMenuProps) => (
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay: links.length * 0.1, duration: 0.4 }}
     >
-      <Link
-        to="/contact"
-        onClick={onClose}
-        className="text-lg font-medium px-8 py-3 rounded-[10px] border border-foreground text-foreground hover:bg-foreground hover:text-background transition-colors duration-300 mt-4 inline-block"
+      <button
+        onClick={onContactOpen}
+        className="text-lg font-medium px-8 py-3 rounded-[10px] border border-cosmic text-foreground hover:bg-cosmic hover:text-background transition-colors duration-300 mt-4 inline-block cursor-pointer"
       >
         Contact us
-      </Link>
+      </button>
     </motion.div>
   </motion.div>
 );
