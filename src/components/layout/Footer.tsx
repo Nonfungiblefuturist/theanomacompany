@@ -1,11 +1,11 @@
 import { Link } from "react-router-dom";
 import { siteConfig } from "@/data/siteConfig";
+import { useContactOverlay } from "@/contexts/ContactOverlayContext";
 
 const pageLinks = [
   { label: "Home", to: "/" },
   { label: "Work", to: "/work" },
   { label: "About Us", to: "/studio" },
-  { label: "Contact", to: "/contact" },
 ];
 
 const socialLinks = [
@@ -15,6 +15,8 @@ const socialLinks = [
 ];
 
 const Footer = () => {
+  const { setContactOpen } = useContactOverlay();
+
   return (
     <footer className="section-card mx-[6px]" style={{ borderRadius: "20px 20px 0 0" }}>
       <div className="max-w-[1400px] mx-auto px-6 md:px-10 lg:px-16 xl:px-20 pt-16 md:pt-20">
@@ -42,6 +44,14 @@ const Footer = () => {
                   </Link>
                 </li>
               ))}
+              <li>
+                <button
+                  onClick={() => setContactOpen(true)}
+                  className="text-sm text-muted-foreground hover:text-foreground transition-colors duration-200 cursor-pointer bg-transparent border-none p-0"
+                >
+                  Contact
+                </button>
+              </li>
             </ul>
           </div>
 
