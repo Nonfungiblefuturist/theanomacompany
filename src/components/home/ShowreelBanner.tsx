@@ -37,8 +37,8 @@ const ShowreelBanner = () => {
           className="relative w-full overflow-hidden rounded-[20px] cursor-pointer group"
           style={{
             aspectRatio: isPlaying ? "16 / 9" : undefined,
-            height: isPlaying ? "auto" : "clamp(300px, 50vh, 600px)",
-            maxHeight: isPlaying ? "85vh" : undefined,
+            height: isPlaying ? "auto" : "clamp(450px, 65vh, 750px)",
+            maxHeight: isPlaying ? "90vh" : undefined,
             transition: "all 0.6s ease",
           }}
           onClick={handlePlayShowreel}
