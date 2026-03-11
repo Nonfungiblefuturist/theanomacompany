@@ -9,7 +9,7 @@ import { projects } from "@/data/projects";
 
 const curatedSlugs = [
   "music-video-1",
-  "ai-chatbot",
+  "comedy-mockumentary-teaser",
   "vaseline-campaign",
   "animated-25-seconder",
 ];
