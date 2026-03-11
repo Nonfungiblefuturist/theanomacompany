@@ -134,12 +134,37 @@ const DottedWorldMapCanvas = () => {
       ctx.arc(cx, cy, 3, 0, Math.PI * 2);
       ctx.fill();
 
-      // Label
-      ctx.fillStyle = "rgba(255,255,255,0.7)";
-      ctx.font = `${w < 600 ? 9 : 11}px system-ui, -apple-system, sans-serif`;
-      ctx.textAlign = "center";
+      // Label with background for legibility
       const label = `${city.name}, ${city.country}`;
-      ctx.fillText(label, cx, cy - 12);
+      const fontSize = w < 600 ? 10 : 12;
+      ctx.font = `600 ${fontSize}px system-ui, -apple-system, sans-serif`;
+      ctx.textAlign = "center";
+      const textWidth = ctx.measureText(label).width;
+      const padX = 6;
+      const padY = 3;
+      const labelY = cy - 16;
+
+      // Draw dark pill background
+      const rx = cx - textWidth / 2 - padX;
+      const ry = labelY - fontSize + 1 - padY;
+      const rw = textWidth + padX * 2;
+      const rh = fontSize + padY * 2;
+      const radius = rh / 2;
+      ctx.fillStyle = "rgba(0,0,0,0.7)";
+      ctx.beginPath();
+      ctx.moveTo(rx + radius, ry);
+      ctx.lineTo(rx + rw - radius, ry);
+      ctx.arcTo(rx + rw, ry, rx + rw, ry + radius, radius);
+      ctx.arcTo(rx + rw, ry + rh, rx + rw - radius, ry + rh, radius);
+      ctx.lineTo(rx + radius, ry + rh);
+      ctx.arcTo(rx, ry + rh, rx, ry + rh - radius, radius);
+      ctx.arcTo(rx, ry, rx + radius, ry, radius);
+      ctx.closePath();
+      ctx.fill();
+
+      // Draw text
+      ctx.fillStyle = "rgba(255,255,255,0.95)";
+      ctx.fillText(label, cx, labelY);
     }
   }, []);
 
