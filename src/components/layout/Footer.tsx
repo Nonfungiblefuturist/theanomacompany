@@ -109,15 +109,7 @@ const Footer = () => {
           <DottedWorldMapCanvas />
         </div>
 
-        {/* Tagline + Locations */}
-        <div className="mt-8 md:mt-10 text-center">
-          <p className="text-muted-foreground text-sm md:text-base" style={{ lineHeight: 1.7 }}>
-            AI-first creative studio — campaigns, tools, and brand.
-          </p>
-          <p className="text-muted-foreground/50 text-xs md:text-sm mt-3 tracking-wide">
-            Toronto, Ontario, Canada · Mumbai, India · Dubai, UAE · San Francisco, California
-          </p>
-        </div>
+        {/* Tagline + Locations removed */}
 
         <div className="mt-8 md:mt-12 pb-8">
           <h2

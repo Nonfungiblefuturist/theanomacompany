@@ -5,9 +5,15 @@ import FlipButton from "@/components/shared/FlipButton";
 import VideoLightbox from "@/components/shared/VideoLightbox";
 import { projects } from "@/data/projects";
 
-const videoProjects = projects.filter(
-  (p) => p.filterTag === "AI Video Production" && p.videoPreviewUrl
-);
+const selectedWorkOrder = [
+  "music-video-1",
+  "music-video-2",
+  "animated-25-seconder",
+] as const;
+
+const videoProjects = selectedWorkOrder
+  .map((slug) => projects.find((project) => project.slug === slug))
+  .filter((project): project is NonNullable<typeof project> => Boolean(project?.videoPreviewUrl));
 
 const SelectedWork = () => {
   const [lightbox, setLightbox] = useState<{ open: boolean; url: string }>({ open: false, url: "" });
