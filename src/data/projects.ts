@@ -388,7 +388,7 @@ export const projects: Project[] = [
       body: "Each spot uses bold motion design, kinetic typography, and AI-assisted asset generation. Text overlays ensure the message lands with or without audio.",
     },
     gallery: [
-      "https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?w=1200&h=800&fit=crop",
+      "/images/animated-gallery.webp",
     ],
     videoPreviewUrl: "/videos/animated-25-seconder.mov",
     videoFullUrl: "/videos/animated-25-seconder.mov",
