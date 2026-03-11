@@ -74,13 +74,13 @@ const ContactOverlay = () => {
                   <div className="h-px" style={{ background: "rgba(255,255,255,0.08)" }} />
                   <p className="text-sm" style={{ color: "rgba(255,255,255,0.4)" }}>Toronto, Ontario, Canada</p>
                   <div className="h-px" style={{ background: "rgba(255,255,255,0.08)" }} />
-                  <div className="flex gap-4">
+                  <div className="flex gap-4 relative z-10">
                     {siteConfig.socials.twitter && (
-                      <a href={siteConfig.socials.twitter} target="_blank" rel="noopener noreferrer" className="text-[13px] no-underline transition-colors duration-300 hover:text-foreground" style={{ color: "rgba(255,255,255,0.5)" }}>Twitter/X</a>
+                      <a href={siteConfig.socials.twitter} target="_blank" rel="noopener noreferrer" className="text-[13px] no-underline transition-colors duration-300 hover:text-foreground cursor-pointer" style={{ color: "rgba(255,255,255,0.5)" }}>Twitter/X</a>
                     )}
-                    <a href={siteConfig.socials.instagram} target="_blank" rel="noopener noreferrer" className="text-[13px] no-underline transition-colors duration-300 hover:text-foreground" style={{ color: "rgba(255,255,255,0.5)" }}>Instagram</a>
-                    <a href={siteConfig.socials.youtube} target="_blank" rel="noopener noreferrer" className="text-[13px] no-underline transition-colors duration-300 hover:text-foreground" style={{ color: "rgba(255,255,255,0.5)" }}>YouTube</a>
-                    <a href={siteConfig.socials.linkedin} target="_blank" rel="noopener noreferrer" className="text-[13px] no-underline transition-colors duration-300 hover:text-foreground" style={{ color: "rgba(255,255,255,0.5)" }}>LinkedIn</a>
+                    <a href={siteConfig.socials.instagram} target="_blank" rel="noopener noreferrer" className="text-[13px] no-underline transition-colors duration-300 hover:text-foreground cursor-pointer" style={{ color: "rgba(255,255,255,0.5)" }}>Instagram</a>
+                    <a href={siteConfig.socials.youtube} target="_blank" rel="noopener noreferrer" className="text-[13px] no-underline transition-colors duration-300 hover:text-foreground cursor-pointer" style={{ color: "rgba(255,255,255,0.5)" }}>YouTube</a>
+                    <a href={siteConfig.socials.linkedin} target="_blank" rel="noopener noreferrer" className="text-[13px] no-underline transition-colors duration-300 hover:text-foreground cursor-pointer" style={{ color: "rgba(255,255,255,0.5)" }}>LinkedIn</a>
                   </div>
                 </div>
               </div>
