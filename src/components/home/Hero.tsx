@@ -23,7 +23,6 @@ const Hero = () => {
           muted
           playsInline
           preload="metadata"
-          fetchPriority="high"
           className="absolute inset-0 w-full h-full object-cover"
         />
         {/* Light scrim for text readability */}
