@@ -52,6 +52,7 @@ const ImageMosaic = () => (
                 className="w-[80px] h-[55px] md:w-[120px] md:h-[80px] rounded-2xl object-cover"
                 style={{ transform: "rotate(-2deg)" }}
                 loading="lazy"
+                decoding="async"
               />
             </span>
             <span className="text-foreground">Limits</span>

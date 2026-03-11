@@ -40,6 +40,7 @@ const ProjectDetail = () => {
                 src={project.gallery[0] || project.thumbnail}
                 alt={project.title}
                 className="w-full h-full object-cover"
+                loading="lazy"
               />
             </div>
           </ScrollReveal>
