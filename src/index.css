@@ -112,14 +112,9 @@ All colors MUST be HSL.
     outline-offset: 2px;
   }
 
-  /* Minimum touch targets for interactive elements */
-  button, a, input, select, textarea {
+  /* Minimum touch targets – only for standalone interactive elements, not inline nav links */
+  input, select, textarea {
     min-height: 44px;
-  }
-
-  /* Inline links inside prose don't need 44px height */
-  p a, li a, span a {
-    min-height: unset;
   }
 
   .section-card {

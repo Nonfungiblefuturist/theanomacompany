@@ -96,7 +96,7 @@ const VideoCard = ({
   );
 };
 
-/* ── Side thumbnail nav ── */
+/* ── Side dot nav (no thumbnails) ── */
 const SideNav = ({
   visible,
   activeIndex,
@@ -105,39 +105,32 @@ const SideNav = ({
   activeIndex: number;
 }) => (
   <div
-    className="hidden md:flex fixed right-6 top-1/2 -translate-y-1/2 flex-col gap-2 z-[90] transition-opacity duration-400"
+    className="hidden md:flex fixed right-6 top-1/2 -translate-y-1/2 flex-col gap-3 z-[90] transition-opacity duration-400"
     style={{
       opacity: visible ? 1 : 0,
       pointerEvents: visible ? "auto" : "none",
     }}
   >
     {videoProjects.map((p, i) => (
-      <button
+      <div
         key={p.slug}
-        className="relative group w-16 h-10 rounded-md overflow-hidden cursor-pointer transition-all duration-300 border-2 p-0 bg-transparent"
-        style={{
-          opacity: i === activeIndex ? 1 : 0.4,
-          borderColor: i === activeIndex ? "hsl(var(--cosmic))" : "transparent",
-        }}
+        className="flex items-center gap-2 justify-end"
       >
-        {p.videoPreviewUrl ? (
-          <video
-            src={p.videoPreviewUrl}
-            muted
-            playsInline
-            className="w-full h-full object-cover"
-            preload="none"
-          />
-        ) : (
-          <div className="w-full h-full bg-muted/10" />
-        )}
         <span
-          className="absolute right-[calc(100%+10px)] top-1/2 -translate-y-1/2 whitespace-nowrap text-[11px] font-medium transition-opacity duration-300 pointer-events-none text-muted-foreground"
+          className="whitespace-nowrap text-[11px] font-medium transition-opacity duration-300 pointer-events-none text-muted-foreground"
           style={{ opacity: i === activeIndex ? 1 : 0 }}
         >
           {p.title}
         </span>
-      </button>
+        <span
+          className="block rounded-full transition-all duration-300 shrink-0"
+          style={{
+            width: i === activeIndex ? 10 : 6,
+            height: i === activeIndex ? 10 : 6,
+            background: i === activeIndex ? "hsl(var(--cosmic))" : "hsl(var(--muted-foreground) / 0.4)",
+          }}
+        />
+      </div>
     ))}
   </div>
 );
