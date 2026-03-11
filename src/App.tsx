@@ -48,6 +48,7 @@ const LenisProvider = ({ children }: { children: React.ReactNode }) => {
 
 const App = () => (
   <QueryClientProvider client={queryClient}>
+    <MotionConfig reducedMotion="user">
     <TooltipProvider>
       <ContactOverlayProvider>
         <Toaster />
