@@ -104,7 +104,7 @@ export const projects: Project[] = [
       body: "The system parses resumes, extracts structured data, and ranks candidates on configurable criteria. Review time dropped by over 80%.",
     },
     gallery: [
-      "https://images.unsplash.com/photo-1586281380349-632531db7ed4?w=1200&h=800&fit=crop",
+      "/images/resume-match.webp",
     ],
     externalLink: "https://resumatch-ai-720109186790.us-west1.run.app/",
   },
