@@ -27,11 +27,6 @@ const Footer = () => {
               The Anoma Company
             </span>
             <p className="mt-3 text-muted-foreground text-sm">{siteConfig.description}</p>
-            <div className="mt-4 space-y-1">
-              <p className="text-sm text-muted-foreground">Toronto, Canada</p>
-              <p className="text-sm text-muted-foreground">Mumbai, India</p>
-              <p className="text-sm text-muted-foreground">Dubai, UAE</p>
-            </div>
           </div>
 
           <div>
