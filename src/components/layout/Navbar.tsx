@@ -80,7 +80,7 @@ const Navbar = () => {
         {/* Contact pill — right (desktop) */}
         <button
           onClick={() => setContactOpen(true)}
-          className="hidden md:inline-flex relative overflow-hidden items-center gap-1.5 font-medium px-8 py-3.5 rounded-full text-foreground cursor-pointer transition-all duration-300 group/contact"
+          className="hidden md:inline-flex relative overflow-hidden items-center gap-1.5 font-medium px-8 py-3 rounded-full text-foreground cursor-pointer transition-all duration-300 group/contact"
           style={{
             fontSize: "clamp(16px, 1.4vw, 20px)",
             background: "transparent",
