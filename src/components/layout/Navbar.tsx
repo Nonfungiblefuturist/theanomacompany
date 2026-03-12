@@ -53,7 +53,11 @@ const Navbar = () => {
           <img
             src="/images/anoma-logo.png"
             alt="The Anoma Company"
-            style={{ height: "clamp(11rem, 20vw, 18rem)" }}
+            style={{
+              height: scrolled ? "clamp(4rem, 6vw, 5.5rem)" : "clamp(7rem, 12vw, 10rem)",
+              transition: "height 0.4s ease, opacity 0.4s ease",
+              opacity: scrolled ? 0.5 : 1,
+            }}
             className="w-auto"
           />
         </Link>
