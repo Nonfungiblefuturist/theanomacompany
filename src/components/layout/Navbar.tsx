@@ -45,7 +45,7 @@ const Navbar = () => {
         style={{
           top: scrolled ? 8 : 24,
           transition: "all 0.4s ease",
-          height: "clamp(90px, 16vw, 140px)",
+          height: scrolled ? "clamp(70px, 10vw, 90px)" : "clamp(120px, 18vw, 160px)",
         }}
       >
         {/* Logo — left */}
@@ -53,7 +53,11 @@ const Navbar = () => {
           <img
             src="/images/anoma-logo.png"
             alt="The Anoma Company"
-            style={{ height: "clamp(11rem, 20vw, 18rem)" }}
+            style={{
+              height: scrolled ? "clamp(4rem, 6vw, 5.5rem)" : "clamp(7rem, 12vw, 10rem)",
+              transition: "height 0.4s ease, opacity 0.4s ease",
+              opacity: scrolled ? 0.5 : 1,
+            }}
             className="w-auto"
           />
         </Link>
@@ -76,7 +80,7 @@ const Navbar = () => {
         {/* Contact pill — right (desktop) */}
         <button
           onClick={() => setContactOpen(true)}
-          className="hidden md:inline-flex relative overflow-hidden items-center gap-1.5 font-medium px-8 py-3.5 rounded-full text-foreground cursor-pointer transition-all duration-300 group/contact"
+          className="hidden md:inline-flex relative overflow-hidden items-center gap-1.5 font-medium px-8 py-3 rounded-full text-foreground cursor-pointer transition-all duration-300 group/contact"
           style={{
             fontSize: "clamp(16px, 1.4vw, 20px)",
             background: "transparent",
