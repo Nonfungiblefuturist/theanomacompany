@@ -21,7 +21,7 @@ export const team: TeamMember[] = [
   },
   {
     name: "Sreejeeta",
-    role: "Co-Founder, Head of Business Operations",
+    role: "Co-Founder, Head of Strategy and Creative Development",
     image: "/images/sreejeeta.jpg",
     linkedin: "https://www.linkedin.com/in/sreejeeta-ghosh/",
   },
