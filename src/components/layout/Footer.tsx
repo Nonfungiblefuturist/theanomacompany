@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { useRef, useEffect, useState } from "react";
 import { siteConfig } from "@/data/siteConfig";
 import { useContactOverlay } from "@/contexts/ContactOverlayContext";
 import DottedWorldMapCanvas from "@/components/shared/DottedWorldMapCanvas";
@@ -18,6 +19,26 @@ const socialLinks = [
 
 const Footer = () => {
   const { setContactOpen } = useContactOverlay();
+  const brandRef = useRef<HTMLHeadingElement>(null);
+  const [scrollProgress, setScrollProgress] = useState(0);
+
+  useEffect(() => {
+    const el = brandRef.current;
+    if (!el) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setScrollProgress(entry.isIntersecting ? entry.intersectionRatio : 0);
+      },
+      { threshold: Array.from({ length: 20 }, (_, i) => i / 19) }
+    );
+
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
+
+  const brandScale = 1 - scrollProgress * 0.3;
+  const brandOpacity = 1 - scrollProgress * 0.7;
 
   return (
     <footer aria-label="Site footer" className="section-card mx-[6px]" style={{ borderRadius: "20px 20px 0 0" }}>
