@@ -35,7 +35,7 @@ const AboutPreview = () => (
       </div>
 
       {/* Stats + Image inner container */}
-      <div className="mt-16 rounded-[20px] bg-card p-4 md:p-6">
+      <div className="mt-16 rounded-[20px] bg-card p-4 md:p-6 min-h-[500px]">
         <div className="grid grid-cols-1 lg:grid-cols-[30%_1fr] gap-8 lg:gap-6">
           {/* Left: Vertical stats */}
           <div className="p-4 md:p-6">
