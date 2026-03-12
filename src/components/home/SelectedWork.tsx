@@ -43,7 +43,7 @@ const VideoCard = ({
   return (
     <div
       className="video-stack-card sticky top-0"
-      style={{ height: "40vh", marginBottom: "20vh", zIndex: index + 1 }}
+      style={{ height: "40vh", marginBottom: "10vh", zIndex: index + 1 }}
     >
       <div
         className="video-stack-inner relative w-full h-full rounded-[20px] overflow-hidden"
