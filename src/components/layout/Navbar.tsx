@@ -54,9 +54,9 @@ const Navbar = () => {
             src="/images/anoma-logo.png"
             alt="The Anoma Company"
             style={{
-              height: scrolled ? "clamp(4rem, 6vw, 5.5rem)" : "clamp(7rem, 12vw, 10rem)",
+              height: scrolled ? "clamp(5rem, 8vw, 7rem)" : "clamp(7rem, 12vw, 10rem)",
               transition: "height 0.4s ease, opacity 0.4s ease",
-              opacity: scrolled ? 0.5 : 1,
+              opacity: scrolled ? 0.75 : 1,
             }}
             className="w-auto"
           />
