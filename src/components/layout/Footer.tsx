@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { useRef, useEffect, useState } from "react";
 import { siteConfig } from "@/data/siteConfig";
 import { useContactOverlay } from "@/contexts/ContactOverlayContext";
 import DottedWorldMapCanvas from "@/components/shared/DottedWorldMapCanvas";
@@ -18,6 +19,26 @@ const socialLinks = [
 
 const Footer = () => {
   const { setContactOpen } = useContactOverlay();
+  const brandRef = useRef<HTMLHeadingElement>(null);
+  const [scrollProgress, setScrollProgress] = useState(0);
+
+  useEffect(() => {
+    const el = brandRef.current;
+    if (!el) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setScrollProgress(entry.isIntersecting ? entry.intersectionRatio : 0);
+      },
+      { threshold: Array.from({ length: 20 }, (_, i) => i / 19) }
+    );
+
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
+
+  const brandScale = 1 - scrollProgress * 0.3;
+  const brandOpacity = 1 - scrollProgress * 0.7;
 
   return (
     <footer aria-label="Site footer" className="section-card mx-[6px]" style={{ borderRadius: "20px 20px 0 0" }}>
@@ -113,13 +134,17 @@ const Footer = () => {
 
         <div className="mt-8 md:mt-12 pb-8">
           <h2
-            className="font-bold text-foreground uppercase tracking-tight select-none text-center"
+            ref={brandRef}
+            className="font-bold text-foreground uppercase tracking-tight select-none text-center will-change-transform"
             style={{
               fontSize: "clamp(2.5rem, 10vw, 9rem)",
               lineHeight: 0.9,
               letterSpacing: "-0.05em",
               whiteSpace: "nowrap",
               padding: "0 6px",
+              transform: `scale(${brandScale})`,
+              opacity: brandOpacity,
+              transition: "transform 0.1s linear, opacity 0.1s linear",
             }}
           >
             THE ANOMA COMPANY
