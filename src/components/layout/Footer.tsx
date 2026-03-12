@@ -113,13 +113,17 @@ const Footer = () => {
 
         <div className="mt-8 md:mt-12 pb-8">
           <h2
-            className="font-bold text-foreground uppercase tracking-tight select-none text-center"
+            ref={brandRef}
+            className="font-bold text-foreground uppercase tracking-tight select-none text-center will-change-transform"
             style={{
               fontSize: "clamp(2.5rem, 10vw, 9rem)",
               lineHeight: 0.9,
               letterSpacing: "-0.05em",
               whiteSpace: "nowrap",
               padding: "0 6px",
+              transform: `scale(${brandScale})`,
+              opacity: brandOpacity,
+              transition: "transform 0.1s linear, opacity 0.1s linear",
             }}
           >
             THE ANOMA COMPANY
