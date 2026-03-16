@@ -171,9 +171,19 @@ const DottedWorldMapCanvas = () => {
   }, []);
 
   useEffect(() => {
-    draw();
-    window.addEventListener("resize", draw);
-    return () => window.removeEventListener("resize", draw);
+    const wrap = wrapRef.current;
+    if (!wrap) return;
+
+    const ro = new ResizeObserver((entries) => {
+      const entry = entries[0];
+      if (!entry) return;
+      const { width, height } = entry.contentRect;
+      sizeRef.current = { w: width, h: height };
+      requestAnimationFrame(draw);
+    });
+
+    ro.observe(wrap);
+    return () => ro.disconnect();
   }, [draw]);
 
   return (
