@@ -5,7 +5,7 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import { MotionConfig } from "framer-motion";
-import Lenis from "lenis";
+import { ContactOverlayProvider } from "./contexts/ContactOverlayContext";
 
 const Index = lazy(() => import("./pages/Index"));
 const Work = lazy(() => import("./pages/Work"));
@@ -17,9 +17,8 @@ const Contact = lazy(() => import("./pages/Contact"));
 const PrivacyPolicy = lazy(() => import("./pages/PrivacyPolicy"));
 const Terms = lazy(() => import("./pages/Terms"));
 const NotFound = lazy(() => import("./pages/NotFound"));
-import BackToSPictures from "./components/BackToSPictures";
-import ContactOverlay from "./components/layout/ContactOverlay";
-import { ContactOverlayProvider } from "./contexts/ContactOverlayContext";
+const BackToSPictures = lazy(() => import("./components/BackToSPictures"));
+const ContactOverlay = lazy(() => import("./components/layout/ContactOverlay"));
 
 const queryClient = new QueryClient();
 
@@ -32,51 +31,72 @@ const ScrollToTop = () => {
   return null;
 };
 
-// Lenis smooth scroll
+// Lenis smooth scroll (deferred)
 const LenisProvider = ({ children }: { children: React.ReactNode }) => {
   useEffect(() => {
-    const lenis = new Lenis({ duration: 1.6, lerp: 0.08, smoothWheel: true });
-    const raf = (time: number) => {
-      lenis.raf(time);
-      requestAnimationFrame(raf);
+    let rafId = 0;
+    let disposed = false;
+    let lenisInstance: { raf: (time: number) => void; destroy: () => void } | null = null;
+
+    const start = async () => {
+      const { default: Lenis } = await import("lenis");
+      if (disposed) return;
+
+      lenisInstance = new Lenis({ duration: 1.6, lerp: 0.08, smoothWheel: true });
+
+      const raf = (time: number) => {
+        lenisInstance?.raf(time);
+        rafId = requestAnimationFrame(raf);
+      };
+
+      rafId = requestAnimationFrame(raf);
     };
-    requestAnimationFrame(raf);
-    return () => lenis.destroy();
+
+    void start();
+
+    return () => {
+      disposed = true;
+      if (rafId) cancelAnimationFrame(rafId);
+      lenisInstance?.destroy();
+    };
   }, []);
+
   return <>{children}</>;
 };
 
 const App = () => (
   <QueryClientProvider client={queryClient}>
     <MotionConfig reducedMotion="user">
-    <TooltipProvider>
-      <ContactOverlayProvider>
-        <Toaster />
-        <Sonner />
-        <BrowserRouter>
-          <LenisProvider>
-            <ScrollToTop />
-            <Suspense fallback={null}>
-              <Routes>
-                <Route path="/" element={<Index />} />
-                <Route path="/work" element={<Work />} />
-                <Route path="/work/:slug" element={<ProjectDetail />} />
-                <Route path="/studio" element={<Studio />} />
-                <Route path="/blog" element={<Blog />} />
-                <Route path="/blog/:slug" element={<BlogArticle />} />
-                <Route path="/contact" element={<Contact />} />
-                <Route path="/privacy-policy" element={<PrivacyPolicy />} />
-                <Route path="/terms" element={<Terms />} />
-                {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-                <Route path="*" element={<NotFound />} />
-              </Routes>
-            </Suspense>
-            <BackToSPictures />
-            <ContactOverlay />
-          </LenisProvider>
-        </BrowserRouter>
-      </ContactOverlayProvider>
-    </TooltipProvider>
+      <TooltipProvider>
+        <ContactOverlayProvider>
+          <Toaster />
+          <Sonner />
+          <BrowserRouter>
+            <LenisProvider>
+              <ScrollToTop />
+              <Suspense fallback={null}>
+                <Routes>
+                  <Route path="/" element={<Index />} />
+                  <Route path="/work" element={<Work />} />
+                  <Route path="/work/:slug" element={<ProjectDetail />} />
+                  <Route path="/studio" element={<Studio />} />
+                  <Route path="/blog" element={<Blog />} />
+                  <Route path="/blog/:slug" element={<BlogArticle />} />
+                  <Route path="/contact" element={<Contact />} />
+                  <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+                  <Route path="/terms" element={<Terms />} />
+                  {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+                  <Route path="*" element={<NotFound />} />
+                </Routes>
+              </Suspense>
+              <Suspense fallback={null}>
+                <BackToSPictures />
+                <ContactOverlay />
+              </Suspense>
+            </LenisProvider>
+          </BrowserRouter>
+        </ContactOverlayProvider>
+      </TooltipProvider>
     </MotionConfig>
   </QueryClientProvider>
 );
