@@ -53,6 +53,8 @@ const Navbar = () => {
           <img
             src="/images/anoma-logo.png"
             alt="The Anoma Company"
+            width={124}
+            height={160}
             style={{
               height: scrolled ? "clamp(5rem, 8vw, 7rem)" : "clamp(7rem, 12vw, 10rem)",
               transition: "height 0.4s ease, opacity 0.4s ease",

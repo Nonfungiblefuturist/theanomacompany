@@ -75,8 +75,11 @@ const AboutPreview = () => (
               <img
                 src="/images/studio-hero.jpg"
                 alt="The Anoma Company studio"
+                width={917}
+                height={559}
                 className="w-full h-full object-cover"
                 loading="lazy"
+                decoding="async"
               />
             </div>
           </ScrollReveal>
