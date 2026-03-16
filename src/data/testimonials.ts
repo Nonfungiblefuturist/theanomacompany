@@ -23,7 +23,7 @@ export const testimonials: Testimonial[] = [
   },
   {
     quote: "Their custom AI workflow integration transformed our entire content pipeline. We're now pushing out 3x more social content with the same team.",
-    author: "Chad K.",
+    author: "Philip L.",
     role: "Head of Creative",
     project: "Workflow Automation",
     savings: "3x content output increase",
