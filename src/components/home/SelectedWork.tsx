@@ -180,19 +180,32 @@ const SelectedWork = () => {
   const stackRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const handleScroll = () => {
-      const stack = stackRef.current;
-      if (!stack) return;
-      const cards = stack.querySelectorAll<HTMLDivElement>(".video-stack-card");
-      let current = 0;
-      cards.forEach((card, i) => {
-        const rect = card.getBoundingClientRect();
-        if (rect.top <= 10) current = i;
-      });
-      setActiveIndex(current);
-    };
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    return () => window.removeEventListener("scroll", handleScroll);
+    const stack = stackRef.current;
+    if (!stack) return;
+    const cards = stack.querySelectorAll<HTMLDivElement>(".video-stack-card");
+    if (!cards.length) return;
+
+    const observers: IntersectionObserver[] = [];
+    const visibleSet = new Set<number>();
+
+    cards.forEach((card, i) => {
+      const observer = new IntersectionObserver(
+        ([entry]) => {
+          if (entry.isIntersecting) {
+            visibleSet.add(i);
+          } else {
+            visibleSet.delete(i);
+          }
+          const maxVisible = visibleSet.size > 0 ? Math.max(...visibleSet) : 0;
+          setActiveIndex(maxVisible);
+        },
+        { threshold: 0.5 }
+      );
+      observer.observe(card);
+      observers.push(observer);
+    });
+
+    return () => observers.forEach((o) => o.disconnect());
   }, []);
 
   useEffect(() => {
