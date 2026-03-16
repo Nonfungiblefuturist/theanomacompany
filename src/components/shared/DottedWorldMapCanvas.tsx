@@ -73,13 +73,15 @@ const DottedWorldMapCanvas = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const wrapRef = useRef<HTMLDivElement>(null);
 
+  const sizeRef = useRef({ w: 0, h: 0 });
+
   const draw = useCallback(() => {
     const canvas = canvasRef.current;
-    const wrap = wrapRef.current;
-    if (!canvas || !wrap) return;
+    if (!canvas) return;
 
-    const w = wrap.clientWidth;
-    const h = wrap.clientHeight;
+    const w = sizeRef.current.w;
+    const h = sizeRef.current.h;
+    if (w === 0 || h === 0) return;
     const dpr = window.devicePixelRatio || 1;
     canvas.width = w * dpr;
     canvas.height = h * dpr;
