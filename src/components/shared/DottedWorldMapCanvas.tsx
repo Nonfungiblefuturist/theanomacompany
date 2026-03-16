@@ -73,13 +73,15 @@ const DottedWorldMapCanvas = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const wrapRef = useRef<HTMLDivElement>(null);
 
+  const sizeRef = useRef({ w: 0, h: 0 });
+
   const draw = useCallback(() => {
     const canvas = canvasRef.current;
-    const wrap = wrapRef.current;
-    if (!canvas || !wrap) return;
+    if (!canvas) return;
 
-    const w = wrap.clientWidth;
-    const h = wrap.clientHeight;
+    const w = sizeRef.current.w;
+    const h = sizeRef.current.h;
+    if (w === 0 || h === 0) return;
     const dpr = window.devicePixelRatio || 1;
     canvas.width = w * dpr;
     canvas.height = h * dpr;
@@ -169,9 +171,19 @@ const DottedWorldMapCanvas = () => {
   }, []);
 
   useEffect(() => {
-    draw();
-    window.addEventListener("resize", draw);
-    return () => window.removeEventListener("resize", draw);
+    const wrap = wrapRef.current;
+    if (!wrap) return;
+
+    const ro = new ResizeObserver((entries) => {
+      const entry = entries[0];
+      if (!entry) return;
+      const { width, height } = entry.contentRect;
+      sizeRef.current = { w: width, h: height };
+      requestAnimationFrame(draw);
+    });
+
+    ro.observe(wrap);
+    return () => ro.disconnect();
   }, [draw]);
 
   return (
