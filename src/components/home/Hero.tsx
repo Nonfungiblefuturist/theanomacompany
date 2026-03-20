@@ -45,7 +45,8 @@ const Hero = () => {
               letterSpacing: "-0.05em",
             }}
           >
-            THE ANOMA<br />COMPANY
+            <span aria-hidden="true">THE ANOMA<br />COMPANY</span>
+            <span className="sr-only">AI-First Cinematic Production Studio in Toronto</span>
           </h1>
 
           {/* Right: tagline + description */}
