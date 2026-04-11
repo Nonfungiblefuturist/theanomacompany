@@ -1,16 +1,61 @@
+import { useState } from "react";
 import { useContactOverlay } from "@/contexts/ContactOverlayContext";
 import { siteConfig } from "@/data/siteConfig";
+import { supabase } from "@/integrations/supabase/client";
 import { AnimatePresence, motion } from "framer-motion";
+import { z } from "zod";
+import { useToast } from "@/hooks/use-toast";
+
+const contactSchema = z.object({
+  name: z.string().trim().min(1, "Name is required").max(100),
+  email: z.string().trim().email("Invalid email address").max(255),
+  service: z.string().max(100).optional(),
+  budget: z.string().max(100).optional(),
+  message: z.string().trim().min(1, "Message is required").max(5000),
+});
 
 const ContactOverlay = () => {
   const { contactOpen, setContactOpen } = useContactOverlay();
+  const [submitting, setSubmitting] = useState(false);
+  const { toast } = useToast();
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const fd = new FormData(e.currentTarget);
-    const subject = `New inquiry from ${fd.get("name")}`;
-    const body = `Name: ${fd.get("name")}\nEmail: ${fd.get("email")}\nService: ${fd.get("service")}\nBudget: ${fd.get("budget")}\nMessage: ${fd.get("message")}`;
-    window.location.href = `mailto:hello@theanoma.company?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+
+    const parsed = contactSchema.safeParse({
+      name: fd.get("name"),
+      email: fd.get("email"),
+      service: fd.get("service") || undefined,
+      budget: fd.get("budget") || undefined,
+      message: fd.get("message"),
+    });
+
+    if (!parsed.success) {
+      const firstError = Object.values(parsed.error.flatten().fieldErrors)[0]?.[0];
+      toast({ title: "Validation error", description: firstError || "Please check your inputs.", variant: "destructive" });
+      return;
+    }
+
+    setSubmitting(true);
+    const { data: formData } = parsed;
+
+    const { error } = await supabase.from("contact_submissions").insert({
+      name: formData.name,
+      email: formData.email,
+      service_interest: formData.service || null,
+      company: formData.budget || null,
+      message: formData.message,
+    });
+
+    setSubmitting(false);
+
+    if (error) {
+      toast({ title: "Something went wrong", description: "Please try again or email us directly.", variant: "destructive" });
+      return;
+    }
+
+    toast({ title: "Message sent!", description: "We'll get back to you shortly." });
     setContactOpen(false);
   };
 
@@ -92,6 +137,7 @@ const ContactOverlay = () => {
                   <input
                     name="name"
                     required
+                    maxLength={100}
                     placeholder="Your name"
                     className="w-full px-4 py-3.5 rounded-[10px] text-foreground text-sm outline-none transition-[border-color] duration-300 placeholder:opacity-20"
                     style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", fontFamily: "inherit" }}
@@ -106,6 +152,7 @@ const ContactOverlay = () => {
                     name="email"
                     type="email"
                     required
+                    maxLength={255}
                     placeholder="you@email.com"
                     className="w-full px-4 py-3.5 rounded-[10px] text-foreground text-sm outline-none transition-[border-color] duration-300 placeholder:opacity-20"
                     style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", fontFamily: "inherit" }}
@@ -169,6 +216,7 @@ const ContactOverlay = () => {
                   <textarea
                     name="message"
                     required
+                    maxLength={5000}
                     placeholder="Tell us about your project..."
                     rows={4}
                     className="w-full px-4 py-3.5 rounded-[10px] text-foreground text-sm outline-none transition-[border-color] duration-300 resize-y placeholder:opacity-20"
@@ -180,12 +228,13 @@ const ContactOverlay = () => {
 
                 <button
                   type="submit"
-                  className="w-full py-3.5 rounded-[10px] text-sm font-medium cursor-pointer transition-all duration-300 mt-1"
+                  disabled={submitting}
+                  className="w-full py-3.5 rounded-[10px] text-sm font-medium cursor-pointer transition-all duration-300 mt-1 disabled:opacity-50 disabled:cursor-not-allowed"
                   style={{ background: "white", color: "#0a0a0a", border: "none", fontFamily: "inherit" }}
-                  onMouseEnter={(e) => { e.currentTarget.style.background = "hsl(270, 100%, 50%)"; e.currentTarget.style.color = "white"; }}
+                  onMouseEnter={(e) => { if (!submitting) { e.currentTarget.style.background = "hsl(270, 100%, 50%)"; e.currentTarget.style.color = "white"; } }}
                   onMouseLeave={(e) => { e.currentTarget.style.background = "white"; e.currentTarget.style.color = "#0a0a0a"; }}
                 >
-                  Send Message ↗
+                  {submitting ? "Sending…" : "Send Message ↗"}
                 </button>
               </form>
             </div>
