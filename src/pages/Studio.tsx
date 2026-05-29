@@ -6,17 +6,24 @@ import ScrollReveal from "@/components/shared/ScrollReveal";
 import StatsCounter from "@/components/shared/StatsCounter";
 import LogoMarquee from "@/components/shared/LogoMarquee";
 import FlipButton from "@/components/shared/FlipButton";
+import SEO from "@/components/shared/SEO";
 import { stats } from "@/data/stats";
 import { team } from "@/data/team";
 
 
 const Studio = () => (
   <div className="min-h-screen text-foreground" style={{ background: "#0F0F0F" }}>
+    <SEO
+      title="Studio — The Anoma Company | AI-First Production"
+      description="Meet the Toronto-based AI-first production studio. Our mission, methodology, and the team blending cinematic craft with custom AI tools."
+      path="/studio"
+    />
     <NebulaEffects />
     <Navbar />
 
     {/* Hero Image */}
     <section className="section-card mx-[6px] mt-[6px] rounded-[20px] overflow-hidden">
+      <h1 className="sr-only">The Anoma Company — AI-First Cinematic Production Studio in Toronto</h1>
       <div className="aspect-[21/9] md:aspect-[3/1] w-full">
         <img
           src="/images/studio-hero.jpg"
