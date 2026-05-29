@@ -1,6 +1,21 @@
 # The Anoma Company
 > AI-first cinematic production studio based in Toronto, Canada.
 
+## Pages
+- [Home](/): AI-first cinematic production studio — overview and capabilities.
+- [Studio](/studio): Mission, methodology, team, and what makes The Anoma Company AI-first.
+- [Work](/work): Selected projects across AI video, creative campaigns, branding, and AI tools.
+- [Blog](/blog): Essays on AI-native production, hybrid workflows, and the CTRL+AI methodology.
+- [Contact](/contact): Email, WhatsApp, and studio contact details.
+- [Privacy Policy](/privacy-policy): How we handle visitor and client data.
+- [Terms](/terms): Terms governing use of the site and services.
+
+## Articles
+- [How AI Is Reshaping Commercial Production](/blog/ai-reshaping-commercial-production): AI-native studios delivering cinema-grade work at startup speed.
+- [The CTRL+AI Methodology](/blog/ctrl-ai-methodology): Human control plus AI execution as a creative framework.
+- [Hybrid Workflows: When to Shoot, When to Generate](/blog/hybrid-workflows): Choosing the right tool for each creative moment.
+- [Building an AI-First Studio from Scratch](/blog/building-ai-first-studio): Behind the scenes of an AI-native production studio.
+
 ## Services
 - AI Video Production: Cinematic commercials, music videos, animated spots using hybrid AI + live-action workflows.
 - Creative Campaigns: End-to-end campaign production — strategy, visuals, motion, delivery.
@@ -19,10 +34,3 @@
 - Email: admin@theanoma.company
 - Website: https://theanoma.company
 - Instagram: @theanomacompany
-
-## Notable Work
-- CineGrade AI Reporter: https://cinegrade-ai-reporter-720109186790.us-west1.run.app/
-- DirectorGPT: https://directorgpt-720109186790.us-west1.run.app/
-- ResuMatch AI: https://resumatch-ai-720109186790.us-west1.run.app/
-- WorkBack: https://workback-720109186790.us-west1.run.app/
-- Campus Convert: https://campus-convert-720109186790.us-west1.run.app/

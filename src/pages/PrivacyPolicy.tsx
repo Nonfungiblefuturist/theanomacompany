@@ -1,9 +1,15 @@
 import NebulaEffects from "@/components/shared/NebulaEffects";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
+import SEO from "@/components/shared/SEO";
 
 const PrivacyPolicy = () => (
   <div className="min-h-screen bg-background text-foreground">
+    <SEO
+      title="Privacy Policy — The Anoma Company"
+      description="How The Anoma Company collects, uses, and protects information from visitors and clients."
+      path="/privacy-policy"
+    />
     <NebulaEffects />
     <Navbar />
     <section className="pt-32 pb-20">

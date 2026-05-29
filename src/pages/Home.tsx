@@ -14,9 +14,27 @@ import BentoGrid from "@/components/home/BentoGrid";
 
 import Testimonials from "@/components/home/Testimonials";
 import HomeFAQ from "@/components/home/HomeFAQ";
+import SEO from "@/components/shared/SEO";
+import { faqs } from "@/data/faqs";
+
+const faqJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqs.map((f) => ({
+    "@type": "Question",
+    name: f.question,
+    acceptedAnswer: { "@type": "Answer", text: f.answer },
+  })),
+};
 
 const Home = () => (
   <div className="min-h-screen text-foreground" style={{ background: "#0F0F0F" }}>
+    <SEO
+      title="The Anoma Company — AI-First Production Studio"
+      description="Toronto-based AI-first cinematic production studio. AI video, creative campaigns, branding, and custom AI tools for ambitious brands."
+      path="/"
+      jsonLd={faqJsonLd}
+    />
     <NebulaEffects />
     <Navbar />
     <main>

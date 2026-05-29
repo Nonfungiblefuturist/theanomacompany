@@ -3,6 +3,7 @@ import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import CTABand from "@/components/layout/CTABand";
 import ScrollReveal from "@/components/shared/ScrollReveal";
+import SEO from "@/components/shared/SEO";
 import { projects, getRelatedProjects } from "@/data/projects";
 
 const ProjectDetail = () => {
@@ -13,6 +14,11 @@ const ProjectDetail = () => {
   if (!project) {
     return (
       <div className="min-h-screen bg-background text-foreground">
+        <SEO
+          title="Project not found — The Anoma Company"
+          description="This project could not be found."
+          path={`/work/${slug ?? ""}`}
+        />
         <Navbar />
         <section className="pt-32 pb-20">
           <div className="max-w-5xl mx-auto px-6 md:px-10">
@@ -27,8 +33,27 @@ const ProjectDetail = () => {
     );
   }
 
+  const projectJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "CreativeWork",
+    name: project.title,
+    description: project.summary,
+    image: `https://theanoma.company${project.gallery[0] || project.thumbnail}`,
+    creator: { "@type": "Organization", name: "The Anoma Company" },
+    dateCreated: String(project.year),
+    genre: project.category,
+  };
+
   return (
     <div className="min-h-screen bg-background text-foreground">
+      <SEO
+        title={`${project.title} — ${project.category} | The Anoma Company`}
+        description={project.summary}
+        path={`/work/${project.slug}`}
+        type="article"
+        image={`https://theanoma.company${project.gallery[0] || project.thumbnail}`}
+        jsonLd={projectJsonLd}
+      />
       <Navbar />
 
       <article className="pt-28 pb-20">

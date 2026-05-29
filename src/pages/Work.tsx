@@ -9,6 +9,7 @@ import ScrollReveal from "@/components/shared/ScrollReveal";
 import VideoLightbox from "@/components/shared/VideoLightbox";
 import TripleVideoPreview from "@/components/shared/TripleVideoPreview";
 import { projects } from "@/data/projects";
+import SEO from "@/components/shared/SEO";
 
 const categories = [
   { label: "All", value: "all" },
@@ -36,6 +37,11 @@ const Work = () => {
 
   return (
     <div className="min-h-screen text-foreground" style={{ background: "#0F0F0F" }}>
+      <SEO
+        title="Work — AI Video, Campaigns & AI Tools | The Anoma Company"
+        description="Selected projects from The Anoma Company: AI-native music videos, commercial spots, brand campaigns, packaging, and custom AI tools."
+        path="/work"
+      />
       <NebulaEffects />
       <Navbar />
 

@@ -1,9 +1,15 @@
 import NebulaEffects from "@/components/shared/NebulaEffects";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
+import SEO from "@/components/shared/SEO";
 
 const Terms = () => (
   <div className="min-h-screen bg-background text-foreground">
+    <SEO
+      title="Terms & Conditions — The Anoma Company"
+      description="Terms governing the use of The Anoma Company website and services."
+      path="/terms"
+    />
     <NebulaEffects />
     <Navbar />
     <section className="pt-32 pb-20">
