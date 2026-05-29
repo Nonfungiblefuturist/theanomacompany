@@ -53,7 +53,7 @@ const Footer = () => {
           </div>
 
           <div>
-            <h4 className="text-sm font-medium uppercase tracking-widest text-muted-foreground mb-4">Pages</h4>
+            <h3 className="text-sm font-medium uppercase tracking-widest text-muted-foreground mb-4">Pages</h3>
             <ul className="space-y-2">
               {pageLinks.map((l) => (
                 <li key={l.to}>
@@ -74,7 +74,7 @@ const Footer = () => {
           </div>
 
           <div>
-            <p className="text-sm font-medium text-muted-foreground uppercase tracking-widest mb-4">Get in Touch</p>
+            <h3 className="text-sm font-medium text-muted-foreground uppercase tracking-widest mb-4">Get in Touch</h3>
             <a
               href={`mailto:${siteConfig.email}`}
               className="block text-sm text-muted-foreground hover:text-foreground transition-colors"
@@ -99,7 +99,7 @@ const Footer = () => {
             </a>
 
             <div className="mt-6">
-              <h4 className="text-sm font-medium uppercase tracking-widest text-muted-foreground mb-3">Socials</h4>
+              <h3 className="text-sm font-medium uppercase tracking-widest text-muted-foreground mb-3">Socials</h3>
               <ul className="space-y-2">
                 {socialLinks.map((s) => (
                   <li key={s.label}>
