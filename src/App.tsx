@@ -87,6 +87,8 @@ const App = () => (
                   <Route path="/contact" element={<Contact />} />
                   <Route path="/privacy-policy" element={<PrivacyPolicy />} />
                   <Route path="/terms" element={<Terms />} />
+                  <Route path="/login" element={<Login />} />
+                  <Route path="/.lovable/oauth/consent" element={<OAuthConsent />} />
                   {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
                   <Route path="*" element={<NotFound />} />
                 </Routes>
