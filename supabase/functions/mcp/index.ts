@@ -584,7 +584,7 @@ import { defineTool as defineTool6 } from "npm:@lovable.dev/mcp-js@0.26.2";
 var siteConfig = {
   name: "The Anoma Company",
   tagline: "Everything else is noise.",
-  description: "AI-First Creative Studio. Campaigns, tools, and brand systems.",
+  description: "Toronto AI-first production studio crafting cinematic AI video, creative campaigns, brand identity, and custom AI tools for ambitious brands worldwide.",
   email: "admin@theanoma.company",
   phone: "+1 (647) 564-8106",
   phoneAlt: "+91 81698 63268",

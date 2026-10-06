@@ -30,8 +30,8 @@ const faqJsonLd = {
 const Home = () => (
   <div className="min-h-screen text-foreground" style={{ background: "#0F0F0F" }}>
     <SEO
-      title="The Anoma Company — AI-First Production Studio"
-      description="Toronto-based AI-first cinematic production studio. AI video, creative campaigns, branding, and custom AI tools for ambitious brands."
+      title="The Anoma Company — AI Video, Campaigns & Brand Studio"
+      description="Toronto AI-first production studio crafting cinematic AI video, creative campaigns, brand identity, and custom AI tools for ambitious brands worldwide."
       path="/"
       jsonLd={faqJsonLd}
     />
